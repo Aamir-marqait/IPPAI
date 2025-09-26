@@ -20,7 +20,7 @@ export default function PartnersCarousel() {
 
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll">
-            {partners.map((partner, index) => (
+            {[...partners, ...partners].map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
                 className="flex-shrink-0 mx-8 flex items-center justify-center"
