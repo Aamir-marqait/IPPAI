@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,6 +7,11 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="w-full bg-transparent mt-[33px]">
@@ -104,56 +110,144 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile/Tablet Navigation */}
-          <nav className="flex lg:hidden">
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/"
-                className="font-work-sans font-medium text-sm sm:text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
-              >
-                HOME
-                <div
-                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/"
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  } origin-center`}
-                ></div>
-              </Link>
-              <Link
-                href="/about"
-                className="font-work-sans font-medium text-sm sm:text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
-              >
-                ABOUT
-                <div
-                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/about"
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  } origin-center`}
-                ></div>
-              </Link>
-              <Link
-                href="/news"
-                className="font-work-sans font-medium text-sm sm:text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
-              >
-                NEWS
-                <div
-                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/news"
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-100"
-                  } origin-center`}
-                ></div>
-              </Link>
-            </div>
-          </nav>
+          {/* Hamburger Menu Button - Mobile/Tablet */}
+          <button
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
+          </button>
 
-          {/* Contact Button */}
-          <Button className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
+          {/* Contact Button - Desktop Only */}
+          <Button className="hidden lg:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
             CONTACT US
           </Button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={toggleMenu}
+        ></div>
+
+        {/* Mobile Menu */}
+        <nav
+          className={`lg:hidden fixed top-0 right-0 h-full w-80 bg-black z-50 transform transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col p-6 space-y-6 mt-16">
+            <Link
+              href="/"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              HOME
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
+              href="/about"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              ABOUT US
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/about"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
+              href="/events"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              EVENTS
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/events"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
+              href="/irpri"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              IRPRI
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/irpri"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
+              href="/news"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              NEWS
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/news"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
+              href="/podcast"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              PODCAST
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/podcast"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            
+            {/* Contact Button - Mobile Menu */}
+            <Button 
+              className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
+              onClick={toggleMenu}
+            >
+              CONTACT US
+            </Button>
+          </div>
+        </nav>
       </div>
     </header>
   );
