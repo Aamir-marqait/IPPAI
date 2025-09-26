@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-transparent mt-[33px]">
+    <header className="w-full bg-transparent">
       <div className="mx-auto max-w-[1100px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
