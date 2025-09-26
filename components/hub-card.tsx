@@ -19,27 +19,25 @@ export function HubCard({ icon, title, description, className }: HubCardProps) {
       aria-label={title}
     >
       {/* Icon badge with subtle offset shadow */}
-      <div className="relative h-12 w-12">
+      <div className="relative h-16 w-16">
         {/* offset shadow */}
         <span
-          className="absolute left-1 top-2 h-8 w-8 rounded bg-destructive/15"
+          className="absolute left-3 top-3 h-10 w-10 rounded bg-[#FBEBEB]"
+          style={{ clipPath: 'polygon(1% 0, 110% 100%, 0 100%)' }}
           aria-hidden="true"
         />
         {/* circular badge */}
-        <span
-          className="absolute inset-0 m-auto h-10 w-10 rounded-full bg-destructive/10"
-          aria-hidden="true"
-        />
+       
         {/* red line icon */}
-        <span className="relative z-10 flex h-12 w-12 items-center justify-center text-destructive">
+        <span className="relative z-10 flex h-16 w-16 items-center justify-center text-destructive">
           {icon}
         </span>
       </div>
 
-      <h3 className="mt-5 text-xl sm:text-[22px] font-semibold text-foreground">
+      <h3 className="mt-5 text-sm sm:text-base md:text-lg xl:text-[20px] font-bold font-georgia leading-[135%] align-middle text-[#243C4B]">
         {title}
       </h3>
-      <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+      <p className="mt-3 text-sm sm:text-base md:text-lg xl:text-[18px] font-normal font-sans leading-[160%] align-middle text-[#6D6D6D]">
         {description}
       </p>
     </article>
@@ -50,8 +48,8 @@ export function HubCard({ icon, title, description, className }: HubCardProps) {
 export function IconDocument() {
   return (
     <svg
-      width="26"
-      height="26"
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -69,8 +67,8 @@ export function IconDocument() {
 export function IconSpeaker() {
   return (
     <svg
-      width="26"
-      height="26"
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -89,8 +87,8 @@ export function IconSpeaker() {
 export function IconPolicy() {
   return (
     <svg
-      width="26"
-      height="26"
+      width="32"
+      height="32"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

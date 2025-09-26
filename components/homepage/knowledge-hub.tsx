@@ -25,10 +25,10 @@ export default function KnowledgeHub() {
 
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 md:pt-14 pb-12 md:pb-16">
         <header className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground text-balance">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-center text-[#141414]">
             Knowledge Hub
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground">
+          <p className="mt-3 text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-7 text-center text-[#141414]/85">
             Your gateway to energy intelligence and thought leadership.
           </p>
         </header>
