@@ -48,17 +48,17 @@ const milestones = [
 
 export default function MilestonesTimeline() {
   return (
-    <section className="bg-[#fafafa] py-14">
+    <section className="bg-white py-14">
       <div className="max-w-[1100px] mx-auto px-4">
-        <h2 
+        <h2
           className="text-center mb-2 font-red-hat-display"
           style={{
             fontWeight: 700,
-            fontSize: '36px',
-            lineHeight: '100%',
-            letterSpacing: '0%',
-            textAlign: 'center',
-            color: '#141414'
+            fontSize: "36px",
+            lineHeight: "100%",
+            letterSpacing: "0%",
+            textAlign: "center",
+            color: "#141414",
           }}
         >
           Milestones That Matter
@@ -114,18 +114,18 @@ export default function MilestonesTimeline() {
                 <div className="flex items-center justify-center bg-[#FFF7F7] rounded-lg w-14 h-14 flex-shrink-0">
                   {m.icon}
                 </div>
-                <div 
+                <div
                   className="w-px h-12"
-                  style={{ border: '1px solid #DDDDDD' }}
+                  style={{ border: "1px solid #DDDDDD" }}
                 ></div>
-                <div 
+                <div
                   className="font-red-hat-display capitalize"
                   style={{
                     fontWeight: 600,
-                    fontSize: '20px',
-                    lineHeight: '100%',
-                    letterSpacing: '0%',
-                    color: '#141414'
+                    fontSize: "20px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#141414",
                   }}
                 >
                   {m.text}
