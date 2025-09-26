@@ -7,7 +7,7 @@ export default function Testimonials() {
       className="w-screen relative"
       style={{
         background:
-          " linear-gradient(255.27deg, #D3363B 26.48%, #6D1C1E 110.06%);",
+          " linear-gradient(255.27deg, #D3363B 26.48%, #6D1C1E 110.06%)",
       }}
     >
       <DecorQuotes

@@ -57,6 +57,19 @@ export default function Header() {
               ></div>
             </Link>
             <Link
+              href="/membership"
+              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+            >
+              MEMBERSHIP
+              <div
+                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                  pathname === "/membership"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                } origin-center`}
+              ></div>
+            </Link>
+            <Link
               href="/events"
               className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
             >
@@ -238,9 +251,9 @@ export default function Header() {
                 } origin-center`}
               ></div>
             </Link>
-            
+
             {/* Contact Button - Mobile Menu */}
-            <Button 
+            <Button
               className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
               onClick={toggleMenu}
             >
