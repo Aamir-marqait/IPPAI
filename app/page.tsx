@@ -1,6 +1,7 @@
 import PartnersCarousel from "@/components/homepage/association-partners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
+import Contributors from "@/components/homepage/key-contribution";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
 import Commitments from "@/components/homepage/our-commitments";
 import Testimonials from "@/components/homepage/testimonials";
@@ -18,6 +19,7 @@ export default function Home() {
       <KnowledgeHub />
       <VoicesInAction />
       <Testimonials />
+      <Contributors />
     </div>
   );
 }
