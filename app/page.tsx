@@ -3,6 +3,7 @@ import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
 import Commitments from "@/components/homepage/our-commitments";
+import Testimonials from "@/components/homepage/testimonials";
 import { VoicesInAction } from "@/components/homepage/voice";
 import WhatWeDo from "@/components/homepage/what-we-do";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <WhatWeDo />
       <KnowledgeHub />
       <VoicesInAction />
+      <Testimonials />
     </div>
   );
 }
