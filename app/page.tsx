@@ -1,7 +1,9 @@
 import PartnersCarousel from "@/components/homepage/association-partners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
+import KnowledgeHub from "@/components/homepage/knowledge-hub";
 import Commitments from "@/components/homepage/our-commitments";
+import WhatWeDo from "@/components/homepage/what-we-do";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <PartnersCarousel />
       <Introduction />
       <Commitments />
+      <WhatWeDo />
+      <KnowledgeHub />
     </div>
   );
 }
