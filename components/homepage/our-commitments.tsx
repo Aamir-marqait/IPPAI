@@ -1,18 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { StatCard } from "../stat-card";
 
-export default function CommitmentsHero() {
+export default function Commitments() {
   return (
     <section
       aria-label="Our Commitments"
       className="relative w-screen bg-center bg-cover"
-      style={{ backgroundImage: "url('/images/commitments-bg.png')" }}
+      style={{ backgroundImage: "url('/home/commitment.png')" }}
     >
-      {/* overlay to darken image for contrast, themed via tokens */}
       <div className="absolute inset-0 bg-foreground/70" />
 
-      <div className="relative mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14 lg:py-16">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
+      <div className="relative mx-auto max-w-[1100px] px-4 sm:px-6 py-10 sm:py-12 md:py-14 lg:py-16">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-20">
           {/* Left: Stat cards in a 2x2 grid */}
           <div className="w-full md:w-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
             <StatCard value="17" suffix="+" label="Lorem ipsum" />
@@ -22,17 +21,18 @@ export default function CommitmentsHero() {
           </div>
 
           {/* Right: Heading, copy, CTA */}
-          <div className="w-full md:flex-1 max-w-[600px] md:max-w-[520px] lg:max-w-[560px]">
-            <h2 className="text-primary-foreground text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance">
+          <div className="w-full md:flex-1 ">
+            <h2 className="text-white font-bold font-red-hat-display leading-none tracking-[-1px] capitalize text-2xl sm:text-3xl md:text-4xl xl:text-[48px]">
               Our Commitments
             </h2>
-            <p className="mt-4 text-primary-foreground/85 text-base sm:text-lg leading-relaxed">
+            <p className="mt-4 text-white font-normal font-poppins leading-8 text-sm sm:text-base md:text-lg xl:text-[20px]">
               We are committed to working with you collaboratively to understand
               your goals and create a strategy that will achieve them.
             </p>
             <div className="mt-6">
               <Button
-                className="rounded-full px-6 sm:px-7 py-5 h-auto bg-destructive text-background hover:bg-destructive/90"
+                className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-medium font-work-sans leading-none text-center rounded-[25px] px-8 py-3 text-xs sm:text-sm md:text-base xl:text-base"
+                style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
                 aria-label="Join Us"
               >
                 Join Us

@@ -9,19 +9,19 @@ export function StatCard({ value, suffix, label, className }: StatCardProps) {
   return (
     <div
       className={[
-        // glass panel: translucent, blurred, subtle border
-        "rounded-[20px] border border-background/20 bg-background/10",
-        "backdrop-blur-md shadow-sm",
+        "rounded-[20px] border-[0.91px] border-[#555555] bg-white/[0.09]",
+        "backdrop-blur-md backdrop-saturate-150",
         "p-5 sm:p-6 md:p-7",
         className || "",
       ].join(" ")}
+      style={{ boxShadow: "0px 0px 7.44px 0px #FFFFFF40 inset" }}
     >
-      <div className="flex items-baseline gap-1">
-        <span className="text-primary-foreground font-semibold text-4xl sm:text-5xl md:text-6xl leading-none">
+      <div className="flex items-baseline gap-1 justify-start">
+        <span className="text-white font-bold font-red-hat-display leading-none  text-3xl sm:text-4xl md:text-5xl xl:text-[58.08px]">
           {value}
         </span>
         {suffix ? (
-          <span className="text-destructive font-semibold text-3xl sm:text-4xl md:text-5xl leading-none">
+          <span className="text-[#D3363B] font-bold font-red-hat-display leading-none text-3xl sm:text-4xl md:text-5xl xl:text-[58.08px]">
             {suffix}
           </span>
         ) : null}
@@ -29,7 +29,7 @@ export function StatCard({ value, suffix, label, className }: StatCardProps) {
 
       <div className="mt-3 h-[3px] w-10 sm:w-12 md:w-14 bg-destructive rounded-full" />
 
-      <p className="mt-3 text-primary-foreground/85 text-sm sm:text-base">
+      <p className="mt-3 text-white font-bold font-poppins leading-none  text-xs sm:text-sm md:text-base xl:text-[16.34px]">
         {label}
       </p>
     </div>
