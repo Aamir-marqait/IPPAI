@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Work_Sans, Red_Hat_Display, Poppins, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Work_Sans,
+  Red_Hat_Display,
+  Poppins,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const geistSans = Geist({
@@ -37,7 +43,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "IPPAI - International Public Policy and Administration Institute",
-  description: "International Public Policy and Administration Institute - Advancing public policy through education, research, and professional development.",
+  description:
+    "International Public Policy and Administration Institute - Advancing public policy through education, research, and professional development.",
 };
 
 export default function RootLayout({
@@ -50,10 +57,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} antialiased`}
       >
-        <Header />
-        <main className="pt-20">
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
