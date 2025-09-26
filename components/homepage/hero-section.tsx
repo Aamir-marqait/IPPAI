@@ -5,7 +5,7 @@ import Header from "../Header";
 
 export default function HomeHero() {
   return (
-    <div className="min-h-screen ">
+    <div className="relative">
       <div
         className="absolute inset-0 w-screen h-screen bg-cover bg-center bg-no-repeat"
         style={{
