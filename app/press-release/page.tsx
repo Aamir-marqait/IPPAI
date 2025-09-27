@@ -23,7 +23,7 @@ export default function PressRelease() {
               inviting teams worldwide to develop innovative solutions to pressing policy challenges affecting communities globally.
             </p>
             <p className="text-gray-600 mb-6">
-              This year's challenge focuses on three key areas: climate adaptation strategies, digital governance frameworks, 
+              This year&apos;s challenge focuses on three key areas: climate adaptation strategies, digital governance frameworks, 
               and inclusive economic development policies. The winning teams will receive funding support and implementation assistance...
             </p>
             <button className="text-blue-600 hover:text-blue-800 font-medium">Read Full Release →</button>
@@ -53,7 +53,7 @@ export default function PressRelease() {
             </div>
             <h2 className="text-2xl font-bold mb-4 text-gray-900">IPPAI Partners with Leading Universities for Executive Education Program</h2>
             <p className="text-gray-600 mb-4">
-              Strategic partnership with top-tier universities worldwide expands IPPAI's reach in executive education, 
+              Strategic partnership with top-tier universities worldwide expands IPPAI&apos;s reach in executive education, 
               offering specialized programs for senior government officials and policy leaders.
             </p>
             <p className="text-gray-600 mb-6">
@@ -74,7 +74,7 @@ export default function PressRelease() {
               approach to online learning and professional development in public administration.
             </p>
             <p className="text-gray-600 mb-6">
-              This prestigious award acknowledges IPPAI's commitment to advancing the field through cutting-edge educational 
+              This prestigious award acknowledges IPPAI&apos;s commitment to advancing the field through cutting-edge educational 
               methodologies and its significant contribution to professional development worldwide...
             </p>
             <button className="text-blue-600 hover:text-blue-800 font-medium">Read Full Release →</button>
@@ -91,7 +91,7 @@ export default function PressRelease() {
               researchers, and practitioners from around the world.
             </p>
             <p className="text-gray-600 mb-6">
-              The 2025 Global Policy Summit will focus on "Building Resilient Societies: Policy Innovation in Times of Change" 
+              The 2025 Global Policy Summit will focus on &ldquo;Building Resilient Societies: Policy Innovation in Times of Change&rdquo; 
               and will feature keynote speakers from leading international organizations...
             </p>
             <button className="text-blue-600 hover:text-blue-800 font-medium">Read Full Release →</button>
