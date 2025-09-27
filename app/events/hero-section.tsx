@@ -112,21 +112,25 @@ export default function HeroSection() {
         </main>
 
         {/* Countdown Timer Box */}
-        <div className="absolute bottom-0 right-10 transform -translate-x-1/2 z-20">
-          <div className="bg-white rounded-[20px] px-8 py-6 shadow-2xl">
+        <div className="absolute bottom-0 right-10 transform overflow-auto -translate-x-1/2 z-20">
+          <div className="bg-white rounded-[20px] px-8 py-6 border">
             <div className="flex items-center gap-8">
               <div className="text-center">
                 <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.days).padStart(2, "0")}
                 </div>
-                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">Days</div>
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">
+                  Days
+                </div>
               </div>
 
               <div className="text-center">
                 <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </div>
-                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">Hours</div>
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">
+                  Hours
+                </div>
               </div>
 
               <div className="text-center">
