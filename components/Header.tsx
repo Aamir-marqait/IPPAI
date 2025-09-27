@@ -18,6 +18,9 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Check if we're on an event detail page
+  const isEventDetailPage = pathname?.startsWith('/events/') && pathname !== '/events';
+
   if (!mounted) {
     return (
       <header className="w-full absolute z-50 left-0 right-0 pt-4">
@@ -119,7 +122,11 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link
               href="/"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               HOME
               <div
@@ -132,7 +139,11 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               ABOUT US
               <div
@@ -145,7 +156,11 @@ export default function Header() {
             </Link>
             <Link
               href="/membership"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               MEMBERSHIP
               <div
@@ -158,12 +173,16 @@ export default function Header() {
             </Link>
             <Link
               href="/events"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               EVENTS
               <div
                 className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/events"
+                  pathname === "/events" || pathname?.startsWith("/events/")
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
                 } origin-center`}
@@ -171,7 +190,11 @@ export default function Header() {
             </Link>
             <Link
               href="/irpri"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               IRPRI
               <div
@@ -184,7 +207,11 @@ export default function Header() {
             </Link>
             <Link
               href="/news"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               NEWS
               <div
@@ -197,7 +224,11 @@ export default function Header() {
             </Link>
             <Link
               href="/podcast"
-              className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage 
+                  ? "text-black hover:text-gray-600" 
+                  : "text-white hover:text-red-500"
+              }`}
             >
               PODCAST
               <div

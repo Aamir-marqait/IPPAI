@@ -9,75 +9,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import eventsData from "../../data/events.json";
 
-const events = [
-  {
-    id: 1,
-    title: "IIA Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 1.png",
-    status: "upcoming",
-    statusLabel: "Upcoming Event",
-  },
-  {
-    id: 2,
-    title: "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 2.png",
-    status: "past",
-    statusLabel: "Past Event",
-  },
-  {
-    id: 3,
-    title: "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 3.png",
-    status: "past",
-    statusLabel: "Past Event",
-  },
-  {
-    id: 4,
-    title: "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 4.png",
-    status: "past",
-    statusLabel: "Past Event",
-  },
-  {
-    id: 5,
-    title: "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 5.png",
-    status: "past",
-    statusLabel: "Past Event",
-  },
-  {
-    id: 6,
-    title: "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-    location: "2715 Ash Dr. San Jose, South Dakota -83475",
-    date: "Dec 11- Dec 24, 2025",
-    image: "/event/event 6.png",
-    status: "past",
-    statusLabel: "Past Event",
-  },
-];
+const events = eventsData.events;
 
 export default function EventsPage() {
   return (
@@ -106,7 +40,7 @@ export default function EventsPage() {
           {events.map((event) => (
             <Link
               key={event.id}
-              href={`/events/${event.id}`}
+              href={`/events/${event.slug}`}
               className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow block cursor-pointer"
             >
               {/* Event Image */}
