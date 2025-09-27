@@ -10,10 +10,12 @@ export default function Testimonials() {
           " linear-gradient(255.27deg, #D3363B 26.48%, #6D1C1E 110.06%)",
       }}
     >
-      <DecorQuotes
-        side="left"
-        size={240}
-        className="pointer-events-none absolute -bottom-6 left-3 opacity-10"
+      <Image
+        src="/home/4.png"
+        alt=""
+        width={240}
+        height={240}
+        className="pointer-events-none absolute -bottom-6 left-0 opacity-100"
       />
       <DecorQuotes
         side="right"

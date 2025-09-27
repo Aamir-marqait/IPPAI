@@ -20,14 +20,6 @@ export function HubCard({ icon, title, description, className }: HubCardProps) {
     >
       {/* Icon badge with subtle offset shadow */}
       <div className="relative h-16 w-16">
-        {/* offset shadow */}
-        <span
-          className="absolute left-3 top-3 h-10 w-10 rounded bg-[#FBEBEB]"
-          style={{ clipPath: 'polygon(1% 0, 110% 100%, 0 100%)' }}
-          aria-hidden="true"
-        />
-        {/* circular badge */}
-       
         {/* red line icon */}
         <span className="relative z-10 flex h-16 w-16 items-center justify-center text-destructive">
           {icon}
