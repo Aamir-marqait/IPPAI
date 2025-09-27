@@ -6,6 +6,7 @@ import { FaGlobe } from "react-icons/fa6";
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const TABS = [
   {
@@ -160,6 +161,7 @@ const TABS = [
 
 export default function MembershipTabs() {
   const [tab, setTab] = useState("corporate");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const active = TABS.find((t) => t.key === tab)!;
 
   return (
@@ -224,12 +226,16 @@ export default function MembershipTabs() {
                 </li>
               ))}
             </ul>
-            <button className="cursor-pointer w-fit rounded-full bg-[#D3363B] hover:bg-[#B8303A] text-white font-medium px-8 py-2 text-base leading-none text-center shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] transition font-['Work_Sans']">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="cursor-pointer w-fit rounded-full bg-[#D3363B] hover:bg-[#B8303A] text-white font-medium px-8 py-2 text-base leading-none text-center shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] transition font-['Work_Sans']"
+            >
               Join Now
             </button>
           </div>
         </div>
       </div>
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }

@@ -1,192 +1,253 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+import type React from "react";
 
-interface JoinMembershipModalProps {
-  open: boolean
-  onOpenChange: (open: boolean) => void
+import { useState } from "react";
+import Image from "next/image";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+
+interface JoinUsModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-export default function JoinMembershipModal({ 
-  open, 
-  onOpenChange 
-}: JoinMembershipModalProps) {
+export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    phone: "",
     company: "",
-    position: "",
-    interests: "",
-  })
+    message: "",
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    company: "",
+  });
+
+  const validateForm = () => {
+    const newErrors = {
+      name: "",
+      email: "",
+      company: "",
+    };
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    // Company validation
+    if (!formData.company.trim()) {
+      newErrors.company = "Company name is required";
+    }
+
+    setErrors(newErrors);
+    return !Object.values(newErrors).some(error => error !== "");
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    onOpenChange(false)
-  }
+    e.preventDefault();
+    
+    if (validateForm()) {
+      console.log("Form submitted:", formData);
+      // Handle form submission here
+      onOpenChange(false);
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+      setErrors({
+        name: "",
+        email: "",
+        company: "",
+      });
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    // Clear error when user starts typing
+    if (errors[field as keyof typeof errors]) {
+      setErrors((prev) => ({ ...prev, [field]: "" }));
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-[#D3363B] font-red-hat-display">
-            Join Our Membership
-          </DialogTitle>
-          <DialogDescription className="text-gray-600 font-poppins">
-            Fill out the form below to become a member and unlock exclusive benefits, 
-            resources, and connections designed to help you grow.
-          </DialogDescription>
-        </DialogHeader>
-        
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                First Name *
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-                placeholder="Enter your first name"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                Last Name *
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-                placeholder="Enter your last name"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-              placeholder="Enter your email address"
+      <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-white">
+        <DialogTitle className="sr-only">
+          Join Us Today - Membership Registration
+        </DialogTitle>
+        <div className="flex h-[600px]">
+          {/* Left side - Image */}
+          <div className="flex-1 relative">
+            <Image
+              src="/membership/join.png"
+              alt="Professional handshake with network overlay"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
           </div>
 
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-              placeholder="Enter your phone number"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                Company/Organization
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-                placeholder="Enter your company"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-2">
-                Position/Title
-              </label>
-              <input
-                type="text"
-                id="position"
-                name="position"
-                value={formData.position}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-                placeholder="Enter your position"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="interests" className="block text-sm font-medium text-gray-700 mb-2">
-              Areas of Interest
-            </label>
-            <textarea
-              id="interests"
-              name="interests"
-              value={formData.interests}
-              onChange={handleInputChange}
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D3363B] focus:border-[#D3363B]"
-              placeholder="Tell us about your interests and what you hope to gain from membership..."
-            />
-          </div>
-
-          <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 space-y-2 space-y-reverse sm:space-y-0">
-            <Button
-              type="button"
-              variant="outline"
+          {/* Right side - Form */}
+          <div className="flex-1 bg-gray-50 p-8 relative">
+            {/* Close button */}
+            {/* <button
               onClick={() => onOpenChange(false)}
-              className="w-full sm:w-auto"
+              className="absolute top-4 right-4 p-1 hover:bg-gray-200 rounded-sm transition-colors"
             >
-              Cancel
-            </Button>
-            <Button
-              type="submit"
-              className="w-full sm:w-auto bg-[#D3363B] hover:bg-[#B8303A] text-white"
-            >
-              Submit Application
-            </Button>
+              <X className="w-5 h-5 text-gray-600" />
+            </button> */}
+
+            <div className="max-w-sm mx-auto">
+              <h2 
+                className="mb-8 text-left font-red-hat-display"
+                style={{
+                  fontWeight: 700,
+                  fontSize: '30.1px',
+                  lineHeight: '34.2px',
+                  letterSpacing: '0px',
+                  color: '#D3363B'
+                }}
+              >
+                Join Us Today!
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label 
+                    className="block mb-2 font-poppins"
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '12.31px',
+                      lineHeight: '12.31px',
+                      letterSpacing: '0%',
+                      color: '#121212'
+                    }}
+                  >
+                    Name
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="John Carter"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange("name", e.target.value)}
+                    className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
+                      errors.name ? 'border-red-500' : 'border-black/[0.13]'
+                    }`}
+                  />
+                  {/* {errors.name && (
+                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.name}</p>
+                  )} */}
+                </div>
+
+                <div>
+                  <label 
+                    className="block mb-2 font-poppins"
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '12.31px',
+                      lineHeight: '12.31px',
+                      letterSpacing: '0%',
+                      color: '#121212'
+                    }}
+                  >
+                    Email
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="example@email.com"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
+                      errors.email ? 'border-red-500' : 'border-black/[0.13]'
+                    }`}
+                  />
+                  {/* {errors.email && (
+                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.email}</p>
+                  )} */}
+                </div>
+
+                <div>
+                  <label 
+                    className="block mb-2 font-poppins"
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '12.31px',
+                      lineHeight: '12.31px',
+                      letterSpacing: '0%',
+                      color: '#121212'
+                    }}
+                  >
+                    Company Name
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Tech Solutions"
+                    value={formData.company}
+                    onChange={(e) =>
+                      handleInputChange("company", e.target.value)
+                    }
+                    className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
+                      errors.company ? 'border-red-500' : 'border-black/[0.13]'
+                    }`}
+                  />
+                  {/* {errors.company && (
+                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.company}</p>
+                  )} */}
+                </div>
+
+                <div>
+                  <label 
+                    className="block mb-2 font-poppins"
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '12.31px',
+                      lineHeight: '12.31px',
+                      letterSpacing: '0%',
+                      color: '#121212'
+                    }}
+                  >
+                    Leave us a message
+                  </label>
+                  <Textarea
+                    placeholder="Please type your message here..."
+                    value={formData.message}
+                    onChange={(e) =>
+                      handleInputChange("message", e.target.value)
+                    }
+                    className="w-full h-[97.82px] rounded-[13.68px] border-[0.68px] border-black/[0.13] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 resize-none pt-[16.42px] pr-[16.42px] pb-[68.4px] pl-[16.42px]"
+                    rows={4}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full h-[37.625px] bg-[#D3363B] hover:bg-[#B8303A] text-white font-work-sans font-semibold text-base leading-[12.31px] tracking-[0%] text-center rounded-[20.52px] pt-[12.31px] pr-[16.42px] pb-[12.31px] pl-[16.42px] opacity-100"
+                >
+                  Join
+                </Button>
+              </form>
+            </div>
           </div>
-        </form>
+        </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

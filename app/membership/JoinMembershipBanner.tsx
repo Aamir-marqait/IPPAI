@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 import Image from "next/image";
 import { useState } from "react";
-import JoinMembershipModal from "@/components/JoinMembershipModal";
 
 export default function JoinMembershipBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function JoinMembershipBanner() {
               <br className="hidden md:block" />
               designed to help you grow.
             </p>
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="bg-[#D3363B] cursor-pointer hover:bg-[#B8303A] transition text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md w-fit"
             >
@@ -45,11 +45,8 @@ export default function JoinMembershipBanner() {
           </div>
         </div>
       </div>
-      
-      <JoinMembershipModal 
-        open={isModalOpen} 
-        onOpenChange={setIsModalOpen} 
-      />
+
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
