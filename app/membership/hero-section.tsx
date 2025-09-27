@@ -6,10 +6,10 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 w-screen bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/home/background.png')",
+          backgroundImage: "url('/membership/hero.png')",
         }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       {/* Content */}

@@ -1,6 +1,11 @@
+"use client";
+
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function JoinMembershipBanner() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="bg-white py-12">
       <div className="max-w-5xl mx-auto px-4">
@@ -12,7 +17,7 @@ export default function JoinMembershipBanner() {
         >
           {/* Background image */}
           <Image
-            src="/path/to/your/background-image.jpg" // <-- Set your image path here
+            src="/membership/bg2.png" // <-- Set your image path here
             alt="Membership Banner"
             fill
             className="object-cover"
@@ -20,7 +25,7 @@ export default function JoinMembershipBanner() {
             priority
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
+          <div className="absolute inset-0 bg-black/20 z-10"></div>
           {/* Content */}
           <div className="relative z-20 flex flex-col justify-center items-center h-full py-16">
             <h2 className="text-white text-3xl md:text-5xl xl:text-[48px] font-bold text-center mb-4 drop-shadow leading-[46px] font-red-hat-display">
@@ -31,12 +36,17 @@ export default function JoinMembershipBanner() {
               <br className="hidden md:block" />
               designed to help you grow.
             </p>
-            <button className="bg-[#D3363B] cursor-pointer hover:bg-[#B8303A] transition text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md w-fit">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#D3363B] cursor-pointer hover:bg-[#B8303A] transition text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md w-fit"
+            >
               Join Now
             </button>
           </div>
         </div>
       </div>
+
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
