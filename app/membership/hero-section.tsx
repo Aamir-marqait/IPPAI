@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+
 
 export default function HeroSection() {
   return (
@@ -13,8 +13,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
-        <Header />
+      <div className="relative z-10 pt-28">
 
         <main className="flex max-w-[1100px]  min-h-96 mx-auto flex-col items-center justify-center  lg:mt-2 text-center">
           <div className="w-full">

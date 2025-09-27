@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/Header";
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -50,8 +50,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col">
-        <Header />
+      <div className="relative z-10 min-h-screen flex flex-col pt-28">
 
         <main className="flex-1 flex justify-end items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
           <div className="w-1/2 text-center space-y-8 lg:space-y-3 translate-y-20">

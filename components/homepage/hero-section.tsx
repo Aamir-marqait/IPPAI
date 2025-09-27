@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Header from "../Header";
+
 
 export default function HomeHero() {
   return (
@@ -19,8 +19,7 @@ export default function HomeHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
-        <Header />
+      <div className="relative z-10 pt-28">
 
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">

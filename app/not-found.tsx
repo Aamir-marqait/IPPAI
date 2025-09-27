@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -9,7 +8,7 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-black flex items-center justify-center px-4 py-40">
       <div className="max-w-2xl mx-auto text-center">
         {/* Error Illustration */}
         <div className="mb-8">
@@ -28,12 +27,13 @@ export default function NotFound() {
 
         {/* Error Content */}
         <div className="mb-8">
-          <h2 className="font-red-hat-display font-bold text-3xl md:text-4xl text-[#141414] mb-4">
+          <h2 className="font-red-hat-display font-bold text-3xl md:text-4xl text-white mb-4">
             Page Not Found
           </h2>
-          <p className="font-poppins font-normal text-base md:text-lg text-[#141414]/60 leading-relaxed max-w-lg mx-auto mb-6">
-            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
-            Let&apos;s get you back to exploring IPPAI&apos;s energy policy insights and regulatory frameworks.
+          <p className="font-poppins font-normal text-base md:text-lg text-white/60 leading-relaxed max-w-lg mx-auto mb-6">
+            The page you&apos;re looking for doesn&apos;t exist or has been
+            moved. Let&apos;s get you back to exploring IPPAI&apos;s energy
+            policy insights and regulatory frameworks.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function NotFound() {
               Back to Home
             </Button>
           </Link>
-          
+
           <Button
             onClick={() => router.back()}
             variant="outline"
@@ -56,33 +56,33 @@ export default function NotFound() {
 
         {/* Quick Links */}
         <div className="mt-12 pt-8 border-t border-[#DEDEDE]">
-          <p className="font-poppins font-light text-sm text-[#141414]/60 mb-4">
+          <p className="font-poppins font-light text-sm text-white/60 mb-4">
             Or explore these sections:
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="font-poppins text-sm text-[#D3363B] hover:text-[#D3363B]/80 transition-colors"
             >
               About IPPAI
             </Link>
             <span className="text-[#DEDEDE]">|</span>
-            <Link 
-              href="/events" 
+            <Link
+              href="/events"
               className="font-poppins text-sm text-[#D3363B] hover:text-[#D3363B]/80 transition-colors"
             >
               Events
             </Link>
             <span className="text-[#DEDEDE]">|</span>
-            <Link 
-              href="/knowledge-hub" 
+            <Link
+              href="/knowledge-hub"
               className="font-poppins text-sm text-[#D3363B] hover:text-[#D3363B]/80 transition-colors"
             >
               Knowledge Hub
             </Link>
             <span className="text-[#DEDEDE]">|</span>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="font-poppins text-sm text-[#D3363B] hover:text-[#D3363B]/80 transition-colors"
             >
               Contact
@@ -92,7 +92,7 @@ export default function NotFound() {
 
         {/* Brand Footer */}
         <div className="mt-8 pt-6 border-t border-[#DEDEDE]">
-          <p className="font-briem-hand text-sm text-[#656565]">
+          <p className="font-briem-hand text-sm text-white/70">
             Powering India&apos;s Energy Future Since 1994
           </p>
         </div>
