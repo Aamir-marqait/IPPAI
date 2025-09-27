@@ -1,47 +1,95 @@
-import {
-  CalendarDays,
-  Users2,
-  FileText,
-  Building2,
-  Award,
-  Handshake,
-  Rocket,
-} from "lucide-react";
+import Image from "next/image";
 
 const milestones = [
   {
     year: "1994",
-    icon: <CalendarDays className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/1994.png"
+        alt="1994 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "IPPAI Founded As India's First Independent Power Producers Association",
   },
   {
     year: "2001",
-    icon: <Users2 className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2001.png"
+        alt="2001 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Established As Key Policy Advisor To Government Of India",
   },
   {
     year: "2005",
-    icon: <FileText className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2005.png"
+        alt="2005 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Launched Comprehensive Regulatory Framework Initiatives",
   },
   {
     year: "2010",
-    icon: <Building2 className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2010.png"
+        alt="2010 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Pioneered Renewable Energy Integration Policies",
   },
   {
     year: "2015",
-    icon: <Award className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2015.png"
+        alt="2015 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Achieved Recognition As Leading Energy Sector Catalyst",
   },
   {
     year: "2020",
-    icon: <Handshake className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2020.png"
+        alt="2020 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Expanded Focus To Include Sustainability And Clean Energy",
   },
   {
     year: "2024",
-    icon: <Rocket className="w-8 h-8 text-[#C24A48]" />,
+    icon: (
+      <Image
+        src="/about/2024.png"
+        alt="2024 milestone"
+        width={45}
+        height={45}
+        className="object-contain"
+      />
+    ),
     text: "Leading India's Energy Transition With 3200+ MW Mobilized",
   },
 ];

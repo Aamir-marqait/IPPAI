@@ -1,58 +1,137 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 const members = [
   // Circle around the central image (positions are % relative to container)
   {
     src: "/about/user2.png",
-    alt: "Member 1",
+    alt: "Dr. Priya Sharma",
+    name: "Dr. Priya Sharma",
+    occupation: "Director of Energy Policy",
+    description:
+      "Leading renewable energy initiatives with 15+ years of experience in sustainable power solutions.",
     size: 55,
     style: { top: "3%", left: "60%" },
   },
   {
     src: "/about/user3.png",
-    alt: "Member 2",
+    alt: "Rajesh Kumar",
+    name: "Rajesh Kumar",
+    occupation: "Chief Technology Officer",
+    description:
+      "Pioneering smart grid technologies and digital transformation in the power sector.",
     size: 115,
     style: { top: "1%", left: "74%" },
   },
   {
     src: "/about/user2.png",
-    alt: "Member 3",
+    alt: "Ms. Anjali Verma",
+    name: "Ms. Anjali Verma",
+    occupation: "Head of Regulatory Affairs",
+    description:
+      "Expert in power sector regulations with deep understanding of compliance frameworks.",
     size: 140,
     style: { top: "37%", left: "93%" },
   },
   {
     src: "/about/user3.png",
-    alt: "Member 4",
+    alt: "Dr. Suresh Patel",
+    name: "Dr. Suresh Patel",
+    occupation: "Senior Research Advisor",
+    description:
+      "Leading research in grid modernization and energy storage solutions for India.",
     size: 120,
     style: { top: "68%", left: "85%" },
   },
   {
     src: "/about/user2.png",
-    alt: "Member 5",
+    alt: "Kavita Singh",
+    name: "Kavita Singh",
+    occupation: "Operations Director",
+    description:
+      "Streamlining power sector operations with innovative management strategies.",
     size: 90,
     style: { top: "78%", left: "70%" },
   },
   {
     src: "/about/user1.png",
-    alt: "Member 6",
+    alt: "Arjun Mehta",
+    name: "Arjun Mehta",
+    occupation: "Strategic Planning Head",
+    description:
+      "Developing long-term strategies for sustainable power infrastructure development.",
     size: 110,
     style: { top: "68%", left: "45%" },
   },
   {
     src: "/about/user2.png",
-    alt: "Member 7",
+    alt: "Dr. Ravi Gupta",
+    name: "Dr. Ravi Gupta",
+    occupation: "Innovation Lead",
+    description:
+      "Driving technological innovation in renewable energy and smart power systems.",
     size: 100,
     style: { top: "40%", left: "36%" },
   },
   {
     src: "/about/user3.png",
-    alt: "Member 8",
+    alt: "Neha Agarwal",
+    name: "Neha Agarwal",
+    occupation: "Policy Research Manager",
+    description:
+      "Analyzing policy impacts and shaping regulatory frameworks for power sector growth.",
     size: 120,
     style: { top: "15%", left: "40%" },
   },
 ];
 
+const defaultCenterMember = {
+  src: "/about/user1.png",
+  alt: "Mr. V.P. Raja",
+  name: "Mr. V.P. Raja",
+  occupation: "Former Chairman, Maharashtra Electricity Regulatory Commission",
+  description:
+    "The experience and competence of our team will help build your business successful.",
+};
+
 export default function LeadershipCircle() {
+  const [centerMember, setCenterMember] = useState(defaultCenterMember);
+
+  const [originalCenterMember] = useState(defaultCenterMember);
+
+  const [hoveredImageData, setHoveredImageData] = useState<{
+    src: string;
+    alt: string;
+    index: number;
+  } | null>(null);
+
+  const handleImageHover = (
+    member: (typeof members)[0],
+    imageIndex: number
+  ) => {
+    // Store current hovered image data
+    setHoveredImageData({
+      src: member.src,
+      alt: member.alt,
+      index: imageIndex,
+    });
+
+    // Move hovered member to center
+    setCenterMember({
+      src: member.src,
+      alt: member.alt,
+      name: member.name,
+      occupation: member.occupation,
+      description: member.description,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredImageData(null);
+    setCenterMember(originalCenterMember);
+  };
+
   return (
     <section
       className="relative w-full min-h-screen py-12 flex items-center overflow-hidden"
@@ -64,38 +143,38 @@ export default function LeadershipCircle() {
       <div className="max-w-[1200px] mx-auto w-full px-4 z-10">
         {/* Top: Title and Subtitle */}
         <div className="text-center mb-20">
-          <div 
+          <div
             className="uppercase text-center font-red-hat-display mb-2"
             style={{
               fontWeight: 700,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#D3363B'
+              fontSize: "16px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              color: "#D3363B",
             }}
           >
             Advisory Board Members
           </div>
-          <h2 
+          <h2
             className="text-center font-red-hat-display mb-3"
             style={{
               fontWeight: 700,
-              fontSize: '36px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#FFFFFF'
+              fontSize: "36px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              color: "#FFFFFF",
             }}
           >
             Leadership at IPPAI
           </h2>
-          <p 
+          <p
             className="text-center font-poppins max-w-[40rem] mx-auto"
             style={{
               fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '28px',
-              letterSpacing: '0%',
-              color: '#e0e0e0'
+              fontSize: "16px",
+              lineHeight: "28px",
+              letterSpacing: "0%",
+              color: "#e0e0e0",
             }}
           >
             Guided by experienced leaders, experts, and advisors shaping the
@@ -106,45 +185,44 @@ export default function LeadershipCircle() {
         {/* Bottom: Left-Right Content */}
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left: Featured Member */}
-          <div className="flex flex-col flex-shrink-0 md:w-1/4 w-full mb-10 md:mb-0">
+          <div className="flex flex-col flex-shrink-0 md:w-sm w-full mb-10 md:mb-0">
             <div className="">
-              <div 
-                className="text-right font-red-hat-display mb-2 flex items-center"
+              <div
+                className="text-right font-red-hat-display mb-2 flex items-center transition-all duration-300 ease-in-out"
                 style={{
                   fontWeight: 800,
-                  fontSize: '48px',
-                  lineHeight: '64px',
-                  letterSpacing: '1%',
-                  color: '#D3363B'
+                  fontSize: "48px",
+                  lineHeight: "64px",
+                  letterSpacing: "1%",
+                  color: "#D3363B",
                 }}
               >
-                Mr. V.P. Raja
+                {centerMember.name}
               </div>
-              <div 
-                className="font-poppins mb-2"
+              <div
+                className="font-poppins mb-2 transition-all duration-300 ease-in-out"
                 style={{
                   fontWeight: 400,
-                  fontSize: '24px',
-                  lineHeight: '144%',
-                  letterSpacing: '3%',
-                  color: '#FFFFFF'
+                  fontSize: "24px",
+                  lineHeight: "144%",
+                  letterSpacing: "3%",
+                  color: "#FFFFFF",
                 }}
               >
-                Former Chairman, Maharashtra Electricity Regulatory Commission
+                {centerMember.occupation}
               </div>
-              <div 
-                className="flex items-center"
+              <div
+                className="flex items-center transition-all duration-300 ease-in-out"
                 style={{
-                  fontFamily: 'poppins',
+                  fontFamily: "poppins",
                   fontWeight: 400,
-                  fontSize: '18px',
-                  lineHeight: '160%',
-                  letterSpacing: '0%',
-                  color: '#d6d6d6'
+                  fontSize: "18px",
+                  lineHeight: "160%",
+                  letterSpacing: "0%",
+                  color: "#d6d6d6",
                 }}
               >
-                The experience and competence of our team will help build your
-                business successful.
+                {centerMember.description}
               </div>
             </div>
           </div>
@@ -152,12 +230,12 @@ export default function LeadershipCircle() {
           <div className="relative flex-1 min-h-[600px] flex items-center justify-center">
             {/* Central member */}
             <div className="absolute z-20 top-[39%] left-[63%] w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2">
-              <div className="relative rounded-full border-[3px] border-white shadow-lg w-[300px] h-[300px]">
+              <div className="relative rounded-full border-[3px] border-white shadow-lg w-[300px] h-[300px] transition-all duration-300 ease-in-out">
                 <Image
-                  src="/about/user1.png"
-                  alt="Central Member"
+                  src={centerMember.src}
+                  alt={centerMember.alt}
                   fill
-                  className="object-cover rounded-full"
+                  className="object-cover rounded-full transition-all duration-300 ease-in-out"
                   style={{ borderRadius: "9999px" }}
                   priority
                 />
@@ -167,16 +245,18 @@ export default function LeadershipCircle() {
             {members.map((m, i) => (
               <div
                 key={i}
-                className="absolute z-10"
+                className="absolute z-10 cursor-pointer"
                 style={{
                   ...m.style,
                   width: m.size,
                   height: m.size,
                   transform: "translate(-50%, -50%)",
                 }}
+                onMouseEnter={() => handleImageHover(m, i)}
+                onMouseLeave={handleMouseLeave}
               >
                 <div
-                  className="relative rounded-full border-4"
+                  className="relative rounded-full border-4 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl"
                   style={{
                     border: "3px solid #FFF",
                     boxShadow: "0px 0px 15px 0px #1C1D2226",
@@ -185,10 +265,18 @@ export default function LeadershipCircle() {
                   }}
                 >
                   <Image
-                    src={m.src}
-                    alt={m.alt}
+                    src={
+                      hoveredImageData?.index === i
+                        ? originalCenterMember.src
+                        : m.src
+                    }
+                    alt={
+                      hoveredImageData?.index === i
+                        ? originalCenterMember.alt
+                        : m.alt
+                    }
                     fill
-                    className="object-cover rounded-full"
+                    className="object-cover rounded-full transition-all duration-300 ease-in-out"
                     style={{ borderRadius: "9999px" }}
                     sizes={`${m.size}px`}
                     priority

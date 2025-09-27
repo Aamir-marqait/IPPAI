@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
 import Header from "../Header";
 
@@ -57,13 +56,13 @@ export default function HomeHero() {
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Calendar className="text-red-500 w-5 h-5" />
+                    <Image src="/home/calendar.svg" alt="Calendar" width={20} height={20} className="w-5 h-5" />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       25th to 27th September 2025
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="text-red-500 w-5 h-5" />
+                    <Image src="/home/location.svg" alt="Location" width={20} height={20} className="w-5 h-5" />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       Shoonya Farm Retreat, Belagavi, Karnataka 2
                     </span>
