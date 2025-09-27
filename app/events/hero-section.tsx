@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -52,42 +53,58 @@ export default function HeroSection() {
       <div className="relative z-10 h-full">
         <Header />
 
-        <main className="flex  mx-auto px-4 h-[calc(100vh-120px)] items-center">
+        <main className="flex   mx-auto px-4 h-[calc(100vh-120px)] items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full items-center">
             {/* Left Side - Person with Red Circle */}
-            <div className="relative flex justify-center lg:justify-start">
-             
-            </div>
+            <div className="relative flex justify-center lg:justify-start"></div>
 
             {/* Right Side - Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="font-red-hat-display font-bold text-[56px] leading-none tracking-normal text-center uppercase text-white mb-4">
+            <div className="text-center">
+              <h1 className="font-red-hat-display max-w-xl font-bold text-[56px] leading-[150%] tracking-normal text-center uppercase text-white ">
                 ANNUAL BUSINESS
                 <br />
                 <span className="text-[#D3363B]">EVENT 2025</span>
               </h1>
 
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/home/line.png"
+                  alt="Line"
+                  width={200}
+                  height={4}
+                  className="h-auto"
+                />
+              </div>
+
               {/* Event Details */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-4 h-4 bg-[#D3363B] rounded"></div>
-                  <span className="font-poppins text-white text-base lg:text-lg">
+              <div className="space-y-3  mb-12 flex flex-col items-start max-w-lg mx-auto">
+                <div className="flex items-center justify-center gap-3">
+                  <Image
+                    src="/home/calendar.svg"
+                    alt="Calendar"
+                    width={20}
+                    height={20}
+                  />
+                  <span className="font-work-sans text-white text-xl text-left font-medium leading-none">
                     25th to 27th September 2025
                   </span>
                 </div>
 
-                <div className="flex items-center justify-center lg:justify-start gap-3">
-                  <div className="w-4 h-4 bg-[#D3363B] rounded"></div>
-                  <span className="font-poppins text-white text-base lg:text-lg">
-                    Shoonya Farm Retreat, Belagavi,
-                    <br />
-                    Karnataka 2
+                <div className="flex items-start justify-center gap-3">
+                  <Image
+                    src="/home/location.svg"
+                    alt="Location"
+                    width={20}
+                    height={20}
+                  />
+                  <span className="font-work-sans text-white text-xl font-medium leading-none ">
+                    Shoonya Farm Retreat, Belagavi,Karnataka 2
                   </span>
                 </div>
               </div>
 
               {/* Register Button */}
-              <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base px-8 py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
+              <Button className="bg-[#D3363B] mr-32 hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none text-center px-8 py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
                 Register Now
               </Button>
             </div>
@@ -95,37 +112,37 @@ export default function HeroSection() {
         </main>
 
         {/* Countdown Timer Box */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="absolute bottom-0 right-10 transform -translate-x-1/2 z-20">
           <div className="bg-white rounded-[20px] px-8 py-6 shadow-2xl">
             <div className="flex items-center gap-8">
               <div className="text-center">
-                <div className="font-red-hat-display font-bold text-3xl text-[#D3363B] mb-1">
+                <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.days).padStart(2, "0")}
                 </div>
-                <div className="font-poppins text-sm text-gray-600">Days</div>
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">Days</div>
               </div>
 
               <div className="text-center">
-                <div className="font-red-hat-display font-bold text-3xl text-[#D3363B] mb-1">
+                <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </div>
-                <div className="font-poppins text-sm text-gray-600">Hours</div>
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">Hours</div>
               </div>
 
               <div className="text-center">
-                <div className="font-red-hat-display font-bold text-3xl text-[#D3363B] mb-1">
+                <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </div>
-                <div className="font-poppins text-sm text-gray-600">
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">
                   Minutes
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="font-red-hat-display font-bold text-3xl text-[#D3363B] mb-1">
+                <div className="font-poppins font-bold text-[50px] leading-[60px] text-[#D3363BCC] mb-1">
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </div>
-                <div className="font-poppins text-sm text-gray-600">
+                <div className="font-poppins font-medium text-base leading-[19.2px] text-[#696A87] text-center">
                   Seconds
                 </div>
               </div>
