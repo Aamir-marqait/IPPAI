@@ -1,6 +1,7 @@
-import { Calendar, MapPin, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Select,
   SelectContent,
@@ -84,13 +85,12 @@ export default function EventsPage() {
       <div className="w-full max-w-[1100px] mx-auto px-4 py-8 md:py-12">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <h1 className="font-inter font-bold text-[32px] leading-none text-[#141414]">
             Our Events
           </h1>
           <Select defaultValue="default">
             <SelectTrigger className="w-full sm:w-[140px] bg-white">
               <SelectValue placeholder="Sort By" />
-              <ChevronDown className="h-4 w-4 opacity-50" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="default">Sort By</SelectItem>
@@ -104,9 +104,10 @@ export default function EventsPage() {
         {/* Events Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {events.map((event) => (
-            <div
+            <Link
               key={event.id}
-              className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow"
+              href={`/events/${event.id}`}
+              className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow block cursor-pointer"
             >
               {/* Event Image */}
               <div className="relative">
@@ -131,8 +132,16 @@ export default function EventsPage() {
                   </span>
                 </div>
 
+                {/* White Background for Button */}
+                <div
+                  className="absolute top-0 right-0  bg-white w-16 h-16"
+                  style={{
+                    borderRadius: "0px 8px 0px 50px",
+                  }}
+                ></div>
+
                 {/* Arrow Button */}
-                <div className="absolute top-3 right-3 bg-white">
+                <div className="absolute top-3 right-3">
                   <Button
                     size="sm"
                     className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white p-0"
@@ -163,10 +172,12 @@ export default function EventsPage() {
                 {/* Date */}
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                  <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">{event.date}</span>
+                  <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">
+                    {event.date}
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
