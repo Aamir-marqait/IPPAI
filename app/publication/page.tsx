@@ -102,10 +102,10 @@ export default function Publication() {
                 <span className="text-sm text-gray-500">January 2025</span>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Estonia's Digital Government: A Model for Public Sector Innovation
+                Estonia&apos;s Digital Government: A Model for Public Sector Innovation
               </h3>
               <p className="text-gray-600 mb-4">
-                Detailed case study examining Estonia's digital government initiatives, analyzing implementation strategies, 
+                Detailed case study examining Estonia&apos;s digital government initiatives, analyzing implementation strategies, 
                 challenges overcome, and lessons learned for other nations.
               </p>
               <div className="flex items-center mb-4 text-sm text-gray-500">
