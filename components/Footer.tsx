@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Logo & About */}
           <div className="flex-1 min-w-[220px]">
             <Image
-              src="/header/logo.png"
+              src="/header/logo2.png"
               alt="IPPAI Logo"
               width={100}
               height={48}

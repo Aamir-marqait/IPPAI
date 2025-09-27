@@ -6,12 +6,16 @@ import Header from "../Header";
 export default function HomeHero() {
   return (
     <div className="relative">
-      <div
-        className="absolute inset-0 w-screen h-screen bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/home/background.png')",
-        }}
-      >
+      <div className="absolute inset-0 w-screen h-screen overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/home/background.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 

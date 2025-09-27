@@ -8,7 +8,7 @@ export default function Commitments() {
       className="relative w-screen bg-center bg-cover"
       style={{ backgroundImage: "url('/home/commitment.png')" }}
     >
-      <div className="absolute inset-0 bg-foreground/70" />
+      <div className="absolute inset-0 bg-foreground/80" />
 
       <div className="relative mx-auto max-w-[1100px] px-4 sm:px-6 py-10 sm:py-12 md:py-14 lg:py-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-20">

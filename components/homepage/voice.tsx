@@ -12,7 +12,7 @@ export function VoicesInAction() {
 
   const items = [
     {
-      imgSrc: "/home/voice.png",
+      imgSrc: "/home/voice1.png",
       imgAlt: "Participants group photo",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
@@ -20,7 +20,7 @@ export function VoicesInAction() {
         "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
     },
     {
-      imgSrc: "/home/voice.png",
+      imgSrc: "/home/voice2.png",
       imgAlt: "Conference speakers on podium",
       date: "Sep 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
@@ -28,7 +28,7 @@ export function VoicesInAction() {
         "Platform for sharing opportunities, publications, and award programs with civic impact.",
     },
     {
-      imgSrc: "/home/voice.png",
+      imgSrc: "/home/voice3.png",
       imgAlt: "Award ceremony",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
@@ -36,7 +36,7 @@ export function VoicesInAction() {
         "Unique confluences of industry and civil society engaging for a brighter future.",
     },
     {
-      imgSrc: "/home/voice.png",
+      imgSrc: "/home/voice1.png",
       imgAlt: "Panel discussion",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
@@ -44,7 +44,7 @@ export function VoicesInAction() {
         "Leaders discuss sector transformation and inclusive policy initiatives.",
     },
     {
-      imgSrc: "/home/voice.png",
+      imgSrc: "/home/voice2.png",
       imgAlt: "Community workshop",
       date: "Aug 12, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
