@@ -4,13 +4,6 @@ import React, { useState } from "react";
 import { FaUsers } from "react-icons/fa6";
 import { FaGlobe } from "react-icons/fa6";
 
-import {
-  Radio,
-  Users,
-  GraduationCap,
-  TrendingUp,
-  BadgeCheck,
-} from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -28,23 +21,63 @@ const TABS = [
     title: "For professionals advancing their energy sector careers",
     items: [
       {
-        icon: <Radio className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon1.svg"
+            alt="Policy access"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Policy access and regulatory updates.",
       },
       {
-        icon: <Users className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon2.svg"
+            alt="Networking"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Networking opportunities with industry leaders",
       },
       {
-        icon: <GraduationCap className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon3.svg"
+            alt="Professional development"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Professional development workshops.",
       },
       {
-        icon: <TrendingUp className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon4.svg"
+            alt="Career advancement"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Career advancement support.",
       },
       {
-        icon: <BadgeCheck className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon5.svg"
+            alt="Certification"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Certification program eligibility.",
       },
     ],
@@ -62,23 +95,63 @@ const TABS = [
     title: "For aspiring professionals in the energy sector",
     items: [
       {
-        icon: <Radio className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon1.svg"
+            alt="Access to resources"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Access to curated energy sector resources.",
       },
       {
-        icon: <Users className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon2.svg"
+            alt="Mentorship"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Mentorship with experienced professionals.",
       },
       {
-        icon: <GraduationCap className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon3.svg"
+            alt="Skill building"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Skill-building workshops and webinars.",
       },
       {
-        icon: <TrendingUp className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon4.svg"
+            alt="Career guidance"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Career guidance and job listings.",
       },
       {
-        icon: <BadgeCheck className="text-red-600 w-5 h-5" />,
+        icon: (
+          <Image
+            src="/membership/icon5.svg"
+            alt="Student awards"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+        ),
         text: "Eligibility for student awards.",
       },
     ],
