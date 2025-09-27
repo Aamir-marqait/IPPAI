@@ -20,7 +20,7 @@ export default function Testimonials() {
       <DecorQuotes
         side="right"
         size={132}
-        className="pointer-events-none absolute top-10 right-8 opacity-50"
+        className="pointer-events-none absolute top-16 right-20 opacity-100"
       />
 
       <div className="mx-auto max-w-[1100px] px-6 md:px-8 py-14 md:py-16 lg:py-20">
@@ -125,19 +125,18 @@ function DecorQuotes({
       height={size}
       viewBox="0 0 120 120"
       fill="none"
+      style={{ transform: "scaleX(-1)" }}
     >
       <path
         d="M30 70c-8 0-14-6-14-14V28c0-8 6-14 14-14h26v26H46c-1 8-8 14-16 14z"
-        stroke="currentColor"
+        stroke="white"
         strokeWidth="6"
-        style={{ color: "var(--primary-foreground)" }}
         opacity={isRight ? 0.85 : 1}
       />
       <path
         d="M86 70c-8 0-14-6-14-14V28c0-8 6-14 14-14h26v26H102c-1 8-8 14-16 14z"
-        stroke="currentColor"
+        stroke="white"
         strokeWidth="6"
-        style={{ color: "var(--primary-foreground)" }}
         opacity={isRight ? 0.85 : 1}
       />
     </svg>
