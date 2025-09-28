@@ -96,86 +96,61 @@ const milestones = [
 
 export default function MilestonesTimeline() {
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-8 md:py-14">
       <div className="max-w-[1100px] mx-auto px-4">
-        <h2
-          className="text-center mb-2 font-red-hat-display"
-          style={{
-            fontWeight: 700,
-            fontSize: "36px",
-            lineHeight: "100%",
-            letterSpacing: "0%",
-            textAlign: "center",
-            color: "#141414",
-          }}
-        >
+        <h2 className="text-center mb-2 font-red-hat-display font-bold text-2xl md:text-3xl lg:text-4xl leading-tight text-[#141414]">
           Milestones That Matter
         </h2>
-        <p className="text-center text-[#141414] text-base mb-12 font-poppins font-normal leading-7">
+        <p className="text-center text-[#141414] text-sm md:text-base mb-8 md:mb-12 font-poppins font-normal leading-6 md:leading-7 max-w-2xl mx-auto">
           Three decades of transformative achievements in India&apos;s power
           sector
         </p>
-        <div className="flex flex-row max-w-2xl mx-auto">
-          {/* Years & Dots */}
-          <div className="flex flex-col items-end pr-9 relative">
+
+        <div className="flex flex-col md:flex-row max-w-3xl items-center justify-center mx-auto">
+          {/* Years & Dots - Hidden on mobile, shown on desktop */}
+          <div className="hidden md:flex flex-col items-end pr-6 lg:pr-9 relative">
             {/* Dotted line */}
             <div
               className="absolute top-12 bottom-7 w-0.5 border-dashed border-[#CDCDCD] border-l-2 z-0"
               style={{
                 height: "calc(100% - 3.5rem)",
-                right: "41px",
+                right: "40px",
               }}
             />
             {milestones.map((m) => (
               <div
                 key={m.year}
-                className="flex items-center mb-20 last:mb-0 z-10 mt-10"
+                className="flex items-center mb-16 lg:mb-20 last:mb-0 z-10 mt-10"
               >
-                <span className="text-[#C24A48] text-4xl font-semibold w-16 text-right">
+                <span className="text-[#C24A48] text-2xl lg:text-4xl font-semibold w-12 lg:w-16 text-right">
                   {m.year}
                 </span>
-                <span className="ml-10 w-3 h-3 rounded-full bg-[#C24A48] block"></span>
+                <span className="ml-6 lg:ml-10 w-3 h-3 rounded-full bg-[#C24A48] block"></span>
               </div>
             ))}
           </div>
+
           {/* Cards */}
-          <div className="flex-1 flex flex-col gap-7">
+          <div className="flex-1 flex flex-col gap-4 md:gap-6 lg:gap-7">
             {milestones.map((m, i) => (
               <div
                 key={i}
-                className="flex items-center"
-                style={{
-                  background: "#F6F6F6",
-                  borderBottom: "1px solid #D3363B",
-                  width: "587px",
-                  height: "133px",
-                  borderRadius: "20px",
-                  opacity: 1,
-                  gap: "24px",
-                  paddingTop: "34px",
-                  paddingRight: "41px",
-                  paddingBottom: "34px",
-                  paddingLeft: "41px",
-                  borderBottomWidth: "1px",
-                }}
+                className="flex flex-col sm:flex-row items-start sm:items-center bg-[#F6F6F6] border-b border-[#D3363B] rounded-2xl p-4 md:p-6 lg:p-8 gap-4 md:gap-6 w-full max-w-full md:max-w-[587px]"
               >
-                <div className="flex items-center justify-center bg-[#FFF7F7] rounded-lg w-14 h-14 flex-shrink-0">
+                <div className="flex md:hidden items-center gap-3 mb-2">
+                  <span className="text-[#C24A48] text-xl font-semibold">
+                    {m.year}
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-[#C24A48]"></span>
+                </div>
+
+                <div className="flex items-center justify-center bg-[#FFF7F7] rounded-lg w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
                   {m.icon}
                 </div>
-                <div
-                  className="w-px h-12"
-                  style={{ border: "1px solid #DDDDDD" }}
-                ></div>
-                <div
-                  className="font-red-hat-display capitalize"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "20px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    color: "#141414",
-                  }}
-                >
+
+                <div className="hidden sm:block w-px h-8 md:h-12 border-l border-[#DDDDDD]"></div>
+
+                <div className="font-red-hat-display capitalize font-semibold text-base md:text-lg lg:text-xl leading-tight text-[#141414] flex-1">
                   {m.text}
                 </div>
               </div>
