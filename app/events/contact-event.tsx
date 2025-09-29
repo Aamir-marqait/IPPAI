@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function ContactUsSection() {
   return (
@@ -50,33 +51,13 @@ export default function ContactUsSection() {
           </div>
           <div className="flex items-start gap-4 mb-5">
             <div className="w-[56px] h-[56px] flex items-center justify-center rounded-full border border-[#C84B4B]">
-              {/* Venue icon */}
-              <svg width="30" height="30" fill="none" viewBox="0 0 30 30">
-                <rect
-                  x="7"
-                  y="12"
-                  width="3"
-                  height="8"
-                  stroke="#C84B4B"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="13.5"
-                  y="9"
-                  width="3"
-                  height="11"
-                  stroke="#C84B4B"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="20"
-                  y="15"
-                  width="3"
-                  height="5"
-                  stroke="#C84B4B"
-                  strokeWidth="2"
-                />
-              </svg>
+              <Image
+                src="/event/contact1.svg"
+                alt="Event Venue"
+                width={30}
+                height={30}
+                className="w-[56px] h-[56px] "
+              />
             </div>
             <div>
               <div className="font-bold text-[#232A34] text-[17px] uppercase mb-1">
@@ -88,23 +69,14 @@ export default function ContactUsSection() {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <div className="w-[56px] h-[56px] flex items-center justify-center rounded-full border border-[#C84B4B]">
-              {/* Location icon */}
-              <svg width="30" height="30" fill="none" viewBox="0 0 30 30">
-                <circle
-                  cx="15"
-                  cy="13"
-                  r="4"
-                  stroke="#C84B4B"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M15 25c5-6 7-9 7-12a7 7 0 1 0-14 0c0 3 2 6 7 12z"
-                  stroke="#C84B4B"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </svg>
+            <div>
+              <Image
+                src="/event/contact2.svg"
+                alt="Location Address"
+                width={30}
+                height={30}
+                className="w-[56px] h-[56px] "
+              />
             </div>
             <div>
               <div className="font-bold text-[#232A34] text-[17px] uppercase mb-1">
