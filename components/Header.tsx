@@ -265,9 +265,11 @@ export default function Header() {
           </button>
 
           {/* Contact Button - Desktop Only */}
-          <Button className="hidden  lg:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
-            CONTACT US
-          </Button>
+          <Link href="/contact" className="hidden lg:flex">
+            <Button className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
+              CONTACT US
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Overlay */}
@@ -371,12 +373,14 @@ export default function Header() {
             </Link>
 
             {/* Contact Button - Mobile Menu */}
-            <Button
-              className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
-              onClick={toggleMenu}
-            >
-              CONTACT US
-            </Button>
+            <Link href="/contact">
+              <Button
+                className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
+                onClick={toggleMenu}
+              >
+                CONTACT US
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>
