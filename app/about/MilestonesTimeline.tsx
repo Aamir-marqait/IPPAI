@@ -5,11 +5,12 @@ const milestones = [
     year: "1994",
     icon: (
       <Image
-        src="/about/1994.png"
+        src="/optimized/about-1994.webp"
         alt="1994 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "IPPAI Founded As India's First Independent Power Producers Association",
@@ -18,11 +19,12 @@ const milestones = [
     year: "2001",
     icon: (
       <Image
-        src="/about/2001.png"
+        src="/optimized/about-2001.webp"
         alt="2001 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Established As Key Policy Advisor To Government Of India",
@@ -31,11 +33,12 @@ const milestones = [
     year: "2005",
     icon: (
       <Image
-        src="/about/2005.png"
+        src="/optimized/about-2005.webp"
         alt="2005 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Launched Comprehensive Regulatory Framework Initiatives",
@@ -44,11 +47,12 @@ const milestones = [
     year: "2010",
     icon: (
       <Image
-        src="/about/2010.png"
+        src="/optimized/about-2010.webp"
         alt="2010 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Pioneered Renewable Energy Integration Policies",
@@ -57,11 +61,12 @@ const milestones = [
     year: "2015",
     icon: (
       <Image
-        src="/about/2015.png"
+        src="/optimized/about-2015.webp"
         alt="2015 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Achieved Recognition As Leading Energy Sector Catalyst",
@@ -70,11 +75,12 @@ const milestones = [
     year: "2020",
     icon: (
       <Image
-        src="/about/2020.png"
+        src="/optimized/about-2020.webp"
         alt="2020 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Expanded Focus To Include Sustainability And Clean Energy",
@@ -83,11 +89,12 @@ const milestones = [
     year: "2024",
     icon: (
       <Image
-        src="/about/2024.png"
+        src="/optimized/about-2024.webp"
         alt="2024 milestone"
         width={45}
         height={45}
         className="object-contain"
+        loading="lazy"
       />
     ),
     text: "Leading India's Energy Transition With 3200+ MW Mobilized",

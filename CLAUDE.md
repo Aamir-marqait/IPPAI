@@ -178,3 +178,33 @@ node optimize-media.js
 - **Sharp**: Image optimization and format conversion
 - **Next.js Image**: Built-in lazy loading and optimization
 - **FFmpeg**: Video compression (optional)
+
+---
+
+## About Page Optimization Results (Completed)
+
+Successfully optimized **20 images** for the about page with significant improvements:
+
+### Major Savings:
+- `about.jpg` → `about-hero.webp`: **6.2MB → 0.5MB** (91.9% savings)
+- `bg.png` → `about-bg.webp`: **2.0MB → 0.3MB** (85.3% savings)  
+- `bg3.png` → `about-bg3.webp`: **0.5MB → 0.0MB** (95.8% savings)
+- Recognition images (ip.png, gr.png, ea.png): **90-93% savings each**
+- Timeline milestone images: **38-54% savings each**
+
+### Components Updated:
+- `/app/about/MilestonesTimeline.tsx` - 7 milestone year images
+- `/app/about/our-purpose.tsx` - Background + decoration images  
+- `/app/about/RecognizedCatalystSection.tsx` - 4 recognition images
+- `/app/about/ThreeDecadesSection.tsx` - Hero image
+
+### Lazy Loading Implementation:
+- All images converted to `/optimized/about-*.webp` format
+- Added `loading="lazy"` to below-the-fold images
+- Implemented blur placeholders for smooth loading
+- Background images updated to use WebP format
+
+### Performance Impact:
+- **Total file size reduction**: ~10MB+ saved across about page
+- **Average compression**: 38-96% depending on image type
+- **Loading performance**: Significantly improved on slower connections

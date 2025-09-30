@@ -38,13 +38,15 @@ export default function ThreeDecadesSection() {
           <div className="relative">
             <div className="relative z-10">
               <Image
-                src="/about/about.jpg" // Set your image path here
+                src="/optimized/about-hero.webp"
                 alt="Energy Leadership"
                 width={540}
                 height={330}
                 className="rounded-2xl object-cover"
                 style={{ width: "100%", height: "auto", maxWidth: 540 }}
-                priority
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
               />
             </div>
             <div className="absolute -right-2 bottom-0 md:bottom-1 w-6 h-68 bg-[#FFF7DB] rounded-2xl z-0 hidden md:block"></div>

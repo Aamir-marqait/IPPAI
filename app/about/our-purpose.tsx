@@ -5,7 +5,7 @@ export default function OurPurpose() {
     <div
       className="w-screen min-h-[80vh] relative"
       style={{
-        backgroundImage: "url('/about/bg.png')",
+        backgroundImage: "url('/optimized/about-bg.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -37,11 +37,12 @@ export default function OurPurpose() {
               {/* Top right image - shows only on hover */}
               <div className="absolute top-[4px] right-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image
-                  src="/about/5.png"
+                  src="/optimized/about-5.webp"
                   alt="Decoration"
                   width={160}
                   height={64}
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -88,11 +89,12 @@ export default function OurPurpose() {
               {/* Top right image - shows only on hover */}
               <div className="absolute top-[4px] right-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image
-                  src="/about/5.png"
+                  src="/optimized/about-5.webp"
                   alt="Decoration"
                   width={160}
                   height={64}
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -139,11 +141,12 @@ export default function OurPurpose() {
               {/* Top right image - shows only on hover */}
               <div className="absolute top-[4px] right-[5px] overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image
-                  src="/about/5.png"
+                  src="/optimized/about-5.webp"
                   alt="Decoration"
                   width={160}
                   height={64}
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
               <div
