@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactUsSection() {
   return (
@@ -43,50 +43,26 @@ export default function ContactUsSection() {
           </div>
           <div className="font-poppins font-bold text-[40px] leading-[48px] text-[#223645] mb-3">
             CONTACT US FOR <br className="hidden md:block" />
-            FURTHER INFORMATION
+            QUERIES
           </div>
           <div className="font-poppins font-normal text-base leading-[24px] text-[#696A87] mb-7 max-w-[400px]">
             Quam amet tristique adipisicing incididunt arcu, excepturi molestie
             turpis deserunt ducimus malesuada minus mauris veniam.
           </div>
-          <div className="flex items-start gap-4 mb-5">
-            <div className="w-[56px] h-[56px] flex items-center justify-center rounded-full border border-[#C84B4B]">
-              <Image
-                src="/event/contact1.svg"
-                alt="Event Venue"
-                width={30}
-                height={30}
-                className="w-[56px] h-[56px] "
-              />
-            </div>
-            <div>
-              <div className="font-bold text-[#232A34] text-[17px] uppercase mb-1">
-                Event Venue :
-              </div>
-              <div className="text-[#757B84] text-[16px] font-medium">
-                Hollywood Banquet Hall , Riverside Building Area
-              </div>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div>
-              <Image
-                src="/event/contact2.svg"
-                alt="Location Address"
-                width={30}
-                height={30}
-                className="w-[56px] h-[56px] "
-              />
-            </div>
-            <div>
-              <div className="font-bold text-[#232A34] text-[17px] uppercase mb-1">
-                Location Address :
-              </div>
-              <div className="text-[#757B84] text-[16px] font-medium">
-                5214 Sunset Blvd, Los Angeles CA 90027, USA
-              </div>
-            </div>
-          </div>
+          <ul className="text-sm font-normal font-poppins space-y-3 mt-2">
+            <li className="flex items-center gap-3">
+              <Mail size={16} className="text-[#D3363B] flex-shrink-0" />
+              <span>Email: info@ippai.org</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone size={16} className="text-[#D3363B] flex-shrink-0" />
+              <span>Phone: +91-11-41635700</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <MapPin size={16} className="text-[#D3363B] flex-shrink-0 mt-0.5" />
+              <span>Diamond House, 2nd Floor, 11, Primrose Road, Bengaluru – 560025</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

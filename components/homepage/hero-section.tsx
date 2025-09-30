@@ -31,11 +31,12 @@ export default function HomeHero() {
                 <span className="relative inline-block">
                   Framework
                   <Image
-                    src="/home/line.png"
+                    src="/optimized/line.webp"
                     alt=""
                     width={400}
                     height={20}
                     className="absolute -bottom-2 left-0 w-full h-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] opacity-80"
+                    loading="lazy"
                   />
                 </span>
                 <br />
@@ -86,11 +87,12 @@ export default function HomeHero() {
                     Sponsored By
                   </span>
                   <Image
-                    src="/home/s.png"
+                    src="/optimized/s.webp"
                     alt="Sponsor"
                     width={60}
                     height={60}
                     className="h-10 w-auto"
+                    loading="lazy"
                   />
                   <div
                     className="w-px h-8 "
@@ -106,21 +108,23 @@ export default function HomeHero() {
                   </span>
 
                   <Image
-                    src="/home/kp1.png"
+                    src="/optimized/kp1.webp"
                     alt="Idam - Enabling Carbon Minimal World"
                     width={120}
                     height={60}
                     className="h-10 w-auto"
+                    loading="lazy"
                   />
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Image
-                    src="/home/kp2.png"
+                    src="/optimized/kp2.webp"
                     alt="IPPAI"
                     width={156}
                     height={59}
                     className="h-10 w-auto"
+                    loading="lazy"
                   />
                 </div>
               </div>
