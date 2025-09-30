@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 
 const videos = [
   {
@@ -13,49 +13,49 @@ const videos = [
   },
   {
     thumb: "/vid1.png",
-    src: "/video2.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video3.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video4.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video5.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video6.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video7.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video8.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
   {
     thumb: "/vid1.png",
-    src: "/video9.mp4",
+    src: "/video.mp4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
   },
@@ -217,19 +217,51 @@ export default function VideoGallerySection() {
                             </div>
                           </div>
                         </div>
-                        <div className="mt-3 font-poppins text-base font-semibold text-[#222]">
+                        <div 
+                          className="mt-3 text-base font-bold leading-none tracking-normal text-[#243C4B]"
+                          style={{
+                            fontFamily: 'Red Hat Display',
+                            fontWeight: 700,
+                            fontSize: '16px',
+                            lineHeight: '100%',
+                            letterSpacing: '0px'
+                          }}
+                        >
                           {video.title}
                         </div>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl p-0 bg-transparent border-none shadow-none">
-                      <div className="w-full h-full flex items-center justify-center bg-black/70 p-0">
+                    <DialogContent className="max-w-6xl w-[90vw] h-[80vh] p-0 bg-black border-none shadow-2xl">
+                      <DialogTitle className="sr-only">
+                        {video.title}
+                      </DialogTitle>
+                      <div className="relative w-full h-full flex items-center justify-center bg-black rounded-lg overflow-hidden">
                         <video
                           src={video.src}
                           controls
                           autoPlay
-                          className="rounded-lg w-full h-full max-h-[70vh] bg-black"
+                          className="w-full h-full object-contain"
+                          style={{ maxHeight: '100%', maxWidth: '100%' }}
                         />
+                        {/* Close button */}
+                        <button
+                          onClick={() => {
+                            setModalOpen(false);
+                            setActiveVideo(null);
+                          }}
+                          className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200 z-10"
+                          aria-label="Close video"
+                        >
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                        {/* Video title overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                          <h3 className="text-white text-lg font-semibold font-poppins">
+                            {video.title}
+                          </h3>
+                        </div>
                       </div>
                     </DialogContent>
                   </Dialog>
