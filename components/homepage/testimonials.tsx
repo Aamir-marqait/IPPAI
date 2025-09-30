@@ -11,11 +11,12 @@ export default function Testimonials() {
       }}
     >
       <Image
-        src="/home/4.png"
+        src="/optimized/4.webp"
         alt=""
         width={240}
         height={240}
         className="pointer-events-none absolute -bottom-6 left-0 opacity-100"
+        loading="lazy"
       />
       <DecorQuotes
         side="right"
@@ -44,12 +45,14 @@ export default function Testimonials() {
           <div className="shrink-0">
             <div className="relative rounded-2xl overflow-hidden ring-4 ring-white/70">
               <Image
-                src={"/home/test.png"}
+                src={"/optimized/test.webp"}
                 alt="Speaker portrait"
                 width={400}
                 height={300}
                 className="block h-[260px] w-[340px] object-cover md:h-[300px] md:w-[340px]"
-                priority
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
               />
             </div>
           </div>

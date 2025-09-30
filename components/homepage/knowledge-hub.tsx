@@ -37,17 +37,17 @@ export default function KnowledgeHub() {
         {/* Cards */}
         <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
           <HubCard
-            icon={<Image src="/home/1.png" alt="Articles and Insights" width={32} height={32} />}
+            icon={<Image src="/optimized/1.webp" alt="Articles and Insights" width={32} height={32} loading="lazy" />}
             title="Articles and Insights"
             description="Access comprehensive reports, research, and policy updates that shape India's power sector landscape."
           />
           <HubCard
-            icon={<Image src="/home/2.png" alt="Research and Reports" width={32} height={32} />}
+            icon={<Image src="/optimized/2.webp" alt="Research and Reports" width={32} height={32} loading="lazy" />}
             title="Research and Reports"
             description="Platform for thought leadership through speaking opportunities, publications, and award programs."
           />
           <HubCard
-            icon={<Image src="/home/3.png" alt="Policy Recommendations" width={32} height={32} />}
+            icon={<Image src="/optimized/3.webp" alt="Policy Recommendations" width={32} height={32} loading="lazy" />}
             title="Policy Recommendations"
             description="Connect directly with policymakers, regulators, and industry leaders driving sector transformation."
           />
