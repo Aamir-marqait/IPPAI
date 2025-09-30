@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const members = [
@@ -97,40 +97,36 @@ const defaultCenterMember = {
 
 export default function LeadershipCircle() {
   const [centerMember, setCenterMember] = useState(defaultCenterMember);
-
+  const [currentIndex, setCurrentIndex] = useState(-1); // -1 means showing default center member
   const [originalCenterMember] = useState(defaultCenterMember);
 
-  const [hoveredImageData, setHoveredImageData] = useState<{
-    src: string;
-    alt: string;
-    index: number;
-  } | null>(null);
+  // Auto-rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % (members.length + 1);
+        
+        if (nextIndex === members.length) {
+          // Show default center member
+          setCenterMember(originalCenterMember);
+          return -1;
+        } else {
+          // Show member at nextIndex
+          const member = members[nextIndex];
+          setCenterMember({
+            src: member.src,
+            alt: member.alt,
+            name: member.name,
+            occupation: member.occupation,
+            description: member.description,
+          });
+          return nextIndex;
+        }
+      });
+    }, 3000); // Change every 3 seconds
 
-  const handleImageHover = (
-    member: (typeof members)[0],
-    imageIndex: number
-  ) => {
-    // Store current hovered image data
-    setHoveredImageData({
-      src: member.src,
-      alt: member.alt,
-      index: imageIndex,
-    });
-
-    // Move hovered member to center
-    setCenterMember({
-      src: member.src,
-      alt: member.alt,
-      name: member.name,
-      occupation: member.occupation,
-      description: member.description,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImageData(null);
-    setCenterMember(originalCenterMember);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -245,33 +241,32 @@ export default function LeadershipCircle() {
             {members.map((m, i) => (
               <div
                 key={i}
-                className="absolute z-10 cursor-pointer"
+                className="absolute z-10"
                 style={{
                   ...m.style,
                   width: m.size,
                   height: m.size,
                   transform: "translate(-50%, -50%)",
                 }}
-                onMouseEnter={() => handleImageHover(m, i)}
-                onMouseLeave={handleMouseLeave}
               >
                 <div
-                  className="relative rounded-full border-4 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl"
+                  className="relative rounded-full border-4 transition-all duration-300 ease-in-out"
                   style={{
                     border: "3px solid #FFF",
                     boxShadow: "0px 0px 15px 0px #1C1D2226",
                     width: m.size,
                     height: m.size,
+                    transform: currentIndex === i ? "scale(1.1)" : "scale(1)",
                   }}
                 >
                   <Image
                     src={
-                      hoveredImageData?.index === i
+                      currentIndex === i
                         ? originalCenterMember.src
                         : m.src
                     }
                     alt={
-                      hoveredImageData?.index === i
+                      currentIndex === i
                         ? originalCenterMember.alt
                         : m.alt
                     }
