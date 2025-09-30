@@ -99,6 +99,7 @@ export default function LeadershipCircle() {
   const [centerMember, setCenterMember] = useState(defaultCenterMember);
   const [currentIndex, setCurrentIndex] = useState(-1); // -1 means showing default center member
   const [originalCenterMember] = useState(defaultCenterMember);
+  const [rotationOffset, setRotationOffset] = useState(0);
 
   // Auto-rotation effect
   useEffect(() => {
@@ -109,6 +110,7 @@ export default function LeadershipCircle() {
         if (nextIndex === members.length) {
           // Show default center member
           setCenterMember(originalCenterMember);
+          setRotationOffset(0); // Reset rotation
           return -1;
         } else {
           // Show member at nextIndex
@@ -120,13 +122,20 @@ export default function LeadershipCircle() {
             occupation: member.occupation,
             description: member.description,
           });
+          setRotationOffset(nextIndex); // Set rotation offset
           return nextIndex;
         }
       });
     }, 3000); // Change every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [originalCenterMember]);
+
+  // Function to get rotated member data (position and size)
+  const getRotatedMember = (memberIndex: number) => {
+    const rotatedIndex = (memberIndex + rotationOffset) % members.length;
+    return members[rotatedIndex];
+  };
 
   return (
     <section
@@ -238,47 +247,51 @@ export default function LeadershipCircle() {
               </div>
             </div>
             {/* Surrounding members */}
-            {members.map((m, i) => (
-              <div
-                key={i}
-                className="absolute z-10"
-                style={{
-                  ...m.style,
-                  width: m.size,
-                  height: m.size,
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
+            {members.map((m, i) => {
+              const rotatedMember = getRotatedMember(i);
+              return (
                 <div
-                  className="relative rounded-full border-4 transition-all duration-300 ease-in-out"
+                  key={i}
+                  className="absolute z-10"
                   style={{
-                    border: "3px solid #FFF",
-                    boxShadow: "0px 0px 15px 0px #1C1D2226",
-                    width: m.size,
-                    height: m.size,
-                    transform: currentIndex === i ? "scale(1.1)" : "scale(1)",
+                    ...rotatedMember.style,
+                    width: rotatedMember.size,
+                    height: rotatedMember.size,
+                    transform: "translate(-50%, -50%)",
+                    transition: "top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out",
                   }}
                 >
-                  <Image
-                    src={
-                      currentIndex === i
-                        ? originalCenterMember.src
-                        : m.src
-                    }
-                    alt={
-                      currentIndex === i
-                        ? originalCenterMember.alt
-                        : m.alt
-                    }
-                    fill
-                    className="object-cover rounded-full transition-all duration-300 ease-in-out"
-                    style={{ borderRadius: "9999px" }}
-                    sizes={`${m.size}px`}
-                    priority
-                  />
+                  <div
+                    className="relative rounded-full border-4 transition-all duration-300 ease-in-out"
+                    style={{
+                      border: "3px solid #FFF",
+                      boxShadow: "0px 0px 15px 0px #1C1D2226",
+                      width: rotatedMember.size,
+                      height: rotatedMember.size,
+                      transform: currentIndex === i ? "scale(1.1)" : "scale(1)",
+                    }}
+                  >
+                    <Image
+                      src={
+                        currentIndex === i
+                          ? originalCenterMember.src
+                          : m.src
+                      }
+                      alt={
+                        currentIndex === i
+                          ? originalCenterMember.alt
+                          : m.alt
+                      }
+                      fill
+                      className="object-cover rounded-full transition-all duration-300 ease-in-out"
+                      style={{ borderRadius: "9999px" }}
+                      sizes={`${rotatedMember.size}px`}
+                      priority
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
