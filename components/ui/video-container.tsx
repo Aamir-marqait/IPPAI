@@ -38,7 +38,14 @@ export function VideoContainer({
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onEnded={() => setIsPlaying(false)}
+        onLoadedData={() => {
+          if (videoRef) {
+            videoRef.currentTime = 0.1; // Show frame at 0.1 seconds
+          }
+        }}
         controls={false}
+        preload="auto"
+        muted
       >
         <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
