@@ -110,7 +110,7 @@ export default function LeadershipCircle() {
         if (nextIndex === members.length) {
           // Show default center member
           setCenterMember(originalCenterMember);
-          setRotationOffset(0); // Reset rotation
+          setRotationOffset(members.length); // Keep rotation going
           return -1;
         } else {
           // Show member at nextIndex
@@ -122,7 +122,7 @@ export default function LeadershipCircle() {
             occupation: member.occupation,
             description: member.description,
           });
-          setRotationOffset(nextIndex); // Set rotation offset
+          setRotationOffset(nextIndex + 1); // Always increment for animation
           return nextIndex;
         }
       });

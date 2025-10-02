@@ -42,8 +42,8 @@ export default function ContactUsSection() {
             Get in touch
           </div>
           <div className="font-poppins font-bold text-[40px] leading-[48px] text-[#223645] mb-3">
-            CONTACT US FOR MEDIA <br className="hidden md:block" />
-            QUERIES
+            CONTACT US FOR <br className="hidden md:block" />
+            MEDIA QUERIES
           </div>
           <div className="font-poppins font-normal text-base leading-[24px] text-[#696A87] mb-7 max-w-[400px]">
             Quam amet tristique adipisicing incididunt arcu, excepturi molestie
