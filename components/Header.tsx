@@ -205,7 +205,7 @@ export default function Header() {
           </div>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-4">
             <Link
               href="/"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
