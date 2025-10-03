@@ -4,10 +4,8 @@ export default function CampusSection() {
   return (
     <section className="w-full flex flex-col items-center bg-white py-8 px-2 sm:px-4">
       <div className="w-full max-w-[1100px] flex flex-col lg:flex-row justify-around items-center gap-8 lg:gap-0 mb-12">
-        {/* Left: Person Image in Circle */}
         <div className="flex-1 flex justify-center relative min-w-[290px] max-w-[360px]">
-          {/* Main student image */}
-          <div className="relative z-20 w-[520px] h-[320px] rounded-full overflow-hidden flex items-center justify-center bg-white">
+          <div className="relative z-20 w-[320px] h-[320px] md:w-[520px] md:h-[320px] rounded-full overflow-hidden flex items-center justify-center bg-white">
             <Image
               src="/course/ic.png"
               alt="Campus students"
@@ -75,7 +73,7 @@ export default function CampusSection() {
       </div>
 
       {/* Banner Section */}
-      <div className="w-full max-w-[1200px] min-h-[300px] rounded-2xl bg-gradient-to-r from-[#711D1F] to-[#CD353A] relative overflow-hidden">
+      <div className="hidden md:block w-full max-w-[1200px] min-h-[300px] rounded-2xl bg-gradient-to-r from-[#711D1F] to-[#CD353A] relative overflow-hidden">
         <div className="flex items-center justify-between h-full px-16 py-14  relative z-10">
           {/* Left Content */}
           <div className="flex-1 text-white max-w-md">

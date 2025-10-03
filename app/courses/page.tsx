@@ -5,6 +5,8 @@ import CurriculumCourses from "./our-courses";
 import MentorsSection from "./MentorsSection";
 import OurAlumni from "./our-alumni";
 import CampusSection from "./IRPRI-campus";
+import CampusGallery from "./gallery";
+import RegisterNowSection from "./RegisterNowSection";
 
 function page() {
   return (
@@ -15,6 +17,8 @@ function page() {
       <MentorsSection />
       <OurAlumni />
       <CampusSection />
+      <CampusGallery />
+      <RegisterNowSection />
     </div>
   );
 }
