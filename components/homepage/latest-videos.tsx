@@ -1,55 +1,99 @@
 "use client";
 
-import { useRef } from "react";
-import { EventCard } from "../event-card";
+import { useRef, useState } from "react";
+
+import { VideoCard } from "../video-card";
+import { VideoModal } from "../ui/video-modal";
 
 export function LatestVideos() {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<{
+    src: string;
+    title: string;
+  } | null>(null);
 
   const scrollBy = (dir: -1 | 1) => {
     scrollerRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
   };
 
+  const handleVideoClick = (videoSrc: string, title: string) => {
+    setActiveVideo({ src: videoSrc, title });
+    setModalOpen(true);
+  };
+
   const items = [
     {
-      imgSrc: "/home/voice1.png",
-      imgAlt: "Participants group photo",
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
       description:
         "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
+      videoSrc: "/video.mp4",
     },
     {
-      imgSrc: "/home/voice2.png",
-      imgAlt: "Conference speakers on podium",
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
       date: "Sep 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
       description:
         "Platform for sharing opportunities, publications, and award programs with civic impact.",
+      videoSrc: "/video.mp4",
     },
     {
-      imgSrc: "/home/voice3.png",
-      imgAlt: "Award ceremony",
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
       description:
         "Unique confluences of industry and civil society engaging for a brighter future.",
+      videoSrc: "/video.mp4",
     },
     {
-      imgSrc: "/home/voice1.png",
-      imgAlt: "Panel discussion",
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
       description:
         "Leaders discuss sector transformation and inclusive policy initiatives.",
+      videoSrc: "/video.mp4",
     },
     {
-      imgSrc: "/home/voice2.png",
-      imgAlt: "Community workshop",
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 12, 2025",
       title: "Breaking Barriers: Youth Shaping Tomorrow",
       description:
         "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/video.mp4",
+    },
+    {
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
+      date: "Aug 12, 2025",
+      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      description:
+        "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/video.mp4",
+    },
+    {
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
+      date: "Aug 12, 2025",
+      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      description:
+        "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/video.mp4",
+    },
+    {
+      imgSrc: "/vid1.png",
+      imgAlt: "Video thumbnail",
+      date: "Aug 12, 2025",
+      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      description:
+        "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/video.mp4",
     },
   ];
 
@@ -65,11 +109,11 @@ export function LatestVideos() {
                 aria-hidden="true"
               />
               <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
-                Latest Events
+                VIDEOS
               </span>
             </div>
             <h2 className="mt-3 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-[#141414]">
-              Voices In Action
+              Latest Videos
             </h2>
             <p className="mt-3 max-w-[720px] text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-7 text-[#141414]/70">
               Unique confluences of stalwarts from government, industry and
@@ -133,7 +177,15 @@ export function LatestVideos() {
             className="no-scrollbar flex gap-6 overflow-x-auto scroll-px-4 snap-x snap-mandatory pb-2"
           >
             {items.map((it, idx) => (
-              <EventCard key={idx} {...it} />
+              <VideoCard
+                key={idx}
+                {...it}
+                onClick={
+                  it.videoSrc
+                    ? () => handleVideoClick(it.videoSrc, it.title)
+                    : undefined
+                }
+              />
             ))}
           </div>
 
@@ -184,6 +236,19 @@ export function LatestVideos() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <VideoModal
+          open={modalOpen}
+          onOpenChange={(open) => {
+            setModalOpen(open);
+            if (!open) setActiveVideo(null);
+          }}
+          videoSrc={activeVideo.src}
+          title={activeVideo.title}
+        />
+      )}
     </section>
   );
 }
