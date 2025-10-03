@@ -24,7 +24,7 @@ export default function IntensiveCourseHero() {
         />
       </div>
 
-      <div className="relative max-w-[1100px] z-20 w-full mx-auto  py-8 flex items-center">
+      <div className="relative max-w-[1100px] z-20 w-full mx-auto  py-8 flex items-center justify-between">
         <div className="flex flex-col justify-center items-start max-w-full md:max-w-[520px] lg:max-w-[580px] ">
           <div className="flex items-center gap-2 mb-1">
             <Image
@@ -54,18 +54,17 @@ export default function IntensiveCourseHero() {
             Register Now
           </Link>
         </div>
-      </div>
-
-      <div className="absolute right-4 md:right-28 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-end justify-center">
-        <div className="relative z-10 w-[220px] h-[220px] rounded-full overflow-hidden flex items-center justify-center">
-          <Image
-            src="/course/person-right.png"
-            alt="Person Right"
-            fill
-            className="object-cover h-[40rem] w-96"
-            draggable={false}
-            priority
-          />
+        <div className=" z-20 hidden md:flex flex-col justify-center">
+          <div className="relative z-10 w-[500px] h-[400px] r">
+            <Image
+              src="/course/person-right.png"
+              alt="Person Right"
+              fill
+              className="object-fill"
+              draggable={false}
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
