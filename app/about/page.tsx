@@ -10,10 +10,11 @@ function page() {
   return (
     <div>
       <HeroSection />
+      <MilestonesTimeline />
       <ThreeDecadesSection />
       <OurPurpose />
       <LeadershipCircle />
-      <MilestonesTimeline />
+
       <RecognizedCatalystSection />
     </div>
   );

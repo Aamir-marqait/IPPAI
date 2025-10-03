@@ -4,6 +4,7 @@ import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
 import Contributors from "@/components/homepage/key-contribution";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
+import { LatestVideos } from "@/components/homepage/latest-videos";
 import Commitments from "@/components/homepage/our-commitments";
 import Testimonials from "@/components/homepage/testimonials";
 import { VoicesInAction } from "@/components/homepage/voice";
@@ -15,10 +16,11 @@ export default function Home() {
       <HomeHero />
       <PartnersCarousel />
       <Introduction />
-      <Commitments />
-      <WhatWeDo />
       <KnowledgeHub />
+      <Commitments />
+      <LatestVideos />
       <VoicesInAction />
+      <WhatWeDo />
       <Testimonials />
       <Contributors />
       <CompanyCarousel />
