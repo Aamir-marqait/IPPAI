@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function IntensiveCourseHero() {
   return (
-    <section className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[430px] xl:min-h-[470px] w-full flex items-center justify-center bg-[#1c1c1c] overflow-hidden pt-32">
+    <section className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[430px] xl:min-h-[470px] w-full flex items-center justify-center bg-[#1c1c1c] overflow-hidden px-5 md:px-0 pt-32">
       <Image
         src="/course/hero.png"
         alt="Background"
