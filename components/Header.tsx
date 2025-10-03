@@ -4,11 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [resourcesDropdown, setResourcesDropdown] = useState(false);
+  const [mediaCenterDropdown, setMediaCenterDropdown] = useState(false);
+  const [resourcesDropdownMain, setResourcesDropdownMain] = useState(false);
+  const [mediaCenterDropdownMain, setMediaCenterDropdownMain] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -19,7 +24,10 @@ export default function Header() {
   };
 
   // Check if we're on an event detail page, course detail page, or podcast page
-  const isEventDetailPage = (pathname?.startsWith('/events/') && pathname !== '/events') || (pathname?.startsWith('/courses/') && pathname !== '/courses') || pathname?.startsWith('/podcast');
+  const isEventDetailPage =
+    (pathname?.startsWith("/events/") && pathname !== "/events") ||
+    (pathname?.startsWith("/courses/") && pathname !== "/courses") ||
+    pathname?.startsWith("/podcast");
 
   if (!mounted) {
     return (
@@ -65,26 +73,86 @@ export default function Header() {
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
               </Link>
               <Link
-                href="/irpri"
+                href="/courses"
                 className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
               >
                 IRPRI
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
               </Link>
-              <Link
-                href="/news"
-                className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              <div
+                className="relative"
+                onMouseEnter={() => setResourcesDropdown(true)}
+                onMouseLeave={() => setResourcesDropdown(false)}
               >
-                NEWS
-                <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
-              </Link>
-              <Link
-                href="/podcast"
-                className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+                <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
+                  RESOURCES
+                  <ChevronDown className="w-4 h-4" />
+                  <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
+                </button>
+
+                {/* Resources Dropdown */}
+                {resourcesDropdown && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50">
+                    {/* Arrow */}
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+
+                    <div className="py-2">
+                      <Link
+                        href="/press-releases"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Press Releases
+                      </Link>
+                      <Link
+                        href="/publications"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Publications
+                      </Link>
+                      <Link
+                        href="/articles"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Articles
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div
+                className="relative"
+                onMouseEnter={() => setMediaCenterDropdown(true)}
+                onMouseLeave={() => setMediaCenterDropdown(false)}
               >
-                PODCAST
-                <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
-              </Link>
+                <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
+                  MEDIA CENTER
+                  <ChevronDown className="w-4 h-4" />
+                  <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
+                </button>
+
+                {/* Media Center Dropdown */}
+                {mediaCenterDropdown && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50">
+                    {/* Arrow */}
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+
+                    <div className="py-2">
+                      <Link
+                        href="/photo-gallery"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Photo Gallery
+                      </Link>
+                      <Link
+                        href="/podcast"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Video Gallery / Podcast
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
             </nav>
             <button
               className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
@@ -123,8 +191,8 @@ export default function Header() {
             <Link
               href="/"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
                   : "text-white hover:text-red-500"
               }`}
             >
@@ -140,8 +208,8 @@ export default function Header() {
             <Link
               href="/about"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
                   : "text-white hover:text-red-500"
               }`}
             >
@@ -157,8 +225,8 @@ export default function Header() {
             <Link
               href="/membership"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
                   : "text-white hover:text-red-500"
               }`}
             >
@@ -174,8 +242,8 @@ export default function Header() {
             <Link
               href="/events"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
                   : "text-white hover:text-red-500"
               }`}
             >
@@ -189,59 +257,122 @@ export default function Header() {
               ></div>
             </Link>
             <Link
-              href="/irpri"
+              href="/courses"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
                   : "text-white hover:text-red-500"
               }`}
             >
               IRPRI
               <div
                 className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/irpri"
+                  pathname === "/courses"
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
                 } origin-center`}
               ></div>
             </Link>
-            <Link
-              href="/news"
-              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
-                  : "text-white hover:text-red-500"
-              }`}
+            <div
+              className="relative"
+              onMouseEnter={() => setResourcesDropdownMain(true)}
+              onMouseLeave={() => setResourcesDropdownMain(false)}
             >
-              NEWS
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/news"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
-            <Link
-              href="/podcast"
-              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage 
-                  ? "text-black hover:text-gray-600" 
-                  : "text-white hover:text-red-500"
-              }`}
+              <button
+                className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group flex items-center gap-1 ${
+                  isEventDetailPage
+                    ? "text-black hover:text-gray-600"
+                    : "text-white hover:text-red-500"
+                }`}
+              >
+                RESOURCES
+                <ChevronDown className="w-4 h-4" />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/news"
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+
+              {/* Resources Dropdown Main */}
+              {resourcesDropdownMain && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50">
+                  {/* Arrow */}
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+
+                  <div className="py-2">
+                    <Link
+                      href="/press-releases"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Press Releases
+                    </Link>
+                    <Link
+                      href="/publications"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Publications
+                    </Link>
+                    <Link
+                      href="/articles"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Articles
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div
+              className="relative"
+              onMouseEnter={() => setMediaCenterDropdownMain(true)}
+              onMouseLeave={() => setMediaCenterDropdownMain(false)}
             >
-              PODCAST
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/podcast"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
+              <button
+                className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group flex items-center gap-1 ${
+                  isEventDetailPage
+                    ? "text-black hover:text-gray-600"
+                    : "text-white hover:text-red-500"
+                }`}
+              >
+                MEDIA CENTER
+                <ChevronDown className="w-4 h-4" />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/podcast"
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+
+              {/* Media Center Dropdown Main */}
+              {mediaCenterDropdownMain && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50">
+                  {/* Arrow */}
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+
+                  <div className="py-2">
+                    <Link
+                      href="/photo-gallery"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Photo Gallery
+                    </Link>
+                    <Link
+                      href="/podcast"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Video Gallery / Podcast
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
-          {/* Hamburger Menu Button - Mobile/Tablet */}
           <button
             className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
             onClick={toggleMenu}
@@ -330,14 +461,14 @@ export default function Header() {
               ></div>
             </Link>
             <Link
-              href="/irpri"
+              href="/courses"
               className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
               onClick={toggleMenu}
             >
               IRPRI
               <div
                 className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/irpri"
+                  pathname === "/courses"
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
                 } origin-center`}
@@ -345,10 +476,11 @@ export default function Header() {
             </Link>
             <Link
               href="/news"
-              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
               onClick={toggleMenu}
             >
-              NEWS
+              RESOURCES
+              <ChevronDown className="w-4 h-4" />
               <div
                 className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
                   pathname === "/news"
@@ -359,10 +491,11 @@ export default function Header() {
             </Link>
             <Link
               href="/podcast"
-              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
               onClick={toggleMenu}
             >
-              PODCAST
+              MEDIA CENTER
+              <ChevronDown className="w-4 h-4" />
               <div
                 className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
                   pathname === "/podcast"
