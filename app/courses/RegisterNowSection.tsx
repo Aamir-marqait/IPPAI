@@ -42,29 +42,29 @@ export default function RegisterNowSection() {
         {/* Right Column: Form */}
         <div className="flex-1 flex items-center justify-center w-full min-w-[320px] max-w-md relative">
           {/* Glass Effect Card */}
-          <div className="w-[540px] h-[625px] rounded-[20px] bg-gradient-to-br from-[rgba(13,13,13,0.4032)] via-[rgba(14,14,14,0.55)] to-[rgba(16,16,16,0.6984)] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)_inset,_0px_-2px_4px_12px_rgba(255,255,255,0.08)] backdrop-blur-sm p-7">
-            <h2 className="font-red-hat-display max-w-md font-bold text-[36px] leading-[48px] align-middle capitalize text-white mb-8">
+          <div className="w-full max-w-[540px] lg:w-[540px] lg:h-[625px] rounded-[20px] bg-gradient-to-br from-[rgba(13,13,13,0.4032)] via-[rgba(14,14,14,0.55)] to-[rgba(16,16,16,0.6984)] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)_inset,_0px_-2px_4px_12px_rgba(255,255,255,0.08)] backdrop-blur-sm p-4 sm:p-6 lg:p-7">
+            <h2 className="font-red-hat-display max-w-md font-bold text-2xl sm:text-3xl lg:text-[36px] leading-tight lg:leading-[48px] align-middle capitalize text-white mb-6 lg:mb-8">
               Sign Up For Free Resources
             </h2>
-            <form className="flex flex-col gap-6">
+            <form className="flex flex-col gap-4 lg:gap-6">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-[456px] h-[58px] rounded-[30px] px-5 py-3 text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
+                className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-[456px] h-[58px] rounded-[30px] px-5 py-3 text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
+                className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <input
                 type="tel"
                 placeholder="Phone"
-                className="w-[456px] h-[58px] rounded-[30px] px-5 py-3 text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
+                className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <textarea
                 placeholder="Message"
-                className="w-[456px] h-[120px] rounded-[15px] px-5 py-3 text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D] resize-none"
+                className="w-full max-w-[456px] lg:w-[456px] h-[100px] lg:h-[120px] rounded-[15px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D] resize-none"
               />
               <button
                 type="submit"
