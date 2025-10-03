@@ -6,6 +6,8 @@ import {
   Red_Hat_Display,
   Poppins,
   Plus_Jakarta_Sans,
+  Epilogue,
+  Sora,
 } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
@@ -46,6 +48,18 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: "IPPAI - International Public Policy and Administration Institute",
   description:
@@ -60,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} ${epilogue.variable} ${sora.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>

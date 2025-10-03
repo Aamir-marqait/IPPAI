@@ -15,6 +15,8 @@ const config: Config = {
         'briem-hand': ['Briem Hand', 'cursive'],
         'plus-jakarta-sans': ['Plus Jakarta Sans', 'sans-serif'],
         'georgia': ['Georgia', 'serif'],
+        'epilogue': ['var(--font-epilogue)', 'sans-serif'],
+        'sora': ['var(--font-sora)', 'sans-serif'],
       },
       maxWidth: {
         '50rem': '50rem',
