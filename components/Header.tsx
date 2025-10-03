@@ -18,8 +18,8 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Check if we're on an event detail page or podcast page
-  const isEventDetailPage = (pathname?.startsWith('/events/') && pathname !== '/events') || pathname?.startsWith('/podcast');
+  // Check if we're on an event detail page, course detail page, or podcast page
+  const isEventDetailPage = (pathname?.startsWith('/events/') && pathname !== '/events') || (pathname?.startsWith('/courses/') && pathname !== '/courses') || pathname?.startsWith('/podcast');
 
   if (!mounted) {
     return (
