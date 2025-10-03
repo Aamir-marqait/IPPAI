@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const members = [
@@ -97,39 +97,44 @@ const defaultCenterMember = {
 
 export default function LeadershipCircle() {
   const [centerMember, setCenterMember] = useState(defaultCenterMember);
-
+  const [currentIndex, setCurrentIndex] = useState(-1); // -1 means showing default center member
   const [originalCenterMember] = useState(defaultCenterMember);
+  const [rotationOffset, setRotationOffset] = useState(0);
 
-  const [hoveredImageData, setHoveredImageData] = useState<{
-    src: string;
-    alt: string;
-    index: number;
-  } | null>(null);
+  // Auto-rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % (members.length + 1);
+        
+        if (nextIndex === members.length) {
+          // Show default center member
+          setCenterMember(originalCenterMember);
+          setRotationOffset(members.length); // Keep rotation going
+          return -1;
+        } else {
+          // Show member at nextIndex
+          const member = members[nextIndex];
+          setCenterMember({
+            src: member.src,
+            alt: member.alt,
+            name: member.name,
+            occupation: member.occupation,
+            description: member.description,
+          });
+          setRotationOffset(nextIndex + 1); // Always increment for animation
+          return nextIndex;
+        }
+      });
+    }, 3000); // Change every 3 seconds
 
-  const handleImageHover = (
-    member: (typeof members)[0],
-    imageIndex: number
-  ) => {
-    // Store current hovered image data
-    setHoveredImageData({
-      src: member.src,
-      alt: member.alt,
-      index: imageIndex,
-    });
+    return () => clearInterval(interval);
+  }, [originalCenterMember]);
 
-    // Move hovered member to center
-    setCenterMember({
-      src: member.src,
-      alt: member.alt,
-      name: member.name,
-      occupation: member.occupation,
-      description: member.description,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImageData(null);
-    setCenterMember(originalCenterMember);
+  // Function to get rotated member data (position and size)
+  const getRotatedMember = (memberIndex: number) => {
+    const rotatedIndex = (memberIndex + rotationOffset) % members.length;
+    return members[rotatedIndex];
   };
 
   return (
@@ -242,48 +247,51 @@ export default function LeadershipCircle() {
               </div>
             </div>
             {/* Surrounding members */}
-            {members.map((m, i) => (
-              <div
-                key={i}
-                className="absolute z-10 cursor-pointer"
-                style={{
-                  ...m.style,
-                  width: m.size,
-                  height: m.size,
-                  transform: "translate(-50%, -50%)",
-                }}
-                onMouseEnter={() => handleImageHover(m, i)}
-                onMouseLeave={handleMouseLeave}
-              >
+            {members.map((m, i) => {
+              const rotatedMember = getRotatedMember(i);
+              return (
                 <div
-                  className="relative rounded-full border-4 transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl"
+                  key={i}
+                  className="absolute z-10"
                   style={{
-                    border: "3px solid #FFF",
-                    boxShadow: "0px 0px 15px 0px #1C1D2226",
-                    width: m.size,
-                    height: m.size,
+                    ...rotatedMember.style,
+                    width: rotatedMember.size,
+                    height: rotatedMember.size,
+                    transform: "translate(-50%, -50%)",
+                    transition: "top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out",
                   }}
                 >
-                  <Image
-                    src={
-                      hoveredImageData?.index === i
-                        ? originalCenterMember.src
-                        : m.src
-                    }
-                    alt={
-                      hoveredImageData?.index === i
-                        ? originalCenterMember.alt
-                        : m.alt
-                    }
-                    fill
-                    className="object-cover rounded-full transition-all duration-300 ease-in-out"
-                    style={{ borderRadius: "9999px" }}
-                    sizes={`${m.size}px`}
-                    priority
-                  />
+                  <div
+                    className="relative rounded-full border-4 transition-all duration-300 ease-in-out"
+                    style={{
+                      border: "3px solid #FFF",
+                      boxShadow: "0px 0px 15px 0px #1C1D2226",
+                      width: rotatedMember.size,
+                      height: rotatedMember.size,
+                      transform: currentIndex === i ? "scale(1.1)" : "scale(1)",
+                    }}
+                  >
+                    <Image
+                      src={
+                        currentIndex === i
+                          ? originalCenterMember.src
+                          : m.src
+                      }
+                      alt={
+                        currentIndex === i
+                          ? originalCenterMember.alt
+                          : m.alt
+                      }
+                      fill
+                      className="object-cover rounded-full transition-all duration-300 ease-in-out"
+                      style={{ borderRadius: "9999px" }}
+                      sizes={`${rotatedMember.size}px`}
+                      priority
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
