@@ -45,7 +45,7 @@ export default function AboutIrpriSection() {
             <p className="font-poppins font-normal xl:text-[16px] xl:leading-[24px] xl:tracking-[0%] text-[#4D5756] text-base sm:text-lg leading-relaxed mb-4 max-w-xl">
               The IPPAI Regulatory and Policy Research Institute (IRPRI) is
               dedicated to advancing knowledge, capacity building, and
-              leadership in India's evolving power and energy sector through
+              leadership in India&apos;s evolving power and energy sector through
               research, training, and collaboration.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function AboutIrpriSection() {
                 Our Mission:
               </div>
               <div className="font-poppins font-normal xl:text-[16px] xl:leading-[24px] xl:tracking-[0%] text-[#333931] text-base">
-                To strengthen India's power sector by enhancing regulatory
+                To strengthen India&apos;s power sector by enhancing regulatory
                 expertise, promoting policy awareness, and building skilled
                 professionals through knowledge sharing, training, and industry
                 collaboration.
@@ -69,7 +69,7 @@ export default function AboutIrpriSection() {
               <div className="font-poppins font-normal xl:text-[16px] xl:leading-[24px] xl:tracking-[0%] text-[#333931] text-base">
                 To be a leading center of excellence in regulatory, policy, and
                 power market development, empowering stakeholders to drive
-                sustainable growth, innovation, and energy security for India's
+                sustainable growth, innovation, and energy security for India&apos;s
                 future.
               </div>
             </div>
