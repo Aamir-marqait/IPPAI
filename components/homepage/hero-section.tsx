@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function HomeHero() {
@@ -68,12 +69,14 @@ export default function HomeHero() {
                     </span>
                   </div>
                 </div>
-                <Button
-                  className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none text-center rounded-[25px] p-[10px] px-8"
-                  style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
-                >
-                  Register Now
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none text-center rounded-[25px] p-[10px] px-8"
+                    style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
+                  >
+                    Register Now
+                  </Button>
+                </Link>
               </div>
             </div>
 

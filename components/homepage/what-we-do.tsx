@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function WhatWeDo() {
   return (
@@ -59,12 +60,14 @@ export default function WhatWeDo() {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <Button
-                className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-medium font-work-sans leading-none text-center px-8 py-3 text-xs sm:text-sm md:text-base xl:text-base rounded-full"
-                style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
-              >
-                Join Now
-              </Button>
+              <Link href="/contact">
+                <Button
+                  className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-medium font-work-sans leading-none text-center px-8 py-3 text-xs sm:text-sm md:text-base xl:text-base rounded-full"
+                  style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
+                >
+                  Join Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
