@@ -1,61 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import coursesData from "../../data/courses.json";
 
-const courses = [
-  {
-    img: "/course/1.png",
-    title: "101 - The Legal & Institutional Framework",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-  {
-    img: "/course/2.png",
-    title: "102 - Functioning Of Electricity Grid",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-  {
-    img: "/course/3.png",
-    title: "103 - Evolution Of The Power Market",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-  {
-    img: "/course/4.png",
-    title: "202- GNA And Open Access Mechanism",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-  {
-    img: "/course/5.png",
-    title: "203- Resource Adequacy",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-  {
-    img: "/course/5.png",
-    title: "204- Issues In Consumer Interes",
-    lessons: "Lesson 10",
-    duration: "19h 30m",
-    students: "Students 20+",
-    author: "Angela",
-    authorImg: "/course/m1.png",
-  },
-];
+const courses = coursesData.courses;
 
 export default function CurriculumCourses() {
   return (
@@ -83,12 +30,13 @@ export default function CurriculumCourses() {
         {/* Grid */}
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
           {courses.map((course, idx) => (
-            <div
-              key={idx}
+            <Link
+              key={course.id}
+              href={`/courses/${course.slug}`}
               className="
                 bg-white rounded-[10px] shadow-[0px_0px_8.9px_0px_rgba(0,0,0,0.09)]
                 w-full max-w-[353px] min-h-[430px] opacity-100 flex flex-col
-                overflow-hidden
+                overflow-hidden hover:shadow-lg transition-shadow cursor-pointer
               "
             >
               {/* Course Image */}
@@ -159,15 +107,12 @@ export default function CurriculumCourses() {
                       {course.author}
                     </span>
                   </div>
-                  <a
-                    href="#"
-                    className="font-poppins font-medium xl:text-[16px] xl:leading-[26.67px] xl:tracking-[0%] text-[#D3363B] text-[15px] hover:underline cursor-pointer capitalize"
-                  >
+                  <span className="font-poppins font-medium xl:text-[16px] xl:leading-[26.67px] xl:tracking-[0%] text-[#D3363B] text-[15px] hover:underline cursor-pointer capitalize">
                     Learn More
-                  </a>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

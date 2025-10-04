@@ -6,7 +6,9 @@ export default function Introduction() {
       <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-[5.5rem]">
         <div className="text-center mb-16 lg:mb-20">
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-center text-[#141414] mb-6 lg:mb-8">
-            Independent Power Producers Association of India
+            Independent{" "}
+            <span className="text-[#D3363B]"> Power Producers Association </span>
+            of India
           </h1>
           <p className="text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-none text-center text-[#141414]/60 max-w-6xl mx-auto">
             IPPAI was set up as a not-for-profit association shortly after the

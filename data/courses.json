@@ -1,0 +1,523 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "101 - The Legal & Institutional Framework",
+      "slug": "101-the-legal-institutional-framework",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/1.png",
+      "category": "Foundation Course",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Comprehensive foundation course covering the essential legal and institutional frameworks governing energy policy and regulation."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Electricity & Constitution",
+            "o The Electricity Act 2003 Related Legislation, Notifications, Orders",
+            "o Rules & Proposed Amendments",
+            "o Central Electricity Authority (Grid Standards) Regulations, 2010",
+            "o Electricity (Rights of Consumers) Rules, 2020",
+            "o Indian Electricity Grid Code (IEGC)",
+            "o Central Electricity Regulatory Commission (Terms and Conditions of Tariff) Regulations",
+            "o State Electricity Regulatory Commission Acts and Rules",
+            "o Environmental Clearance and Forest Clearance Acts",
+            "o Energy Conservation Act, 2001 and its Amendments"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE - ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o Ministry of Power, Ministry of New and Renewable Energy",
+            "o Central Electricity Regulatory Commission (CERC) - Interstate Commerce",
+            "o State Electricity Regulatory Commissions (SERCs) - Intrastate Commerce",
+            "o Central Electricity Authority (CEA) - Technical Standards and Planning",
+            "o Regional Power Committees (RPCs) - Grid Coordination",
+            "o Central Transmission Utility (CTU) - Power Grid Corporation of India Ltd (PGCIL)",
+            "o National Load Dispatch Centre (NLDC) - Grid Operations",
+            "o Regional Load Dispatch Centres (RLDCs) - Regional Grid Management",
+            "o State Transmission Utilities (STUs) - State Level Transmission",
+            "o State Load Dispatch Centres (SLDCs) - State Grid Operations",
+            "o Distribution Companies (DISCOMs) - Electricity Distribution",
+            "o Central and State Generating Stations",
+            "o Independent Power Producers (IPPs), Merchant Power Plants (MPPs)",
+            "o Captive Power Plants (CPPs) and Open Access Consumers",
+            "o Power Exchanges - IEX, PXIL for Short-term Trading"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o National Electricity Policy (NEP) 2005 and its Implementation",
+            "o National Tariff Policy (NTP) 2006 and Amendments",
+            "o Renewable Energy Policy and Solar Mission Targets",
+            "o Electricity Regulatory Commissions - Functions and Powers",
+            "o Tariff Determination Process - Multi-Year Tariff (MYT) Framework",
+            "o Cost of Service vs. Performance-Based Rate Making",
+            "o Cross-Subsidy and Subsidy Rationalization Policies",
+            "o Open Access Regulations and Wheeling Charges",
+            "o Dispute Resolution Mechanisms - Appellate Tribunal for Electricity (APTEL)",
+            "o Competition Commission of India (CCI) Role in Power Sector",
+            "o State Electricity Policy Formulation and Implementation",
+            "o Rural Electrification and Distribution Reforms"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Drafting a Regulation/Order/Speaking Orders Determining Tariff",
+            "o Mock Regulatory Commission Hearing - Tariff Petition Process",
+            "o Stakeholder Consultation Process Simulation",
+            "o Electricity Bill Analysis and Consumer Grievance Resolution",
+            "o Open Access Application Filing and Approval Process",
+            "o Power Purchase Agreement (PPA) Negotiation Exercise",
+            "o Grid Code Violation Case Study and Penalty Determination",
+            "o Renewable Energy Certificate (REC) Trading Simulation",
+            "o Distribution Franchise Model Case Study",
+            "o Public Hearing Simulation for Major Policy Changes"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Understanding of constitutional framework for electricity regulation",
+        "Knowledge of key institutions and their roles in the power sector",
+        "Comprehension of regulatory processes and tariff determination",
+        "Practical skills in drafting regulatory documents"
+      ],
+      "prerequisites": "Basic understanding of energy systems recommended",
+      "certification": "Certificate of completion upon successful assessment"
+    },
+    {
+      "id": 2,
+      "title": "102 - Functioning Of Electricity Grid",
+      "slug": "102-functioning-of-electricity-grid",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/2.png",
+      "category": "Technical Course",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Technical deep-dive into electricity grid operations, load dispatch, and system management across India's interconnected power network."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Indian Electricity Grid Code (IEGC) - Technical Standards",
+            "o Central Electricity Authority (Grid Standards) Regulations, 2010",
+            "o Electricity Act 2003 - Grid Operations Provisions",
+            "o CERC (Indian Electricity Grid Code) Regulations, 2023",
+            "o State Grid Codes and Operating Procedures",
+            "o Central Electricity Authority (Technical Standards) Regulations",
+            "o Power System Development Fund Rules",
+            "o Renewable Energy Grid Integration Guidelines",
+            "o Emergency Response and Restoration Code"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o National Load Dispatch Centre (NLDC) - Grid Operations Control",
+            "o Regional Load Dispatch Centres (RLDCs) - Regional Grid Management",
+            "o State Load Dispatch Centres (SLDCs) - State Grid Operations",
+            "o Power Grid Corporation of India Ltd (PGCIL) - Transmission Owner",
+            "o Central Transmission Utility (CTU) Functions",
+            "o Regional Power Committees (RPCs) - Grid Coordination",
+            "o Central Electricity Authority (CEA) - Technical Standards",
+            "o State Transmission Utilities (STUs) - State Transmission",
+            "o Generating Stations - Generation Scheduling",
+            "o Distribution Utilities - Load Forecasting and Management"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o Merit Order Dispatch and Economic Principles",
+            "o Ancillary Services Framework and Pricing",
+            "o Grid Security and Reliability Standards",
+            "o Frequency Regulation and Control Mechanisms",
+            "o Transmission Planning and Grid Development",
+            "o Renewable Energy Integration Policies",
+            "o Grid Code Compliance and Enforcement",
+            "o Inter-State and Intra-State Coordination Protocols",
+            "o Emergency Response and Blackout Prevention",
+            "o Grid Infrastructure Development Policies"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Real-time Grid Operation Control Room Simulation",
+            "o Load Dispatch Decision Making Exercise",
+            "o Grid Disturbance Management and Restoration",
+            "o Merit Order Dispatch Calculation and Implementation",
+            "o Frequency Control and AGC Operation Simulation",
+            "o Renewable Energy Integration Challenge Exercise",
+            "o Grid Security Assessment and Contingency Planning",
+            "o Inter-Regional Power Transfer Coordination",
+            "o Emergency Response Procedure Implementation"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Comprehensive understanding of grid operations",
+        "Knowledge of dispatch mechanisms and protocols",
+        "Understanding of grid stability and security measures",
+        "Practical experience with grid simulation tools"
+      ],
+      "prerequisites": "Basic electrical engineering knowledge preferred",
+      "certification": "Technical certification in grid operations"
+    },
+    {
+      "id": 3,
+      "title": "103 - Evolution Of The Power Market",
+      "slug": "103-evolution-of-the-power-market",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/3.png",
+      "category": "Market Analysis",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Historical analysis and current trends in power market evolution, from regulated monopolies to competitive market structures."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Electricity Act 2003 - Market Reforms and Competition",
+            "o Central Electricity Regulatory Commission Act, 1998",
+            "o Competition Act, 2002 - Power Sector Applications",
+            "o CERC (Power Market) Regulations, 2021",
+            "o CERC (Terms and Conditions for Recognition and Issuance of Renewable Energy Certificate) Regulations",
+            "o Foreign Exchange Management Act (FEMA) - Power Sector Investments",
+            "o Companies Act 2013 - Corporate Governance in Power Sector",
+            "o Energy Conservation Act, 2001 - Market Mechanisms",
+            "o Consumer Protection Act, 2019 - Electricity Consumer Rights"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o Power Exchange of India Limited (PXIL) - Market Operations",
+            "o Indian Energy Exchange (IEX) - Electricity Trading Platform",
+            "o Central Electricity Regulatory Commission (CERC) - Market Regulation",
+            "o Power Market Surveillance Cell - Market Monitoring",
+            "o Market Coupling Operator (MCO) - Price Discovery",
+            "o National Sample Survey Office (NSSO) - Market Research",
+            "o Competition Commission of India (CCI) - Anti-competitive Practices",
+            "o Foreign Investment Promotion Board (FIPB) - Foreign Investments",
+            "o Power Trading Corporation (PTC) - Government Trading Entity",
+            "o Private Power Trading Companies - Market Participants"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o National Electricity Policy 2005 - Market Development Objectives",
+            "o Tariff Policy 2006 - Competitive Market Transition",
+            "o National Solar Mission - Renewable Energy Markets",
+            "o Power Market Development and Competition Enhancement",
+            "o Cross-border Electricity Trade Policy",
+            "o Electricity Contract Enforcement and Dispute Resolution",
+            "o Market-based Economic Dispatch (MBED) Implementation",
+            "o Ancillary Services Market Development",
+            "o Capacity Market Mechanisms and Design",
+            "o Green Energy Corridor and Market Integration"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Power Exchange Trading Simulation - Day-Ahead Market",
+            "o Real-time Market (RTM) Trading Exercise",
+            "o Bilateral Contract Negotiation Workshop",
+            "o Renewable Energy Certificate (REC) Trading Simulation",
+            "o Market Coupling and Price Discovery Exercise",
+            "o Open Access Application and Market Entry Simulation",
+            "o Power Purchase Agreement (PPA) Structuring Workshop",
+            "o Market Surveillance and Manipulation Detection",
+            "o Cross-border Power Trade Negotiation Exercise"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Understanding of power market evolution in India",
+        "Knowledge of different market structures and mechanisms",
+        "Analysis of economic impacts of market reforms",
+        "Insights into future market developments"
+      ],
+      "prerequisites": "Basic economics and policy background helpful",
+      "certification": "Market analysis certification"
+    },
+    {
+      "id": 4,
+      "title": "202- GNA And Open Access Mechanism",
+      "slug": "202-gna-and-open-access-mechanism",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/4.png",
+      "category": "Advanced Course",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Advanced course on General Network Access (GNA) and Open Access mechanisms enabling competitive power markets."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Electricity Act 2003 - Open Access Provisions (Section 9, 10, 12)",
+            "o CERC (Grant of Connectivity, Long-term Access and Medium-term Open Access) Regulations, 2009",
+            "o CERC (Sharing of Inter-State Transmission Charges and Losses) Regulations, 2020",
+            "o CERC (Terms and Conditions of Tariff) Regulations, 2019",
+            "o State Electricity Regulatory Commissions (Open Access) Regulations",
+            "o Central Electricity Authority (Technical Standards for Connectivity) Regulations, 2007",
+            "o Indian Electricity Grid Code (IEGC) - Connectivity and Access Provisions",
+            "o CERC (Procedure, Terms and Conditions for grant of trading license) Regulations, 2020",
+            "o Electricity Rules, 2005 - Open Access Implementation Guidelines"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o Central Electricity Regulatory Commission (CERC) - Interstate Open Access",
+            "o State Electricity Regulatory Commissions (SERCs) - Intrastate Open Access",
+            "o Central Transmission Utility (CTU) - Transmission Access Provider",
+            "o State Transmission Utilities (STUs) - State Level Access",
+            "o Regional Load Dispatch Centres (RLDCs) - Access Coordination",
+            "o State Load Dispatch Centres (SLDCs) - State Access Management",
+            "o Central Electricity Authority (CEA) - Technical Standards and Connectivity",
+            "o Distribution Companies (DISCOMs) - Local Access and Wheeling",
+            "o Power Trading Companies - Open Access Facilitators",
+            "o Open Access Customers - Industrial and Commercial Consumers"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o National Electricity Policy 2005 - Open Access Objectives",
+            "o National Tariff Policy 2006 - Access Charge Principles",
+            "o Cross-subsidy Surcharge Determination and Rationalization",
+            "o Transmission and Wheeling Charge Methodology",
+            "o Point of Connection (PoC) Mechanism and Pricing",
+            "o General Network Access (GNA) Framework Implementation",
+            "o Connectivity and Long-term Access (LTA) Process",
+            "o Medium-term Open Access (MTOA) and Short-term Open Access (STOA)",
+            "o Green Energy Open Access Rules, 2022",
+            "o Banking and Scheduling Mechanisms for Open Access"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Open Access Application Filing - Step-by-Step Process",
+            "o Transmission Charge Calculation Exercise",
+            "o Cross-subsidy Surcharge Computation Workshop",
+            "o Point of Connection Study and System Impact Assessment",
+            "o Open Access Agreement Negotiation Simulation",
+            "o Scheduling and Energy Accounting Process",
+            "o Grid Security Analysis for Open Access",
+            "o Dispute Resolution in Open Access Cases",
+            "o Renewable Energy Open Access Project Development"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Expert knowledge of GNA and Open Access frameworks",
+        "Understanding of technical and commercial processes",
+        "Skills in system planning and impact assessment",
+        "Practical experience with regulatory procedures"
+      ],
+      "prerequisites": "Completion of courses 101-103 or equivalent experience",
+      "certification": "Advanced certification in market access mechanisms"
+    },
+    {
+      "id": 5,
+      "title": "203- Resource Adequacy",
+      "slug": "203-resource-adequacy",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/5.png",
+      "category": "Planning & Security",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Comprehensive study of resource adequacy planning, ensuring reliable electricity supply meets demand under various scenarios."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Electricity Act 2003 - Resource Planning and Adequacy Provisions",
+            "o Central Electricity Authority (Technical Standards for Construction of Electrical Plants) Regulations, 2010",
+            "o CERC (Terms and Conditions of Tariff) Regulations - Capacity Charges",
+            "o National Electricity Policy 2005 - Resource Adequacy Objectives",
+            "o Renewable Energy Purchase Obligation (RPO) Regulations",
+            "o CERC (Deviation Settlement Mechanism) Regulations - Grid Security",
+            "o Central Electricity Authority (Safety Requirements) Regulations, 2010",
+            "o Energy Storage System Guidelines and Standards",
+            "o Demand Side Management and Energy Efficiency Regulations"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o Central Electricity Authority (CEA) - Resource Adequacy Assessment",
+            "o Load Dispatch Centres - Real-time Adequacy Monitoring",
+            "o Central Electricity Regulatory Commission (CERC) - Capacity Market Regulation",
+            "o Planning Commission - Long-term Resource Planning",
+            "o Ministry of Power - Resource Policy and Planning",
+            "o Regional Power Committees (RPCs) - Regional Adequacy Coordination",
+            "o State Electricity Regulatory Commissions - State Adequacy Planning",
+            "o Generating Companies - Capacity Availability and Maintenance",
+            "o Transmission Utilities - Network Adequacy and Security",
+            "o Distribution Companies - Demand Forecasting and Load Management"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o National Electricity Plan (NEP) - Resource Adequacy Roadmap",
+            "o Capacity Addition Program and Implementation Timeline",
+            "o Reserve Margin Standards and Reliability Criteria",
+            "o Demand Forecasting Methodology and Accuracy Standards",
+            "o Renewable Energy Integration and Grid Stability Policies",
+            "o Energy Storage Policy and Deployment Strategy",
+            "o Demand Response and Demand Side Management Programs",
+            "o Capacity Markets and Adequacy Payment Mechanisms",
+            "o Resource Adequacy Standards and Compliance Framework",
+            "o Emergency Procurement and Resource Adequacy Recovery Plans"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Resource Adequacy Assessment - Probabilistic Analysis",
+            "o Demand Forecasting Model Development and Testing",
+            "o Capacity Credit Calculation for Renewable Resources",
+            "o Reserve Margin Optimization Exercise",
+            "o Peak Load Management Strategy Simulation",
+            "o Energy Storage Sizing and Placement Analysis",
+            "o Demand Response Program Design Workshop",
+            "o Resource Adequacy Crisis Management Simulation",
+            "o Long-term Resource Planning Scenario Analysis"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Mastery of resource adequacy planning techniques",
+        "Understanding of reliability standards and metrics",
+        "Skills in renewable integration planning",
+        "Knowledge of market mechanisms for adequacy"
+      ],
+      "prerequisites": "Strong background in power systems and economics",
+      "certification": "Specialist certification in resource adequacy planning"
+    },
+    {
+      "id": 6,
+      "title": "204- Issues In Consumer Interest",
+      "slug": "204-issues-in-consumer-interest",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/5.png",
+      "category": "Consumer Protection",
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Focus on consumer protection, rights, and advocacy in the evolving electricity market landscape."
+      },
+      "sections": {
+        "legislation": {
+          "title": "LEGISLATION:",
+          "items": [
+            "o Electricity Act 2003 - Consumer Rights and Protection (Chapter V, VI)",
+            "o Electricity (Rights of Consumers) Rules, 2020",
+            "o Consumer Protection Act, 2019 - Electricity Services Coverage",
+            "o Right to Information Act, 2005 - Transparency in Electricity Sector",
+            "o CERC (Terms and Conditions of Tariff) Regulations - Consumer Impact",
+            "o State Electricity Regulatory Commissions (Standards of Performance) Regulations",
+            "o Electricity Supply Code and Consumer Service Regulations",
+            "o Public Utilities (Consumer Grievances) Rules",
+            "o Competition Act, 2002 - Consumer Welfare in Electricity Markets"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "items": [
+            "o Consumer Grievance Redressal Forums (CGRFs) - First Level Resolution",
+            "o Electricity Ombudsman - Second Level Consumer Protection",
+            "o State Electricity Regulatory Commissions (SERCs) - Consumer Advocacy",
+            "o Central Electricity Regulatory Commission (CERC) - Consumer Interests",
+            "o State Consumer Disputes Redressal Commissions",
+            "o National Consumer Disputes Redressal Commission",
+            "o Distribution Companies (DISCOMs) - Consumer Service Obligations",
+            "o Consumer Organizations and Advocacy Groups",
+            "o Legal Services Authorities - Consumer Legal Aid",
+            "o Public Interest Research Groups - Consumer Advocacy"
+          ]
+        },
+        "policyFramework": {
+          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "items": [
+            "o National Electricity Policy 2005 - Consumer Protection Objectives",
+            "o National Tariff Policy 2006 - Consumer Interest Safeguards",
+            "o Standards of Performance (SOP) for Distribution Utilities",
+            "o Consumer Grievance Redressal Mechanism Implementation",
+            "o Tariff Design and Cross-subsidy Rationalization Policies",
+            "o Quality of Service Standards and Penalty Framework",
+            "o Consumer Education and Awareness Programs",
+            "o Digital Consumer Services and Online Grievance Systems",
+            "o Consumer Data Protection and Privacy Policies",
+            "o Vulnerable Consumer Protection and Lifeline Tariff Policies"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Consumer Grievance Filing and Resolution Process",
+            "o Electricity Bill Analysis and Dispute Resolution",
+            "o Consumer Forum Hearing Simulation",
+            "o Ombudsman Proceeding and Decision Making",
+            "o Public Interest Litigation Drafting Exercise",
+            "o Consumer Advocacy Campaign Planning",
+            "o Tariff Impact Assessment on Different Consumer Categories",
+            "o Quality of Service Monitoring and Complaint Process",
+            "o Consumer Rights Awareness Program Design"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Deep understanding of consumer rights in electricity sector",
+        "Knowledge of tariff impacts on different consumer segments",
+        "Skills in consumer advocacy and representation",
+        "Understanding of regulatory processes from consumer perspective"
+      ],
+      "prerequisites": "Basic understanding of electricity regulation",
+      "certification": "Consumer advocacy and protection certification"
+    }
+  ]
+}

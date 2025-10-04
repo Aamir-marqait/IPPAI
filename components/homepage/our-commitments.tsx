@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { StatCard } from "../stat-card";
+import Link from "next/link";
 
 export default function Commitments() {
   return (
@@ -30,13 +31,15 @@ export default function Commitments() {
               your goals and create a strategy that will achieve them.
             </p>
             <div className="mt-6">
-              <Button
-                className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-medium font-work-sans leading-none text-center rounded-[25px] px-8 py-3 text-xs sm:text-sm md:text-base xl:text-base"
-                style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
-                aria-label="Join Us"
-              >
-                Join Us
-              </Button>
+              <Link href="/contact">
+                <Button
+                  className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-medium font-work-sans leading-none text-center rounded-[25px] px-8 py-3 text-xs sm:text-sm md:text-base xl:text-base"
+                  style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
+                  aria-label="Join Us"
+                >
+                  Join Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
