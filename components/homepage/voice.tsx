@@ -54,7 +54,7 @@ export function VoicesInAction() {
   ];
 
   return (
-    <section className="w-screen bg-background py-10 md:py-14">
+    <section className="w-screen bg-white py-10 md:py-14">
       <div className="mx-auto max-w-[1100px] px-6">
         {/* Header */}
         <div className="flex items-start justify-between gap-6">
