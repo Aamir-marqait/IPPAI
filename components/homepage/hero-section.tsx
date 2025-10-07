@@ -85,7 +85,7 @@ export default function HomeHero() {
               style={{ boxShadow: "0px 12px 30px 0px #00000030" }}
             >
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
                     Sponsored By
                   </span>
@@ -103,7 +103,7 @@ export default function HomeHero() {
                       border: "1px solid #DEDEDE",
                     }}
                   ></div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center gap-4">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">

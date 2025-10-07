@@ -1,13 +1,17 @@
+"use client";
 import Image from "next/image";
 
 export default function Introduction() {
   return (
-    <div className="w-screen min-h-screen bg-background">
+    <div className="w-screen min-h-screen bg-white">
       <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-[5.5rem]">
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-16 lg:mb-14">
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-center text-[#141414] mb-6 lg:mb-8">
             Independent{" "}
-            <span className="text-[#D3363B]"> Power Producers Association </span>
+            <span className="text-[#D3363B]">
+              {" "}
+              Power Producers Association{" "}
+            </span>
             of India
           </h1>
           <p className="text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-none text-center text-[#141414]/60 max-w-6xl mx-auto">
@@ -26,8 +30,14 @@ export default function Introduction() {
           {/* Examine Card */}
           <div className="group relative">
             <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer group-hover:scale-105 group-hover:z-50"
+              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
               style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
+              }}
             >
               <div className="w-full h-36 relative mb-2">
                 <Image
@@ -56,8 +66,14 @@ export default function Introduction() {
           {/* Engage Card */}
           <div className="group relative">
             <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer group-hover:scale-105 group-hover:z-50"
+              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
               style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
+              }}
             >
               <div className="w-full h-36 relative mb-2">
                 <Image
@@ -86,8 +102,14 @@ export default function Introduction() {
           {/* Empower Card */}
           <div className="group relative">
             <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer group-hover:scale-105 group-hover:z-50"
+              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
               style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
+              }}
             >
               <div className="w-full h-36 relative mb-2">
                 <Image

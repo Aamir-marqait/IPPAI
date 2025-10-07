@@ -7,7 +7,7 @@ export default function KnowledgeHub() {
   return (
     <section
       aria-label="Knowledge Hub"
-      className="relative w-screen overflow-hidden"
+      className="relative md:-mt-28 w-screen overflow-hidden"
     >
       {/* Curved light backdrop using SVG that scales to the viewport width */}
       <div className="absolute left-0 top-0 -z-10 w-full">
