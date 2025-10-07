@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function HomeHero() {
   return (
     <div className="relative">
@@ -21,7 +20,6 @@ export default function HomeHero() {
 
       {/* Content */}
       <div className="relative z-10 pt-28">
-
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
             <div className="text-center mb-12">
@@ -57,13 +55,25 @@ export default function HomeHero() {
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Image src="/home/calendar.svg" alt="Calendar" width={20} height={20} className="w-5 h-5" />
+                    <Image
+                      src="/home/calendar.svg"
+                      alt="Calendar"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       25th to 27th September 2025
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Image src="/home/location.svg" alt="Location" width={20} height={20} className="w-5 h-5" />
+                    <Image
+                      src="/home/location.svg"
+                      alt="Location"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       Shoonya Farm Retreat, Belagavi, Karnataka 2
                     </span>
@@ -134,6 +144,20 @@ export default function HomeHero() {
             </div>
           </div>
         </main>
+      </div>
+
+      {/* Centered Image */}
+      <div className="absolute cursor-pointer inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+        <div className="p-6">
+          <Image
+            src="/next.png"
+            alt="Next"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px]"
+            priority
+          />
+        </div>
       </div>
     </div>
   );
