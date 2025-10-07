@@ -1,8 +1,39 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function HomeHero() {
+  const [currentEvent, setCurrentEvent] = useState(0);
+
+  const events = [
+    {
+      title: "Regulatory & Policy Framework in the Power Sector",
+      date: "25th to 27th September 2025",
+      location: "Shoonya Farm Retreat, Belagavi, Karnataka",
+      video: "/home/background.mp4",
+    },
+    {
+      title: "Renewable Energy Policy Summit",
+      date: "15th to 17th October 2025",
+      location: "Green Valley Resort, Pune, Maharashtra",
+      video: "/home/background.mp4",
+    },
+    {
+      title: "Smart Grid Infrastructure Conference",
+      date: "20th to 22nd November 2025",
+      location: "Tech Park Convention Center, Bangalore",
+      video: "/home/background.mp4",
+    },
+    {
+      title: "Energy Transition Workshop",
+      date: "10th to 12th December 2025",
+      location: "Coastal Resort, Goa",
+      video: "/home/background.mp4",
+    },
+  ];
+
   return (
     <div className="relative">
       <div className="absolute inset-0 w-screen h-screen overflow-hidden">
@@ -13,7 +44,7 @@ export default function HomeHero() {
           loop
           playsInline
         >
-          <source src="/home/background.mp4" type="video/mp4" />
+          <source src={events[currentEvent].video} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
@@ -51,7 +82,7 @@ export default function HomeHero() {
               </p>
             </div>
 
-            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-16 shadow-2xl">
+            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-5 shadow-2xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
@@ -63,7 +94,7 @@ export default function HomeHero() {
                       className="w-5 h-5"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      25th to 27th September 2025
+                      {events[currentEvent].date}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -75,7 +106,7 @@ export default function HomeHero() {
                       className="w-5 h-5"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      Shoonya Farm Retreat, Belagavi, Karnataka 2
+                      {events[currentEvent].location}
                     </span>
                   </div>
                 </div>
@@ -88,6 +119,19 @@ export default function HomeHero() {
                   </Button>
                 </Link>
               </div>
+            </div>
+            <div className="flex justify-start gap-2 mb-16">
+              {events.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentEvent(index)}
+                  className={`h-2 transition-all duration-300 rounded-full ${
+                    index === currentEvent
+                      ? "bg-[#D3363B] w-16"
+                      : "bg-white/40 w-7 hover:bg-white/60"
+                  }`}
+                />
+              ))}
             </div>
 
             <div
@@ -146,9 +190,12 @@ export default function HomeHero() {
         </main>
       </div>
 
-      {/* Centered Image */}
-      <div className="absolute cursor-pointer inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
-        <div className="p-6">
+      {/* Next Button */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+        <button
+          onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
           <Image
             src="/next.png"
             alt="Next"
@@ -157,7 +204,7 @@ export default function HomeHero() {
             className="w-full h-10 max-w-[200px]"
             priority
           />
-        </div>
+        </button>
       </div>
     </div>
   );
