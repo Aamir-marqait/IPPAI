@@ -49,31 +49,33 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col pt-28">
+      <div className="relative z-10 min-h-screen flex flex-col">
         <main className="flex-1 flex items-center">
           <div className="w-full max-w-[1100px] mx-auto flex flex-col lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
             {/* Left side - Overlapping Images */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
               <div className="relative w-full max-w-md lg:max-w-lg">
+                {/* Base frame image */}
                 <Image
                   src="/event/frame.png"
                   alt="Event Frame"
                   width={500}
                   height={600}
-                  className="relative w-full h-auto object-contain z-10"
+                  className="w-full h-auto object-contain"
                 />
-                <Image
-                  src="/hero.png"
-                  alt="Hero"
-                  width={500}
-                  height={600}
-                  className="absolute inset-0 w-full h-full object-contain z-20"
-                />
+                {/* Hero image overlapping on top */}
+                <div
+                  className="absolute top-8 left-8 inset-0 bg-contain bg-center bg-no-repeat h-[28rem] w-[28em] rounded-xl"
+                  style={{
+                    backgroundImage: "url('/hero.png')",
+                    zIndex: 10,
+                  }}
+                ></div>
               </div>
             </div>
-            
+
             {/* Right side - Content */}
-            <div className="w-full lg:w-1/2 text-center space-y-8 lg:space-y-3 lg:translate-y-20">
+            <div className="w-full lg:w-1/2 text-center space-y-8 lg:space-y-3 lg:translate-y-20 mt-10 lg:mt-0  pt-20  ">
               {/* Main Title */}
               <div>
                 <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal uppercase text-white text-balance">
@@ -85,17 +87,17 @@ export default function HeroSection() {
                   <Image
                     src="/home/line.png"
                     alt="Line"
-                    width={200}
+                    width={500}
                     height={4}
-                    className="h-auto w-auto max-w-[120px] xs:max-w-[150px] sm:max-w-[180px] md:max-w-[200px]"
+                    className="h-auto w-auto max-w-[120px] xs:max-w-[150px] sm:max-w-[180px] md:min-w-[270px]"
                   />
                 </div>
               </div>
 
               {/* Event Details */}
-              <div>
+              <div className="md:ml-10">
                 <div className="space-y-2 xs:space-y-3 sm:space-y-4">
-                  <div className="flex flex-wrap items-center justify-center gap-2 xs:gap-3">
+                  <div className="flex flex-wrap items-center justify-start gap-2 xs:gap-3">
                     <Image
                       src="/home/calendar.svg"
                       alt="Calendar"
@@ -108,7 +110,7 @@ export default function HeroSection() {
                     </span>
                   </div>
 
-                  <div className="flex flex-wrap items-start justify-center gap-2 xs:gap-3">
+                  <div className="flex flex-wrap items-start justify-start gap-2 xs:gap-3">
                     <Image
                       src="/home/location.svg"
                       alt="Location"
@@ -116,7 +118,7 @@ export default function HeroSection() {
                       height={20}
                       className="flex-shrink-0 mt-1"
                     />
-                    <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed text-center max-w-md">
+                    <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed text-left max-w-md">
                       Shoonya Farm Retreat, Belagavi, Karnataka
                     </span>
                   </div>
@@ -130,7 +132,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="pt-8 lg:pt-12">
+              <div className="pt-8 lg:pt-24 ">
                 <div className="inline-block bg-white rounded-[20px] px-4 xs:px-6 md:px-8 py-3 xs:py-4 lg:py-6 border shadow-lg">
                   <div className="flex flex-wrap justify-center items-center gap-3 xs:gap-4 sm:gap-6 lg:gap-8">
                     {[
