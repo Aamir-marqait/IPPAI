@@ -9,7 +9,7 @@ export default function HomeHero() {
 
   const events = [
     {
-      title: "Regulators & Policy Makers Retreat",
+      title: "Intensive Course",
       desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
       date: "29th - 31st October, 2025",
       location:
@@ -17,24 +17,10 @@ export default function HomeHero() {
       image: "/hero.png",
     },
     {
-      title: "Renewable Energy Policy Summit",
-      desc: "Driving Sustainable Growth through Innovative Policies & Strategic Implementation",
-      date: "15th to 17th October 2025",
-      location: "Green Valley Resort, Pune, Maharashtra",
-      image: "/hero.png",
-    },
-    {
-      title: "Sustainable Finance & Investment Forum",
-      desc: "Mobilizing Capital for Clean Energy Projects and Green Infrastructure Development",
-      date: "20th to 22nd November 2025",
-      location: "Tech Park Convention Center, Bangalore",
-      image: "/hero.png",
-    },
-    {
-      title: "Energy Transition Workshop Series",
-      desc: "Accelerating the Shift to Clean and Renewable Energy Sources for Sustainable Growth",
-      date: "10th to 12th December 2025",
-      location: "Coastal Resort, Goa",
+      title: "26th Regulators & Policymakers Retreat",
+      desc: "Advancing Regulatory Excellence & Strategic Policy Implementation",
+      date: "7th- 10th January, 2026",
+      location: "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
       image: "/hero.png",
     },
   ];
