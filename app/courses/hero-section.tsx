@@ -55,15 +55,31 @@ export default function IntensiveCourseHero() {
           </Link>
         </div>
         <div className=" z-20 hidden md:flex flex-col justify-center">
-          <div className="relative z-10 w-[500px] h-[400px] r">
+          <div className="relative z-10 w-[500px] h-[500px]">
             <Image
               src="/course/person-right.png"
               alt="Person Right"
               fill
-              className="object-fill"
+              className="object-contain"
               draggable={false}
               priority
             />
+            {/* Styled div positioned at top right of person image */}
+            <div className="absolute z-30 flex flex-col items-center justify-center top-0 -right-12 w-48 h-44 rounded-xl px-7 py-5 bg-black/25 shadow-lg">
+              <Image
+                src="/course/i.png"
+                alt="Students"
+                width={120}
+                height={60}
+                className="object-contain mb-3"
+              />
+              <div className="text-center font-work-sans font-medium text-sm leading-relaxed text-white">
+                Total Students
+              </div>
+              <div className="text-center font-work-sans font-bold text-4xl leading-relaxed text-white">
+                12K
+              </div>
+            </div>
           </div>
         </div>
       </div>

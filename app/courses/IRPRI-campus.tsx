@@ -5,12 +5,12 @@ export default function CampusSection() {
     <section className="w-full flex flex-col items-center bg-white py-8 px-2 sm:px-4">
       <div className="w-full max-w-[1100px] flex flex-col lg:flex-row justify-around items-center gap-8 lg:gap-0 mb-12">
         <div className="flex-1 flex justify-center relative min-w-[290px] max-w-[360px]">
-          <div className="relative z-20 w-[320px] h-[320px] md:w-[520px] md:h-[320px] rounded-full overflow-hidden flex items-center justify-center bg-white">
+          <div className="relative z-20 w-[320px] h-[320px] md:w-[520px] md:h-[320px] rounded-lg overflow-hidden flex items-center justify-center bg-white">
             <Image
               src="/course/ic.png"
               alt="Campus students"
               fill
-              className="object-contain"
+              className="object-fill"
               priority
             />
           </div>
