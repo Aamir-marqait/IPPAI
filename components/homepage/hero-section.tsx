@@ -9,43 +9,45 @@ export default function HomeHero() {
 
   const events = [
     {
-      title: "Regulatory & Policy Framework in the Power Sector",
+      title: "Regulators & Policy Makers Retreat",
+      desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
       date: "25th to 27th September 2025",
       location: "Shoonya Farm Retreat, Belagavi, Karnataka",
-      video: "/home/background.mp4",
+      image: "/hero.png",
     },
     {
       title: "Renewable Energy Policy Summit",
+      desc: " Driving Sustainable Growth through Innovative Policies",
       date: "15th to 17th October 2025",
       location: "Green Valley Resort, Pune, Maharashtra",
-      video: "/home/background.mp4",
+      image: "/hero.png",
     },
     {
       title: "Smart Grid Infrastructure Conference",
+      desc: "Building Resilient and Efficient Energy Networks for the Future",
       date: "20th to 22nd November 2025",
       location: "Tech Park Convention Center, Bangalore",
-      video: "/home/background.mp4",
+      image: "/hero.png",
     },
     {
       title: "Energy Transition Workshop",
+      desc: "Accelerating the Shift to Clean and Renewable Energy Sources",
       date: "10th to 12th December 2025",
       location: "Coastal Resort, Goa",
-      video: "/home/background.mp4",
+      image: "/hero.png",
     },
   ];
 
   return (
     <div className="relative">
       <div className="absolute inset-0 w-screen h-screen overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={events[currentEvent].video} type="video/mp4" />
-        </video>
+        <Image
+          src={events[currentEvent].image}
+          alt="Event background"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -54,31 +56,12 @@ export default function HomeHero() {
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
             <div className="text-center mb-12">
-              <h1 className="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
-                Intensive Course on
-                <br />
-                Regulatory & Policy{" "}
-                <span className="relative inline-block">
-                  Framework
-                  <Image
-                    src="/optimized/line.webp"
-                    alt=""
-                    width={400}
-                    height={20}
-                    className="absolute -bottom-2 left-0 w-full h-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] opacity-80"
-                    loading="lazy"
-                  />
-                </span>
-                <br />
-                in the{" "}
-                <span className="relative bg-gradient-to-r from-[#D3363B] to-[#EA7A7D] bg-clip-text text-transparent">
-                  Power Sector
-                </span>
+              <h1 className="md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
+                {events[currentEvent].title}
               </h1>
 
-              <p className="text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-2xl">
-                IPPAI brings together policymakers, regulators, and industry
-                leaders to shape India&apos;s energy and infrastructure future.
+              <p className="md:max-w-md text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-2xl">
+                {events[currentEvent].desc}
               </p>
             </div>
 
