@@ -87,17 +87,23 @@ export default function Header() {
                 <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
                   RESOURCES
                   <ChevronDown className="w-4 h-4" />
-                  <div className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${resourcesDropdown ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-center`}></div>
+                  <div
+                    className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                      resourcesDropdown
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
+                    } origin-center`}
+                  ></div>
                 </button>
 
                 {/* Invisible bridge for smooth hover */}
                 {resourcesDropdown && (
                   <div className="absolute top-full left-0 right-0 h-6 bg-transparent"></div>
                 )}
-                
+
                 {/* Resources Dropdown */}
                 {resourcesDropdown && (
-                  <div 
+                  <div
                     className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
                     onMouseEnter={() => setResourcesDropdown(true)}
                     onMouseLeave={() => setResourcesDropdown(false)}
@@ -107,10 +113,10 @@ export default function Header() {
 
                     <div className="py-2">
                       <Link
-                        href="/press-releases"
+                        href="/policies"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                       >
-                        Press Releases
+                        Policies
                       </Link>
                       <Link
                         href="/publications"
@@ -136,17 +142,23 @@ export default function Header() {
                 <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
                   MEDIA CENTER
                   <ChevronDown className="w-4 h-4" />
-                  <div className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${mediaCenterDropdown ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'} origin-center`}></div>
+                  <div
+                    className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                      mediaCenterDropdown
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
+                    } origin-center`}
+                  ></div>
                 </button>
 
                 {/* Invisible bridge for smooth hover */}
                 {mediaCenterDropdown && (
                   <div className="absolute top-full left-0 right-0 h-6 bg-transparent"></div>
                 )}
-                
+
                 {/* Media Center Dropdown */}
                 {mediaCenterDropdown && (
-                  <div 
+                  <div
                     className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
                     onMouseEnter={() => setMediaCenterDropdown(true)}
                     onMouseLeave={() => setMediaCenterDropdown(false)}
@@ -155,6 +167,12 @@ export default function Header() {
                     <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                     <div className="py-2">
+                      <Link
+                        href="/press-releases"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        Press Releases
+                      </Link>
                       <Link
                         href="/photo-gallery"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -307,7 +325,10 @@ export default function Header() {
                 <ChevronDown className="w-4 h-4" />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/news" || pathname === "/press-releases" || pathname === "/publications" || pathname === "/articles" || resourcesDropdownMain
+                    pathname === "/policies" ||
+                    pathname === "/publications" ||
+                    pathname === "/articles" ||
+                    resourcesDropdownMain
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   } origin-center`}
@@ -318,10 +339,10 @@ export default function Header() {
               {resourcesDropdownMain && (
                 <div className="absolute top-full left-0 right-0 h-4 bg-transparent"></div>
               )}
-              
+
               {/* Resources Dropdown Main */}
               {resourcesDropdownMain && (
-                <div 
+                <div
                   className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
                   onMouseEnter={() => setResourcesDropdownMain(true)}
                   onMouseLeave={() => setResourcesDropdownMain(false)}
@@ -331,10 +352,10 @@ export default function Header() {
 
                   <div className="py-2">
                     <Link
-                      href="/press-releases"
+                      href="/policies"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
-                      Press Releases
+                      Policies
                     </Link>
                     <Link
                       href="/publications"
@@ -368,7 +389,11 @@ export default function Header() {
                 <ChevronDown className="w-4 h-4" />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/podcast" || pathname === "/photo-gallery" || pathname === "/video-gallery" || mediaCenterDropdownMain
+                    pathname === "/press-releases" ||
+                    pathname === "/podcast" ||
+                    pathname === "/photo-gallery" ||
+                    pathname === "/video-gallery" ||
+                    mediaCenterDropdownMain
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   } origin-center`}
@@ -379,10 +404,10 @@ export default function Header() {
               {mediaCenterDropdownMain && (
                 <div className="absolute top-full left-0 right-0 h-4 bg-transparent"></div>
               )}
-              
+
               {/* Media Center Dropdown Main */}
               {mediaCenterDropdownMain && (
-                <div 
+                <div
                   className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
                   onMouseEnter={() => setMediaCenterDropdownMain(true)}
                   onMouseLeave={() => setMediaCenterDropdownMain(false)}
@@ -391,6 +416,12 @@ export default function Header() {
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                   <div className="py-2">
+                    <Link
+                      href="/press-releases"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Press Releases
+                    </Link>
                     <Link
                       href="/photo-gallery"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
