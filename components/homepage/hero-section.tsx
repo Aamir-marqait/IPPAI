@@ -55,17 +55,17 @@ export default function HomeHero() {
       <div className="relative z-10 pt-28">
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
-            <div className="text-center mb-12">
-              <h1 className="md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
+            <div className="text-center mb-12 mx-7 md:mx-0">
+              <h1 className="max-w-sm md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
                 {events[currentEvent].title}
               </h1>
 
-              <p className="md:max-w-md text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-2xl">
+              <p className="md:max-w-md text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-sm">
                 {events[currentEvent].desc}
               </p>
             </div>
 
-            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-5 shadow-2xl">
+            <div className="bg-white/96 rounded-[20px] mx-7 md:mx-0 p-6 md:p-8 max-w-2xl mb-5 shadow-2xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
@@ -103,7 +103,7 @@ export default function HomeHero() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-start gap-2 mb-16">
+            <div className="flex justify-start gap-2 mb-16 mx-7 md:mx-0">
               {events.map((_, index) => (
                 <button
                   key={index}
@@ -118,10 +118,10 @@ export default function HomeHero() {
             </div>
 
             <div
-              className="bg-white rounded-[20px] border border-[#CCCCCC] p-6 md:py-8 mx-auto"
+              className="bg-white rounded-[20px] border border-[#CCCCCC] p-6 md:py-8 md:mx-auto mx-7"
               style={{ boxShadow: "0px 12px 30px 0px #00000030" }}
             >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
                 {/* <div className="flex items-center gap-4">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
                     Sponsored By
@@ -142,7 +142,7 @@ export default function HomeHero() {
                   ></div>
                 </div> */}
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 ">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
                     Knowledge Partner
                   </span>
