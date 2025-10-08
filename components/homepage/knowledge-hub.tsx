@@ -129,7 +129,7 @@ export default function KnowledgeHubSection() {
               Corporate Colonization&apos;s?
             </div>
             <Link
-              href="/articles"
+              href="/policies"
               className="flex items-center gap-2 mt-auto group text-[#D3363B] font-semibold text-[13px]"
             >
               VIEW ALL

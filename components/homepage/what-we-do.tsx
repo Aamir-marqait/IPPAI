@@ -35,8 +35,7 @@ export default function WhatWeDo() {
 
             {/* Heading */}
             <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-[#141414]">
-              Leading the way in bringing innovation and inspiration to the
-              power sector.
+              Leading the way in building cerebral capacity in the power sector.
             </h1>
 
             {/* Bullet Points */}
@@ -46,7 +45,6 @@ export default function WhatWeDo() {
                 "Driving impactful energy and sustainability policies.",
                 "Sharing research, innovation, and best practices.",
                 "Bridging government, industry, and consumers.",
-                "Advancing clean and innovative power solutions.",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <Check className="w-3 h-3 text-[#D3363B]" strokeWidth={3} />

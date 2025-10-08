@@ -11,8 +11,9 @@ export default function HomeHero() {
     {
       title: "Regulators & Policy Makers Retreat",
       desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
-      date: "25th to 27th September 2025",
-      location: "Shoonya Farm Retreat, Belagavi, Karnataka",
+      date: "29th - 31st October, 2025",
+      location:
+        "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
       image: "/hero.png",
     },
     {
@@ -186,7 +187,11 @@ export default function HomeHero() {
       <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-between px-20">
         {/* Previous Button */}
         <button
-          onClick={() => setCurrentEvent((prev) => (prev === 0 ? events.length - 1 : prev - 1))}
+          onClick={() =>
+            setCurrentEvent((prev) =>
+              prev === 0 ? events.length - 1 : prev - 1
+            )
+          }
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
         >
           <Image
@@ -198,7 +203,7 @@ export default function HomeHero() {
             priority
           />
         </button>
-        
+
         {/* Next Button */}
         <button
           onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
