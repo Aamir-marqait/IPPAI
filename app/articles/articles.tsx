@@ -1,76 +1,91 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const articles = [
   {
     image: "/article/1.png",
-    title: "Bill Walsh leadership lessons",
+    title: "Hydropower development in India",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/1.pdf",
   },
   {
     image: "/article/2.png",
-    title: "Bill Walsh leadership lessons",
+    title:
+      "Biomass Based Power Generation Opportunities and the Role of Independent Power Producers in India",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste for clean electricity generation...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/2.pdf",
   },
   {
-    image: "/article/1.png",
-    title: "Bill Walsh leadership lessons",
+    image: "/article/3.png",
+    title: "24x7 power supply critical to maintaining high growth: IPPAI",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Understanding the vital importance of uninterrupted power supply for India's economic growth and the policy framework needed to achieve energy security...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/3.pdf",
   },
   {
-    image: "/article/2.png",
-    title: "Bill Walsh leadership lessons",
+    image: "/article/4.png",
+    title: "The Indian Power Sector: Need of Sustainable Energy Access",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Examining India's transition towards sustainable energy solutions and the critical role of renewable technologies in ensuring universal power access...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/4.pdf",
   },
   {
-    image: "/article/1.png",
-    title: "Bill Walsh leadership lessons",
+    image: "/article/5.png",
+    title: "Breaking the Myth Behind Coastal Thermal Power Plants",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Debunking misconceptions about coastal thermal power facilities and highlighting their strategic importance in India's diversified energy portfolio...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/5.pdf",
   },
   {
-    image: "/article/2.png",
-    title: "Bill Walsh leadership lessons",
+    image: "/article/6.png",
+    title:
+      "Discussion Paper on Competitive Bidding in the Indian power sector: Past, Present and the Future",
     summary:
-      "Employment law is a critical branch of the legal system that governs the...",
+      "Comprehensive analysis of competitive bidding evolution in India's power sector, examining historical trends and future market opportunities...",
     author: {
-      name: "Alec Whitten",
-      avatar: "/article/1.png",
+      name: "IPPAI",
+      avatar: "/header/logo.png",
     },
     date: "17 Jan 2025",
+    pdfFile: "/article/6.pdf",
   },
 ];
 
 export default function ExpertArticles() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState<
+    (typeof articles)[0] | null
+  >(null);
+
   return (
     <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white">
       <div className="mx-auto w-full max-w-[1100px] flex flex-col items-center">
@@ -97,6 +112,10 @@ export default function ExpertArticles() {
               style={{
                 opacity: 1,
               }}
+              onClick={() => {
+                setSelectedArticle(article);
+                setIsModalOpen(true);
+              }}
             >
               {/* Image */}
               <div
@@ -122,7 +141,7 @@ export default function ExpertArticles() {
               {/* Content */}
               <div className="flex flex-col px-6 pt-5 pb-6 flex-1">
                 <div className="flex items-start justify-between">
-                  <h3 className="font-red-hat-display font-bold text-2xl leading-none capitalize text-[#101828] mb-2">
+                  <h3 className="font-red-hat-display font-bold text-2xl leading-tight capitalize text-[#101828] mb-2 line-clamp-2">
                     {article.title}
                   </h3>
                   <span className="text-[#D3363B] mt-1 ml-1">
@@ -137,7 +156,7 @@ export default function ExpertArticles() {
                     </svg>
                   </span>
                 </div>
-                <div className="font-poppins font-normal text-base leading-[29px] tracking-[0.3%] text-[#6D6D6D] mb-4">
+                <div className="font-poppins font-normal text-base leading-[29px] tracking-[0.3%] text-[#6D6D6D] mb-4 line-clamp-3">
                   {article.summary}
                 </div>
                 <div className="flex items-center gap-3 mt-auto">
@@ -162,6 +181,11 @@ export default function ExpertArticles() {
           ))}
         </div>
       </div>
+      <JoinUsModal
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+        article={selectedArticle}
+      />
       <style jsx>{`
         @media (max-width: 1100px) {
           .card-custom {
