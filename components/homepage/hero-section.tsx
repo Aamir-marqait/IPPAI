@@ -1,71 +1,95 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useState } from "react";
 
 export default function HomeHero() {
+  const [currentEvent, setCurrentEvent] = useState(0);
+
+  const events = [
+    {
+      title: "Regulators & Policy Makers Retreat",
+      desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
+      date: "25th to 27th September 2025",
+      location: "Shoonya Farm Retreat, Belagavi, Karnataka",
+      image: "/hero.png",
+    },
+    {
+      title: "Renewable Energy Policy Summit",
+      desc: " Driving Sustainable Growth through Innovative Policies",
+      date: "15th to 17th October 2025",
+      location: "Green Valley Resort, Pune, Maharashtra",
+      image: "/hero.png",
+    },
+    {
+      title: "Smart Grid Infrastructure Conference",
+      desc: "Building Resilient and Efficient Energy Networks for the Future",
+      date: "20th to 22nd November 2025",
+      location: "Tech Park Convention Center, Bangalore",
+      image: "/hero.png",
+    },
+    {
+      title: "Energy Transition Workshop",
+      desc: "Accelerating the Shift to Clean and Renewable Energy Sources",
+      date: "10th to 12th December 2025",
+      location: "Coastal Resort, Goa",
+      image: "/hero.png",
+    },
+  ];
+
   return (
     <div className="relative">
       <div className="absolute inset-0 w-screen h-screen overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/home/background.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src={events[currentEvent].image}
+          alt="Event background"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 pt-28">
-
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
             <div className="text-center mb-12">
-              <h1 className="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
-                Intensive Course on
-                <br />
-                Regulatory & Policy{" "}
-                <span className="relative inline-block">
-                  Framework
-                  <Image
-                    src="/optimized/line.webp"
-                    alt=""
-                    width={400}
-                    height={20}
-                    className="absolute -bottom-2 left-0 w-full h-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] opacity-80"
-                    loading="lazy"
-                  />
-                </span>
-                <br />
-                in the{" "}
-                <span className="relative bg-gradient-to-r from-[#D3363B] to-[#EA7A7D] bg-clip-text text-transparent">
-                  Power Sector
-                </span>
+              <h1 className="md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
+                {events[currentEvent].title}
               </h1>
 
-              <p className="text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-2xl">
-                IPPAI brings together policymakers, regulators, and industry
-                leaders to shape India&apos;s energy and infrastructure future.
+              <p className="md:max-w-md text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none mt-5 max-w-2xl">
+                {events[currentEvent].desc}
               </p>
             </div>
 
-            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-16 shadow-2xl">
+            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-5 shadow-2xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Image src="/home/calendar.svg" alt="Calendar" width={20} height={20} className="w-5 h-5" />
+                    <Image
+                      src="/home/calendar.svg"
+                      alt="Calendar"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      25th to 27th September 2025
+                      {events[currentEvent].date}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Image src="/home/location.svg" alt="Location" width={20} height={20} className="w-5 h-5" />
+                    <Image
+                      src="/home/location.svg"
+                      alt="Location"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5"
+                    />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      Shoonya Farm Retreat, Belagavi, Karnataka 2
+                      {events[currentEvent].location}
                     </span>
                   </div>
                 </div>
@@ -79,13 +103,26 @@ export default function HomeHero() {
                 </Link>
               </div>
             </div>
+            <div className="flex justify-start gap-2 mb-16">
+              {events.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentEvent(index)}
+                  className={`h-2 transition-all duration-300 rounded-full ${
+                    index === currentEvent
+                      ? "bg-[#D3363B] w-16"
+                      : "bg-white/40 w-7 hover:bg-white/60"
+                  }`}
+                />
+              ))}
+            </div>
 
             <div
               className="bg-white rounded-[20px] border border-[#CCCCCC] p-6 md:py-8 mx-auto"
               style={{ boxShadow: "0px 12px 30px 0px #00000030" }}
             >
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
                     Sponsored By
                   </span>
@@ -103,7 +140,7 @@ export default function HomeHero() {
                       border: "1px solid #DEDEDE",
                     }}
                   ></div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center gap-4">
                   <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
@@ -134,6 +171,23 @@ export default function HomeHero() {
             </div>
           </div>
         </main>
+      </div>
+
+      {/* Next Button */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+        <button
+          onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
+          <Image
+            src="/next.png"
+            alt="Next"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px]"
+            priority
+          />
+        </button>
       </div>
     </div>
   );

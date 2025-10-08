@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function WhatWeDo() {
   return (
-    <div className="w-screen min-h-screen bg-white">
+    <div className="w-screen min-h-screen bg-[#F5F5F5]">
       <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image Section */}
