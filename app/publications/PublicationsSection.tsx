@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const publications = [
   {
@@ -48,6 +50,8 @@ const publications = [
 ];
 
 export default function PublicationsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white">
       <div className="mx-auto w-full max-w-[1100px] flex flex-col items-center">
@@ -72,6 +76,7 @@ export default function PublicationsSection() {
                 transition hover:shadow-[0px_8px_28px_0px_rgba(16,24,40,0.13)]
                 opacity-100
               `}
+              onClick={() => setIsModalOpen(true)}
             >
               {/* Image */}
               <div
@@ -115,6 +120,7 @@ export default function PublicationsSection() {
           ))}
         </div>
       </div>
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
       <style jsx>{`
         @media (max-width: 1200px) {
           .card-custom {

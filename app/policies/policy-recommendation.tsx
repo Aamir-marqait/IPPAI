@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const policies = [
   {
@@ -34,6 +37,8 @@ const policies = [
 ];
 
 export default function PolicyRecommendations() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="bg-white py-10 px-2 sm:px-6 w-full flex justify-center">
       <div className="w-full max-w-[1100px] flex flex-col items-center">
@@ -55,6 +60,7 @@ export default function PolicyRecommendations() {
               md:w-[280px] md:h-[290px] 
               sm:w-[200px] sm:h-[210px] 
               opacity-100 rotate-0"
+              onClick={() => setIsModalOpen(true)}
             >
               {/* Image */}
               <div className="w-[95%] mx-auto mt-2 h-[160px] sm:h-[170px] md:h-[165px]  overflow-hidden relative">
@@ -93,6 +99,7 @@ export default function PolicyRecommendations() {
           ))}
         </div>
       </div>
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
