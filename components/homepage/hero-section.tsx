@@ -17,21 +17,21 @@ export default function HomeHero() {
     },
     {
       title: "Renewable Energy Policy Summit",
-      desc: " Driving Sustainable Growth through Innovative Policies",
+      desc: "Driving Sustainable Growth through Innovative Policies & Strategic Implementation",
       date: "15th to 17th October 2025",
       location: "Green Valley Resort, Pune, Maharashtra",
       image: "/hero.png",
     },
     {
-      title: "Smart Grid Infrastructure Conference",
-      desc: "Building Resilient and Efficient Energy Networks for the Future",
+      title: "Sustainable Finance & Investment Forum",
+      desc: "Mobilizing Capital for Clean Energy Projects and Green Infrastructure Development",
       date: "20th to 22nd November 2025",
       location: "Tech Park Convention Center, Bangalore",
       image: "/hero.png",
     },
     {
-      title: "Energy Transition Workshop",
-      desc: "Accelerating the Shift to Clean and Renewable Energy Sources",
+      title: "Energy Transition Workshop Series",
+      desc: "Accelerating the Shift to Clean and Renewable Energy Sources for Sustainable Growth",
       date: "10th to 12th December 2025",
       location: "Coastal Resort, Goa",
       image: "/hero.png",
@@ -65,7 +65,7 @@ export default function HomeHero() {
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
             <div className="text-center mb-12 mx-7 md:mx-0">
-              <h1 className="max-w-sm md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
+              <h1 className="max-w-xl md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
                 {events[currentEvent].title}
               </h1>
 
