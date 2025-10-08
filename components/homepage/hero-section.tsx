@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomeHero() {
   const [currentEvent, setCurrentEvent] = useState(0);
@@ -37,6 +37,15 @@ export default function HomeHero() {
       image: "/hero.png",
     },
   ];
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEvent((prev) => (prev + 1) % events.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [events.length]);
 
   return (
     <div className="relative">
@@ -173,8 +182,24 @@ export default function HomeHero() {
         </main>
       </div>
 
-      {/* Next Button */}
-      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+      {/* Navigation Buttons */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-between px-20">
+        {/* Previous Button */}
+        <button
+          onClick={() => setCurrentEvent((prev) => (prev === 0 ? events.length - 1 : prev - 1))}
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
+          <Image
+            src="/next.png"
+            alt="Previous"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px] rotate-180"
+            priority
+          />
+        </button>
+        
+        {/* Next Button */}
         <button
           onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
