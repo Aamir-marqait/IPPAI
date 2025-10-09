@@ -7,7 +7,7 @@ export default function Commitments() {
     <section
       aria-label="Our Commitments"
       className="relative w-screen bg-center bg-cover"
-      style={{ backgroundImage: "url('/home/commitment.png')" }}
+      style={{ backgroundImage: "url('/optimized/commitment.webp')" }}
     >
       <div className="absolute inset-0 bg-foreground/80" />
 

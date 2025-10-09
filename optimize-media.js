@@ -71,7 +71,21 @@ async function main() {
     { input: 'public/home/voice1.png', output: 'public/optimized/voice1.webp' },
     { input: 'public/home/voice2.png', output: 'public/optimized/voice2.webp' },
     { input: 'public/home/voice3.png', output: 'public/optimized/voice3.webp' },
-    { input: 'public/home/key1.png', output: 'public/optimized/key1.webp' }
+    { input: 'public/home/key1.png', output: 'public/optimized/key1.webp' },
+    
+    // Additional homepage images found
+    { input: 'public/home/calendar.svg', output: 'public/optimized/calendar.webp' },
+    { input: 'public/home/location.svg', output: 'public/optimized/location.webp' },
+    { input: 'public/next.png', output: 'public/optimized/next.webp' },
+    { input: 'public/home/what.png', output: 'public/optimized/what.webp' },
+    { input: 'public/home/kh1.png', output: 'public/optimized/kh1.webp' },
+    { input: 'public/home/kh2.png', output: 'public/optimized/kh2.webp' },
+    { input: 'public/line.png', output: 'public/optimized/line-main.webp' },
+    { input: 'public/home/khbg.png', output: 'public/optimized/khbg.webp' },
+    
+    // Hero section background images
+    { input: 'public/hero.png', output: 'public/optimized/hero.webp' },
+    { input: 'public/home/bg2.jpg', output: 'public/optimized/bg2.webp' }
   ];
 
   console.log('🚀 Starting image optimization...\n');

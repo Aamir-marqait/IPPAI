@@ -14,14 +14,14 @@ export default function HomeHero() {
       date: "29th - 31st October, 2025",
       location:
         "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
-      image: "/hero.png",
+      image: "/optimized/hero.webp",
     },
     {
       title: "26th Regulators & Policymakers Retreat",
       desc: "Advancing Regulatory Excellence & Strategic Policy Implementation",
       date: "7th- 10th January, 2026",
       location: "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
-      image: "/hero.png",
+      image: "/optimized/bg2.webp",
     },
   ];
 
@@ -66,11 +66,12 @@ export default function HomeHero() {
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
                     <Image
-                      src="/home/calendar.svg"
+                      src="/optimized/calendar.webp"
                       alt="Calendar"
                       width={20}
                       height={20}
                       className="w-5 h-5"
+                      loading="lazy"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       {events[currentEvent].date}
@@ -78,11 +79,12 @@ export default function HomeHero() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Image
-                      src="/home/location.svg"
+                      src="/optimized/location.webp"
                       alt="Location"
                       width={20}
                       height={20}
                       className="w-5 h-5"
+                      loading="lazy"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
                       {events[currentEvent].location}
@@ -181,12 +183,12 @@ export default function HomeHero() {
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
         >
           <Image
-            src="/next.png"
+            src="/optimized/next.webp"
             alt="Previous"
             width={200}
             height={150}
             className="w-full h-10 max-w-[200px] rotate-180"
-            priority
+            loading="lazy"
           />
         </button>
 
@@ -196,12 +198,12 @@ export default function HomeHero() {
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
         >
           <Image
-            src="/next.png"
+            src="/optimized/next.webp"
             alt="Next"
             width={200}
             height={150}
             className="w-full h-10 max-w-[200px]"
-            priority
+            loading="lazy"
           />
         </button>
       </div>

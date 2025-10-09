@@ -8,37 +8,37 @@ export default function Contributors() {
     {
       name: "Mr. V.P. Raja",
       role: "Former Chairman, MERC",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Mr. V.P. Raja portrait",
     },
     {
       name: "Mr. Ashok Kumar Rajput",
       role: "Former Member (Power Systems), CEA",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Mr. Ashok Kumar Rajput portrait",
     },
     {
       name: "Dr. Upendra N. Behera",
       role: "Former Chairman, OERC",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Dr. Upendra N. Behera portrait",
     },
     {
       name: "Mr. B.B Mehta",
       role: "Director(SLDC), OPTCL",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Mr. B.B Mehta portrait",
     },
     {
       name: "Mr. P.K Agarwal",
       role: "Former Director & CISO, POSOCO",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Mr. P.K Agarwal portrait",
     },
     {
       name: "Mr. Satyajit Ganguly",
       role: "Former CEO & MD, PXIL",
-      imgSrc: "/home/key1.png",
+      imgSrc: "/optimized/key1.webp",
       imgAlt: "Mr. Satyajit Ganguly portrait",
     },
   ];

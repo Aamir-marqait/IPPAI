@@ -1,55 +1,94 @@
 "use client";
 
-import { useRef } from "react";
-import { EventCard } from "../event-card";
+import { useRef, useState } from "react";
+
+import { VideoCard } from "../video-card";
+import { VideoModal } from "../ui/video-modal";
 
 export function VoicesInAction() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
   const scrollBy = (dir: -1 | 1) => {
     scrollerRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
   };
 
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<{
+    src: string;
+    title: string;
+  } | null>(null);
+
+  // const scrollBy = (dir: -1 | 1) => {
+  //   scrollerRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
+  // };
+
+  const handleVideoClick = (videoSrc: string, title: string) => {
+    setActiveVideo({ src: videoSrc, title });
+    setModalOpen(true);
+  };
+
   const items = [
     {
-      imgSrc: "/home/voice1.png",
-      imgAlt: "Participants group photo",
+      imgSrc: "/voice/1.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      title: "about IRPRI",
       description:
         "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
+      videoSrc: "/voice/1.mp4",
     },
     {
-      imgSrc: "/home/voice2.png",
-      imgAlt: "Conference speakers on podium",
+      imgSrc: "/voice/2.png",
+      imgAlt: "Video thumbnail",
       date: "Sep 10, 2025",
-      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      title: "Hindu Q&A- Pricing of electricity",
       description:
         "Platform for sharing opportunities, publications, and award programs with civic impact.",
+      videoSrc: "/voice/2.mp4",
     },
     {
-      imgSrc: "/home/voice3.png",
-      imgAlt: "Award ceremony",
+      imgSrc: "/voice/3.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      title: "Mr B Joshi- Additional Surcharge",
       description:
         "Unique confluences of industry and civil society engaging for a brighter future.",
+      videoSrc: "/voice/3.mp4",
     },
     {
-      imgSrc: "/home/voice1.png",
-      imgAlt: "Panel discussion",
+      imgSrc: "/voice/4.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      title: "TN Regulator- EA 2003, price of power and reforms (UDAY)",
       description:
         "Leaders discuss sector transformation and inclusive policy initiatives.",
+      videoSrc: "/voice/4.mp4",
     },
     {
-      imgSrc: "/home/voice2.png",
-      imgAlt: "Community workshop",
+      imgSrc: "/voice/5.png",
+      imgAlt: "Video thumbnail",
       date: "Aug 12, 2025",
-      title: "Breaking Barriers: Youth Shaping Tomorrow",
+      title: "Mr B Joshi- Electricity Duty",
       description:
         "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/voice/5.mp4",
+    },
+    {
+      imgSrc: "/voice/6.png",
+      imgAlt: "Video thumbnail",
+      date: "Aug 12, 2025",
+      title: "Mr Dhaul- Open Access",
+      description:
+        "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/voice/6.mp4",
+    },
+    {
+      imgSrc: "/voice/7.png",
+      imgAlt: "Video thumbnail",
+      date: "Aug 12, 2025",
+      title: "Mr Nath- Force majure",
+      description:
+        "Hands-on workshops showcasing innovation and collaborative problem solving.",
+      videoSrc: "/voice/7.mp4",
     },
   ];
 
@@ -83,7 +122,7 @@ export function VoicesInAction() {
               type="button"
               aria-label="Previous"
               onClick={() => scrollBy(-1)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-border bg-muted/30 text-muted-foreground hover:bg-muted/50 transition"
+              className="cursor-pointer inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-border bg-muted/30 text-muted-foreground hover:bg-muted/50 transition"
             >
               {/* Left chevron */}
               <svg
@@ -105,7 +144,7 @@ export function VoicesInAction() {
               type="button"
               aria-label="Next"
               onClick={() => scrollBy(1)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-border bg-(--brand-red)/10 text-[color:var(--brand-red)] hover:bg-(--brand-red)/15 transition"
+              className="cursor-pointer inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-border bg-(--brand-red)/10 text-[color:var(--brand-red)] hover:bg-(--brand-red)/15 transition"
             >
               {/* Right chevron */}
               <svg
@@ -133,7 +172,15 @@ export function VoicesInAction() {
             className="no-scrollbar flex gap-6 overflow-x-auto scroll-px-4 snap-x snap-mandatory pb-2"
           >
             {items.map((it, idx) => (
-              <EventCard key={idx} {...it} />
+              <VideoCard
+                key={idx}
+                {...it}
+                onClick={
+                  it.videoSrc
+                    ? () => handleVideoClick(it.videoSrc, it.title)
+                    : undefined
+                }
+              />
             ))}
           </div>
 
@@ -184,6 +231,19 @@ export function VoicesInAction() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <VideoModal
+          open={modalOpen}
+          onOpenChange={(open) => {
+            setModalOpen(open);
+            if (!open) setActiveVideo(null);
+          }}
+          videoSrc={activeVideo.src}
+          title={activeVideo.title}
+        />
+      )}
     </section>
   );
 }
