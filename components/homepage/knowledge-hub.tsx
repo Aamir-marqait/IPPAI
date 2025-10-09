@@ -6,7 +6,7 @@ export default function KnowledgeHubSection() {
     <section
       className="w-full flex flex-col items-center py-8 px-4 md:px-6 lg:px-8 md:-mt-20"
       style={{
-        backgroundImage: "url('/home/khbg.png')",
+        backgroundImage: "url('/optimized/khbg.webp')",
         backgroundSize: "contain",
         backgroundPosition: "top",
         backgroundRepeat: "no-repeat",
@@ -28,11 +28,12 @@ export default function KnowledgeHubSection() {
           <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 justify-between">
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/home/kh1.png"
+                src="/optimized/kh1.webp"
                 alt="Articles Icon"
                 width={38}
                 height={38}
                 className="w-[38px] h-[38px]"
+                loading="lazy"
               />
               <span className="font-red-hat-display font-bold text-[#BC3C33] text-xl">
                 {/* Just icon, no label here */}
@@ -89,12 +90,13 @@ export default function KnowledgeHubSection() {
           <div className="hidden lg:flex items-stretch justify-center px-0">
             <div className="h-full flex items-center">
               <Image
-                src="/line.png"
+                src="/optimized/line-main.webp"
                 alt="Divider"
                 width={6}
                 height={600}
                 className="w-[6px] min-h-[340px] mx-0"
                 style={{ minHeight: "280px", maxHeight: "1420px" }}
+                loading="lazy"
               />
             </div>
           </div>
@@ -103,11 +105,12 @@ export default function KnowledgeHubSection() {
           <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 justify-between">
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/home/kh2.png"
+                src="/optimized/kh2.webp"
                 alt="Policy Icon"
                 width={38}
                 height={38}
                 className="w-[38px] h-[38px]"
+                loading="lazy"
               />
             </div>
             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">

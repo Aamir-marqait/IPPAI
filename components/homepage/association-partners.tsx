@@ -3,11 +3,11 @@
 import Image from "next/image";
 
 const partners = [
-  { name: "Google", logo: "/home/google.png" },
-  { name: "Uber", logo: "/home/uber.png" },
-  { name: "Microsoft", logo: "/home/microsoft.png" },
-  { name: "Shopify", logo: "/home/shopify.png" },
-  { name: "Spotify", logo: "/home/spotify.png" },
+  { name: "Google", logo: "/optimized/google.webp" },
+  { name: "Uber", logo: "/optimized/uber.webp" },
+  { name: "Microsoft", logo: "/optimized/microsoft.webp" },
+  { name: "Shopify", logo: "/optimized/shopify.webp" },
+  { name: "Spotify", logo: "/optimized/spotify.webp" },
 ];
 
 export default function PartnersCarousel() {

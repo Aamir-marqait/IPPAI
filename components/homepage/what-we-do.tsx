@@ -12,7 +12,7 @@ export default function WhatWeDo() {
           <div className="order-2 lg:order-1">
             <div className="relative w-full aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden">
               <Image
-                src="/home/what.png"
+                src="/optimized/what.webp"
                 alt="Wind turbines in a field against cloudy sky"
                 fill
                 className="object-contain"

@@ -1,57 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const publications = [
   {
-    image: "/article/1.png",
-    title: "The Great Game Of Energy",
-    author: "Anthony Doerr",
+    image: "/pub/1.jpg",
+    title: "Powering Andhra",
+    author: "IPPAI",
     date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
+    desc: "Comprehensive analysis of Andhra Pradesh's power sector transformation, policy reforms, and energy infrastructure development strategies.",
   },
   {
-    image: "/article/1.png",
-    title: "State Of Indian Power Sector",
-    author: "Anthony Doerr",
+    image: "/pub/2.jpg",
+    title: "Round Table to Discuss Issues",
+    author: "IPPAI",
     date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
+    desc: "Stakeholder discussions on critical power sector challenges, regulatory frameworks, and collaborative solutions for industry growth.",
   },
   {
-    image: "/article/1.png",
-    title: "Consumer Issues in Power",
-    author: "Anthony Doerr",
+    image: "/pub/3.jpg",
+    title: "ECONOMIC IMPACT OF JUDICIAL DecISIoNs",
+    author: "IPPAI",
     date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
+    desc: "Detailed study examining how judicial rulings shape power sector economics, investment decisions, and regulatory compliance costs.",
   },
   {
-    image: "/article/1.png",
-    title: "The Great Game Of Energy",
-    author: "Anthony Doerr",
+    image: "/pub/4.jpg",
+    title: "The Great Game of Energy",
+    author: "IPPAI",
     date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
+    desc: "Strategic insights into global energy geopolitics, market dynamics, and India's position in the evolving energy landscape.",
   },
   {
-    image: "/article/1.png",
-    title: "Development of the Power Sector in Uttar Pradesh",
-    author: "Anthony Doerr",
+    image: "/pub/5.jpg",
+    title: "Captive Power Series 2009",
+    author: "IPPAI",
     date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
-  },
-  {
-    image: "/article/1.png",
-    title: "The Great Game Of Energy",
-    author: "Anthony Doerr",
-    date: "17 Jan 2025",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus mobili eleifend enim, tristique",
+    desc: "In-depth exploration of captive power generation trends, regulatory frameworks, and industrial energy self-sufficiency strategies.",
   },
 ];
 
 export default function PublicationsSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white">
       <div className="mx-auto w-full max-w-[1100px] flex flex-col items-center">
@@ -76,7 +65,6 @@ export default function PublicationsSection() {
                 transition hover:shadow-[0px_8px_28px_0px_rgba(16,24,40,0.13)]
                 opacity-100
               `}
-              onClick={() => setIsModalOpen(true)}
             >
               {/* Image */}
               <div
@@ -120,7 +108,7 @@ export default function PublicationsSection() {
           ))}
         </div>
       </div>
-      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+
       <style jsx>{`
         @media (max-width: 1200px) {
           .card-custom {

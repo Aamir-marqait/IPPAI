@@ -6,21 +6,21 @@ import { cn } from "@/lib/utils"; // If you use shadcn, otherwise use clsx or cl
 
 // Example logos for each row (replace with your assets)
 const companiesRow1 = [
-  { name: "Jindal Power", logo: "/home/company1.jpg" },
-  { name: "Tata", logo: "/home/company2.jpg" },
-  { name: "Jaypee", logo: "/home/company3.jpg" },
-  { name: "Essar", logo: "/home/company4.jpg" },
-  { name: "Adhunik", logo: "/home/company5.jpg" },
-  { name: "Suzlon", logo: "/home/company6.jpg" },
+  { name: "Jindal Power", logo: "/optimized/company1.webp" },
+  { name: "Tata", logo: "/optimized/company2.webp" },
+  { name: "Jaypee", logo: "/optimized/company3.webp" },
+  { name: "Essar", logo: "/optimized/company4.webp" },
+  { name: "Adhunik", logo: "/optimized/company5.webp" },
+  { name: "Suzlon", logo: "/optimized/company6.webp" },
 ];
 
 const companiesRow2 = [
-  { name: "Suzlon", logo: "/home/company6.jpg" },
-  { name: "Adhunik", logo: "/home/company5.jpg" },
-  { name: "Jaypee", logo: "/home/company3.jpg" },
-  { name: "Essar", logo: "/home/company4.jpg" },
-  { name: "Tata", logo: "/home/company2.jpg" },
-  { name: "Jindal Power", logo: "/home/company1.jpg" },
+  { name: "Suzlon", logo: "/optimized/company6.webp" },
+  { name: "Adhunik", logo: "/optimized/company5.webp" },
+  { name: "Jaypee", logo: "/optimized/company3.webp" },
+  { name: "Essar", logo: "/optimized/company4.webp" },
+  { name: "Tata", logo: "/optimized/company2.webp" },
+  { name: "Jindal Power", logo: "/optimized/company1.webp" },
 ];
 
 export default function CompanyCarousel() {
