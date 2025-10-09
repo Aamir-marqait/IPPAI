@@ -6,58 +6,34 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/
 
 const videos = [
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/2.png",
+    src: "/voice/2.mp4",
+    title: "Pricing of electricity",
   },
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/3.png",
+    src: "/voice/3.mp4",
+    title: "Additional Surcharge",
   },
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/4.png",
+    src: "/voice/4.mp4",
+    title: "EA 2003, price of power and reforms (UDAY)",
   },
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/5.png",
+    src: "/voice/5.mp4",
+    title: "Electricity Duty",
   },
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/6.png",
+    src: "/voice/6.mp4",
+    title: "Open Access",
   },
   {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-  },
-  {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-  },
-  {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-  },
-  {
-    thumb: "/vid1.png",
-    src: "/video.mp4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    thumb: "/voice/7.png",
+    src: "/voice/7.mp4",
+    title: "Force majure",
   },
 ];
 

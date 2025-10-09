@@ -27,20 +27,20 @@ export function VoicesInAction() {
   };
 
   const items = [
-    {
-      imgSrc: "/voice/1.png",
-      imgAlt: "Video thumbnail",
-      date: "Aug 10, 2025",
-      title: "about IRPRI",
-      description:
-        "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
-      videoSrc: "/voice/1.mp4",
-    },
+    // {
+    //   imgSrc: "/voice/1.png",
+    //   imgAlt: "Video thumbnail",
+    //   date: "Aug 10, 2025",
+    //   title: "about IRPRI",
+    //   description:
+    //     "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
+    //   videoSrc: "/voice/1.mp4",
+    // },
     {
       imgSrc: "/voice/2.png",
       imgAlt: "Video thumbnail",
       date: "Sep 10, 2025",
-      title: "Hindu Q&A- Pricing of electricity",
+      title: "Pricing of electricity",
       description:
         "Platform for sharing opportunities, publications, and award programs with civic impact.",
       videoSrc: "/voice/2.mp4",
@@ -49,7 +49,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/3.png",
       imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "Mr B Joshi- Additional Surcharge",
+      title: "Additional Surcharge",
       description:
         "Unique confluences of industry and civil society engaging for a brighter future.",
       videoSrc: "/voice/3.mp4",
@@ -58,7 +58,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/4.png",
       imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "TN Regulator- EA 2003, price of power and reforms (UDAY)",
+      title: "EA 2003, price of power and reforms (UDAY)",
       description:
         "Leaders discuss sector transformation and inclusive policy initiatives.",
       videoSrc: "/voice/4.mp4",
@@ -67,7 +67,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/5.png",
       imgAlt: "Video thumbnail",
       date: "Aug 12, 2025",
-      title: "Mr B Joshi- Electricity Duty",
+      title: "Electricity Duty",
       description:
         "Hands-on workshops showcasing innovation and collaborative problem solving.",
       videoSrc: "/voice/5.mp4",
@@ -76,7 +76,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/6.png",
       imgAlt: "Video thumbnail",
       date: "Aug 12, 2025",
-      title: "Mr Dhaul- Open Access",
+      title: "Open Access",
       description:
         "Hands-on workshops showcasing innovation and collaborative problem solving.",
       videoSrc: "/voice/6.mp4",
@@ -85,7 +85,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/7.png",
       imgAlt: "Video thumbnail",
       date: "Aug 12, 2025",
-      title: "Mr Nath- Force majure",
+      title: "Force majure",
       description:
         "Hands-on workshops showcasing innovation and collaborative problem solving.",
       videoSrc: "/voice/7.mp4",
@@ -104,7 +104,7 @@ export function VoicesInAction() {
                 aria-hidden="true"
               />
               <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
-                Latest Events
+                Latest Videos
               </span>
             </div>
             <h2 className="mt-3 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-[#141414]">
