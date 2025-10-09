@@ -43,7 +43,7 @@ export default function VideoGallerySection() {
     src: string;
     title: string;
   } | null>(null);
-  const [activeTab, setActiveTab] = useState("podcasts");
+  const [activeTab, setActiveTab] = useState("gallery");
 
   return (
     <section className="w-full flex justify-center bg-white py-8 sm:py-12 px-2">
@@ -53,31 +53,13 @@ export default function VideoGallerySection() {
           {/* Slider Background */}
           <div
             className={`absolute top-1 bottom-1 bg-[#D3363B] rounded-full transition-all duration-300 ease-in-out shadow-[0px_4px_4px_0px_#D3363B1F] ${
-              activeTab === "podcasts"
+              activeTab === "gallery"
                 ? "left-1 w-[calc(50%-2px)]"
                 : "left-[calc(50%+1px)] w-[calc(50%-2px)]"
             }`}
           />
 
           {/* Tab Buttons */}
-          <button
-            onClick={() => setActiveTab("podcasts")}
-            className={`relative z-10 px-7 py-2.5 font-medium text-base leading-none tracking-normal text-center transition-colors duration-300 ${
-              activeTab === "podcasts"
-                ? "text-white"
-                : "text-[#161C2D] cursor-pointer"
-            }`}
-            style={{
-              fontFamily: "Work Sans",
-              fontWeight: 500,
-              fontSize: "16px",
-              lineHeight: "100%",
-              letterSpacing: "0%",
-              textAlign: "center",
-            }}
-          >
-            Our Podcasts
-          </button>
           <button
             onClick={() => setActiveTab("gallery")}
             className={`relative z-10 px-7 py-2.5 font-medium text-base leading-none tracking-normal text-center transition-colors duration-300 ${
@@ -96,34 +78,26 @@ export default function VideoGallerySection() {
           >
             Video Gallery
           </button>
+          <button
+            onClick={() => setActiveTab("podcasts")}
+            className={`relative z-10 px-7 py-2.5 font-medium text-base leading-none tracking-normal text-center transition-colors duration-300 ${
+              activeTab === "podcasts"
+                ? "text-white"
+                : "text-[#161C2D] cursor-pointer"
+            }`}
+            style={{
+              fontFamily: "Work Sans",
+              fontWeight: 500,
+              fontSize: "16px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              textAlign: "center",
+            }}
+          >
+            Our Podcasts
+          </button>
         </div>
         {/* Tab Content */}
-        {activeTab === "podcasts" && (
-          <div className="w-full">
-            <div
-              className="text-center text-[#4D5756] text-base leading-6 tracking-normal max-w-xl mb-7 mx-auto"
-              style={{
-                fontFamily: "Poppins",
-                fontWeight: 400,
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "0%",
-                textAlign: "center",
-                verticalAlign: "middle",
-              }}
-            >
-              Discover insights and conversations that shape India&apos;s energy
-              future through our exclusive podcast series.
-            </div>
-            {/* Podcast content placeholder */}
-            <div className="w-full flex justify-center items-center py-16">
-              <p className="text-gray-500 text-lg font-medium">
-                No video is available at the moment.
-              </p>
-            </div>
-          </div>
-        )}
-
         {activeTab === "gallery" && (
           <div className="w-full">
             <div
@@ -250,6 +224,32 @@ export default function VideoGallerySection() {
                 </p>
               </div>
             )}
+          </div>
+        )}
+
+        {activeTab === "podcasts" && (
+          <div className="w-full">
+            <div
+              className="text-center text-[#4D5756] text-base leading-6 tracking-normal max-w-xl mb-7 mx-auto"
+              style={{
+                fontFamily: "Poppins",
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "24px",
+                letterSpacing: "0%",
+                textAlign: "center",
+                verticalAlign: "middle",
+              }}
+            >
+              Discover insights and conversations that shape India&apos;s energy
+              future through our exclusive podcast series.
+            </div>
+            {/* Podcast content placeholder */}
+            <div className="w-full flex justify-center items-center py-16">
+              <p className="text-gray-500 text-lg font-medium">
+                No video is available at the moment.
+              </p>
+            </div>
           </div>
         )}
       </div>
