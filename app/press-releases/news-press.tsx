@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const news = [
   {
@@ -46,6 +49,8 @@ const news = [
 ];
 
 export default function NewsPressSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white">
       <div className="mx-auto w-full max-w-[1100px] flex flex-col items-center">
@@ -103,8 +108,8 @@ export default function NewsPressSection() {
                   {item.desc}
                 </p>
                 <div className="flex items-center justify-between w-full">
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
                     className="bg-[#D3363B] hover:bg-[#bc2c2c] text-white font-work-sans  font-medium text-[15.6px] leading-[100%] text-center shadow-[0_3.9px_3.9px_rgba(211,54,59,0.31)] rounded-full px-5 py-3 transition flex items-center gap-2"
                   >
                     Learn More
@@ -117,7 +122,7 @@ export default function NewsPressSection() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </a>
+                  </button>
                   <span className="text-white/80 font-sans font-normal text-lg leading-10 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
                     {item.date}
                   </span>
@@ -127,6 +132,7 @@ export default function NewsPressSection() {
           ))}
         </div>
       </div>
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }

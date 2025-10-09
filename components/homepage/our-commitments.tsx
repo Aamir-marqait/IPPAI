@@ -11,20 +11,24 @@ export default function Commitments() {
     >
       <div className="absolute inset-0 bg-foreground/80" />
 
-      <div className="relative mx-auto max-w-[1100px] px-4 sm:px-6 py-10 sm:py-12 md:py-14 lg:py-16">
+      <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 py-10 sm:py-12 md:py-14 lg:py-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-20">
           {/* Left: Stat cards in a 2x2 grid */}
           <div className="w-full md:w-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
-            <StatCard value="17" suffix="+" label="Lorem ipsum" />
-            <StatCard value="100" suffix="+" label="Lorem ipsum" />
-            <StatCard value="3200" suffix="+" label="Lorem ipsum" />
+            <StatCard
+              value="30"
+              suffix="+"
+              label="Years of Industry Experience"
+            />
+            <StatCard value="300" suffix="+" label="Conferences Held" />
+            <StatCard value="1000" suffix="+" label="Attendees" />
             <StatCard value="99.9" suffix="%" label="Lorem ipsum" />
           </div>
 
           {/* Right: Heading, copy, CTA */}
           <div className="w-full md:flex-1 ">
             <h2 className="text-white font-bold font-red-hat-display leading-none tracking-[-1px] capitalize text-2xl sm:text-3xl md:text-4xl xl:text-[48px]">
-              Our Commitments
+              Powering Excellence
             </h2>
             <p className="mt-4 text-white font-normal font-poppins leading-8 text-sm sm:text-base md:text-lg xl:text-[20px]">
               We are committed to working with you collaboratively to understand

@@ -9,12 +9,25 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+interface Article {
+  image: string;
+  title: string;
+  summary: string;
+  author: {
+    name: string;
+    avatar: string;
+  };
+  date: string;
+  pdfFile: string;
+}
+
 interface JoinUsModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  article?: Article | null;
 }
 
-export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
+export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,6 +40,9 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
     email: "",
     company: "",
   });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const validateForm = () => {
     const newErrors = {
@@ -56,13 +72,36 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
     return !Object.values(newErrors).some(error => error !== "");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const downloadPDF = () => {
+    if (article?.pdfFile) {
+      const link = document.createElement('a');
+      link.href = article.pdfFile;
+      link.download = `${article.title.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (validateForm()) {
+      setIsLoading(true);
+      
+      // Simulate API call with 2 second delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       console.log("Form submitted:", formData);
-      // Handle form submission here
-      onOpenChange(false);
+      
+      // Download the PDF after successful form submission (only if article is provided)
+      if (article) {
+        downloadPDF();
+      }
+      
+      setIsLoading(false);
+      setShowThankYou(true);
+      
       // Reset form
       setFormData({
         name: "",
@@ -78,6 +117,11 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
     }
   };
 
+  const handleThankYouClose = () => {
+    setShowThankYou(false);
+    onOpenChange(false);
+  };
+
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
@@ -87,6 +131,7 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
   };
 
   return (
+    <>
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-white">
         <DialogTitle className="sr-only">
@@ -239,9 +284,27 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
 
                 <Button
                   type="submit"
-                  className="w-full h-[37.625px] bg-[#D3363B] hover:bg-[#B8303A] text-white font-work-sans font-semibold text-base leading-[12.31px] tracking-[0%] text-center rounded-[20.52px] pt-[12.31px] pr-[16.42px] pb-[12.31px] pl-[16.42px] opacity-100"
+                  disabled={isLoading}
+                  className="w-full h-[37.625px] bg-[#D3363B] hover:bg-[#B8303A] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-work-sans font-semibold text-base leading-[12.31px] tracking-[0%] text-center rounded-[20.52px] pt-[12.31px] pr-[16.42px] pb-[12.31px] pl-[16.42px] opacity-100 flex items-center justify-center gap-2"
                 >
-                  Join
+                  {isLoading && (
+                    <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                  )}
+                  {isLoading ? "Processing..." : "Join"}
                 </Button>
               </form>
             </div>
@@ -249,5 +312,40 @@ export function JoinUsModal({ open, onOpenChange }: JoinUsModalProps) {
         </div>
       </DialogContent>
     </Dialog>
+
+    {/* Thank You Modal */}
+    <Dialog open={showThankYou} onOpenChange={handleThankYouClose}>
+      <DialogContent className="max-w-md w-full p-0 overflow-hidden bg-white">
+        <DialogTitle className="sr-only">
+          Thank You for Joining
+        </DialogTitle>
+        <div className="p-8 text-center">
+          <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          
+          <h2 className="font-red-hat-display font-bold text-2xl text-[#141414] mb-3">
+            Thank You for Joining!
+          </h2>
+          
+          <p className="font-poppins font-normal text-base text-[#4D5756] mb-6 leading-relaxed">
+            {article 
+              ? "We appreciate your interest in IPPAI. Your article will be downloaded shortly, and we'll be in touch with more valuable insights."
+              : "We appreciate your interest in IPPAI. We'll be in touch with valuable insights and opportunities to collaborate with us."
+            }
+          </p>
+          
+          <Button
+            onClick={handleThankYouClose}
+            className="w-full h-[37.625px] bg-[#D3363B] hover:bg-[#B8303A] text-white font-work-sans font-semibold text-base rounded-[20.52px]"
+          >
+            Continue
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }

@@ -3,43 +3,53 @@ import Image from "next/image";
 const leaders = [
   {
     img: "/leader/1.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Dr. Pramod Deo",
+    role: "Former Chairman, CERC",
   },
   {
     img: "/leader/2.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Mr. VP Raja",
+    role: "Former Chairman, MERC",
   },
   {
     img: "/leader/3.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Mr. R. N. Prasher",
+    role: "Former Chairman, HERC",
   },
   {
     img: "/leader/4.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Dr. V K Garg",
+    role: "Former Chairman, JERC",
   },
   {
     img: "/leader/1.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Ms. Sudha Mahalingam",
+    role: "Former Regulator, Petroleum and Natural Gas Regulatory Board",
   },
   {
     img: "/leader/2.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Dr. Upendra N. Behera",
+    role: "Former Chairman, OERC",
   },
   {
     img: "/leader/3.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Mr. P.K Agarwal",
+    role: "Former Director & CISO, POSOCO",
   },
   {
     img: "/leader/4.jpg",
-    name: "Mr. Salman Kurshid",
-    role: "Chief Learning Officer",
+    name: "Mr. Chintan Shah",
+    role: "Group President, ReNew",
+  },
+  {
+    img: "/leader/1.jpg",
+    name: "Mr. Balawant Joshi",
+    role: "MD, Idam Infrastructure Advisory",
+  },
+  {
+    img: "/leader/2.jpg",
+    name: "Mr. Harry Dhaul",
+    role: "Director General, IPPAI",
   },
 ];
 
@@ -57,7 +67,7 @@ export default function LeadershipSection() {
           Guided by experienced leaders, experts, and advisors shaping the
           future of India&apos;s power sector.
         </p>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-7 gap-y-9 justify-items-center">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-x-7 gap-y-9 justify-items-center">
           {leaders.map((leader, i) => (
             <div
               key={i}
@@ -75,10 +85,10 @@ export default function LeadershipSection() {
                 />
               </div>
               <div className="w-full">
-                <div className="font-red-hat-display font-bold text-xl leading-none text-[#07060F] mb-1">
+                <div className="font-red-hat-display font-bold text-xl leading-none text-[#07060F] mb-1 truncate">
                   {leader.name}
                 </div>
-                <div className="font-poppins font-normal text-base leading-[30px] text-[#4D4D4D]">
+                <div className="font-poppins font-normal text-base leading-[30px] text-[#4D4D4D] truncate">
                   {leader.role}
                 </div>
               </div>

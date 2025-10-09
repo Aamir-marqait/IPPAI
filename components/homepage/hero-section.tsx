@@ -2,41 +2,37 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomeHero() {
   const [currentEvent, setCurrentEvent] = useState(0);
 
   const events = [
     {
-      title: "Regulators & Policy Makers Retreat",
+      title: "Intensive Course",
       desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
-      date: "25th to 27th September 2025",
-      location: "Shoonya Farm Retreat, Belagavi, Karnataka",
+      date: "29th - 31st October, 2025",
+      location:
+        "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
       image: "/hero.png",
     },
     {
-      title: "Renewable Energy Policy Summit",
-      desc: " Driving Sustainable Growth through Innovative Policies",
-      date: "15th to 17th October 2025",
-      location: "Green Valley Resort, Pune, Maharashtra",
-      image: "/hero.png",
-    },
-    {
-      title: "Smart Grid Infrastructure Conference",
-      desc: "Building Resilient and Efficient Energy Networks for the Future",
-      date: "20th to 22nd November 2025",
-      location: "Tech Park Convention Center, Bangalore",
-      image: "/hero.png",
-    },
-    {
-      title: "Energy Transition Workshop",
-      desc: "Accelerating the Shift to Clean and Renewable Energy Sources",
-      date: "10th to 12th December 2025",
-      location: "Coastal Resort, Goa",
+      title: "26th Regulators & Policymakers Retreat",
+      desc: "Advancing Regulatory Excellence & Strategic Policy Implementation",
+      date: "7th- 10th January, 2026",
+      location: "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
       image: "/hero.png",
     },
   ];
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEvent((prev) => (prev + 1) % events.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [events.length]);
 
   return (
     <div className="relative">
@@ -56,7 +52,7 @@ export default function HomeHero() {
         <main className="flex max-w-[1100px] mx-auto flex-col items-start justify-center min-h-[calc(100vh-120px)] lg:mt-2">
           <div className=" w-full">
             <div className="text-center mb-12 mx-7 md:mx-0">
-              <h1 className="max-w-sm md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
+              <h1 className="max-w-xl md:max-w-md text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-6 leading-[150%]">
                 {events[currentEvent].title}
               </h1>
 
@@ -173,8 +169,28 @@ export default function HomeHero() {
         </main>
       </div>
 
-      {/* Next Button */}
-      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+      {/* Navigation Buttons */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-between px-20">
+        {/* Previous Button */}
+        <button
+          onClick={() =>
+            setCurrentEvent((prev) =>
+              prev === 0 ? events.length - 1 : prev - 1
+            )
+          }
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
+          <Image
+            src="/next.png"
+            alt="Previous"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px] rotate-180"
+            priority
+          />
+        </button>
+
+        {/* Next Button */}
         <button
           onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"

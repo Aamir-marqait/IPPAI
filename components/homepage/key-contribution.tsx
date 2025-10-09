@@ -6,28 +6,40 @@ import { CTABanner } from "./cta-banner";
 export default function Contributors() {
   const people = [
     {
-      name: "Becca Stone",
-      role: "Chief Learning Officer",
+      name: "Mr. V.P. Raja",
+      role: "Former Chairman, MERC",
       imgSrc: "/home/key1.png",
-      imgAlt: "Becca Stone portrait",
+      imgAlt: "Mr. V.P. Raja portrait",
     },
     {
-      name: "Robert Fox",
-      role: "Senior Consultant",
+      name: "Mr. Ashok Kumar Rajput",
+      role: "Former Member (Power Systems), CEA",
       imgSrc: "/home/key1.png",
-      imgAlt: "Robert Fox portrait",
+      imgAlt: "Mr. Ashok Kumar Rajput portrait",
     },
     {
-      name: "Kristin Watson",
-      role: "Training Facilitator",
+      name: "Dr. Upendra N. Behera",
+      role: "Former Chairman, OERC",
       imgSrc: "/home/key1.png",
-      imgAlt: "Kristin Watson portrait",
+      imgAlt: "Dr. Upendra N. Behera portrait",
     },
     {
-      name: "Amélie Durand",
-      role: "Instructional Designer",
+      name: "Mr. B.B Mehta",
+      role: "Director(SLDC), OPTCL",
       imgSrc: "/home/key1.png",
-      imgAlt: "Amélie Durand portrait",
+      imgAlt: "Mr. B.B Mehta portrait",
+    },
+    {
+      name: "Mr. P.K Agarwal",
+      role: "Former Director & CISO, POSOCO",
+      imgSrc: "/home/key1.png",
+      imgAlt: "Mr. P.K Agarwal portrait",
+    },
+    {
+      name: "Mr. Satyajit Ganguly",
+      role: "Former CEO & MD, PXIL",
+      imgSrc: "/home/key1.png",
+      imgAlt: "Mr. Satyajit Ganguly portrait",
     },
   ];
 
@@ -39,7 +51,7 @@ export default function Contributors() {
       <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
         {/* Eyebrow */}
         <div className="text-center text-xs md:text-sm xl:text-base font-bold tracking-[0.18em] uppercase text-[#D3363B] leading-none font-['Red_Hat_Display']">
-          Key Contributors
+          Eminent Faculty
         </div>
 
         {/* Title */}
@@ -47,13 +59,15 @@ export default function Contributors() {
           id="contributors-heading"
           className="mt-3 text-center text-2xl md:text-3xl xl:text-[36px] font-bold text-[#141414] text-balance leading-none font-['Red_Hat_Display']"
         >
-          Driving Innovation Together
+          Guided by Experience. Shaping the Future of Power
         </h2>
 
         {/* Subtitle */}
         <p className="mt-4 md:mt-5 text-center text-sm md:text-base xl:text-base font-normal text-muted-foreground max-w-3xl mx-auto text-pretty xl:leading-7 font-['Poppins']">
-          Eminent thinkers, renowned experts and erudite speakers come together
-          on a common platform to inform, inspire and create change.
+          From former regulators to sector pioneers, our faculty brings deep
+          insight into power sector regulations and policies — turning decades
+          of experience into actionable learning that strengthens capacity and
+          drives informed decision-making across the electricity value chain.
         </p>
 
         {/* Grid */}
