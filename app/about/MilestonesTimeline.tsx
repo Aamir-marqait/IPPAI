@@ -85,20 +85,20 @@ const milestones = [
     ),
     text: "Expanded Focus To Include Sustainability And Clean Energy",
   },
-  {
-    year: "2024",
-    icon: (
-      <Image
-        src="/optimized/about-2024.webp"
-        alt="2024 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Leading India's Energy Transition With 3200+ MW Mobilized",
-  },
+  // {
+  //   year: "2024",
+  //   icon: (
+  //     <Image
+  //       src="/optimized/about-2024.webp"
+  //       alt="2024 milestone"
+  //       width={45}
+  //       height={45}
+  //       className="object-contain"
+  //       loading="lazy"
+  //     />
+  //   ),
+  //   text: "Leading India's Energy Transition With 3200+ MW Mobilized",
+  // },
 ];
 
 export default function MilestonesTimeline() {
@@ -127,7 +127,7 @@ export default function MilestonesTimeline() {
             {milestones.map((m) => (
               <div
                 key={m.year}
-                className="flex items-center mb-16 lg:mb-20 last:mb-0 z-10 mt-10"
+                className="flex items-start mb-16 lg:mb-20 last:mb-0 z-10 mt-10"
               >
                 <span className="text-[#C24A48] text-2xl lg:text-4xl font-semibold w-12 lg:w-16 text-right">
                   {m.year}
