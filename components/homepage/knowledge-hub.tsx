@@ -1,7 +1,56 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { JoinUsModal } from "@/components/JoinMembershipModal";
+
+const knowledgeHubArticles = [
+  {
+    title: "HYDROPOWER DEVELOPMENT IN INDIA",
+    summary: "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
+    pdfFile: "/article/1.pdf",
+    image: "/article/1.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "BIOMASS BASED POWER GENERATION OPPORTUNITIES",
+    summary: "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
+    pdfFile: "/article/2.pdf",
+    image: "/article/2.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "24x7 POWER SUPPLY",
+    summary: "Understanding the vital importance of uninterrupted power supply for India's economic growth",
+    pdfFile: "/article/3.pdf",
+    image: "/article/3.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+];
 
 export default function KnowledgeHubSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState<
+    (typeof knowledgeHubArticles)[0] | null
+  >(null);
+
+  const handleArticleClick = (article: typeof knowledgeHubArticles[0]) => {
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
   return (
     <section
       className="w-full flex flex-col items-center py-8 px-4 md:px-6 lg:px-8 md:-mt-20"
@@ -43,29 +92,20 @@ export default function KnowledgeHubSection() {
               Articles <br className="sm:hidden md:block" /> and Insights
             </h3>
             <div className="mb-3">
-              <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                INDUSTRY PERSPECTIVE
-              </div>
-              <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-                Details of the Concessions/Exemptions under NET Metering
-                Arrangement Technologies and New Paradigms in Renewable Energy
-                Sphere
-              </div>
-              <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                SOCIO-ECOLOGICAL NARRATIVES
-              </div>
-              <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-                Current Ecological Concerns in the Power Sector: Options to
-                Avoid or Minimise Impacts.The Neo-liberal Era - Sustainable
-                Futures or Corporate Colonization&apos;s?
-              </div>
-              <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                ENERGY SECURITY
-              </div>
-              <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
-                Energy Security in South Asia: Bangladesh Perspective.
-                Geopolitics of Energy: An Indian Perspective.
-              </div>
+              {knowledgeHubArticles.map((article, index) => (
+                <div
+                  key={index}
+                  className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+                  onClick={() => handleArticleClick(article)}
+                >
+                  <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                    {article.title}
+                  </div>
+                  <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
+                    {article.summary}
+                  </div>
+                </div>
+              ))}
             </div>
             <Link
               href="/articles"
@@ -151,6 +191,11 @@ export default function KnowledgeHubSection() {
           </div>
         </div>
       </div>
+      <JoinUsModal
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+        article={selectedArticle}
+      />
     </section>
   );
 }
