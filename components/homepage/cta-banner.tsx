@@ -13,7 +13,7 @@ export function CTABanner({
   title = "Driving Innovation Together",
   description = "Join IPPAI to access exclusive events, insights, and industry connections.",
   ctaLabel = "Join Now",
-  onClickHref = "#",
+  onClickHref = "/contact",
 }: CTABannerProps) {
   return (
     <section aria-label="Call to Action" className="w-full">

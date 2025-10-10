@@ -1,10 +1,7 @@
-"use client";
-import { JoinUsModal } from "@/components/JoinMembershipModal";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
 
 export default function RecognizedCatalystSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="w-full">
       <div className="bg-black h-[60vh]  pb-32">
@@ -129,18 +126,17 @@ export default function RecognizedCatalystSection() {
                 build a sustainable, reliable, and affordable power future for
                 all.
               </p>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="cursor-pointer bg-[#D3363B] shadow-[0px_4px_4px_0px_#D3363B4F] font-work-sans font-medium text-base leading-none tracking-normal text-center text-white px-7 py-2 rounded-full"
+              <Link
+                href="/contact"
+                className="cursor-pointer bg-[#D3363B] shadow-[0px_4px_4px_0px_#D3363B4F] font-work-sans font-medium text-base leading-none tracking-normal text-center text-white px-7 py-2 rounded-full inline-block"
               >
                 Join Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
