@@ -44,27 +44,27 @@ export default function KnowledgeHubSection() {
             </h3>
             <div className="mb-3">
               <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                INDUSTRY PERSPECTIVE
+                HYDROPOWER DEVELOPMENT IN INDIA
               </div>
               <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-                Details of the Concessions/Exemptions under NET Metering
-                Arrangement Technologies and New Paradigms in Renewable Energy
-                Sphere
+                Exploring India&apos;s vast hydroelectric potential and the
+                strategic role of IPPs in developing sustainable renewable
+                energy infrastructure across the nation
               </div>
               <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                SOCIO-ECOLOGICAL NARRATIVES
+                BIOMASS BASED POWER GENERATION OPPORTUNITIES
               </div>
               <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-                Current Ecological Concerns in the Power Sector: Options to
-                Avoid or Minimise Impacts.The Neo-liberal Era - Sustainable
-                Futures or Corporate Colonization&apos;s?
+                Analyzing biomass energy&apos;s transformative potential in
+                India&apos;s power sector and how IPPs can leverage agricultural
+                waste
               </div>
               <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle">
-                ENERGY SECURITY
+                24x7 POWER SUPPLY
               </div>
               <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
-                Energy Security in South Asia: Bangladesh Perspective.
-                Geopolitics of Energy: An Indian Perspective.
+                Understanding the vital importance of uninterrupted power supply
+                for India&apos;s economic growth
               </div>
             </div>
             <Link
