@@ -7,7 +7,8 @@ import { JoinUsModal } from "@/components/JoinMembershipModal";
 const knowledgeHubArticles = [
   {
     title: "HYDROPOWER DEVELOPMENT IN INDIA",
-    summary: "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
+    summary:
+      "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
     pdfFile: "/article/1.pdf",
     image: "/article/1.png",
     author: {
@@ -18,7 +19,8 @@ const knowledgeHubArticles = [
   },
   {
     title: "BIOMASS BASED POWER GENERATION OPPORTUNITIES",
-    summary: "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
+    summary:
+      "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
     pdfFile: "/article/2.pdf",
     image: "/article/2.png",
     author: {
@@ -29,9 +31,49 @@ const knowledgeHubArticles = [
   },
   {
     title: "24x7 POWER SUPPLY",
-    summary: "Understanding the vital importance of uninterrupted power supply for India's economic growth",
+    summary:
+      "Understanding the vital importance of uninterrupted power supply for India's economic growth",
     pdfFile: "/article/3.pdf",
     image: "/article/3.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+];
+
+const policyRecommendations = [
+  {
+    title: "The Great Game Of Energy",
+    summary:
+      "Details of the Concessions/Exemptions under NET Metering Arrangement Technologies and New Paradigms in Renewable Energy Sphere",
+    pdfFile: "/policy/1.pdf",
+    image: "/policy/1.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "Consume Issues in power",
+    summary:
+      "Current Ecological Concerns in the Power Sector: Options to Avoid or Minimise Impacts",
+    pdfFile: "/policy/2.pdf",
+    image: "/policy/2.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "Assisting Power consumers in reducing hardship",
+    summary:
+      "The Neo-liberal Era - Sustainable Futures or Corporate Colonization's?",
+    pdfFile: "/policy/3.pdf",
+    image: "/policy/3.png",
     author: {
       name: "IPPAI",
       avatar: "/header/logo.png",
@@ -46,8 +88,13 @@ export default function KnowledgeHubSection() {
     (typeof knowledgeHubArticles)[0] | null
   >(null);
 
-  const handleArticleClick = (article: typeof knowledgeHubArticles[0]) => {
+  const handleArticleClick = (article: (typeof knowledgeHubArticles)[0]) => {
     setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handlePolicyClick = (policy: (typeof policyRecommendations)[0]) => {
+    setSelectedArticle(policy);
     setIsModalOpen(true);
   };
 
@@ -98,12 +145,12 @@ export default function KnowledgeHubSection() {
                   className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
                   onClick={() => handleArticleClick(article)}
                 >
-                  <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
                     {article.title}
                   </div>
-                  <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
+                  {/* <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
                     {article.summary}
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
@@ -156,20 +203,18 @@ export default function KnowledgeHubSection() {
             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
               Policy <br className="sm:hidden" /> Recommendations
             </h3>
-            <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-              Details of the Concessions/Exemptions under NET Metering
-              Arrangement Technologies and New Paradigms in Renewable Energy
-              Sphere
-              <br />
-              <br />
-              Current Ecological Concerns in the Power Sector: Options to Avoid
-              or Minimise Impacts.The Neo-liberal Era - Sustainable Futures or
-              Corporate Colonization&apos;s?
-              <br />
-              <br />
-              Current Ecological Concerns in the Power Sector: Options to Avoid
-              or Minimise Impacts.The Neo-liberal Era - Sustainable Futures or
-              Corporate Colonization&apos;s?
+            <div className="mb-3">
+              {policyRecommendations.map((policy, index) => (
+                <div
+                  key={index}
+                  className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+                  onClick={() => handlePolicyClick(policy)}
+                >
+                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                    {policy?.title?.toUpperCase()}
+                  </div>
+                </div>
+              ))}
             </div>
             <Link
               href="/policies"
