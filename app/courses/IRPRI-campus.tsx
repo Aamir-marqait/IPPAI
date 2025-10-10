@@ -63,17 +63,16 @@ export default function CampusSection() {
 
       {/* Banner Section */}
       <div className="hidden md:block w-full max-w-[1200px] min-h-[300px] rounded-2xl bg-gradient-to-r from-[#711D1F] to-[#CD353A] relative overflow-hidden">
-        <div className="flex items-center justify-between h-full px-16 py-14  relative z-10">
+        <div className="flex items-center gap-20 justify-between h-full px-16 py-14  relative z-10">
           {/* Left Content */}
           <div className="flex-1 text-white max-w-md">
-            <div className="font-poppins font-semibold text-[36px] leading-[47.88px] tracking-[-0.75px] align-middle capitalize text-white mb-2">
-              Thousands Of{" "}
-              <span className="relative bg-white/80 text-[#BC3C33] px-2 py-0.5 rounded-lg font-bold inline-block align-middle">
-                Courses
-              </span>
-              <br className="sm:hidden" />
-              &nbsp;Authored By Industry Experts
-            </div>
+            <Image
+              src="/farm.svg"
+              alt="Farm"
+              width={300}
+              height={200}
+              className="w-[70%] h-auto"
+            />
             {/* <button className="bg-white cursor-pointer shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-semibold text-xl leading-[100%] text-center text-[#C82828] rounded-full mt-3 px-6 py-2 hover:bg-[#ffeaea] transition">
               Sign up for resources
             </button> */}
@@ -112,7 +111,7 @@ export default function CampusSection() {
         </div>
 
         {/* Right Bottom Image - Absolute positioned */}
-        <div className="absolute -right-7 -bottom-4 w-[280px] h-[250px] lg:w-[400px] lg:h-[240px]">
+        {/* <div className="absolute -right-7 -bottom-4 w-[280px] h-[250px] lg:w-[400px] lg:h-[240px]">
           <Image
             src="/course/bi.png"
             alt="Banner image"
@@ -120,7 +119,7 @@ export default function CampusSection() {
             className="object-contain object-bottom"
             priority
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
