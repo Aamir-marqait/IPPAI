@@ -4,13 +4,13 @@ export default function CampusSection() {
   return (
     <section className="w-full flex flex-col items-center bg-white py-8 px-2 sm:px-4">
       <div className="w-full max-w-[1100px] flex flex-col lg:flex-row justify-around items-center gap-8 lg:gap-0 mb-12">
-        <div className="flex-1 flex justify-center relative min-w-[290px] max-w-[360px]">
-          <div className="relative z-20 w-[320px] h-[320px] md:w-[520px] md:h-[320px] rounded-lg overflow-hidden flex items-center justify-center bg-white">
+        <div className="flex-1 flex justify-center relative ">
+          <div className="relative z-20 w-[320px] h-[320px] md:w-[100%] md:h-[420px] rounded-lg overflow-hidden flex items-center justify-center bg-white">
             <Image
-              src="/course/ic.png"
+              src="/c.png"
               alt="Campus students"
               fill
-              className="object-fill"
+              className="object-cover"
               priority
             />
           </div>
@@ -27,47 +27,36 @@ export default function CampusSection() {
           <h2 className="font-red-hat-display font-bold xl:text-[36px] xl:leading-[47.88px] xl:tracking-[-0.75px] text-2xl sm:text-3xl md:text-4xl text-[#161439] mb-4 capitalize">
             IRPRI Campus
           </h2>
-          <p className="font-poppins font-normal xl:text-[16px] xl:leading-[28px] xl:tracking-[0%] text-[#6D6C80] text-base leading-relaxed mb-4">
-            Edhen an unknown printer took a galley of type and scrambled it to
-            make ype specimen bookas survived not only five centuries.Edhen an
-            unknown printer took a galley of type and scrambled.
+          <p className="font-poppins font-normal xl:text-[16px] xl:leading-[28px] xl:tracking-[0%] text-[#6D6C80] text-base leading-relaxed mb-2">
+            The IRPRI facility is situated at Shoonya Farm Retreat in Belgundi,
+            Belgaum, Karnataka, 591108. Direct flights are available to the
+            Belagavi Airport a mere 30 minutes from Shoonya, from the following
+            cities: Delhi, Mumbai, Bengaluru, Hyderabad, Tirupati, Nagpur,
+            Surat, Ahmedabad, and Jaipur.
           </p>
+          <h2 className="font-red-hat-display font-bold xl:text-[24px] xl:leading-[47.88px] xl:tracking-[-0.75px] text-2xl sm:text-3xl md:text-4xl text-[#161439] mb-2 capitalize">
+            Campus Facilities:
+          </h2>
 
-          {/* Feature Icons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full mb-6">
-            <div className="flex flex-col items-start gap-3 flex-1">
-              <div className="flex items-start gap-3">
-                <span className="w-[50px] h-[50px] flex items-center justify-center rounded-[30px] bg-[#FF6666] opacity-100">
-                  <Image
-                    src="/course/class.svg"
-                    alt=""
-                    width={26}
-                    height={26}
-                  />
-                </span>
-                <div className="font-red-hat-display font-bold text-base text-[#222] mb-0">
-                  Smooth Virtual Live Classes
-                </div>
-              </div>
-
-              <div className="font-poppins text-sm text-[#666]">
-                Edhen an unknown printer Rtook galley of type scrambled.
-              </div>
-            </div>
-            <div className="flex flex-col items-start gap-3 flex-1">
-              <div className="flex items-start gap-3">
-                <span className="w-[50px] h-[50px] flex items-center justify-center rounded-[30px] bg-[#1BCBE3] opacity-100">
-                  <Image src="/course/gc.svg" alt="" width={26} height={26} />
-                </span>
-                <div className="font-red-hat-display font-bold text-base text-[#222] mb-0">
-                  99% Graduation Complete
-                </div>
-              </div>
-
-              <div className="font-poppins text-sm text-[#666]">
-                Edhen an unknown printer Rtook galley of type scrambled.
-              </div>
-            </div>
+          {/* Campus Activities */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2 w-full">
+            <ul className="font-poppins text-[#6D6C80] text-base space-y-1 min-w-[180px]">
+              <li className="whitespace-nowrap">• Boating</li>
+              <li className="whitespace-nowrap">• Bird Watching</li>
+              <li className="whitespace-nowrap">• Nature Trails/Treks</li>
+              <li className="whitespace-nowrap">• Paintball and Sports</li>
+            </ul>
+            <ul className="font-poppins text-[#6D6C80] text-base space-y-1 min-w-[180px]">
+              <li className="whitespace-nowrap">• Meditation</li>
+              <li className="whitespace-nowrap">• Outdoor Adventures</li>
+              <li className="whitespace-nowrap">• Picnics</li>
+              <li className="whitespace-nowrap">• Swimming Pool</li>
+            </ul>
+            <ul className="font-poppins text-[#6D6C80] text-base space-y-1 min-w-[180px]">
+              <li className="whitespace-nowrap">• Yoga</li>
+              <li className="whitespace-nowrap">• Expressive Art Workshops</li>
+              <li className="whitespace-nowrap">• Cycling</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -85,35 +74,45 @@ export default function CampusSection() {
               <br className="sm:hidden" />
               &nbsp;Authored By Industry Experts
             </div>
-            <button className="bg-white cursor-pointer shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-semibold text-xl leading-[100%] text-center text-[#C82828] rounded-full mt-3 px-6 py-2 hover:bg-[#ffeaea] transition">
+            {/* <button className="bg-white cursor-pointer shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-semibold text-xl leading-[100%] text-center text-[#C82828] rounded-full mt-3 px-6 py-2 hover:bg-[#ffeaea] transition">
               Sign up for resources
-            </button>
+            </button> */}
           </div>
 
           {/* Middle Stats */}
-          <div className="flex items-center justify-start gap-7 flex-1 relative z-20">
-            <div className="text-center flex flex-col gap-1 items-start">
-              <div className="font-inter font-semibold text-[56px] leading-[47.04px] text-center align-middle text-white mb-1">
-                45K+
+          <div className="flex items-start justify- gap-8 flex-1 relative z-20">
+            <div className="flex flex-col gap-5 items-start">
+              <div className="font-inter font-[300] text-[24px] text-center text-white w-full">
+                Distance From <br />
+                <span className="font-[600]">Belagavi Airport</span>
               </div>
-              <div className="font-inter font-medium text-[16px] leading-[19.2px] text-center align-middle text-white">
-                Active Students
+              <div className="font-inter mt-8 font-[600] text-[32px] leading-[19.2px] text-left text-white">
+                30 minutes
               </div>
             </div>
-            <div className="w-px h-12 bg-[#ffffff44] hidden sm:block"></div>
-            <div className="text-center flex flex-col gap-1 items-start">
-              <div className="font-inter font-semibold text-[56px] leading-[47.04px] text-center align-middle text-white mb-1">
-                328+
+            <div
+              className="w-px h-32 hidden sm:block"
+              style={{
+                background:
+                  "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
+              }}
+            ></div>
+            <div className="flex flex-col gap-5 items-center -ml-10">
+              <div className="font-inter font-[300] text-[24px] text-center text-white max-w-xs">
+                Distance From <br />
+                <span className="font-[600]">
+                  Hubbali, Kolhapur & Goa Airport
+                </span>
               </div>
-              <div className="font-inter font-medium text-[16px] leading-[19.2px] text-center align-middle text-white">
-                Best Instructors
+              <div className="font-inter font-[600] text-[32px] leading-[19.2px] text-center text-white">
+                2-3 hours
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Bottom Image - Absolute positioned */}
-        <div className="absolute -right-4 -bottom-4 w-[300px] h-[280px] lg:w-[400px] lg:h-[320px]">
+        <div className="absolute -right-7 -bottom-4 w-[280px] h-[250px] lg:w-[400px] lg:h-[240px]">
           <Image
             src="/course/bi.png"
             alt="Banner image"

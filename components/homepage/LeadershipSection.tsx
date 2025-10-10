@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CTABanner } from "./cta-banner";
 
 const leaders = [
   {
@@ -159,32 +160,35 @@ export default function LeadershipSection() {
           <div className="flex justify-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-7 gap-y-9 justify-items-center max-w-4xl">
               {leaders.slice(5, 9).map((leader, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center w-full max-w-[230px]"
-            >
-              <div className="w-full aspect-[1/1.1] bg-[#E3E3E3] rounded-[24px] overflow-hidden mb-4 shadow-sm">
-                <Image
-                  src={leader.img}
-                  alt={leader.name}
-                  width={230}
-                  height={250}
-                  className="object-cover w-full h-full"
-                  draggable={false}
-                  priority={i < 4}
-                />
-              </div>
-              <div className="w-full">
-                <div className="font-red-hat-display font-bold text-xl leading-none text-[#07060F] mb-1 truncate">
-                  {leader.name}
+                <div
+                  key={i}
+                  className="flex flex-col items-center w-full max-w-[230px]"
+                >
+                  <div className="w-full aspect-[1/1.1] bg-[#E3E3E3] rounded-[24px] overflow-hidden mb-4 shadow-sm">
+                    <Image
+                      src={leader.img}
+                      alt={leader.name}
+                      width={230}
+                      height={250}
+                      className="object-cover w-full h-full"
+                      draggable={false}
+                      priority={i < 4}
+                    />
+                  </div>
+                  <div className="w-full">
+                    <div className="font-red-hat-display font-bold text-xl leading-none text-[#07060F] mb-1 truncate">
+                      {leader.name}
+                    </div>
+                    <div className="font-poppins font-normal text-base leading-[30px] text-[#4D4D4D] truncate">
+                      {leader.role}
+                    </div>
+                  </div>
                 </div>
-                <div className="font-poppins font-normal text-base leading-[30px] text-[#4D4D4D] truncate">
-                  {leader.role}
-                </div>
-              </div>
-            </div>
               ))}
             </div>
+          </div>
+          <div className="mt-20">
+            <CTABanner />
           </div>
         </div>
       </div>

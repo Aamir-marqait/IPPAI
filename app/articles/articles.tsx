@@ -85,20 +85,120 @@ export default function ExpertArticles() {
   const [selectedArticle, setSelectedArticle] = useState<
     (typeof articles)[0] | null
   >(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+  const categories = [
+    "Industry Perspective",
+    "Narratives", 
+    "Socio-Ecological",
+    "Energy Security"
+  ];
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategories(prev => 
+      prev.includes(category) 
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
+
+  // Close dropdown when clicking outside
+  const handleClickOutside = (e: React.MouseEvent) => {
+    if (isDropdownOpen && !(e.target as Element).closest('.dropdown-container')) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  // Filter articles based on search term and selected categories
+  const filteredArticles = articles.filter(article => {
+    // Search filter
+    const matchesSearch = searchTerm === "" || 
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.summary.toLowerCase().includes(searchTerm.toLowerCase());
+
+    // Category filter - if no categories selected, show all
+    const matchesCategory = selectedCategories.length === 0 || 
+      selectedCategories.some(category => 
+        article.title.toLowerCase().includes(category.toLowerCase()) ||
+        article.summary.toLowerCase().includes(category.toLowerCase())
+      );
+
+    return matchesSearch && matchesCategory;
+  });
 
   return (
-    <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white">
-      <div className="mx-auto w-full max-w-[1100px] flex flex-col items-center">
-        {/* Heading */}
-        <h2 className="font-red-hat-display font-bold text-4xl leading-[48px] text-center capitalize text-[#141414] mb-2">
-          Expert Articles
-        </h2>
-        <p className="font-poppins font-normal text-base leading-6 text-center text-[#4D5756] mb-8 max-w-2xl">
-          In-depth viewpoints shaping the future of energy and policy.
-        </p>
+    <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white" onClick={handleClickOutside}>
+      <div className="mx-auto w-full max-w-[1100px]">
+        {/* Header with heading on left and search/sort on right */}
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 mb-8">
+          {/* Left side - Heading */}
+          <div className="flex flex-col">
+            <h2 className="font-red-hat-display font-bold text-4xl leading-[48px] capitalize text-[#141414] mb-2">
+              Expert Articles
+            </h2>
+            <p className="font-poppins font-normal text-base leading-6 text-[#4D5756] max-w-2xl">
+              In-depth viewpoints shaping the future of energy and policy.
+            </p>
+          </div>
+
+          {/* Right side - Search and Sort */}
+          <div className="flex flex-col sm:flex-row gap-4 lg:min-w-[400px]">
+            {/* Search Input */}
+            <div className="relative">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-[265px] h-10 pl-9 pr-3 pt-[14px] pb-[14px] rounded-[5px] border border-[#EBEBEB] bg-[#FBFBFB] font-work-sans text-base font-normal leading-[100%] focus:ring-2 focus:ring-[#D3363B] focus:border-transparent outline-none"
+              />
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="relative dropdown-container">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-[115px] h-10 flex items-center justify-center gap-3 p-[9.48px] rounded-[4.74px] border border-[#EBEBEB] bg-[#FBFBFB] font-work-sans font-medium text-[15.8px] leading-[100%] text-[#6C757D] hover:bg-gray-50 focus:ring-2 focus:ring-[#D3363B] focus:border-transparent outline-none"
+              >
+                <span>Sort by</span>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg border border-gray-200 z-10" style={{ boxShadow: '0px 0px 7.2px 0px #00000026' }}>
+                  <div className="p-3">
+                    <h3 className="font-work-sans font-normal text-base leading-[100%] text-gray-900 mb-2">Categories</h3>
+                    {categories.map((category) => (
+                      <label key={category} className="flex items-center py-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedCategories.includes(category)}
+                          onChange={() => handleCategoryChange(category)}
+                          className="h-4 w-4 text-[#D3363B] focus:ring-[#D3363B] border-gray-300 rounded"
+                        />
+                        <span className="ml-3 font-work-sans font-normal text-base leading-[100%] text-gray-700">{category}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        
         {/* Grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 justify-items-center">
-          {articles.map((article, idx) => (
+        {filteredArticles.length > 0 ? (
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 justify-items-center">
+            {filteredArticles.map((article, idx) => (
             <div
               key={idx}
               className={`
@@ -178,8 +278,25 @@ export default function ExpertArticles() {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="w-full text-center py-16">
+            <div className="mx-auto max-w-md">
+              <div className="mb-4">
+                <svg className="mx-auto h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="font-red-hat-display text-lg font-medium text-gray-900 mb-2">
+                No articles found
+              </h3>
+              <p className="font-poppins text-gray-500">
+                Try adjusting your search terms or filter categories to find more articles.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
       <JoinUsModal
         open={isModalOpen}

@@ -12,6 +12,11 @@
       "authorRole": "Development team",
       "img": "/course/101.png",
       "category": "Foundation Course",
+      "description": "This comprehensive foundation course covers the essential legal and institutional frameworks that govern energy policy and regulation in India's power sector.",
+      "points": [
+        "Understanding constitutional framework for electricity regulation and governance structures",
+        "Knowledge of key institutions, their roles, and regulatory processes in the power sector"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Comprehensive foundation course covering the essential legal and institutional frameworks governing energy policy and regulation."
@@ -106,6 +111,11 @@
       "authorRole": "Development team",
       "img": "/course/102.png",
       "category": "Technical Course",
+      "description": "Technical deep-dive into electricity grid operations, load dispatch, and system management across India's interconnected power network.",
+      "points": [
+        "Comprehensive understanding of grid operations and dispatch mechanisms with real-time protocols",
+        "Practical experience with grid simulation tools and emergency response procedures"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Technical deep-dive into electricity grid operations, load dispatch, and system management across India's interconnected power network."
@@ -191,6 +201,11 @@
       "authorRole": "Development team",
       "img": "/course/103.png",
       "category": "Market Analysis",
+      "description": "Historical analysis and current trends in power market evolution, from regulated monopolies to competitive market structures.",
+      "points": [
+        "Understanding of power market evolution in India from monopoly to competitive structures",
+        "Analysis of economic impacts of market reforms and insights into future developments"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Historical analysis and current trends in power market evolution, from regulated monopolies to competitive market structures."
@@ -276,6 +291,11 @@
       "authorRole": "Development team",
       "img": "/course/202.png",
       "category": "Advanced Course",
+      "description": "Advanced course on General Network Access (GNA) and Open Access mechanisms enabling competitive power markets.",
+      "points": [
+        "Expert knowledge of GNA and Open Access frameworks with technical and commercial processes",
+        "Practical experience with regulatory procedures and system planning impact assessment"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Advanced course on General Network Access (GNA) and Open Access mechanisms enabling competitive power markets."
@@ -361,6 +381,11 @@
       "authorRole": "Development team",
       "img": "/course/203.png",
       "category": "Planning & Security",
+      "description": "Comprehensive study of resource adequacy planning, ensuring reliable electricity supply meets demand under various scenarios.",
+      "points": [
+        "Mastery of resource adequacy planning techniques with reliability standards and metrics",
+        "Skills in renewable integration planning and knowledge of market mechanisms for adequacy"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Comprehensive study of resource adequacy planning, ensuring reliable electricity supply meets demand under various scenarios."
@@ -446,6 +471,11 @@
       "authorRole": "Development team",
       "img": "/course/204.png",
       "category": "Consumer Protection",
+      "description": "Focus on consumer protection, rights, and advocacy in the evolving electricity market landscape.",
+      "points": [
+        "Deep understanding of consumer rights in electricity sector with tariff impact analysis",
+        "Skills in consumer advocacy and representation with regulatory process knowledge"
+      ],
       "overview": {
         "title": "OVERVIEW",
         "description": "Focus on consumer protection, rights, and advocacy in the evolving electricity market landscape."

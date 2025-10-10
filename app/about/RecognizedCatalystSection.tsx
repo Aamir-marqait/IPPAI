@@ -4,21 +4,21 @@ import Link from "next/link";
 export default function RecognizedCatalystSection() {
   return (
     <section className="w-full">
-      <div className="bg-black h-[60vh]  pb-32">
+      <div className=" h-[60vh]  pb-32">
         <div className="max-w-6xl mx-auto px-4 pt-12 pb-0">
           {/* Top Headings */}
           <div className="mb-10">
             <div className=" text-[#D3363B] font-red-hat-display font-bold text-base leading-none tracking-normal uppercase mb-8 border-l-4 border-[#D3363B] pl-3">
               SINCE 1994
             </div>
-            <h2 className="font-red-hat-display font-bold text-4xl leading-none tracking-normal text-white mb-2">
+            <h2 className="font-red-hat-display font-bold text-4xl leading-none tracking-normal text-black mb-2">
               Recognized as a Catalyst
               <br />
               for Change
             </h2>
-            <p className="font-poppins font-normal text-base leading-7 tracking-normal text-white/80 mt-2">
-              Our impact resonates across India&apos;s
-              <br className="md:hidden" /> energy sector and beyond
+            <p className="font-poppins font-normal text-base leading-7 tracking-normal text-black/80 mt-2">
+              Our impact resonates across India&apos;s energy sector
+              <br className="md:" /> and beyond
             </p>
           </div>
         </div>
@@ -136,7 +136,6 @@ export default function RecognizedCatalystSection() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

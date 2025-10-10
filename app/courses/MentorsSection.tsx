@@ -7,40 +7,65 @@ import Image from "next/image";
 
 export default function MentorsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Calculate how many cards to show per view
+  const cardsPerView = 4; // Show 4 cards at once on desktop
+  const cardWidth = 243.67;
+  const gap = 24;
+  const slideWidth = cardWidth + gap;
 
-  const mentors = [
+   const mentors = [
     {
       id: 1,
-      name: "Cheryl Curry",
-      role: "Teacher",
-      image: "/course/m1.png",
+      name: "Mr. V.P. Raja",
+      role: "Former Chairman, MERC",
+      imgSrc: "/fc/1.jpg",
+      imgAlt: "Mr. V.P. Raja portrait",
     },
     {
       id: 2,
-      name: "Willie Diaz",
-      role: "Teacher",
-      image: "/course/m2.png",
+      name: "Mr. Ashok Kumar Rajput",
+      role: "Former Member (Power Systems), CEA",
+      imgSrc: "/fc/2.jpg",
+      imgAlt: "Mr. Ashok Kumar Rajput portrait",
     },
     {
       id: 3,
-      name: "Jimmy Sifuentes",
-      role: "Teacher",
-      image: "/course/m3.png",
+      name: "Dr. Upendra N. Behera",
+      role: "Former Chairman, OERC",
+      imgSrc: "/fc/3.jpg",
+      imgAlt: "Dr. Upendra N. Behera portrait",
     },
     {
       id: 4,
-      name: "Micheal Hammond",
-      role: "Teacher",
-      image: "/course/m4.png",
+      name: "Mr. B.B Mehta",
+      role: "Director(SLDC), OPTCL",
+      imgSrc: "/fc/4.jpg",
+      imgAlt: "Mr. B.B Mehta portrait",
+    },
+    {
+      id: 5,
+      name: "Mr. P.K Agarwal",
+      role: "Former Director & CISO, POSOCO",
+      imgSrc: "/fc/5.jpg",
+      imgAlt: "Mr. P.K Agarwal portrait",
+    },
+    {
+      id: 6,
+      name: "Mr. Satyajit Ganguly",
+      role: "Former CEO & MD, PXIL",
+      imgSrc: "/fc/6.jpg",
+      imgAlt: "Mr. Satyajit Ganguly portrait",
     },
   ];
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : mentors.length - 1));
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < mentors.length - 1 ? prev + 1 : 0));
+    const maxIndex = mentors.length - cardsPerView;
+    setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : maxIndex));
   };
 
   return (
@@ -79,19 +104,23 @@ export default function MentorsSection() {
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mentors.map((mentor, index) => (
-            <div
-              key={mentor.id}
-              className="bg-white rounded-[4.17px] overflow-hidden group relative"
-              style={{
-                width: "100%",
-                maxWidth: "243.67px",
-                height: "342.34px",
-                margin: "0 auto",
-              }}
-            >
+        {/* Cards Slider */}
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out gap-6"
+            style={{
+              transform: `translateX(-${currentIndex * slideWidth}px)`,
+            }}
+          >
+            {mentors.map((mentor, index) => (
+              <div
+                key={mentor.id}
+                className="bg-white rounded-[4.17px] overflow-hidden group relative flex-shrink-0"
+                style={{
+                  width: "243.67px",
+                  height: "342.34px",
+                }}
+              >
               {/* Image Container */}
               <div
                 className="relative overflow-hidden"
@@ -106,8 +135,8 @@ export default function MentorsSection() {
                 }}
               >
                 <Image
-                  src={mentor.image}
-                  alt={mentor.name}
+                  src={mentor.imgSrc}
+                  alt={mentor.imgAlt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -115,9 +144,9 @@ export default function MentorsSection() {
 
                 {/* Share Button */}
               </div>
-              <button className="absolute cursor-pointer overflow-visible z-50 top-[68%] right-6 w-8 h-8 bg-[#D3363B] rounded flex items-center justify-center text-white hover:bg-[#9d2e35]  ">
+              {/* <button className="absolute cursor-pointer overflow-visible z-50 top-[68%] right-6 w-8 h-8 bg-[#D3363B] rounded flex items-center justify-center text-white hover:bg-[#9d2e35]  ">
                 <Share2 size={18} />
-              </button>
+              </button> */}
 
               {/* Info Container */}
               <div className="px-5 py-7">
@@ -130,6 +159,7 @@ export default function MentorsSection() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>

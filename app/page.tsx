@@ -2,7 +2,7 @@
 // import CompanyCarousel from "@/components/homepage/collab";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
-import Contributors from "@/components/homepage/key-contribution";
+// import Contributors from "@/components/homepage/key-contribution";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
 // import { LatestVideos } from "@/components/homepage/latest-videos";
 import LeadershipSection from "@/components/homepage/LeadershipSection";
@@ -23,7 +23,7 @@ export default function Home() {
       <VoicesInAction />
       <WhatWeDo />
       <Testimonials />
-      <Contributors />
+      {/* <Contributors /> */}
       <LeadershipSection />
       {/* <CompanyCarousel /> */}
     </div>
