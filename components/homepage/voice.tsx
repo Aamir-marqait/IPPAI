@@ -58,7 +58,7 @@ export function VoicesInAction() {
       imgSrc: "/voice/4.png",
       imgAlt: "Video thumbnail",
       date: "Aug 10, 2025",
-      title: "EA 2003, price of power and reforms (UDAY)",
+      title: "Price of power and reforms (UDAY)",
       description:
         "Leaders discuss sector transformation and inclusive policy initiatives.",
       videoSrc: "/voice/4.mp4",
