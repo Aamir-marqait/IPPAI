@@ -7,7 +7,8 @@ import { JoinUsModal } from "@/components/JoinMembershipModal";
 const knowledgeHubArticles = [
   {
     title: "HYDROPOWER DEVELOPMENT IN INDIA",
-    summary: "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
+    summary:
+      "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
     pdfFile: "/article/1.pdf",
     image: "/article/1.png",
     author: {
@@ -18,7 +19,8 @@ const knowledgeHubArticles = [
   },
   {
     title: "BIOMASS BASED POWER GENERATION OPPORTUNITIES",
-    summary: "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
+    summary:
+      "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
     pdfFile: "/article/2.pdf",
     image: "/article/2.png",
     author: {
@@ -29,9 +31,49 @@ const knowledgeHubArticles = [
   },
   {
     title: "24x7 POWER SUPPLY",
-    summary: "Understanding the vital importance of uninterrupted power supply for India's economic growth",
+    summary:
+      "Understanding the vital importance of uninterrupted power supply for India's economic growth",
     pdfFile: "/article/3.pdf",
     image: "/article/3.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+];
+
+const policyRecommendations = [
+  {
+    title: "The Great Game Of Energy",
+    summary:
+      "Details of the Concessions/Exemptions under NET Metering Arrangement Technologies and New Paradigms in Renewable Energy Sphere",
+    pdfFile: "/policy/1.pdf",
+    image: "/policy/1.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "Consume Issues in power",
+    summary:
+      "Current Ecological Concerns in the Power Sector: Options to Avoid or Minimise Impacts",
+    pdfFile: "/policy/2.pdf",
+    image: "/policy/2.png",
+    author: {
+      name: "IPPAI",
+      avatar: "/header/logo.png",
+    },
+    date: "17 Jan 2025",
+  },
+  {
+    title: "Assisting Power consumers in reducing hardship",
+    summary:
+      "The Neo-liberal Era - Sustainable Futures or Corporate Colonization's?",
+    pdfFile: "/policy/3.pdf",
+    image: "/policy/3.png",
     author: {
       name: "IPPAI",
       avatar: "/header/logo.png",
@@ -46,8 +88,13 @@ export default function KnowledgeHubSection() {
     (typeof knowledgeHubArticles)[0] | null
   >(null);
 
-  const handleArticleClick = (article: typeof knowledgeHubArticles[0]) => {
+  const handleArticleClick = (article: (typeof knowledgeHubArticles)[0]) => {
     setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handlePolicyClick = (policy: (typeof policyRecommendations)[0]) => {
+    setSelectedArticle(policy);
     setIsModalOpen(true);
   };
 
@@ -72,9 +119,9 @@ export default function KnowledgeHubSection() {
         </p>
 
         {/* Main Card */}
-        <div className="w-full max-w-[700px] mt-2 bg-white rounded-[18px] shadow-lg flex flex-col lg:flex-row px-0 py-6 md:py-8 lg:py-12 mx-auto items-stretch relative gap-4 md:gap-6 lg:gap-8">
+        <div className="w-full max-w-[700px] mt-2 bg-white rounded-[18px] shadow-lg flex flex-col lg:flex-row px-0 py-6 md:py-8 lg:py-12 mx-auto relative gap-4 md:gap-6 lg:gap-8">
           {/* Articles/Insights */}
-          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 justify-between">
+          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/optimized/kh1.webp"
@@ -91,39 +138,38 @@ export default function KnowledgeHubSection() {
             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
               Articles <br className="sm:hidden md:block" /> and Insights
             </h3>
-            <div className="mb-3">
+            <div className="flex-grow">
               {knowledgeHubArticles.map((article, index) => (
                 <div
                   key={index}
                   className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
                   onClick={() => handleArticleClick(article)}
                 >
-                  <div className="font-serif font-bold text-sm md:text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
                     {article.title}
-                  </div>
-                  <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] align-middle">
-                    {article.summary}
                   </div>
                 </div>
               ))}
             </div>
-            <Link
-              href="/articles"
-              className="flex items-center gap-2 mt-auto group text-[#D3363B] font-semibold text-[13px]"
-            >
-              VIEW ALL
-              <span className="transition-all group-hover:translate-x-1">
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="#D3363B"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
+            <div className="mt-auto pt-4">
+              <Link
+                href="/articles"
+                className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
+              >
+                VIEW ALL
+                <span className="transition-all group-hover:translate-x-1">
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="#D3363B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* CENTER LINE */}
@@ -133,16 +179,16 @@ export default function KnowledgeHubSection() {
                 src="/optimized/line-main.webp"
                 alt="Divider"
                 width={6}
-                height={600}
-                className="w-[6px] min-h-[340px] mx-0"
-                style={{ minHeight: "280px", maxHeight: "1420px" }}
+                height={200}
+                className="w-[6px] min-h-[140px] mx-0"
+                style={{ minHeight: "280px", maxHeight: "420px" }}
                 loading="lazy"
               />
             </div>
           </div>
 
           {/* Policy Recommendations */}
-          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 justify-between">
+          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/optimized/kh2.webp"
@@ -156,38 +202,38 @@ export default function KnowledgeHubSection() {
             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
               Policy <br className="sm:hidden" /> Recommendations
             </h3>
-            <div className="font-sans font-normal text-sm md:text-[15px] leading-[150%] text-[#6D6D6D] mb-3 align-middle">
-              Details of the Concessions/Exemptions under NET Metering
-              Arrangement Technologies and New Paradigms in Renewable Energy
-              Sphere
-              <br />
-              <br />
-              Current Ecological Concerns in the Power Sector: Options to Avoid
-              or Minimise Impacts.The Neo-liberal Era - Sustainable Futures or
-              Corporate Colonization&apos;s?
-              <br />
-              <br />
-              Current Ecological Concerns in the Power Sector: Options to Avoid
-              or Minimise Impacts.The Neo-liberal Era - Sustainable Futures or
-              Corporate Colonization&apos;s?
+            <div className="flex-grow">
+              {policyRecommendations.map((policy, index) => (
+                <div
+                  key={index}
+                  className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+                  onClick={() => handlePolicyClick(policy)}
+                >
+                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                    {policy?.title?.toUpperCase()}
+                  </div>
+                </div>
+              ))}
             </div>
-            <Link
-              href="/policies"
-              className="flex items-center gap-2 mt-auto group text-[#D3363B] font-semibold text-[13px]"
-            >
-              VIEW ALL
-              <span className="transition-all group-hover:translate-x-1">
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="#D3363B"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
+            <div className="mt-auto pt-4">
+              <Link
+                href="/policies"
+                className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
+              >
+                VIEW ALL
+                <span className="transition-all group-hover:translate-x-1">
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="#D3363B"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

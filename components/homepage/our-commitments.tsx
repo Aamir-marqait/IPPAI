@@ -22,7 +22,7 @@ export default function Commitments() {
             />
             <StatCard value="300" suffix="+" label="Conferences Held" />
             <StatCard value="1000" suffix="+" label="Attendees" />
-            <StatCard value="99.9" suffix="%" label="Lorem ipsum" />
+            <StatCard value="50" suffix="%" label="Trainings Held" />
           </div>
 
           {/* Right: Heading, copy, CTA */}

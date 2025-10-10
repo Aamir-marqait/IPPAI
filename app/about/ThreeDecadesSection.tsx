@@ -9,26 +9,26 @@ export default function ThreeDecadesSection() {
       >
         {/* Left section */}
         <div className="w-full lg:w-[50%] flex flex-col items-start">
-          <div 
+          <div
             className="mb-8 border-l-4 border-red-500 pl-3 font-red-hat-display uppercase"
             style={{
               fontWeight: 700,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#D3363B'
+              fontSize: "16px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              color: "#D3363B",
             }}
           >
             SINCE 1994
           </div>
-          <h2 
+          <h2
             className="mb-16 font-red-hat-display"
             style={{
               fontWeight: 700,
-              fontSize: '36px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#141414'
+              fontSize: "36px",
+              lineHeight: "100%",
+              letterSpacing: "0%",
+              color: "#141414",
             }}
           >
             Three Decades of&nbsp; Energy
@@ -57,12 +57,12 @@ export default function ThreeDecadesSection() {
         <div className="w-full lg:w-[50%] flex flex-col">
           <div
             className="mb-6 font-poppins"
-            style={{ 
+            style={{
               fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '28px',
-              letterSpacing: '0%',
-              color: '#141414'
+              fontSize: "16px",
+              lineHeight: "28px",
+              letterSpacing: "0%",
+              color: "#141414",
             }}
           >
             The Independent Power Producers Association of India (IPPAI) was
@@ -84,90 +84,90 @@ export default function ThreeDecadesSection() {
           {/* Stats */}
           <div className="flex flex-col md:flex-row gap-4 mt-4">
             <div className="bg-[#D3363B] rounded-xl px-1 py-4 flex flex-col items-center min-w-[180px]">
-              <span 
+              <span
                 className="font-plus-jakarta-sans text-center"
                 style={{
                   fontWeight: 700,
-                  fontSize: '24px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  color: '#FFFFFF'
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
                 }}
               >
-                17+
+                30+
               </span>
-              <span 
+              <span
                 style={{
-                  fontFamily: 'Red Hat Display',
+                  fontFamily: "Red Hat Display",
                   fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  textAlign: 'center',
-                  color: '#FFFFFF',
-                  marginTop: '8px',
-                  display: 'block'
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  textAlign: "center",
+                  color: "#FFFFFF",
+                  marginTop: "8px",
+                  display: "block",
                 }}
               >
-                Years of Excellence
+                Years of Industry Experience
               </span>
             </div>
             <div className="bg-[#D3363B] rounded-xl px-1 py-4 flex flex-col items-center min-w-[180px]">
-              <span 
+              <span
                 className="font-plus-jakarta-sans text-center"
                 style={{
                   fontWeight: 700,
-                  fontSize: '24px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  color: '#FFFFFF'
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
                 }}
               >
-                500+
+                300+
               </span>
-              <span 
+              <span
                 style={{
-                  fontFamily: 'Red Hat Display',
+                  fontFamily: "Red Hat Display",
                   fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  textAlign: 'center',
-                  color: '#FFFFFF',
-                  marginTop: '8px',
-                  display: 'block'
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  textAlign: "center",
+                  color: "#FFFFFF",
+                  marginTop: "8px",
+                  display: "block",
                 }}
               >
-                Industry Experts
+                Conferences Held
               </span>
             </div>
             <div className="bg-[#D3363B] rounded-xl px-10 py-4 flex flex-col items-center min-w-[180px]">
-              <span 
+              <span
                 className="font-plus-jakarta-sans text-center"
                 style={{
                   fontWeight: 700,
-                  fontSize: '24px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  color: '#FFFFFF'
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  color: "#FFFFFF",
                 }}
               >
-                50+
+                1000+
               </span>
-              <span 
+              <span
                 style={{
-                  fontFamily: 'Red Hat Display',
+                  fontFamily: "Red Hat Display",
                   fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  textAlign: 'center',
-                  color: '#FFFFFF',
-                  marginTop: '8px',
-                  display: 'block'
+                  fontSize: "14px",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                  textAlign: "center",
+                  color: "#FFFFFF",
+                  marginTop: "8px",
+                  display: "block",
                 }}
               >
-                Frameworks
+                Attendees
               </span>
             </div>
           </div>

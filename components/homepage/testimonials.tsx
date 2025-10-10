@@ -6,32 +6,36 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    image: "/optimized/test.webp",
-    quote: "It is one of the unique forums to meet so many regulators and decision-makers for energy in India. It's an amazing place to really share thoughts and meet so many of them all over India and sometimes from several other countries all at once. From that perspective, I think it's something very special about that retreat.",
-    name: "Mr. Pashupathy Gopalan",
-    position: "President, Asia Pacific and Sub-Saharan Africa, SunEdison"
+    image: "/leader/1.jpg",
+    quote:
+      "It is always a learning experience because of the interaction. There is always something new happening and we meet old colleagues.",
+    name: "Dr. Pramod Deo",
+    position: "Former Chairman, CERC",
   },
   {
     id: 2,
-    image: "/optimized/test.webp",
-    quote: "The insights and networking opportunities at this forum are unparalleled. It brings together the brightest minds in the energy sector and creates meaningful connections that drive real change in the industry.",
-    name: "Dr. Sarah Mitchell",
-    position: "Director of Renewable Energy, Global Power Solutions"
+    image: "/leader/1.jpg",
+    quote:
+      "It is important that decision-makers and social justice campaigners continue to interface at such forums in order to explore improved ways of monitoring service provider accountability and responsibility to the general public.",
+    name: "Mr. Ishmahil Blagrove Jr",
+    position: "Author and International Social justice Campaigner",
   },
   {
     id: 3,
-    image: "/optimized/test.webp",
-    quote: "What sets this platform apart is its ability to foster genuine dialogue between policymakers and industry leaders. The discussions here have shaped our strategic approach to sustainable energy development.",
-    name: "Mr. Rajesh Kumar",
-    position: "Chief Executive Officer, Clean Energy Initiatives"
+    image: "/leader/1.jpg",
+    quote:
+      "IPPAl is doing a wonderful job because they bring companies and regulators together, where regulators really hear from companies what their viewpoint is and what problems they are facing. Regulators too talk about the dilemma they face regarding various legal issues. On this platform, there is exchange of ideas and discussion of new areas like solar.",
+    name: "Mr. Sushil Maroo",
+    position: "MD and CEO, Essar Power Limited",
   },
   {
     id: 4,
-    image: "/optimized/test.webp",
-    quote: "The quality of content and the caliber of participants make this an essential event for anyone serious about the future of energy. It's where policy meets innovation.",
-    name: "Ms. Elena Rodriguez",
-    position: "Policy Director, International Energy Council"
-  }
+    image: "/leader/1.jpg",
+    quote:
+      "It's an excellent opportunity to share views for the development of the sector, to exchange ideas, communicate with people and to listen to various opinions, which eventually will enrich and make the entire sector vibrant and strong.",
+    name: "Mr. Gopal Saxena",
+    position: "Director, BRPL and BYPL",
+  },
 ];
 
 // Testimonials section replicating the red gradient banner with portrait, quote, and decorative quote icons
@@ -129,14 +133,13 @@ export default function Testimonials() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`rounded-full transition-all duration-300 hover:scale-110 ${
-                    index === currentSlide
-                      ? "h-2 w-16"
-                      : "h-2 w-2"
+                    index === currentSlide ? "h-2 w-16" : "h-2 w-2"
                   }`}
                   style={{
-                    background: index === currentSlide
-                      ? "var(--primary-foreground)"
-                      : "color-mix(in oklab, var(--primary-foreground), transparent 55%)",
+                    background:
+                      index === currentSlide
+                        ? "var(--primary-foreground)"
+                        : "color-mix(in oklab, var(--primary-foreground), transparent 55%)",
                   }}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
