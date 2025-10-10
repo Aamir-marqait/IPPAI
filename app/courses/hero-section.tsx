@@ -3,14 +3,17 @@ import Link from "next/link";
 
 export default function IntensiveCourseHero() {
   return (
-    <section className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[430px] xl:min-h-[470px] w-full flex items-center justify-center bg-[#1c1c1c] overflow-hidden px-5 md:px-0 pt-32">
+    <section className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[430px] xl:min-h-[470px] w-full flex items-center justify-center bg-[#1c1c1c] overflow-hidden px-5 md:px-0 pt-28">
       <Image
-        src="/course/hero.png"
+        src="/course/hero.jpg"
         alt="Background"
         fill
         priority
         className="object-cover w-full h-full absolute inset-0 z-0"
       />
+
+      {/* Black overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* <div className="absolute top-3/4 left-4 md:-left-0  -translate-y-1/2 z-20 hidden md:block">
         <Image
@@ -24,7 +27,7 @@ export default function IntensiveCourseHero() {
         />
       </div> */}
 
-      <div className="relative max-w-[1100px] z-20 w-full mx-auto  py-8 flex items-center justify-between">
+      <div className="relative max-w-[1100px] z-20 w-full mx-auto  py-16 flex items-center justify-between">
         <div className="flex flex-col justify-center items-start max-w-full md:max-w-[520px] lg:max-w-[580px] ">
           <div className="flex items-center gap-2 mb-1">
             <Image
