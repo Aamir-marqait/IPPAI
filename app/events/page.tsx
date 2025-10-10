@@ -4,7 +4,7 @@ import EventsPage from "./our-event";
 import WhyJoinEvents from "./WhyJoinEvents";
 import EventsGallery from "./event-gallary";
 
-import OurPartners from "./our-partners";
+// import OurPartners from "./our-partners";
 import TestimonialsSection from "./TestimonialsSection";
 import ContactUsSection from "./contact-event";
 
@@ -16,7 +16,7 @@ function page() {
       <WhyJoinEvents />
       <EventsGallery />
       <TestimonialsSection />
-      <OurPartners />
+      {/* <OurPartners /> */}
       <ContactUsSection />
     </div>
   );
