@@ -1,498 +1,12 @@
 {
   "events": [
     {
-      "id": 1,
-      "title": "IIA Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      "slug": "iia-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-      "location": "2715 Ash Dr. San Jose, South Dakota -83475",
-      "date": "Dec 11- Dec 24, 2025",
-      "dateTime": "Tuesday, December 11 · 10:00 – 6:00pm GMT+5:30",
-      "time": "10:00 AM - 6:00 PM",
-      "capacity": "500 Attendees",
-      "image": "/event/event 1.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Team",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "101- The Legal & Institutional Framework for Energy Policy"
-      },
-      "eventDuration": "Event lasts 8 hours",
-      "fullDescription": "Get ready for a comprehensive understanding of energy policy frameworks with IPPAI— the ultimate workshop to kickstart your policy career! Whether you're a student, professional, or policy enthusiast, this event is packed with the insights you need to make your mark in the energy sector.",
-      "aboutEvent": {
-        "mainDescription": "Get ready for MPOWERingDreams with IPPAI— the ultimate workshop to kickstart your energy policy journey! Whether you're entering the field in 2025 or planning your next career move, this event is packed with the info you need to advance your expertise.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Tuesday, December 11, 2025."
-          },
-          {
-            "icon": "clock", 
-            "text": "Time: 10:00 AM (But arrive early! Our Early Bird Entry opens at 9:00 a.m., where you'll get exclusive access to expert speakers and a team of professionals, ready to answer your questions face-to-face!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: Energy Policy Institute (Inside International Public Policy Center)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "🎓",
-            "title": "Policy Framework Analysis:",
-            "description": "Does institutional structure really matter? We'll dive into how to understand and navigate complex energy policy frameworks for maximum impact.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "💼", 
-            "title": "Career Opportunities:",
-            "description": "Learn how to secure positions that not only advance your career but also contribute meaningfully to energy policy development.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "💵",
-            "title": "Funding & Research Opportunities:",
-            "description": "Demystify the process and learn how to navigate grants, fellowships, and research opportunities in energy policy like a pro.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "💬",
-            "title": "Q&A Session:",
-            "description": "Get your burning questions answered in real time by industry experts and policy professionals!",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This is your one-stop event to get real, actionable insights to make your energy policy journey a success. Whether you're still deciding on specializations or planning your research focus, we've got you covered. Plus, it's a great chance to meet others on the same path!"
-      },
-      "prizes": {
-        "title": "Exciting Prizes (Attendees Only!):",
-        "items": [
-          "1 Policy Research Grant worth $5,000 as the grand prize!",
-          "Gift Cards worth INR 30,000 from Amazon, Flipkart, and professional development platforms!",
-          "Pro Tip: Bring a colleague along! The more, the merrier! Share this with your network and get them to register, too—it's always more fun to start this journey together."
-        ]
-      },
-      "conclusion": "See you there, ready to make your energy policy dreams a reality—and maybe win some amazing prizes! This is your one-stop event to get real, actionable insights to make your policy career a success. Whether you're still deciding on focus areas or planning your next steps, we've got you covered. Plus, it's a great chance to meet others on the same path!"
-    },
-    {
-      "id": 2,
-      "title": "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      "slug": "som-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-      "location": "2715 Ash Dr. San Jose, South Dakota -83475",
-      "date": "Nov 15- Nov 28, 2025",
-      "dateTime": "Friday, November 15 · 9:00 – 5:00pm GMT+5:30",
-      "time": "9:00 AM - 5:00 PM",
-      "capacity": "300 Attendees",
-      "image": "/event/event 2.png",
-      "status": "past",
-      "statusLabel": "Past Event",
-      "organizer": "IPPAI Team",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Past events",
-        "eventTitle": "102- Regulatory Frameworks in Renewable Energy"
-      },
-      "eventDuration": "Event lasts 6 hours",
-      "fullDescription": "Explore the evolving landscape of renewable energy regulations with industry leaders and policy experts in this comprehensive workshop.",
-      "aboutEvent": {
-        "mainDescription": "Join us for an in-depth exploration of renewable energy regulatory frameworks with IPPAI— a specialized workshop designed for professionals working in the clean energy transition. This event covers the latest developments in renewable energy policy and implementation strategies.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Friday, November 15, 2025."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 9:00 AM (Registration opens at 8:30 a.m. for networking breakfast with speakers and industry professionals!)"
-          },
-          {
-            "icon": "location", 
-            "text": "Location: Renewable Energy Research Center (Inside Clean Tech Innovation Hub)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "🌱",
-            "title": "Regulatory Deep Dive:",
-            "description": "Understanding the complex web of renewable energy regulations and how they impact project development and financing.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "⚡",
-            "title": "Grid Integration:",
-            "description": "Learn about the technical and regulatory challenges of integrating renewable energy into existing grid infrastructure.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "📊",
-            "title": "Policy Analysis:",
-            "description": "Analyze current renewable energy policies and their effectiveness in driving clean energy adoption and investment.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "🤝",
-            "title": "Stakeholder Engagement:",
-            "description": "Interactive sessions on how to effectively engage with regulators, utilities, and community stakeholders.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This event provides critical insights into the regulatory landscape shaping renewable energy development. Perfect for energy lawyers, project developers, policy analysts, and anyone involved in the clean energy transition."
-      },
-      "prizes": {
-        "title": "Exciting Prizes (Attendees Only!):",
-        "items": [
-          "1 Professional Development Scholarship worth $3,000 for renewable energy certification!",
-          "Industry report bundles worth INR 25,000 from leading energy research firms!",
-          "Networking opportunities with top renewable energy professionals and potential mentorship connections."
-        ]
-      },
-      "conclusion": "Don't miss this opportunity to deepen your understanding of renewable energy regulations and connect with industry leaders. Whether you're developing projects or shaping policy, this event will provide valuable insights for your professional growth."
-    },
-    {
-      "id": 3,
-      "title": "Advanced Energy Economics and Market Design",
-      "slug": "advanced-energy-economics-and-market-design",
-      "description": "Comprehensive workshop on energy market mechanisms, pricing strategies, and economic analysis in the evolving energy landscape.",
-      "location": "Energy Economics Institute, Mumbai, Maharashtra - 400001",
-      "date": "Jan 20- Jan 22, 2026",
-      "dateTime": "Monday, January 20 · 8:30 – 6:30pm GMT+5:30",
-      "time": "8:30 AM - 6:30 PM",
-      "capacity": "400 Attendees",
-      "image": "/event/event 3.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Economics Division",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "103- Advanced Energy Economics and Market Design"
-      },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "Master the complexities of energy economics with this intensive three-day workshop covering market design, pricing mechanisms, and economic modeling in modern energy systems.",
-      "aboutEvent": {
-        "mainDescription": "Dive deep into energy economics with IPPAI's most comprehensive workshop yet! This intensive program is designed for economists, analysts, and professionals who need to understand and work with complex energy market mechanisms and pricing strategies.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Monday-Wednesday, January 20-22, 2026."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 8:30 AM - 6:30 PM daily (Continental breakfast starts at 8:00 a.m. each day for early networking!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: Energy Economics Institute (Inside Mumbai International Finance Centre)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "📈",
-            "title": "Market Design Principles:",
-            "description": "Understand the fundamental principles of energy market design, including auction mechanisms, capacity markets, and ancillary services.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "💰",
-            "title": "Pricing Strategies:",
-            "description": "Learn advanced pricing models including nodal pricing, time-of-use rates, and dynamic pricing mechanisms for modern energy markets.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "🔧",
-            "title": "Economic Modeling:",
-            "description": "Hands-on sessions with industry-standard economic modeling tools and techniques for energy market analysis and forecasting.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "🌐",
-            "title": "Global Case Studies:",
-            "description": "Analysis of energy market designs from around the world, including lessons learned and best practices from different jurisdictions.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This intensive workshop provides the analytical tools and market insights essential for anyone working in energy economics, market analysis, or energy finance. You'll leave with practical skills and a comprehensive understanding of how energy markets function and evolve."
-      },
-      "prizes": {
-        "title": "Exciting Prizes (Attendees Only!):",
-        "items": [
-          "1 Full scholarship to advanced energy economics certification program worth $10,000!",
-          "Professional software licenses worth INR 50,000 for energy modeling and analysis tools!",
-          "Exclusive invitation to IPPAI's annual Energy Economics Summit with leading global experts."
-        ]
-      },
-      "conclusion": "Join us for this transformative learning experience that will enhance your expertise in energy economics and market analysis. Whether you're shaping policy, developing market strategies, or conducting research, this workshop will provide the advanced knowledge you need to excel in the energy sector."
-    },
-    {
-      "id": 4,
-      "title": "Climate Policy and Energy Transition Strategies",
-      "slug": "climate-policy-and-energy-transition-strategies",
-      "description": "Strategic workshop on climate policy frameworks, energy transition pathways, and implementation strategies for sustainable energy systems.",
-      "location": "Climate Policy Center, New Delhi, Delhi - 110001",
-      "date": "Mar 10- Mar 12, 2026",
-      "dateTime": "Tuesday, March 10 · 9:00 – 5:00pm GMT+5:30",
-      "time": "9:00 AM - 5:00 PM",
-      "capacity": "250 Attendees",
-      "image": "/event/event 4.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Climate Division",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "104- Climate Policy and Energy Transition Strategies"
-      },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "Navigate the complex intersection of climate policy and energy transition with expert guidance on strategic planning, implementation, and stakeholder engagement.",
-      "aboutEvent": {
-        "mainDescription": "Explore the critical nexus between climate policy and energy transition with IPPAI's strategic workshop designed for policy makers, energy planners, and sustainability professionals. This program focuses on practical strategies for implementing climate goals through energy system transformation.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Tuesday-Thursday, March 10-12, 2026."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 9:00 AM - 5:00 PM daily (Welcome reception on Tuesday evening for networking and informal discussions!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: Climate Policy Center (Inside India International Centre, New Delhi)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "🌍",
-            "title": "Climate Policy Frameworks:",
-            "description": "Comprehensive overview of international and national climate policy frameworks, including NDCs, carbon pricing, and regulatory mechanisms.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "⚡",
-            "title": "Transition Pathways:",
-            "description": "Analysis of different energy transition pathways, technology options, and timeline considerations for achieving climate goals.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "🤝",
-            "title": "Stakeholder Engagement:",
-            "description": "Strategies for building consensus and managing diverse stakeholder interests in climate and energy policy development.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "📊",
-            "title": "Implementation Tools:",
-            "description": "Hands-on experience with policy modeling tools, impact assessment methodologies, and monitoring frameworks.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This workshop provides essential knowledge for anyone involved in climate policy development, energy planning, or sustainability strategy. You'll gain practical tools and strategic insights needed to navigate the complex landscape of climate and energy policy implementation."
-      },
-      "prizes": {
-        "title": "Exclusive Opportunities (Attendees Only!):",
-        "items": [
-          "1 Fully-funded fellowship to international climate policy conference worth $8,000!",
-          "Access to premium climate and energy policy databases worth INR 40,000 annually!",
-          "Invitation to join IPPAI's Climate Policy Advisory Network with leading experts and policymakers."
-        ]
-      },
-      "conclusion": "Be part of shaping the future of climate and energy policy. This workshop will equip you with the knowledge, tools, and network needed to drive meaningful progress in the energy transition and climate action."
-    },
-    {
-      "id": 5,
-      "title": "Digital Innovation in Energy Systems",
-      "slug": "digital-innovation-in-energy-systems",
-      "description": "Cutting-edge workshop on digital technologies transforming energy systems, including AI, IoT, blockchain, and smart grid technologies.",
-      "location": "Tech Innovation Hub, Bangalore, Karnataka - 560001",
-      "date": "May 15- May 17, 2026",
-      "dateTime": "Thursday, May 15 · 10:00 – 6:00pm GMT+5:30",
-      "time": "10:00 AM - 6:00 PM",
-      "capacity": "350 Attendees",
-      "image": "/event/event 5.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Digital Innovation Lab",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "105- Digital Innovation in Energy Systems"
-      },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "Explore the digital transformation of energy systems with hands-on learning in emerging technologies that are reshaping how we generate, distribute, and consume energy.",
-      "aboutEvent": {
-        "mainDescription": "Step into the future of energy with IPPAI's comprehensive digital innovation workshop! This cutting-edge program brings together energy professionals, technologists, and innovators to explore how digital technologies are revolutionizing energy systems and creating new opportunities.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Thursday-Saturday, May 15-17, 2026."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 10:00 AM - 6:00 PM daily (Tech expo and networking starts at 9:00 a.m. each day with live demonstrations!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: Tech Innovation Hub (Inside Bangalore International Tech Park)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "🤖",
-            "title": "AI & Machine Learning:",
-            "description": "Hands-on workshops on applying AI and ML for energy forecasting, grid optimization, and predictive maintenance in energy systems.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "🌐",
-            "title": "Smart Grid Technologies:",
-            "description": "Deep dive into smart grid infrastructure, IoT integration, and real-time energy management systems with live demonstrations.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "⛓️",
-            "title": "Blockchain Applications:",
-            "description": "Explore blockchain technology for peer-to-peer energy trading, renewable energy certificates, and decentralized energy markets.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "📱",
-            "title": "Digital Platforms:",
-            "description": "Learn about energy management platforms, customer engagement tools, and digital marketplace solutions for the energy sector.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This workshop is essential for energy professionals who want to stay ahead of the digital transformation curve. You'll gain practical knowledge of emerging technologies and their applications in energy systems, plus valuable networking opportunities with tech innovators and energy leaders."
-      },
-      "prizes": {
-        "title": "Innovation Rewards (Attendees Only!):",
-        "items": [
-          "1 Digital innovation grant worth $12,000 for developing energy technology solutions!",
-          "Access to premium energy tech software and development tools worth INR 60,000!",
-          "Opportunity to pitch your energy innovation ideas to leading venture capital firms and get mentorship support."
-        ]
-      },
-      "conclusion": "Don't miss this opportunity to be at the forefront of energy innovation. Whether you're developing new technologies, implementing digital solutions, or planning for the future, this workshop will provide the insights and connections you need to succeed in the digital energy landscape."
-    },
-    {
-      "id": 6,
-      "title": "International Energy Law and Governance",
-      "slug": "international-energy-law-and-governance",
-      "description": "Advanced seminar on international energy law, cross-border energy trade, and governance frameworks for global energy cooperation.",
-      "location": "International Law Institute, Pune, Maharashtra - 411001",
-      "date": "Jul 8- Jul 10, 2026",
-      "dateTime": "Wednesday, July 8 · 9:30 – 5:30pm GMT+5:30",
-      "time": "9:30 AM - 5:30 PM",
-      "capacity": "200 Attendees",
-      "image": "/event/event 6.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Legal Affairs Division",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "106- International Energy Law and Governance"
-      },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "Master the complexities of international energy law with expert instruction on treaties, trade agreements, dispute resolution, and governance frameworks.",
-      "aboutEvent": {
-        "mainDescription": "Navigate the complex world of international energy law with IPPAI's specialized program designed for legal professionals, policy makers, and international energy practitioners. This advanced seminar covers the full spectrum of legal and governance issues in global energy cooperation.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Wednesday-Friday, July 8-10, 2026."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 9:30 AM - 5:30 PM daily (Distinguished speaker series starts each morning at 9:00 a.m. with international experts!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: International Law Institute (Inside Pune International Legal Complex)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "⚖️",
-            "title": "International Treaties:",
-            "description": "Comprehensive analysis of international energy treaties, agreements, and legal frameworks governing cross-border energy cooperation.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "🌍",
-            "title": "Trade & Investment:",
-            "description": "Expert sessions on international energy trade law, investment protection, and dispute resolution mechanisms in the energy sector.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "🏛️",
-            "title": "Governance Frameworks:",
-            "description": "Study of international energy governance institutions, their roles, and effectiveness in addressing global energy challenges.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "📋",
-            "title": "Case Studies:",
-            "description": "Analysis of landmark energy law cases, arbitration decisions, and their implications for international energy cooperation.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This seminar is crucial for legal professionals, diplomats, and policy makers working on international energy issues. You'll gain deep insights into the legal frameworks governing global energy cooperation and develop practical skills for navigating complex international energy transactions and disputes."
-      },
-      "prizes": {
-        "title": "Professional Opportunities (Attendees Only!):",
-        "items": [
-          "1 Internship opportunity at a leading international energy law firm worth $15,000!",
-          "Access to premium international energy law databases and research tools worth INR 75,000!",
-          "Invitation to present at the Annual International Energy Law Conference with leading practitioners and academics."
-        ]
-      },
-      "conclusion": "Join the leading voices in international energy law for this intensive learning experience. Whether you're practicing energy law, developing policy, or working in international energy organizations, this seminar will enhance your expertise and expand your professional network in the global energy legal community."
-    },
-    {
       "id": 7,
       "title": "Regulators & Policymakers Retreat",
       "slug": "regulators-policymakers-retreat",
       "description": "Join us for an exclusive retreat bringing together regulators and policymakers to discuss the future of energy policy, regulatory frameworks, and collaborative strategies for sustainable energy transition.",
-      "location": "Shoonya Farm Retreat, Belagavi, Karnataka",
-      "date": "Sep 25- Sep 27, 2025",
+      "location": "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
+      "date": "7th- 10th January, 2026",
       "dateTime": "Thursday, September 25 · 9:00 – 6:00pm GMT+5:30",
       "time": "9:00 AM - 6:00 PM",
       "capacity": "150 Attendees",
@@ -566,6 +80,411 @@
         ]
       },
       "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings."
+    },
+    {
+      "id": 1,
+      "title": "Intensive Course",
+      "slug": "intensive-course",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
+      "location": "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
+      "date": "29th - 31st October, 2025",
+      "dateTime": "Tuesday, December 11 · 10:00 – 6:00pm GMT+5:30",
+      "time": "10:00 AM - 6:00 PM",
+      "capacity": "500 Attendees",
+      "image": "/event/event 1.png",
+      "status": "upcoming",
+      "statusLabel": "Upcoming Event",
+      "organizer": "IPPAI Team",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Upcoming events",
+        "eventTitle": "101- The Legal & Institutional Framework for Energy Policy"
+      },
+      "eventDuration": "Event lasts 8 hours",
+      "fullDescription": "Get ready for a comprehensive understanding of energy policy frameworks with IPPAI— the ultimate workshop to kickstart your policy career! Whether you're a student, professional, or policy enthusiast, this event is packed with the insights you need to make your mark in the energy sector.",
+      "aboutEvent": {
+        "mainDescription": "Get ready for MPOWERingDreams with IPPAI— the ultimate workshop to kickstart your energy policy journey! Whether you're entering the field in 2025 or planning your next career move, this event is packed with the info you need to advance your expertise.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Tuesday, December 11, 2025."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 10:00 AM (But arrive early! Our Early Bird Entry opens at 9:00 a.m., where you'll get exclusive access to expert speakers and a team of professionals, ready to answer your questions face-to-face!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Energy Policy Institute (Inside International Public Policy Center)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🎓",
+            "title": "Policy Framework Analysis:",
+            "description": "Does institutional structure really matter? We'll dive into how to understand and navigate complex energy policy frameworks for maximum impact.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "💼",
+            "title": "Career Opportunities:",
+            "description": "Learn how to secure positions that not only advance your career but also contribute meaningfully to energy policy development.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "💵",
+            "title": "Funding & Research Opportunities:",
+            "description": "Demystify the process and learn how to navigate grants, fellowships, and research opportunities in energy policy like a pro.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "💬",
+            "title": "Q&A Session:",
+            "description": "Get your burning questions answered in real time by industry experts and policy professionals!",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This is your one-stop event to get real, actionable insights to make your energy policy journey a success. Whether you're still deciding on specializations or planning your research focus, we've got you covered. Plus, it's a great chance to meet others on the same path!"
+      },
+      "prizes": {
+        "title": "Exciting Prizes (Attendees Only!):",
+        "items": [
+          "1 Policy Research Grant worth $5,000 as the grand prize!",
+          "Gift Cards worth INR 30,000 from Amazon, Flipkart, and professional development platforms!",
+          "Pro Tip: Bring a colleague along! The more, the merrier! Share this with your network and get them to register, too—it's always more fun to start this journey together."
+        ]
+      },
+      "conclusion": "See you there, ready to make your energy policy dreams a reality—and maybe win some amazing prizes! This is your one-stop event to get real, actionable insights to make your policy career a success. Whether you're still deciding on focus areas or planning your next steps, we've got you covered. Plus, it's a great chance to meet others on the same path!"
+    },
+    {
+      "id": 2,
+      "title": "Consultative Conference on Resolving Issues in Open Access, Stressed Assets, Captive & Group Captive, Fuel Supply, Re-negotiation of PPAs to revive Power Consumers...",
+      "slug": "som-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
+      "location": "2715 Ash Dr. San Jose, South Dakota -83475",
+      "date": "Nov 15- Nov 28, 2025",
+      "dateTime": "Friday, November 15 · 9:00 – 5:00pm GMT+5:30",
+      "time": "9:00 AM - 5:00 PM",
+      "capacity": "300 Attendees",
+      "image": "/event/event 2.png",
+      "status": "past",
+      "statusLabel": "Past Event",
+      "organizer": "IPPAI Team",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Past events",
+        "eventTitle": "102- Regulatory Frameworks in Renewable Energy"
+      },
+      "eventDuration": "Event lasts 6 hours",
+      "fullDescription": "Explore the evolving landscape of renewable energy regulations with industry leaders and policy experts in this comprehensive workshop.",
+      "aboutEvent": {
+        "mainDescription": "Join us for an in-depth exploration of renewable energy regulatory frameworks with IPPAI— a specialized workshop designed for professionals working in the clean energy transition. This event covers the latest developments in renewable energy policy and implementation strategies.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Friday, November 15, 2025."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 9:00 AM (Registration opens at 8:30 a.m. for networking breakfast with speakers and industry professionals!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Renewable Energy Research Center (Inside Clean Tech Innovation Hub)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🌱",
+            "title": "Regulatory Deep Dive:",
+            "description": "Understanding the complex web of renewable energy regulations and how they impact project development and financing.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "⚡",
+            "title": "Grid Integration:",
+            "description": "Learn about the technical and regulatory challenges of integrating renewable energy into existing grid infrastructure.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "📊",
+            "title": "Policy Analysis:",
+            "description": "Analyze current renewable energy policies and their effectiveness in driving clean energy adoption and investment.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "🤝",
+            "title": "Stakeholder Engagement:",
+            "description": "Interactive sessions on how to effectively engage with regulators, utilities, and community stakeholders.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This event provides critical insights into the regulatory landscape shaping renewable energy development. Perfect for energy lawyers, project developers, policy analysts, and anyone involved in the clean energy transition."
+      },
+      "prizes": {
+        "title": "Exciting Prizes (Attendees Only!):",
+        "items": [
+          "1 Professional Development Scholarship worth $3,000 for renewable energy certification!",
+          "Industry report bundles worth INR 25,000 from leading energy research firms!",
+          "Networking opportunities with top renewable energy professionals and potential mentorship connections."
+        ]
+      },
+      "conclusion": "Don't miss this opportunity to deepen your understanding of renewable energy regulations and connect with industry leaders. Whether you're developing projects or shaping policy, this event will provide valuable insights for your professional growth."
+    },
+    {
+      "id": 3,
+      "title": "Promoting Fresh Investments in the Power Sector in Telangana",
+      "slug": "advanced-energy-economics-and-market-design",
+      "description": "Comprehensive workshop on energy market mechanisms, pricing strategies, and economic analysis in the evolving energy landscape.",
+      "location": "Energy Economics Institute, Mumbai, Maharashtra - 400001",
+      "date": "Jan 20- Jan 22, 2026",
+      "dateTime": "Monday, January 20 · 8:30 – 6:30pm GMT+5:30",
+      "time": "8:30 AM - 6:30 PM",
+      "capacity": "400 Attendees",
+      "image": "/event/event 3.png",
+      "status": "past",
+      "statusLabel": "Past Event",
+      "organizer": "IPPAI Economics Division",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Past events",
+        "eventTitle": "103- Advanced Energy Economics and Market Design"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "Master the complexities of energy economics with this intensive three-day workshop covering market design, pricing mechanisms, and economic modeling in modern energy systems.",
+      "aboutEvent": {
+        "mainDescription": "Dive deep into energy economics with IPPAI's most comprehensive workshop yet! This intensive program is designed for economists, analysts, and professionals who need to understand and work with complex energy market mechanisms and pricing strategies.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Monday-Wednesday, January 20-22, 2026."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 8:30 AM - 6:30 PM daily (Continental breakfast starts at 8:00 a.m. each day for early networking!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Energy Economics Institute (Inside Mumbai International Finance Centre)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "📈",
+            "title": "Market Design Principles:",
+            "description": "Understand the fundamental principles of energy market design, including auction mechanisms, capacity markets, and ancillary services.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "💰",
+            "title": "Pricing Strategies:",
+            "description": "Learn advanced pricing models including nodal pricing, time-of-use rates, and dynamic pricing mechanisms for modern energy markets.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "🔧",
+            "title": "Economic Modeling:",
+            "description": "Hands-on sessions with industry-standard economic modeling tools and techniques for energy market analysis and forecasting.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "🌐",
+            "title": "Global Case Studies:",
+            "description": "Analysis of energy market designs from around the world, including lessons learned and best practices from different jurisdictions.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This intensive workshop provides the analytical tools and market insights essential for anyone working in energy economics, market analysis, or energy finance. You'll leave with practical skills and a comprehensive understanding of how energy markets function and evolve."
+      },
+      "prizes": {
+        "title": "Exciting Prizes (Attendees Only!):",
+        "items": [
+          "1 Full scholarship to advanced energy economics certification program worth $10,000!",
+          "Professional software licenses worth INR 50,000 for energy modeling and analysis tools!",
+          "Exclusive invitation to IPPAI's annual Energy Economics Summit with leading global experts."
+        ]
+      },
+      "conclusion": "Join us for this transformative learning experience that will enhance your expertise in energy economics and market analysis. Whether you're shaping policy, developing market strategies, or conducting research, this workshop will provide the advanced knowledge you need to excel in the energy sector."
+    },
+    {
+      "id": 4,
+      "title": "Emerging Opportunities & Challenges in the Power Sector for E-Mobility, Industrial & Commercial Power Consumers, Discoms, Generators & Other Stakeholders",
+      "slug": "climate-policy-and-energy-transition-strategies",
+      "description": "Strategic workshop on climate policy frameworks, energy transition pathways, and implementation strategies for sustainable energy systems.",
+      "location": "Climate Policy Center, New Delhi, Delhi - 110001",
+      "date": "Mar 10- Mar 12, 2026",
+      "dateTime": "Tuesday, March 10 · 9:00 – 5:00pm GMT+5:30",
+      "time": "9:00 AM - 5:00 PM",
+      "capacity": "250 Attendees",
+      "image": "/event/event 4.png",
+      "status": "past",
+      "statusLabel": "Past Event",
+      "organizer": "IPPAI Climate Division",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Past events",
+        "eventTitle": "104- Climate Policy and Energy Transition Strategies"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "Navigate the complex intersection of climate policy and energy transition with expert guidance on strategic planning, implementation, and stakeholder engagement.",
+      "aboutEvent": {
+        "mainDescription": "Explore the critical nexus between climate policy and energy transition with IPPAI's strategic workshop designed for policy makers, energy planners, and sustainability professionals. This program focuses on practical strategies for implementing climate goals through energy system transformation.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Tuesday-Thursday, March 10-12, 2026."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 9:00 AM - 5:00 PM daily (Welcome reception on Tuesday evening for networking and informal discussions!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Climate Policy Center (Inside India International Centre, New Delhi)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🌍",
+            "title": "Climate Policy Frameworks:",
+            "description": "Comprehensive overview of international and national climate policy frameworks, including NDCs, carbon pricing, and regulatory mechanisms.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "⚡",
+            "title": "Transition Pathways:",
+            "description": "Analysis of different energy transition pathways, technology options, and timeline considerations for achieving climate goals.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "🤝",
+            "title": "Stakeholder Engagement:",
+            "description": "Strategies for building consensus and managing diverse stakeholder interests in climate and energy policy development.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "📊",
+            "title": "Implementation Tools:",
+            "description": "Hands-on experience with policy modeling tools, impact assessment methodologies, and monitoring frameworks.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This workshop provides essential knowledge for anyone involved in climate policy development, energy planning, or sustainability strategy. You'll gain practical tools and strategic insights needed to navigate the complex landscape of climate and energy policy implementation."
+      },
+      "prizes": {
+        "title": "Exclusive Opportunities (Attendees Only!):",
+        "items": [
+          "1 Fully-funded fellowship to international climate policy conference worth $8,000!",
+          "Access to premium climate and energy policy databases worth INR 40,000 annually!",
+          "Invitation to join IPPAI's Climate Policy Advisory Network with leading experts and policymakers."
+        ]
+      },
+      "conclusion": "Be part of shaping the future of climate and energy policy. This workshop will equip you with the knowledge, tools, and network needed to drive meaningful progress in the energy transition and climate action."
+    },
+    {
+      "id": 5,
+      "title": "Emerging Opportunities & Challenges in Open Access in the Power Sector in Uttar Pradesh for Discoms and Power Consumers",
+      "slug": "digital-innovation-in-energy-systems",
+      "description": "Cutting-edge workshop on digital technologies transforming energy systems, including AI, IoT, blockchain, and smart grid technologies.",
+      "location": "Tech Innovation Hub, Bangalore, Karnataka - 560001",
+      "date": "May 15- May 17, 2026",
+      "dateTime": "Thursday, May 15 · 10:00 – 6:00pm GMT+5:30",
+      "time": "10:00 AM - 6:00 PM",
+      "capacity": "350 Attendees",
+      "image": "/event/event 5.png",
+      "status": "past",
+      "statusLabel": "Past Event",
+      "organizer": "IPPAI Digital Innovation Lab",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Past events",
+        "eventTitle": "105- Digital Innovation in Energy Systems"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "Explore the digital transformation of energy systems with hands-on learning in emerging technologies that are reshaping how we generate, distribute, and consume energy.",
+      "aboutEvent": {
+        "mainDescription": "Step into the future of energy with IPPAI's comprehensive digital innovation workshop! This cutting-edge program brings together energy professionals, technologists, and innovators to explore how digital technologies are revolutionizing energy systems and creating new opportunities.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Thursday-Saturday, May 15-17, 2026."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 10:00 AM - 6:00 PM daily (Tech expo and networking starts at 9:00 a.m. each day with live demonstrations!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Tech Innovation Hub (Inside Bangalore International Tech Park)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🤖",
+            "title": "AI & Machine Learning:",
+            "description": "Hands-on workshops on applying AI and ML for energy forecasting, grid optimization, and predictive maintenance in energy systems.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "🌐",
+            "title": "Smart Grid Technologies:",
+            "description": "Deep dive into smart grid infrastructure, IoT integration, and real-time energy management systems with live demonstrations.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "⛓️",
+            "title": "Blockchain Applications:",
+            "description": "Explore blockchain technology for peer-to-peer energy trading, renewable energy certificates, and decentralized energy markets.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "📱",
+            "title": "Digital Platforms:",
+            "description": "Learn about energy management platforms, customer engagement tools, and digital marketplace solutions for the energy sector.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This workshop is essential for energy professionals who want to stay ahead of the digital transformation curve. You'll gain practical knowledge of emerging technologies and their applications in energy systems, plus valuable networking opportunities with tech innovators and energy leaders."
+      },
+      "prizes": {
+        "title": "Innovation Rewards (Attendees Only!):",
+        "items": [
+          "1 Digital innovation grant worth $12,000 for developing energy technology solutions!",
+          "Access to premium energy tech software and development tools worth INR 60,000!",
+          "Opportunity to pitch your energy innovation ideas to leading venture capital firms and get mentorship support."
+        ]
+      },
+      "conclusion": "Don't miss this opportunity to be at the forefront of energy innovation. Whether you're developing new technologies, implementing digital solutions, or planning for the future, this workshop will provide the insights and connections you need to succeed in the digital energy landscape."
     }
   ]
 }
