@@ -12,7 +12,7 @@ export default function IntensiveCourseHero() {
         className="object-cover w-full h-full absolute inset-0 z-0"
       />
 
-      <div className="absolute top-3/4 left-4 md:-left-0  -translate-y-1/2 z-20 hidden md:block">
+      {/* <div className="absolute top-3/4 left-4 md:-left-0  -translate-y-1/2 z-20 hidden md:block">
         <Image
           src="/course/person-left.png"
           alt="Person Left"
@@ -22,17 +22,17 @@ export default function IntensiveCourseHero() {
           draggable={false}
           priority
         />
-      </div>
+      </div> */}
 
       <div className="relative max-w-[1100px] z-20 w-full mx-auto  py-8 flex items-center justify-between">
         <div className="flex flex-col justify-center items-start max-w-full md:max-w-[520px] lg:max-w-[580px] ">
           <div className="flex items-center gap-2 mb-1">
             <Image
-              src="/header/logo.png"
+              src="/l.png"
               alt="Logo"
-              width={76}
-              height={36}
-              className="h-9 w-auto"
+              width={100}
+              height={100}
+              className="h-12 w-auto"
             />
           </div>
 
@@ -51,11 +51,11 @@ export default function IntensiveCourseHero() {
             className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition mb-3 inline-block"
             style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
           >
-            Register Now
+            Sign Up For Resources
           </Link>
         </div>
         <div className=" z-20 hidden md:flex flex-col justify-center">
-          <div className="relative z-10 w-[500px] h-[500px]">
+          {/* <div className="relative z-10 w-[500px] h-[500px]">
             <Image
               src="/course/person-right.png"
               alt="Person Right"
@@ -64,7 +64,7 @@ export default function IntensiveCourseHero() {
               draggable={false}
               priority
             />
-            {/* Styled div positioned at top right of person image */}
+
             <div className="absolute z-30 flex flex-col items-center justify-center top-0 -right-12 w-48 h-44 rounded-xl px-7 py-5 bg-black/25 shadow-lg">
               <Image
                 src="/course/i.png"
@@ -80,7 +80,7 @@ export default function IntensiveCourseHero() {
                 12K
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
