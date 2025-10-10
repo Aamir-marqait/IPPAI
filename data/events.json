@@ -485,6 +485,87 @@
         ]
       },
       "conclusion": "Join the leading voices in international energy law for this intensive learning experience. Whether you're practicing energy law, developing policy, or working in international energy organizations, this seminar will enhance your expertise and expand your professional network in the global energy legal community."
+    },
+    {
+      "id": 7,
+      "title": "Regulators & Policymakers Retreat",
+      "slug": "regulators-policymakers-retreat",
+      "description": "Join us for an exclusive retreat bringing together regulators and policymakers to discuss the future of energy policy, regulatory frameworks, and collaborative strategies for sustainable energy transition.",
+      "location": "Shoonya Farm Retreat, Belagavi, Karnataka",
+      "date": "Sep 25- Sep 27, 2025",
+      "dateTime": "Thursday, September 25 · 9:00 – 6:00pm GMT+5:30",
+      "time": "9:00 AM - 6:00 PM",
+      "capacity": "150 Attendees",
+      "image": "/event/bg.png",
+      "status": "upcoming",
+      "statusLabel": "Upcoming Event",
+      "organizer": "IPPAI Leadership Team",
+      "registrationLink": "/contact",
+      "breadcrumb": {
+        "category": "Upcoming events",
+        "eventTitle": "Regulators & Policymakers Retreat 2025"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "An exclusive retreat designed for regulators, policymakers, and industry leaders to engage in meaningful dialogue about the future of energy regulation and policy development in an immersive natural setting.",
+      "aboutEvent": {
+        "mainDescription": "Experience transformative policy discussions in the serene environment of Shoonya Farm Retreat. This exclusive gathering brings together leading regulators, policymakers, and thought leaders for intensive sessions on energy regulation, policy innovation, and collaborative governance strategies.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Thursday-Saturday, September 25-27, 2025."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 9:00 AM - 6:00 PM daily (Welcome dinner on Thursday evening and morning nature walks available for early risers!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Shoonya Farm Retreat, Belagavi, Karnataka (Accommodation and meals included)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🏛️",
+            "title": "Policy Innovation Sessions:",
+            "description": "Interactive workshops on innovative regulatory approaches, policy design principles, and adaptive governance frameworks for emerging energy technologies.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "🤝",
+            "title": "Cross-Sector Collaboration:",
+            "description": "Facilitated discussions between regulators, industry representatives, and civil society on building effective public-private partnerships.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "🌱",
+            "title": "Sustainability Integration:",
+            "description": "Deep dive into incorporating sustainability principles and climate considerations into regulatory frameworks and policy decisions.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "🔄",
+            "title": "Adaptive Governance:",
+            "description": "Explore flexible regulatory approaches that can adapt to technological changes and evolving energy market dynamics.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This retreat offers a unique opportunity for high-level policy dialogue in an intimate setting away from the usual conference environment. Build lasting professional relationships while engaging in substantive discussions that can shape the future of energy regulation and policy."
+      },
+      "prizes": {
+        "title": "Exclusive Benefits (Attendees Only!):",
+        "items": [
+          "Access to exclusive policy white papers and regulatory trend analysis worth $5,000 in consulting value!",
+          "Invitation to join the IPPAI Regulators' Network for ongoing collaboration and knowledge sharing!",
+          "Follow-up mentorship opportunities with senior policymakers and regulatory experts in your area of focus."
+        ]
+      },
+      "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings."
     }
   ]
 }
