@@ -3,42 +3,42 @@ import Image from "next/image";
 export default function EventsGallery() {
   const images = [
     {
-      src: "/event/img1.png",
+      src: "/ne/1.jpg",
       alt: "Business presentation with charts",
       size: "small",
     },
     {
-      src: "/event/img2.png",
+      src: "/ne/2.jpg",
       alt: "Professional conference presentation",
       size: "equal",
     },
     {
-      src: "/event/img3.png",
+      src: "/ne/3.jpg",
       alt: "Corporate meeting discussion",
       size: "big",
     },
     {
-      src: "/event/img4.png",
+      src: "/ne/4.jpg",
       alt: "Business seminar audience",
       size: "equal",
     },
     {
-      src: "/event/img5.png",
+      src: "/ne/5.jpg",
       alt: "Professional networking event",
       size: "big",
     },
     {
-      src: "/event/img6.png",
+      src: "/ne/6.jpg",
       alt: "Corporate training session",
       size: "equal",
     },
     {
-      src: "/event/img7.png",
+      src: "/ne/7.jpg",
       alt: "Conference auditorium presentation",
       size: "small",
     },
     {
-      src: "/event/img8.png",
+      src: "/ne/8.jpg",
       alt: "Executive meeting with documents",
       size: "equal",
     },
