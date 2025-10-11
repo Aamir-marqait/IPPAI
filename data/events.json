@@ -1,12 +1,93 @@
 {
   "events": [
     {
+      "id": 7,
+      "title": "Regulators & Policymakers Retreat",
+      "slug": "regulators-policymakers-retreat",
+      "description": "Join us for an exclusive retreat bringing together regulators and policymakers to discuss the future of energy policy, regulatory frameworks, and collaborative strategies for sustainable energy transition.",
+      "location": "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
+      "date": "7th- 10th January, 2026",
+      "dateTime": "Thursday, September 25 · 9:00 – 6:00pm GMT+5:30",
+      "time": "9:00 AM - 6:00 PM",
+      "capacity": "150 Attendees",
+      "image": "/event/bg.png",
+      "status": "upcoming",
+      "statusLabel": "Upcoming Event",
+      "organizer": "IPPAI Leadership Team",
+      "registrationLink": "/contact",
+      "breadcrumb": {
+        "category": "Upcoming events",
+        "eventTitle": "Regulators & Policymakers Retreat 2025"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "An exclusive retreat designed for regulators, policymakers, and industry leaders to engage in meaningful dialogue about the future of energy regulation and policy development in an immersive natural setting.",
+      "aboutEvent": {
+        "mainDescription": "Experience transformative policy discussions in the serene environment of Shoonya Farm Retreat. This exclusive gathering brings together leading regulators, policymakers, and thought leaders for intensive sessions on energy regulation, policy innovation, and collaborative governance strategies.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Thursday-Saturday, September 25-27, 2025."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 9:00 AM - 6:00 PM daily (Welcome dinner on Thursday evening and morning nature walks available for early risers!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Shoonya Farm Retreat, Belagavi, Karnataka (Accommodation and meals included)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "🏛️",
+            "title": "Policy Innovation Sessions:",
+            "description": "Interactive workshops on innovative regulatory approaches, policy design principles, and adaptive governance frameworks for emerging energy technologies.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "🤝",
+            "title": "Cross-Sector Collaboration:",
+            "description": "Facilitated discussions between regulators, industry representatives, and civil society on building effective public-private partnerships.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "🌱",
+            "title": "Sustainability Integration:",
+            "description": "Deep dive into incorporating sustainability principles and climate considerations into regulatory frameworks and policy decisions.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "🔄",
+            "title": "Adaptive Governance:",
+            "description": "Explore flexible regulatory approaches that can adapt to technological changes and evolving energy market dynamics.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This retreat offers a unique opportunity for high-level policy dialogue in an intimate setting away from the usual conference environment. Build lasting professional relationships while engaging in substantive discussions that can shape the future of energy regulation and policy."
+      },
+      "prizes": {
+        "title": "Exclusive Benefits (Attendees Only!):",
+        "items": [
+          "Access to exclusive policy white papers and regulatory trend analysis worth $5,000 in consulting value!",
+          "Invitation to join the IPPAI Regulators' Network for ongoing collaboration and knowledge sharing!",
+          "Follow-up mentorship opportunities with senior policymakers and regulatory experts in your area of focus."
+        ]
+      },
+      "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings."
+    },
+    {
       "id": 1,
-      "title": "IIA Lorem ipsum dolor sit amet, consectetur adipiscing.",
-      "slug": "iia-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing",
+      "title": "Intensive Course",
+      "slug": "intensive-course",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-      "location": "2715 Ash Dr. San Jose, South Dakota -83475",
-      "date": "Dec 11- Dec 24, 2025",
+      "location": "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
+      "date": "29th - 31st October, 2025",
       "dateTime": "Tuesday, December 11 · 10:00 – 6:00pm GMT+5:30",
       "time": "10:00 AM - 6:00 PM",
       "capacity": "500 Attendees",
@@ -29,7 +110,7 @@
             "text": "Date: Tuesday, December 11, 2025."
           },
           {
-            "icon": "clock", 
+            "icon": "clock",
             "text": "Time: 10:00 AM (But arrive early! Our Early Bird Entry opens at 9:00 a.m., where you'll get exclusive access to expert speakers and a team of professionals, ready to answer your questions face-to-face!)"
           },
           {
@@ -48,7 +129,7 @@
             "color": "#A37CFE"
           },
           {
-            "emoji": "💼", 
+            "emoji": "💼",
             "title": "Career Opportunities:",
             "description": "Learn how to secure positions that not only advance your career but also contribute meaningfully to energy policy development.",
             "color": "#FEA800"
@@ -83,7 +164,7 @@
     },
     {
       "id": 2,
-      "title": "Som Lorem ipsum dolor sit amet, consectetur adipiscing.",
+      "title": "Consultative Conference on Resolving Issues in Open Access, Stressed Assets, Captive & Group Captive, Fuel Supply, Re-negotiation of PPAs to revive Power Consumers...",
       "slug": "som-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
       "location": "2715 Ash Dr. San Jose, South Dakota -83475",
@@ -114,7 +195,7 @@
             "text": "Time: 9:00 AM (Registration opens at 8:30 a.m. for networking breakfast with speakers and industry professionals!)"
           },
           {
-            "icon": "location", 
+            "icon": "location",
             "text": "Location: Renewable Energy Research Center (Inside Clean Tech Innovation Hub)"
           }
         ]
@@ -164,7 +245,7 @@
     },
     {
       "id": 3,
-      "title": "Advanced Energy Economics and Market Design",
+      "title": "Promoting Fresh Investments in the Power Sector in Telangana",
       "slug": "advanced-energy-economics-and-market-design",
       "description": "Comprehensive workshop on energy market mechanisms, pricing strategies, and economic analysis in the evolving energy landscape.",
       "location": "Energy Economics Institute, Mumbai, Maharashtra - 400001",
@@ -173,12 +254,12 @@
       "time": "8:30 AM - 6:30 PM",
       "capacity": "400 Attendees",
       "image": "/event/event 3.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
+      "status": "past",
+      "statusLabel": "Past Event",
       "organizer": "IPPAI Economics Division",
       "registrationLink": "#",
       "breadcrumb": {
-        "category": "Upcoming events",
+        "category": "Past events",
         "eventTitle": "103- Advanced Energy Economics and Market Design"
       },
       "eventDuration": "Event lasts 3 days",
@@ -245,7 +326,7 @@
     },
     {
       "id": 4,
-      "title": "Climate Policy and Energy Transition Strategies",
+      "title": "Emerging Opportunities & Challenges in the Power Sector for E-Mobility, Industrial & Commercial Power Consumers, Discoms, Generators & Other Stakeholders",
       "slug": "climate-policy-and-energy-transition-strategies",
       "description": "Strategic workshop on climate policy frameworks, energy transition pathways, and implementation strategies for sustainable energy systems.",
       "location": "Climate Policy Center, New Delhi, Delhi - 110001",
@@ -254,12 +335,12 @@
       "time": "9:00 AM - 5:00 PM",
       "capacity": "250 Attendees",
       "image": "/event/event 4.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
+      "status": "past",
+      "statusLabel": "Past Event",
       "organizer": "IPPAI Climate Division",
       "registrationLink": "#",
       "breadcrumb": {
-        "category": "Upcoming events",
+        "category": "Past events",
         "eventTitle": "104- Climate Policy and Energy Transition Strategies"
       },
       "eventDuration": "Event lasts 3 days",
@@ -326,7 +407,7 @@
     },
     {
       "id": 5,
-      "title": "Digital Innovation in Energy Systems",
+      "title": "Emerging Opportunities & Challenges in Open Access in the Power Sector in Uttar Pradesh for Discoms and Power Consumers",
       "slug": "digital-innovation-in-energy-systems",
       "description": "Cutting-edge workshop on digital technologies transforming energy systems, including AI, IoT, blockchain, and smart grid technologies.",
       "location": "Tech Innovation Hub, Bangalore, Karnataka - 560001",
@@ -335,12 +416,12 @@
       "time": "10:00 AM - 6:00 PM",
       "capacity": "350 Attendees",
       "image": "/event/event 5.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
+      "status": "past",
+      "statusLabel": "Past Event",
       "organizer": "IPPAI Digital Innovation Lab",
       "registrationLink": "#",
       "breadcrumb": {
-        "category": "Upcoming events",
+        "category": "Past events",
         "eventTitle": "105- Digital Innovation in Energy Systems"
       },
       "eventDuration": "Event lasts 3 days",
@@ -404,87 +485,6 @@
         ]
       },
       "conclusion": "Don't miss this opportunity to be at the forefront of energy innovation. Whether you're developing new technologies, implementing digital solutions, or planning for the future, this workshop will provide the insights and connections you need to succeed in the digital energy landscape."
-    },
-    {
-      "id": 6,
-      "title": "International Energy Law and Governance",
-      "slug": "international-energy-law-and-governance",
-      "description": "Advanced seminar on international energy law, cross-border energy trade, and governance frameworks for global energy cooperation.",
-      "location": "International Law Institute, Pune, Maharashtra - 411001",
-      "date": "Jul 8- Jul 10, 2026",
-      "dateTime": "Wednesday, July 8 · 9:30 – 5:30pm GMT+5:30",
-      "time": "9:30 AM - 5:30 PM",
-      "capacity": "200 Attendees",
-      "image": "/event/event 6.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Legal Affairs Division",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "106- International Energy Law and Governance"
-      },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "Master the complexities of international energy law with expert instruction on treaties, trade agreements, dispute resolution, and governance frameworks.",
-      "aboutEvent": {
-        "mainDescription": "Navigate the complex world of international energy law with IPPAI's specialized program designed for legal professionals, policy makers, and international energy practitioners. This advanced seminar covers the full spectrum of legal and governance issues in global energy cooperation.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Wednesday-Friday, July 8-10, 2026."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 9:30 AM - 5:30 PM daily (Distinguished speaker series starts each morning at 9:00 a.m. with international experts!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: International Law Institute (Inside Pune International Legal Complex)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "⚖️",
-            "title": "International Treaties:",
-            "description": "Comprehensive analysis of international energy treaties, agreements, and legal frameworks governing cross-border energy cooperation.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "🌍",
-            "title": "Trade & Investment:",
-            "description": "Expert sessions on international energy trade law, investment protection, and dispute resolution mechanisms in the energy sector.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "🏛️",
-            "title": "Governance Frameworks:",
-            "description": "Study of international energy governance institutions, their roles, and effectiveness in addressing global energy challenges.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "📋",
-            "title": "Case Studies:",
-            "description": "Analysis of landmark energy law cases, arbitration decisions, and their implications for international energy cooperation.",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This seminar is crucial for legal professionals, diplomats, and policy makers working on international energy issues. You'll gain deep insights into the legal frameworks governing global energy cooperation and develop practical skills for navigating complex international energy transactions and disputes."
-      },
-      "prizes": {
-        "title": "Professional Opportunities (Attendees Only!):",
-        "items": [
-          "1 Internship opportunity at a leading international energy law firm worth $15,000!",
-          "Access to premium international energy law databases and research tools worth INR 75,000!",
-          "Invitation to present at the Annual International Energy Law Conference with leading practitioners and academics."
-        ]
-      },
-      "conclusion": "Join the leading voices in international energy law for this intensive learning experience. Whether you're practicing energy law, developing policy, or working in international energy organizations, this seminar will enhance your expertise and expand your professional network in the global energy legal community."
     }
   ]
 }

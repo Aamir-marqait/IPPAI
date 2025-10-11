@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -51,7 +52,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
         <main className="flex-1 flex items-center">
-          <div className="w-full max-w-[1100px] mx-auto flex flex-col lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+          <div className="w-full max-w-[1100px] mx-auto flex flex-col gap-5 lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
             {/* Left side - Overlapping Images */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
               <div className="relative w-full max-w-md lg:max-w-lg">
@@ -78,12 +79,12 @@ export default function HeroSection() {
             <div className="w-full lg:w-1/2 text-center space-y-8 lg:space-y-3 lg:translate-y-20 mt-10 lg:mt-0  pt-20  ">
               {/* Main Title */}
               <div>
-                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal uppercase text-white text-balance">
+                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal uppercase text-white text-left">
                   Regulators & Policymakers
                   <br />
                   <span className="text-[#D3363B]">Retreat</span>
                 </h1>
-                <div className="flex justify-center">
+                <div className="flex justify-right">
                   <Image
                     src="/home/line.png"
                     alt="Line"
@@ -95,7 +96,7 @@ export default function HeroSection() {
               </div>
 
               {/* Event Details */}
-              <div className="md:ml-10">
+              <div className="">
                 <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                   <div className="flex flex-wrap items-center justify-start gap-2 xs:gap-3">
                     <Image
@@ -125,10 +126,19 @@ export default function HeroSection() {
                 </div>
 
                 {/* Register Button */}
-                <div className="pt-4 flex justify-center">
-                  <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
-                    Register Now
-                  </Button>
+                <div className="pt-4 flex justify-start">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <Link href="/contact">
+                      <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 cursor-pointer sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
+                        Register Now
+                      </Button>
+                    </Link>
+                    <Link href="/events/regulators-policymakers-retreat">
+                      <Button className="bg-white shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-medium text-base leading-none text-center text-[#D3363B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] hover:text-white cursor-pointer">
+                        Know More
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
 

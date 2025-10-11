@@ -3,29 +3,29 @@ import Image from "next/image";
 // Replace these avatar URLs with actual image paths
 const testimonials = [
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Assistant Director",
+    role: "Central Electricity Authority",
+    avatar: "/course/user2.jpg",
+    text: `“The course helped provide a detailed overview of various key concepts of the Indian Power sector, such as Resource Adequacy, Open Access and GNA Mechanisms.”`,
   },
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Assistant Engineer",
+    role: "KSEBL",
+    avatar: "/course/user2.jpg",
+    text: `“Good opportunity to interact with various power experts from across the country. Refreshing course”.`,
   },
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Exec Engineer",
+    role: "MSPGCL",
+    avatar: "/course/user2.jpg",
+    text: `“Benefitted from the interaction with legends of the regulatory field. Gained a broader knowledge of the Regulation and Policy arena and current power industry approach.”`,
   },
 ];
 
 export default function OurAlumni() {
   return (
     <section className="bg-[#F5F5F5] min-h-[80vh] w-full flex items-center justify-center">
-      <div className="w-full max-w-[1100px] px-4 py-10 mx-auto">
+      <div className="w-full max-w-[1200px] px-4 py-10 mx-auto">
         {/* Heading */}
         <div className="mb-8 md:mb-12 text-center">
           <h2 className="font-red-hat-display font-bold text-[36px] leading-[46px] text-center text-[#121212] mb-2">
@@ -55,8 +55,8 @@ export default function OurAlumni() {
                   />
                 </div>
                 <div>
-                  <div className="font-poppins font-bold text-[20px] leading-[20px] text-[#D3363B]">
-                    {t.name}
+                  <div className="font-poppins mb-2  font-bold text-[20px] leading-[20px] text-[#D3363B]">
+                    - {t.name}
                   </div>
                   <div className="font-poppins font-normal text-[15px] leading-[18px] text-[#6D6D6D]">
                     {t.role}
