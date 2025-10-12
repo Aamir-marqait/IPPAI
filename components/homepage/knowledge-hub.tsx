@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { JoinUsModal } from "@/components/JoinMembershipModal";
+import { useRouter } from "next/navigation";
 
 const knowledgeHubArticles = [
   {
@@ -87,10 +88,21 @@ export default function KnowledgeHubSection() {
   const [selectedArticle, setSelectedArticle] = useState<
     (typeof knowledgeHubArticles)[0] | null
   >(null);
+  const router = useRouter();
+
+  const categories = [
+    "Industry Perspective",
+    "Narratives / Socio-Ecological",
+    "Energy Security"
+  ];
 
   const handleArticleClick = (article: (typeof knowledgeHubArticles)[0]) => {
     setSelectedArticle(article);
     setIsModalOpen(true);
+  };
+
+  const handleCategoryClick = (category: string) => {
+    router.push(`/articles?category=${encodeURIComponent(category)}`);
   };
 
   const handlePolicyClick = (policy: (typeof policyRecommendations)[0]) => {
@@ -139,14 +151,14 @@ export default function KnowledgeHubSection() {
               Articles <br className="sm:hidden md:block" /> and Insights
             </h3>
             <div className="flex-grow">
-              {knowledgeHubArticles.map((article, index) => (
+              {categories.map((category, index) => (
                 <div
                   key={index}
                   className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
-                  onClick={() => handleArticleClick(article)}
+                  onClick={() => handleCategoryClick(category)}
                 >
                   <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
-                    {article.title}
+                    {category}
                   </div>
                 </div>
               ))}

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { JoinUsModal } from "@/components/JoinMembershipModal";
 
 const articles = [
@@ -81,6 +82,7 @@ const articles = [
 ];
 
 export default function ExpertArticles() {
+  const searchParams = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<
     (typeof articles)[0] | null
@@ -91,10 +93,18 @@ export default function ExpertArticles() {
 
   const categories = [
     "Industry Perspective",
-    "Narratives", 
-    "Socio-Ecological",
+    "Narratives / Socio-Ecological",
     "Energy Security"
   ];
+
+  // Set default category from URL params
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam && categories.includes(categoryParam)) {
+      setSelectedCategories([categoryParam]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategories(prev => 
@@ -165,9 +175,16 @@ export default function ExpertArticles() {
             <div className="relative dropdown-container">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-[115px] h-10 flex items-center justify-center gap-3 p-[9.48px] rounded-[4.74px] border border-[#EBEBEB] bg-[#FBFBFB] font-work-sans font-medium text-[15.8px] leading-[100%] text-[#6C757D] hover:bg-gray-50 focus:ring-2 focus:ring-[#D3363B] focus:border-transparent outline-none"
+                className="min-w-[115px] w-auto h-10 flex items-center justify-center gap-3 px-3 py-[9.48px] rounded-[4.74px] border border-[#EBEBEB] bg-[#FBFBFB] font-work-sans font-medium text-[15.8px] leading-[100%] text-[#6C757D] hover:bg-gray-50 focus:ring-2 focus:ring-[#D3363B] focus:border-transparent outline-none whitespace-nowrap"
               >
-                <span>Sort by</span>
+                <span>
+                  {selectedCategories.length === 0 
+                    ? "Sort by" 
+                    : selectedCategories.length === categories.length 
+                    ? "ALL" 
+                    : selectedCategories.join(", ")
+                  }
+                </span>
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
