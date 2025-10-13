@@ -1,16 +1,18 @@
-import React from "react";
+import Articles from "./articles";
+import ContactSection from "./contact-section";
 import HeroSection from "./hero-section";
-import ExpertArticles from "./articles";
-import ContactUsSection from "./contact-section";
+import { Suspense } from "react";
 
-function page() {
+const Page = () => {
   return (
-    <div>
+    <main>
       <HeroSection />
-      <ExpertArticles />
-      <ContactUsSection />
-    </div>
+      <Suspense>
+        <Articles />
+      </Suspense>
+      <ContactSection />
+    </main>
   );
-}
+};
 
-export default page;
+export default Page;
