@@ -112,12 +112,12 @@ export default function Header() {
                     <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                     <div className="py-2">
-                      <Link
+                      {/* <Link
                         href="/policies"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                       >
                         Policies
-                      </Link>
+                      </Link> */}
                       <Link
                         href="/publications"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -167,12 +167,12 @@ export default function Header() {
                     <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                     <div className="py-2">
-                      <Link
+                      {/* <Link
                         href="/press-releases"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                       >
                         Press Releases
-                      </Link>
+                      </Link> */}
                       <Link
                         href="/photo-gallery"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -351,12 +351,12 @@ export default function Header() {
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                   <div className="py-2">
-                    <Link
+                    {/* <Link
                       href="/policies"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
                       Policies
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/publications"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -416,12 +416,12 @@ export default function Header() {
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                   <div className="py-2">
-                    <Link
+                    {/* <Link
                       href="/press-releases"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
                       Press Releases
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/photo-gallery"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
