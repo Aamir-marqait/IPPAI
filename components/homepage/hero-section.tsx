@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function HomeHero() {
+  const [currentEvent, setCurrentEvent] = useState(0);
+
   const events = [
     {
       title: "26th Regulators & Policymakers Retreat",
@@ -24,56 +27,56 @@ export default function HomeHero() {
 
   return (
     <div className="relative">
-      {/* First Event - Top Half */}
-      <div className="relative h-[60vh] overflow-hidden">
+      <div className="absolute inset-0 w-screen h-screen overflow-hidden">
         <Image
-          src={events[0].image}
+          src={events[currentEvent].image}
           alt="Event background"
           fill
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/40"></div>
-        
-        {/* Content for first event */}
-        <div className="relative z-10 h-full flex items-center pt-20">
-          <div className="max-w-[1100px] mx-auto w-full px-7 md:px-0">
-            <div className="mb-8">
-              <h1 className="max-w-xl text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] font-bold font-red-hat-display text-white mb-4 leading-[150%]">
-                {events[0].title}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen pt-40">
+        <main className="flex max-w-[1100px] mx-auto flex-col items-center justify-center w-full px-7 md:px-0">
+          <div className="w-full flex flex-col items-center">
+            <div className="text-center mb-12">
+              <h1 className="font-red-hat-display font-bold text-[64px] leading-[100%] tracking-[0%] text-center text-white mb-6">
+                {events[currentEvent].title}
               </h1>
-              <p className="max-w-md text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none">
-                {events[0].desc}
+
+              <p className="font-poppins font-medium text-[24px] leading-[150%] tracking-[0%] text-center text-white mt-5 max-w-2xl mx-auto">
+                {events[currentEvent].desc}
               </p>
             </div>
-            
-            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl shadow-2xl">
+
+            <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl mb-5 shadow-2xl w-full">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
                     <Image
-                      src="/optimized/calendar.webp"
+                      src="/home/calendar.svg"
                       alt="Calendar"
                       width={20}
                       height={20}
                       className="w-5 h-5"
-                      loading="lazy"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      {events[0].date}
+                      {events[currentEvent].date}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Image
-                      src="/optimized/location.webp"
+                      src="/home/location.svg"
                       alt="Location"
                       width={20}
                       height={20}
                       className="w-5 h-5"
-                      loading="lazy"
                     />
                     <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                      {events[0].location}
+                      {events[currentEvent].location}
                     </span>
                   </div>
                 </div>
@@ -87,98 +90,50 @@ export default function HomeHero() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Divider Line */}
-      <div 
-        className="w-screen h-[4px] mx-auto"
-        style={{
-          background: "linear-gradient(90deg, #D3363B 0%, #5E1517 100%)"
-        }}
-      ></div>
-      
-      {/* Second Event - Bottom Half */}
-      <div className="relative h-[60vh] overflow-hidden">
-        <Image
-          src={events[1].image}
-          alt="Event background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-        
-        {/* Content for second event */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-[1100px] mx-auto w-full px-7 md:px-0 flex justify-end">
-            <div className="max-w-xl">
-              <div className="mb-8">
-                <h1 className="max-w-xl text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] font-bold font-red-hat-display text-white mb-4 leading-[150%]">
-                  {events[1].title}
-                </h1>
-                <p className="text-left text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins text-white leading-none ml-auto">
-                  {events[1].desc}
-                </p>
-              </div>
-              
-              <div className="bg-white/96 rounded-[20px] p-6 md:p-8 max-w-2xl shadow-2xl ml-auto">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Image
-                        src="/optimized/calendar.webp"
-                        alt="Calendar"
-                        width={20}
-                        height={20}
-                        className="w-5 h-5"
-                        loading="lazy"
-                      />
-                      <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                        {events[1].date}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src="/optimized/location.webp"
-                        alt="Location"
-                        width={20}
-                        height={20}
-                        className="w-5 h-5"
-                        loading="lazy"
-                      />
-                      <span className="text-[#222222] text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none">
-                        {events[1].location}
-                      </span>
-                    </div>
-                  </div>
-                  <Link href="/contact">
-                    <Button
-                      className="cursor-pointer bg-[#D3363B] hover:bg-[#D3363B]/90 text-white text-xs sm:text-sm md:text-base xl:text-base font-medium font-work-sans leading-none text-center rounded-[25px] p-[10px] px-8"
-                      style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
-                    >
-                      Register Now
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+            <div className="flex justify-start gap-2 mb-16">
+              {events.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentEvent(index)}
+                  className={`h-2 transition-all duration-300 rounded-full ${
+                    index === currentEvent
+                      ? "bg-[#D3363B] w-16"
+                      : "bg-white/40 w-7 hover:bg-white/60"
+                  }`}
+                />
+              ))}
             </div>
           </div>
-        </div>
-      </div>
-      
-      {/* Knowledge Partners Section */}
-      {/* <div className="relative bg-white py-8">
-        <div className="max-w-[1100px] mx-auto px-7 md:px-0">
           <div
-            className="bg-white rounded-[20px] border border-[#CCCCCC] p-6 md:py-8"
+            className="bg-white rounded-[20px] border border-[#CCCCCC] p-6 md:py-8 mx-auto w-full max-w-4xl"
             style={{ boxShadow: "0px 12px 30px 0px #00000030" }}
           >
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              {/* <div className="flex items-center gap-4">
+                  <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
+                    Sponsored By
+                  </span>
+                  <Image
+                    src="/optimized/s.webp"
+                    alt="Sponsor"
+                    width={60}
+                    height={60}
+                    className="h-10 w-auto"
+                    loading="lazy"
+                  />
+                  <div
+                    className="w-px h-8 "
+                    style={{
+                      border: "1px solid #DEDEDE",
+                    }}
+                  ></div>
+                </div> */}
+
               <div className="flex items-center gap-4">
                 <span className="text-[#656565] font-light font-briem-hand leading-none text-base sm:text-lg md:text-xl xl:text-2xl">
                   Knowledge Partner
                 </span>
+
                 <Image
                   src="/optimized/kp1.webp"
                   alt="Idam - Enabling Carbon Minimal World"
@@ -188,6 +143,7 @@ export default function HomeHero() {
                   loading="lazy"
                 />
               </div>
+
               <div className="flex items-center gap-4">
                 <Image
                   src="/optimized/kp2.webp"
@@ -200,8 +156,46 @@ export default function HomeHero() {
               </div>
             </div>
           </div>
-        </div>
-      </div> */}
+        </main>
+      </div>
+
+      {/* Previous Button */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-start pl-20">
+        <button
+          onClick={() =>
+            setCurrentEvent(
+              (prev) => (prev - 1 + events.length) % events.length
+            )
+          }
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
+          <Image
+            src="/next.png"
+            alt="Previous"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px] rotate-180"
+            priority
+          />
+        </button>
+      </div>
+
+      {/* Next Button */}
+      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+        <button
+          onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
+          className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
+        >
+          <Image
+            src="/next.png"
+            alt="Next"
+            width={200}
+            height={150}
+            className="w-full h-10 max-w-[200px]"
+            priority
+          />
+        </button>
+      </div>
     </div>
   );
 }
