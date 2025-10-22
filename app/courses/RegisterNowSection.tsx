@@ -41,23 +41,32 @@ export default function RegisterNowSection() {
             <h2 className="font-red-hat-display max-w-md font-bold text-2xl sm:text-3xl lg:text-[36px] leading-tight lg:leading-[48px] align-middle capitalize text-white mb-6 lg:mb-8">
               Register Now
             </h2>
-            <form className="flex flex-col gap-4 lg:gap-6">
+            <form action="https://api.web3forms.com/submit" method="POST" className="flex flex-col gap-4 lg:gap-6">
+              <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
+              <input type="hidden" name="subject" value="Course Registration" />
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                required
                 className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone"
+                required
                 className="w-full max-w-[456px] lg:w-[456px] h-[50px] sm:h-[54px] lg:h-[58px] rounded-[30px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D]"
               />
               <textarea
+                name="message"
                 placeholder="Message"
                 className="w-full max-w-[456px] lg:w-[456px] h-[100px] lg:h-[120px] rounded-[15px] px-4 lg:px-5 py-3 text-sm lg:text-base font-normal bg-white text-[#232323] border border-[#6D6D6D] outline-none placeholder:text-[#8D8D8D] resize-none"
               />
