@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    image: "/leader/1.jpg",
+    image: "/user.jpg",
     quote:
       "It is always a learning experience because of the interaction. There is always something new happening and we meet old colleagues.",
     name: "Dr. Pramod Deo",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    image: "/leader/1.jpg",
+    image: "/user.jpg",
     quote:
       "It is important that decision-makers and social justice campaigners continue to interface at such forums in order to explore improved ways of monitoring service provider accountability and responsibility to the general public.",
     name: "Mr. Ishmahil Blagrove Jr",
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     id: 3,
-    image: "/leader/1.jpg",
+    image: "/user.jpg",
     quote:
       "IPPAl is doing a wonderful job because they bring companies and regulators together, where regulators really hear from companies what their viewpoint is and what problems they are facing. Regulators too talk about the dilemma they face regarding various legal issues. On this platform, there is exchange of ideas and discussion of new areas like solar.",
     name: "Mr. Sushil Maroo",
@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     id: 4,
-    image: "/leader/1.jpg",
+    image: "/user.jpg",
     quote:
       "It's an excellent opportunity to share views for the development of the sector, to exchange ideas, communicate with people and to listen to various opinions, which eventually will enrich and make the entire sector vibrant and strong.",
     name: "Mr. Gopal Saxena",
