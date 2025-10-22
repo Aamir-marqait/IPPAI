@@ -79,8 +79,8 @@ export default function HeroSection() {
             <div className="w-full lg:w-1/2 text-center space-y-8 lg:space-y-3 lg:translate-y-20 mt-10 lg:mt-0  pt-20  ">
               {/* Main Title */}
               <div>
-                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal uppercase text-white text-left">
-                  Regulators & Policymakers
+                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal  text-white text-left">
+                  26th Regulators & Policymakers
                   <br />
                   <span className="text-[#D3363B]">Retreat</span>
                 </h1>

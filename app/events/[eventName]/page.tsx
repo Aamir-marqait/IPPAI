@@ -116,9 +116,11 @@ export default function EventDetailPage() {
           <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mb-4 sm:mb-[22px]">
             {event.whyAttend.description}
           </div>
-          {/* Prizes */}
-          <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.prizes.title}</div>
-          <div className="space-y-3">
+          {/* Prizes - Only show if prizes field exists */}
+          {event.prizes && (
+            <>
+              <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.prizes.title}</div>
+              <div className="space-y-3">
             <div className="flex items-start">
               <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="8" width="18" height="4" rx="1" />
@@ -160,6 +162,8 @@ export default function EventDetailPage() {
               </span>
             </div>
           </div>
+            </>
+          )}
           <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mt-4 sm:mt-[18px]">
             {event.conclusion}
           </div>

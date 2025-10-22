@@ -2,12 +2,12 @@
   "events": [
     {
       "id": 7,
-      "title": "Regulators & Policymakers Retreat",
+      "title": "26th Regulators & Policymakers Retreat",
       "slug": "regulators-policymakers-retreat",
-      "description": "Join us for an exclusive retreat bringing together regulators and policymakers to discuss the future of energy policy, regulatory frameworks, and collaborative strategies for sustainable energy transition.",
-      "location": "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
-      "date": "7th- 10th January, 2026",
-      "dateTime": "Thursday, September 25 · 9:00 – 6:00pm GMT+5:30",
+      "description": "The Evolving Power Sector: Navigating Geopolitics, Markets & India's Energy Transition. Join us for an exclusive retreat bringing together regulators and policymakers to discuss the future of energy policy in a changing global landscape.",
+      "location": "Shoonya Farm Retreat, Belgundi, Belgaum, Karnataka",
+      "date": "7th - 10th January, 2026",
+      "dateTime": "7th - 10th January, 2026",
       "time": "9:00 AM - 6:00 PM",
       "capacity": "150 Attendees",
       "image": "/event/bg.png",
@@ -17,69 +17,147 @@
       "registrationLink": "/contact",
       "breadcrumb": {
         "category": "Upcoming events",
-        "eventTitle": "Regulators & Policymakers Retreat 2025"
+        "eventTitle": "26th Regulators & Policymakers Retreat 2026"
       },
-      "eventDuration": "Event lasts 3 days",
-      "fullDescription": "An exclusive retreat designed for regulators, policymakers, and industry leaders to engage in meaningful dialogue about the future of energy regulation and policy development in an immersive natural setting.",
+      "eventDuration": "Event lasts 4 days",
+      "fullDescription": "The 26th RPR seeks to unpack the complex challenges and opportunities shaping India's ongoing energy transition. Through deliberations with key stakeholders, the Retreat will explore how the country can build a resilient, inclusive, and forward-looking energy strategy amid global geopolitical shifts, climate change, and market dynamics.",
+      "theme": "The Evolving Power Sector: Navigating Geopolitics, Markets & India's Energy Transition",
+      "conceptNote": "The past year has witnessed tectonic shifts in the global order, marked by a series of flashpoints that threaten peace and stability on one hand, and unforeseen geopolitical realignments and alliances on the other. From the spiraling conflict in the Middle East to heightened tensions between nuclear powers India and Pakistan, the protracted Russia-Ukraine war, and resurgence of dormant border disputes, the global landscape is undergoing profound transformation. For India, these shifts come at a critical juncture in its energy transition journey. The convergence of global uncertainties and domestic challenges necessitates a strategic reassessment and a multifaceted response to ensure resilience, inclusivity, and sustainable growth.",
       "aboutEvent": {
-        "mainDescription": "Experience transformative policy discussions in the serene environment of Shoonya Farm Retreat. This exclusive gathering brings together leading regulators, policymakers, and thought leaders for intensive sessions on energy regulation, policy innovation, and collaborative governance strategies.",
+        "mainDescription": "The Regulators and Policymakers Retreat is a unique platform where regulators, policymakers, and industry leaders converge to deliberate on critical challenges and opportunities in India's power sector. It is an opportunity for participants to engage in meaningful discussions, gain actionable insights, and network with sector experts. Recognizing that the power sector does not operate in isolation, discussions will be situated within the broader context of global developments.",
         "details": [
           {
             "icon": "clock",
-            "text": "Date: Thursday-Saturday, September 25-27, 2025."
+            "text": "Date: 7th - 10th January, 2026"
           },
           {
             "icon": "clock",
-            "text": "Time: 9:00 AM - 6:00 PM daily (Welcome dinner on Thursday evening and morning nature walks available for early risers!)"
+            "text": "Time: 9:00 AM - 6:00 PM daily"
           },
           {
             "icon": "location",
-            "text": "Location: Shoonya Farm Retreat, Belagavi, Karnataka (Accommodation and meals included)"
+            "text": "Location: Shoonya Farm Retreat, Belgundi Village, Belgaum District, Karnataka (Spread across 45 acres against the serene backdrop of the Western Ghats)"
           }
-        ]
+        ],
+        "venue": {
+          "title": "About Shoonya Farm Retreat",
+          "description": "The Shoonya Farm Retreat was once home to Indian freedom fighter and industrialist Dr. A.G. Tendulkar. He had strong relationships with leaders like Mahatma Gandhi and Sardar Vallabhai Patel and returned to India after years abroad to contribute to the freedom struggle and, subsequently, to Indian industries. In addition to being a Gandhian, he was also an advocate for industrialisation post-independence and an early naturalist. We at IPPAI seek to offer the participants a pleasant pause from the daily hum drum, creating an opportunity to think afresh about how to approach various policy issues crucial to the Power Sector and the country."
+        }
       },
       "highlights": {
-        "title": "What's in store for you?",
+        "title": "The Key Focus",
         "items": [
           {
-            "emoji": "🏛️",
-            "title": "Policy Innovation Sessions:",
-            "description": "Interactive workshops on innovative regulatory approaches, policy design principles, and adaptive governance frameworks for emerging energy technologies.",
+            "emoji": "🌍",
+            "title": "DAY 1: Geopolitics & Energy Security",
+            "description": "The Retreat will examine the impact of recent geopolitical developments on global energy markets—particularly their implications for energy security, supply chains, and pricing in the Indian context.",
             "color": "#A37CFE"
           },
           {
-            "emoji": "🤝",
-            "title": "Cross-Sector Collaboration:",
-            "description": "Facilitated discussions between regulators, industry representatives, and civil society on building effective public-private partnerships.",
+            "emoji": "🌱",
+            "title": "DAY 2: Climate Change & Sustainability",
+            "description": "Participants will explore how climate change is shaping India's energy future. Key discussions will cover the Water-Food-Energy Nexus, the role of hydropower, the potential of pumped storage, and the interlinkages with irrigation.",
             "color": "#18B76A"
           },
           {
-            "emoji": "🌱",
-            "title": "Sustainability Integration:",
-            "description": "Deep dive into incorporating sustainability principles and climate considerations into regulatory frameworks and policy decisions.",
+            "emoji": "📊",
+            "title": "DAY 3: Power Markets & Regulation",
+            "description": "The Retreat will consider the need to strike the right balance between regulation and open markets, fostering an investment-friendly environment while safeguarding consumer interests—including Market Coupling, Electricity Derivatives, and Virtual Power Purchase Agreements (VPPAs).",
             "color": "#FEA800"
           },
           {
-            "emoji": "🔄",
-            "title": "Adaptive Governance:",
-            "description": "Explore flexible regulatory approaches that can adapt to technological changes and evolving energy market dynamics.",
+            "emoji": "⚡",
+            "title": "DAY 4: Critical Issues in Indian Power Sector",
+            "description": "Granular analysis of key issues including Transmission Planning, RE Must-Run vs Congestion, Demand Forecasting, BESS, Open Access, GNA, DISCOM Profitability, Green Hydrogen, SMRs, and Role of AI & ML in Power Sector.",
             "color": "#F44336"
           }
         ]
       },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This retreat offers a unique opportunity for high-level policy dialogue in an intimate setting away from the usual conference environment. Build lasting professional relationships while engaging in substantive discussions that can shape the future of energy regulation and policy."
-      },
-      "prizes": {
-        "title": "Exclusive Benefits (Attendees Only!):",
+      "criticalIssues": {
+        "title": "Critical Issues to be Discussed",
         "items": [
-          "Access to exclusive policy white papers and regulatory trend analysis worth $5,000 in consulting value!",
-          "Invitation to join the IPPAI Regulators' Network for ongoing collaboration and knowledge sharing!",
-          "Follow-up mentorship opportunities with senior policymakers and regulatory experts in your area of focus."
+          "Transmission Planning",
+          "Renewable Energy as Must-Run vs. Transmission Congestion",
+          "Demand Forecasting and Resource Adequacy Planning",
+          "Status and Scaling of Battery Energy Storage Systems (BESS)",
+          "Open Access & Captive Power",
+          "General Network Access (GNA)",
+          "DISCOM Profitability and Financial Sustainability",
+          "Green Hydrogen Development",
+          "Small Modular Reactors (SMRs)",
+          "Emerging Technologies: Role of AI & ML in the Power Sector"
         ]
       },
-      "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings."
+      "whyAttend": {
+        "title": "Why you should be there",
+        "description": "JOIN THE CONVERSATION THAT SHAPES INDIA'S ENERGY FUTURE. This retreat offers a unique opportunity for high-level policy dialogue in an intimate setting away from the usual conference environment. A major challenge within this transition is the integration of renewable energy into the national grid. As India rapidly scales up solar and wind power, the grid must evolve to manage variability, ensure stability, and balance supply-demand in real time."
+      },
+      "whoShouldAttend": [
+        "SERC - Regulatory Commissions",
+        "Distribution Companies",
+        "Transmission Companies",
+        "Power Generating Companies",
+        "Load Despatch Centers",
+        "CPPs and IPPs",
+        "Renewable Energy Firms",
+        "Electric Vehicle and Charging Infrastructure",
+        "Rooftop Solar Firms",
+        "Financial Institutions",
+        "Energy & Economic Policymaking Departments",
+        "Consumers",
+        "Energy Law Firms",
+        "Think Tanks"
+      ],
+      "delegateFees": {
+        "privateEntities": "INR 79,000 + GST",
+        "governmentEntities": "INR 49,000 + GST",
+        "sercChairmenMembers": "Complimentary for Chairmen and Members"
+      },
+      "awards": {
+        "title": "IPPAI Power Awards 2026",
+        "description": "CELEBRATING EXCELLENCE IN THE INDIAN POWER SECTOR. To encourage and appreciate innovation in the Indian power sector, IPPAI began awarding best performers in the sector in 2012. After over a decade of operations, the IPPAI Power Awards has emerged as the leading technical award in the Indian Power Sector and the premier platform for improving visibility within the industry.",
+        "date": "At RPR, 10th January, 2026",
+        "categories": [
+          "Best Thermal Power Generator",
+          "Best State Transmission Utility",
+          "Best State Load Despatch Centre",
+          "Best Performing DISCOM",
+          "Most Proactive SERC",
+          "Best Power Exchange",
+          "Best OTC Platform",
+          "Best Power Trader",
+          "Best Indian Legal Firm in Power Sector",
+          "Innovation In Any Sphere of Power Sector",
+          "Best Solar Developer",
+          "Best Solar PV Plant",
+          "Best Wind Developer - Maximum",
+          "Best Hydro Power Developer",
+          "Best Pumped Storage Project",
+          "Best Battery Storage Project",
+          "Best Agrivoltaic Project Developer",
+          "Best Utility in Deployment of Smart Metering",
+          "Best State Promoting Rooftop Solar Generation",
+          "Best State Promotion of EV"
+        ]
+      },
+      "contacts": [
+        {
+          "name": "Dharun Kapur",
+          "email": "dharun@ippaimail.org",
+          "phone": "+91 9717063202"
+        },
+        {
+          "name": "Anil Rai",
+          "email": "anil@ippaimail.org",
+          "phone": "+91 9873234386"
+        },
+        {
+          "name": "Divya Sood",
+          "email": "divya@ippaimail.org",
+          "phone": "+91 9557560367"
+        }
+      ],
+      "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings. Be part of shaping India's energy future through strategic policy discussions and collaborative problem-solving."
     },
     {
       "id": 1,
