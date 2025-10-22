@@ -1,3 +1,267 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// "use client";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useState } from "react";
+// import { JoinUsModal } from "@/components/JoinMembershipModal";
+// import { useRouter } from "next/navigation";
+
+// const knowledgeHubArticles = [
+//   {
+//     title: "HYDROPOWER DEVELOPMENT IN INDIA",
+//     summary:
+//       "Exploring India's vast hydroelectric potential and the strategic role of IPPs in developing sustainable renewable energy infrastructure across the nation",
+//     pdfFile: "/article/1.pdf",
+//     image: "/article/1.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+//   {
+//     title: "BIOMASS BASED POWER GENERATION OPPORTUNITIES",
+//     summary:
+//       "Analyzing biomass energy's transformative potential in India's power sector and how IPPs can leverage agricultural waste",
+//     pdfFile: "/article/2.pdf",
+//     image: "/article/2.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+//   {
+//     title: "24x7 POWER SUPPLY",
+//     summary:
+//       "Understanding the vital importance of uninterrupted power supply for India's economic growth",
+//     pdfFile: "/article/3.pdf",
+//     image: "/article/3.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+// ];
+
+// const policyRecommendations = [
+//   {
+//     title: "The Great Game Of Energy",
+//     summary:
+//       "Details of the Concessions/Exemptions under NET Metering Arrangement Technologies and New Paradigms in Renewable Energy Sphere",
+//     pdfFile: "/policy/1.pdf",
+//     image: "/policy/1.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+//   {
+//     title: "Consume Issues in power",
+//     summary:
+//       "Current Ecological Concerns in the Power Sector: Options to Avoid or Minimise Impacts",
+//     pdfFile: "/policy/2.pdf",
+//     image: "/policy/2.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+//   {
+//     title: "Assisting Power consumers in reducing hardship",
+//     summary:
+//       "The Neo-liberal Era - Sustainable Futures or Corporate Colonization's?",
+//     pdfFile: "/policy/3.pdf",
+//     image: "/policy/3.png",
+//     author: {
+//       name: "IPPAI",
+//       avatar: "/header/logo.png",
+//     },
+//     date: "17 Jan 2025",
+//   },
+// ];
+
+// export default function KnowledgeHubSection() {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [selectedArticle, setSelectedArticle] = useState<
+//     (typeof knowledgeHubArticles)[0] | null
+//   >(null);
+//   const router = useRouter();
+
+//   const categories = [
+//     "Industry Perspective",
+//     "Narratives / Socio-Ecological",
+//     "Energy Security"
+//   ];
+
+//   const handleArticleClick = (article: (typeof knowledgeHubArticles)[0]) => {
+//     setSelectedArticle(article);
+//     setIsModalOpen(true);
+//   };
+
+//   const handleCategoryClick = (category: string) => {
+//     router.push(`/articles?category=${encodeURIComponent(category)}`);
+//   };
+
+//   const handlePolicyClick = (policy: (typeof policyRecommendations)[0]) => {
+//     setSelectedArticle(policy);
+//     setIsModalOpen(true);
+//   };
+
+//   return (
+//     <section
+//       className="w-full flex flex-col items-center py-8 px-4 md:px-6 lg:px-8 md:-mt-20"
+//       style={{
+//         backgroundImage: "url('/optimized/khbg.webp')",
+//         backgroundSize: "contain",
+//         backgroundPosition: "top",
+//         backgroundRepeat: "no-repeat",
+//         minHeight: "100vh",
+//       }}
+//     >
+//       <div className="w-full max-w-[1100px] flex flex-col items-center">
+//         {/* Heading */}
+//         <h2 className="font-red-hat-display font-bold text-2xl sm:text-3xl md:text-4xl text-[#1B1B1B] mt-2 mb-2 text-center">
+//           Knowledge Hub
+//         </h2>
+//         <p className="text-[#8C8C8C] font-poppins text-sm md:text-base text-center mb-6 md:mb-8 px-4">
+//           Your gateway to energy intelligence and thought leadership.
+//         </p>
+
+//         {/* Main Card */}
+//         <div className="w-full max-w-[700px] mt-2 bg-white rounded-[18px] shadow-lg flex flex-col lg:flex-row px-0 py-6 md:py-8 lg:py-12 mx-auto relative gap-4 md:gap-6 lg:gap-8">
+//           {/* Articles/Insights */}
+//           <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
+//             <div className="flex items-center gap-2 mb-4">
+//               <Image
+//                 src="/optimized/kh1.webp"
+//                 alt="Articles Icon"
+//                 width={38}
+//                 height={38}
+//                 className="w-[38px] h-[38px]"
+//                 loading="lazy"
+//               />
+//               <span className="font-red-hat-display font-bold text-[#BC3C33] text-xl">
+//                 {/* Just icon, no label here */}
+//               </span>
+//             </div>
+//             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
+//               Articles <br className="sm:hidden md:block" /> and Insights
+//             </h3>
+//             <div className="flex-grow">
+//               {categories.map((category, index) => (
+//                 <div
+//                   key={index}
+//                   className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+//                   onClick={() => handleCategoryClick(category)}
+//                 >
+//                   <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+//                     {category}
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="mt-auto pt-4">
+//               <Link
+//                 href="/articles"
+//                 className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
+//               >
+//                 VIEW ALL
+//                 <span className="transition-all group-hover:translate-x-1">
+//                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+//                     <path
+//                       d="M5 12h14M13 6l6 6-6 6"
+//                       stroke="#D3363B"
+//                       strokeWidth="2"
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                     />
+//                   </svg>
+//                 </span>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* CENTER LINE */}
+//           <div className="hidden lg:flex items-stretch justify-center px-0">
+//             <div className="h-full flex items-center">
+//               <Image
+//                 src="/optimized/line-main.webp"
+//                 alt="Divider"
+//                 width={6}
+//                 height={200}
+//                 className="w-[6px] min-h-[140px] mx-0"
+//                 style={{ minHeight: "280px", maxHeight: "420px" }}
+//                 loading="lazy"
+//               />
+//             </div>
+//           </div>
+
+//           {/* Policy Recommendations */}
+//           <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
+//             <div className="flex items-center gap-2 mb-4">
+//               <Image
+//                 src="/optimized/kh2.webp"
+//                 alt="Policy Icon"
+//                 width={38}
+//                 height={38}
+//                 className="w-[38px] h-[38px]"
+//                 loading="lazy"
+//               />
+//             </div>
+//             <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
+//               Policy <br className="sm:hidden" /> Recommendations
+//             </h3>
+//             <div className="flex-grow">
+//               {policyRecommendations.map((policy, index) => (
+//                 <div
+//                   key={index}
+//                   className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+//                   onClick={() => handlePolicyClick(policy)}
+//                 >
+//                   <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+//                     {policy?.title?.toUpperCase()}
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="mt-auto pt-4">
+//               <Link
+//                 href="/policies"
+//                 className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
+//               >
+//                 VIEW ALL
+//                 <span className="transition-all group-hover:translate-x-1">
+//                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+//                     <path
+//                       d="M5 12h14M13 6l6 6-6 6"
+//                       stroke="#D3363B"
+//                       strokeWidth="2"
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                     />
+//                   </svg>
+//                 </span>
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <JoinUsModal
+//         open={isModalOpen}
+//         onOpenChange={setIsModalOpen}
+//         article={selectedArticle}
+//       />
+//     </section>
+//   );
+// }
+
+
+//  FOR Policy Recommendations remove above commented code
+
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -93,7 +357,7 @@ export default function KnowledgeHubSection() {
   const categories = [
     "Industry Perspective",
     "Narratives / Socio-Ecological",
-    "Energy Security"
+    "Energy Security",
   ];
 
   const handleArticleClick = (article: (typeof knowledgeHubArticles)[0]) => {
@@ -130,122 +394,53 @@ export default function KnowledgeHubSection() {
           Your gateway to energy intelligence and thought leadership.
         </p>
 
-        {/* Main Card */}
-        <div className="w-full max-w-[700px] mt-2 bg-white rounded-[18px] shadow-lg flex flex-col lg:flex-row px-0 py-6 md:py-8 lg:py-12 mx-auto relative gap-4 md:gap-6 lg:gap-8">
-          {/* Articles/Insights */}
-          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
-            <div className="flex items-center gap-2 mb-4">
+        {/* Main Card - Centered Articles */}
+        <div className="w-full max-w-[500px] mt-2 bg-white rounded-[18px] shadow-lg px-8 md:px-12 py-8 md:py-12 mx-auto relative">
+          {/* Articles/Insights - Centered */}
+          <div className="flex flex-col items-center text-center">
+            <div className="flex items-center justify-center gap-2 mb-6">
               <Image
                 src="/optimized/kh1.webp"
                 alt="Articles Icon"
-                width={38}
-                height={38}
-                className="w-[38px] h-[38px]"
+                width={48}
+                height={48}
+                className="w-[48px] h-[48px]"
                 loading="lazy"
               />
-              <span className="font-red-hat-display font-bold text-[#BC3C33] text-xl">
-                {/* Just icon, no label here */}
-              </span>
             </div>
-            <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
-              Articles <br className="sm:hidden md:block" /> and Insights
+            <h3 className="font-serif font-bold text-2xl md:text-3xl leading-[135%] text-[#243C4B] mb-8">
+              Articles and Insights
             </h3>
-            <div className="flex-grow">
+            <div className="w-full space-y-4 mb-8">
               {categories.map((category, index) => (
                 <div
                   key={index}
-                  className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
+                  className="cursor-pointer group transition-all hover:bg-gray-50 p-4 rounded-lg border border-transparent hover:border-[#D3363B]/20"
                   onClick={() => handleCategoryClick(category)}
                 >
-                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
+                  <div className="font-red-hat-display font-medium text-lg leading-[135%] text-[#243C4B] group-hover:text-[#D3363B] transition-colors">
                     {category}
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-auto pt-4">
-              <Link
-                href="/articles"
-                className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
-              >
-                VIEW ALL
-                <span className="transition-all group-hover:translate-x-1">
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                    <path
-                      d="M5 12h14M13 6l6 6-6 6"
-                      stroke="#D3363B"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          {/* CENTER LINE */}
-          <div className="hidden lg:flex items-stretch justify-center px-0">
-            <div className="h-full flex items-center">
-              <Image
-                src="/optimized/line-main.webp"
-                alt="Divider"
-                width={6}
-                height={200}
-                className="w-[6px] min-h-[140px] mx-0"
-                style={{ minHeight: "280px", maxHeight: "420px" }}
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          {/* Policy Recommendations */}
-          <div className="flex flex-1 flex-col px-4 md:px-6 lg:px-7 pt-2 pb-2 min-h-[300px]">
-            <div className="flex items-center gap-2 mb-4">
-              <Image
-                src="/optimized/kh2.webp"
-                alt="Policy Icon"
-                width={38}
-                height={38}
-                className="w-[38px] h-[38px]"
-                loading="lazy"
-              />
-            </div>
-            <h3 className="font-serif font-bold text-xl md:text-2xl leading-[135%] text-[#243C4B] mb-4 md:mb-5 align-middle">
-              Policy <br className="sm:hidden" /> Recommendations
-            </h3>
-            <div className="flex-grow">
-              {policyRecommendations.map((policy, index) => (
-                <div
-                  key={index}
-                  className="mb-3 cursor-pointer group transition-all hover:bg-gray-50 p-2 rounded-lg -ml-2 -mr-2"
-                  onClick={() => handlePolicyClick(policy)}
-                >
-                  <div className="font-red-hat-display font-medium text-base leading-[135%] text-[#243C4B] mb-2 align-middle group-hover:text-[#D3363B] transition-colors">
-                    {policy?.title?.toUpperCase()}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-auto pt-4">
-              <Link
-                href="/policies"
-                className="flex items-center gap-2 group text-[#D3363B] font-semibold text-[13px]"
-              >
-                VIEW ALL
-                <span className="transition-all group-hover:translate-x-1">
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                    <path
-                      d="M5 12h14M13 6l6 6-6 6"
-                      stroke="#D3363B"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            </div>
+            <Link
+              href="/articles"
+              className="flex items-center gap-2 group text-[#D3363B] font-semibold text-sm hover:gap-3 transition-all"
+            >
+              VIEW ALL
+              <span className="transition-all group-hover:translate-x-1">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="#D3363B"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </div>
