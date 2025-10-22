@@ -42,12 +42,12 @@ export default function HomeHero() {
       <div className="relative z-10 flex items-center justify-center min-h-screen pt-40">
         <main className="flex max-w-[1100px] mx-auto flex-col items-center justify-center w-full px-7 md:px-0">
           <div className="w-full flex flex-col items-center">
-            <div className="text-center mb-12">
-              <h1 className="font-red-hat-display font-bold text-[64px] leading-[100%] tracking-[0%] text-center text-white mb-6">
+            <div className="text-center mb-8 min-h-[180px] flex flex-col justify-center">
+              <h1 className="font-red-hat-display font-bold text-[64px] leading-[100%] tracking-[0%] text-center text-white mb-4 min-h-[80px] w-screen flex items-center justify-center">
                 {events[currentEvent].title}
               </h1>
 
-              <p className="font-poppins font-medium text-[24px] leading-[150%] tracking-[0%] text-center text-white mt-5 max-w-2xl mx-auto">
+              <p className="font-poppins font-medium text-[24px] leading-[150%] tracking-[0%] text-center text-white mt-3 max-w-2xl mx-auto min-h-[60px] flex items-center justify-center">
                 {events[currentEvent].desc}
               </p>
             </div>
