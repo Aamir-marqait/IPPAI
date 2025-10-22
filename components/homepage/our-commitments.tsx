@@ -21,7 +21,7 @@ export default function Commitments() {
               label="Years of Industry Experience"
             />
             <StatCard value="300" suffix="+" label="Conferences Held" />
-            <StatCard value="1000" suffix="+" label="Attendees" />
+            <StatCard value="50,000" suffix="+" label="Attendees" />
             <StatCard value="50" suffix="+" label="Trainings Held" />
           </div>
 
