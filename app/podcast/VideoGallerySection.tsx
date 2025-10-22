@@ -247,7 +247,7 @@ export default function VideoGallerySection() {
             {/* Podcast content placeholder */}
             <div className="w-full flex justify-center items-center py-16">
               <p className="text-gray-500 text-lg font-medium">
-                No video is available at the moment.
+                No podcast is available at the moment.
               </p>
             </div>
           </div>
