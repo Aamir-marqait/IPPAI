@@ -27,7 +27,7 @@ export function CTABanner({
       >
         {/* Background image */}
         <Image
-          src="/optimized/cta.webp"
+          src="/eb.jpg"
           alt="Industrial site at sunset"
           fill
           className="object-cover"
@@ -43,21 +43,23 @@ export function CTABanner({
           className="
             relative z-10 text-white
             p-5 sm:p-7 md:p-10 lg:p-12
-            max-w-[560px]
+            flex flex-col items-center justify-center
+            text-center
+            w-full h-full
           "
         >
           <h2
             className="
-              text-xl sm:text-2xl md:text-3xl xl:text-[32px] font-bold
+              text-xl sm:text-2xl md:text-3xl xl:text-[42px] font-bold
               leading-none text-white font-['Red_Hat_Display']
             "
           >
             {title}
           </h2>
-          <p className="mt-2 md:mt-3 text-sm md:text-base xl:text-base font-normal leading-none text-white font-['Poppins']">
+          <p className="mt-2 md:mt-3 text-sm md:text-base xl:text-lg font-normal leading-none text-white font-['Poppins'] max-w-2xl">
             {description}
           </p>
-          <div className="mt-4 md:mt-6">
+          <div className="mt-4 md:mt-12">
             <Link href={onClickHref} aria-label={ctaLabel}>
               <Button className="cursor-pointer rounded-full px-6 md:px-7 py-2.5 md:py-3 xl:text-base font-medium text-center text-white bg-[#D3363B] shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] leading-none font-['Work_Sans'] hover:bg-[#B8303A] border-none">
                 {ctaLabel}
