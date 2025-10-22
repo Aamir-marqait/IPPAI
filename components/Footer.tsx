@@ -1,11 +1,11 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaInstagram,
+//   FaYoutube,
+//   FaLinkedinIn,
+// } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 

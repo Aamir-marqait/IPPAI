@@ -158,7 +158,7 @@ export default function LeadershipCircle() {
               color: "#D3363B",
             }}
           >
-            Advisory Board Members
+            Meet Our Leadership Team
           </div>
           <h2
             className="text-center font-red-hat-display mb-3"
@@ -170,7 +170,7 @@ export default function LeadershipCircle() {
               color: "#FFFFFF",
             }}
           >
-            Leadership at IPPAI
+            The Driving Force of IPPAI
           </h2>
           <p
             className="text-center font-poppins max-w-[40rem] mx-auto"
@@ -182,8 +182,7 @@ export default function LeadershipCircle() {
               color: "#e0e0e0",
             }}
           >
-            Guided by experienced leaders, experts, and advisors shaping the
-            future of India&apos;s power sector.
+            Our dedicated leadership team brings together decades of expertise and vision, steering IPPAI&apos;s mission to transform India&apos;s power sector through strategic collaboration and innovation.
           </p>
         </div>
 
