@@ -152,7 +152,7 @@ export default function ThreeDecadesSection() {
                   color: "#FFFFFF",
                 }}
               >
-                1000+
+                50,000+
               </span>
               <span
                 style={{
