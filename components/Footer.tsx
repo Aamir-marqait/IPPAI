@@ -33,10 +33,9 @@ export default function Footer() {
               height={48}
               className="mb-3"
             />
-            {/* <p className="text-sm font-normal text-white font-poppins leading-normal">
-              Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
-            </p> */}
+            <p className="text-sm font-normal text-white font-poppins leading-normal">
+              Independent Power Producers Association of India.
+            </p>
           </div>
 
           {/* Contact Info */}
