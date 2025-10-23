@@ -2,8 +2,8 @@
   "courses": [
     {
       "id": 1,
-      "title": "101 - The Legal & Institutional Framework",
-      "slug": "101-the-legal-institutional-framework",
+      "title": "101 - Introduction to the Indian Power Sector",
+      "slug": "101-introduction-to-the-indian-power-sector",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -12,97 +12,94 @@
       "authorRole": "Development team",
       "img": "/course/101.png",
       "category": "Foundation Course",
-      "description": "This comprehensive foundation course covers the essential legal and institutional frameworks that govern energy policy and regulation in India's power sector.",
+      "description": "Comprehensive foundation course covering the evolution of India's electricity sector, legal framework, and regulatory institutions.",
       "points": [
-        "Understanding constitutional framework for electricity regulation and governance structures",
-        "Knowledge of key institutions, their roles, and regulatory processes in the power sector"
+        "Understanding the evolution of electricity sector and Electricity Act 2003 framework",
+        "Knowledge of institutional structure, tariff setting principles, and regulatory processes in Indian power sector"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Comprehensive foundation course covering the essential legal and institutional frameworks governing energy policy and regulation."
+        "description": "Comprehensive foundation course covering the evolution of India's electricity sector, legal framework, and regulatory institutions."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "EVOLUTION OF ELECTRICITY SECTOR & LEGISLATION:",
           "items": [
-            "o Electricity & Constitution",
-            "o The Electricity Act 2003 Related Legislation, Notifications, Orders",
-            "o Rules & Proposed Amendments",
-            "o Central Electricity Authority (Grid Standards) Regulations, 2010",
-            "o Electricity (Rights of Consumers) Rules, 2020",
-            "o Indian Electricity Grid Code (IEGC)",
-            "o Central Electricity Regulatory Commission (Terms and Conditions of Tariff) Regulations",
-            "o State Electricity Regulatory Commission Acts and Rules",
-            "o Environmental Clearance and Forest Clearance Acts",
-            "o Energy Conservation Act, 2001 and its Amendments"
+            "o Evolution of Electricity Sector in India",
+            "o Electricity Act 2003 and the Way Forward",
+            "o Introduction to the Basic Provisions of the Electricity Act 2003",
+            "o Electricity as a Concurrent Subject and Resultant Complications",
+            "o Subordinate Legislation",
+            "o Legislation/Policies/Notifications/Rules/Guidelines/Orders/Clarifications",
+            "o Proposed Amendments to Electricity Act 2003",
+            "o National Electricity Policy - Framework and Objectives",
+            "o National Tariff Policy - Principles and Implementation",
+            "o Electricity (Rights of Consumers) Rules, 2020"
           ]
         },
         "institutionalStructure": {
           "title": "INSTITUTIONAL STRUCTURE - ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
           "items": [
-            "o Ministry of Power, Ministry of New and Renewable Energy",
-            "o Central Electricity Regulatory Commission (CERC) - Interstate Commerce",
-            "o State Electricity Regulatory Commissions (SERCs) - Intrastate Commerce",
+            "o Ministry of Power - Policy Formulation and Implementation",
+            "o Ministry of New and Renewable Energy - RE Policy Framework",
+            "o Central Electricity Regulatory Commission (CERC) - Interstate Regulation",
+            "o State Electricity Regulatory Commissions (SERCs) - Intrastate Regulation",
             "o Central Electricity Authority (CEA) - Technical Standards and Planning",
             "o Regional Power Committees (RPCs) - Grid Coordination",
-            "o Central Transmission Utility (CTU) - Power Grid Corporation of India Ltd (PGCIL)",
-            "o National Load Dispatch Centre (NLDC) - Grid Operations",
-            "o Regional Load Dispatch Centres (RLDCs) - Regional Grid Management",
-            "o State Transmission Utilities (STUs) - State Level Transmission",
-            "o State Load Dispatch Centres (SLDCs) - State Grid Operations",
-            "o Distribution Companies (DISCOMs) - Electricity Distribution",
-            "o Central and State Generating Stations",
-            "o Independent Power Producers (IPPs), Merchant Power Plants (MPPs)",
-            "o Captive Power Plants (CPPs) and Open Access Consumers",
-            "o Power Exchanges - IEX, PXIL for Short-term Trading"
+            "o Appellate Tribunal for Electricity (APTEL) - Dispute Resolution",
+            "o Central Transmission Utility (CTU) - PGCIL",
+            "o State Transmission Utilities (STUs) - State Transmission",
+            "o Distribution Companies (DISCOMs) - Power Distribution",
+            "o Generating Companies - Central, State, and Private Sector",
+            "o Load Dispatch Centres - NLDC, RLDCs, SLDCs",
+            "o Consumer Grievance Redressal Forums (CGRF)",
+            "o Electricity Ombudsman - Consumer Protection"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "REGULATORY ACTIVITIES & TARIFF SETTING:",
           "items": [
-            "o National Electricity Policy (NEP) 2005 and its Implementation",
-            "o National Tariff Policy (NTP) 2006 and Amendments",
-            "o Renewable Energy Policy and Solar Mission Targets",
-            "o Electricity Regulatory Commissions - Functions and Powers",
-            "o Tariff Determination Process - Multi-Year Tariff (MYT) Framework",
-            "o Cost of Service vs. Performance-Based Rate Making",
-            "o Cross-Subsidy and Subsidy Rationalization Policies",
-            "o Open Access Regulations and Wheeling Charges",
-            "o Dispute Resolution Mechanisms - Appellate Tribunal for Electricity (APTEL)",
-            "o Competition Commission of India (CCI) Role in Power Sector",
-            "o State Electricity Policy Formulation and Implementation",
-            "o Rural Electrification and Distribution Reforms"
+            "o Activities Carried Out by Electricity Regulatory Commissions",
+            "o Tariff Petition/Order/True-up Process",
+            "o Tariff Setting Principles Used by Electricity Regulators in India",
+            "o Generation Tariff Determination - Cost Plus and Competitive Bidding",
+            "o Transmission Tariff Principles and Methodology",
+            "o Distribution Tariff - Aggregate Revenue Requirement (ARR) Approach",
+            "o Renewable Energy Tariff Determination Framework",
+            "o Role of Commission in Dispute Resolution",
+            "o Landmark Judgements in the Indian Power Sector",
+            "o Role of CGRF and Ombudsman in Consumer Protection"
           ]
         },
         "classroomSimulation": {
-          "title": "CLASSROOM SIMULATION:",
+          "title": "CASE STUDIES & CLASSROOM SIMULATION:",
           "items": [
-            "o Drafting a Regulation/Order/Speaking Orders Determining Tariff",
-            "o Mock Regulatory Commission Hearing - Tariff Petition Process",
+            "o Case Studies on Regulatory Orders and Tariff Petitions",
+            "o Mock Tariff Petition Filing and Hearing Process",
+            "o Drafting Regulatory Orders and Speaking Orders",
             "o Stakeholder Consultation Process Simulation",
-            "o Electricity Bill Analysis and Consumer Grievance Resolution",
-            "o Open Access Application Filing and Approval Process",
-            "o Power Purchase Agreement (PPA) Negotiation Exercise",
-            "o Grid Code Violation Case Study and Penalty Determination",
-            "o Renewable Energy Certificate (REC) Trading Simulation",
-            "o Distribution Franchise Model Case Study",
-            "o Public Hearing Simulation for Major Policy Changes"
+            "o Analysis of Landmark Judgements - Impact Assessment",
+            "o Consumer Grievance Resolution through CGRF Process",
+            "o Ombudsman Proceeding Simulation",
+            "o Regulatory Commission Decision Making Exercise",
+            "o Dispute Resolution Case Studies - APTEL Orders",
+            "o Evolution of Electricity Sector - Historical Analysis"
           ]
         }
       },
       "learningOutcomes": [
-        "Understanding of constitutional framework for electricity regulation",
-        "Knowledge of key institutions and their roles in the power sector",
-        "Comprehension of regulatory processes and tariff determination",
-        "Practical skills in drafting regulatory documents"
+        "Understanding of evolution of Indian electricity sector",
+        "Knowledge of Electricity Act 2003 and regulatory framework",
+        "Comprehension of institutional structure and their jurisdictions",
+        "Expertise in tariff setting principles across generation, transmission, and distribution"
       ],
       "prerequisites": "Basic understanding of energy systems recommended",
       "certification": "Certificate of completion upon successful assessment"
     },
     {
       "id": 2,
-      "title": "102 - Functioning Of Electricity Grid",
-      "slug": "102-functioning-of-electricity-grid",
+      "title": "102 - Evolution of the Power Market",
+      "slug": "102-evolution-of-the-power-market",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -110,89 +107,89 @@
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
       "img": "/course/102.png",
-      "category": "Technical Course",
-      "description": "Technical deep-dive into electricity grid operations, load dispatch, and system management across India's interconnected power network.",
+      "category": "Market Analysis",
+      "description": "Comprehensive course on power market operations, transaction modes, bidding mechanisms, and market coupling in India's evolving electricity sector.",
       "points": [
-        "Comprehensive understanding of grid operations and dispatch mechanisms with real-time protocols",
-        "Practical experience with grid simulation tools and emergency response procedures"
+        "Understanding of power market operations and transaction modes including bilateral exchange",
+        "Knowledge of bidding mechanisms, contract types, and market coupling with analysis of CERC/SERC orders"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Technical deep-dive into electricity grid operations, load dispatch, and system management across India's interconnected power network."
+        "description": "Comprehensive course on power market operations, transaction modes, bidding mechanisms, and market coupling in India's evolving electricity sector."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "INTRODUCTION TO POWER MARKET AND OPERATIONS:",
           "items": [
-            "o Indian Electricity Grid Code (IEGC) - Technical Standards",
-            "o Central Electricity Authority (Grid Standards) Regulations, 2010",
-            "o Electricity Act 2003 - Grid Operations Provisions",
-            "o CERC (Indian Electricity Grid Code) Regulations, 2023",
-            "o State Grid Codes and Operating Procedures",
-            "o Central Electricity Authority (Technical Standards) Regulations",
-            "o Power System Development Fund Rules",
-            "o Renewable Energy Grid Integration Guidelines",
-            "o Emergency Response and Restoration Code"
+            "o Introduction to Power Market and Operations Framework",
+            "o Transaction Modes - Bilateral Exchange Mechanisms",
+            "o Barter/Banking of Power Arrangements",
+            "o Group Captive Power Plants - Regulatory Framework",
+            "o Types of Contracts - Long-term, Medium-term, Short-term",
+            "o Types of Bidding - Competitive Bidding Framework",
+            "o Cost Plus Tariff Determination Methodology",
+            "o Competitive Bidding vs Cost Plus - Comparative Analysis",
+            "o Hybrid Tariff Models / Return to Cost Plus?"
           ]
         },
         "institutionalStructure": {
-          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "title": "BIDDING MECHANISMS & BUSINESS MODELS:",
           "items": [
-            "o National Load Dispatch Centre (NLDC) - Grid Operations Control",
-            "o Regional Load Dispatch Centres (RLDCs) - Regional Grid Management",
-            "o State Load Dispatch Centres (SLDCs) - State Grid Operations",
-            "o Power Grid Corporation of India Ltd (PGCIL) - Transmission Owner",
-            "o Central Transmission Utility (CTU) Functions",
-            "o Regional Power Committees (RPCs) - Grid Coordination",
-            "o Central Electricity Authority (CEA) - Technical Standards",
-            "o State Transmission Utilities (STUs) - State Transmission",
-            "o Generating Stations - Generation Scheduling",
-            "o Distribution Utilities - Load Forecasting and Management"
+            "o Case 1 Bidding - Tariff-based Competitive Bidding",
+            "o Case 2 Bidding - Capacity-based Competitive Bidding",
+            "o SECI (Solar Energy Corporation of India) Business Models",
+            "o NVVNL (NTPC Vidyut Vyapar Nigam Limited) Business Models",
+            "o Examining CERC Orders on Market Operations",
+            "o Examining SERC Orders on Tariff and Bidding",
+            "o Power Trading Corporation (PTC) - Trading Models",
+            "o Independent Power Producers - Market Participation",
+            "o Distribution Companies - Procurement Strategies",
+            "o Renewable Energy Aggregators - Business Models"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "MARKET INSTRUMENTS & COUPLING:",
           "items": [
-            "o Merit Order Dispatch and Economic Principles",
-            "o Ancillary Services Framework and Pricing",
-            "o Grid Security and Reliability Standards",
-            "o Frequency Regulation and Control Mechanisms",
-            "o Transmission Planning and Grid Development",
-            "o Renewable Energy Integration Policies",
-            "o Grid Code Compliance and Enforcement",
-            "o Inter-State and Intra-State Coordination Protocols",
-            "o Emergency Response and Blackout Prevention",
-            "o Grid Infrastructure Development Policies"
+            "o Spots Market - Day-Ahead Market (DAM) Operations",
+            "o Futures Contracts in Power Markets",
+            "o Options and Derivative Instruments",
+            "o Market Coupling - Mechanism and Implementation",
+            "o Price Discovery through Market Coupling",
+            "o Real-time Market (RTM) Operations",
+            "o Green Term-Ahead Market (GTAM)",
+            "o Power Exchange Operations - IEX and PXIL",
+            "o Cross-border Power Trade Mechanisms",
+            "o Market-based Economic Dispatch (MBED)"
           ]
         },
         "classroomSimulation": {
           "title": "CLASSROOM SIMULATION:",
           "items": [
-            "o Real-time Grid Operation Control Room Simulation",
-            "o Load Dispatch Decision Making Exercise",
-            "o Grid Disturbance Management and Restoration",
-            "o Merit Order Dispatch Calculation and Implementation",
-            "o Frequency Control and AGC Operation Simulation",
-            "o Renewable Energy Integration Challenge Exercise",
-            "o Grid Security Assessment and Contingency Planning",
-            "o Inter-Regional Power Transfer Coordination",
-            "o Emergency Response Procedure Implementation"
+            "o Power Market Trading Simulation - Bilateral and Exchange",
+            "o Competitive Bidding Exercise - Case 1 and Case 2",
+            "o Cost Plus vs Competitive Bidding Analysis Workshop",
+            "o Market Coupling Simulation - Price Discovery",
+            "o CERC/SERC Order Analysis - Impact Assessment",
+            "o Barter and Banking Arrangements - Case Studies",
+            "o Group Captive Plant Structuring Exercise",
+            "o Spots, Futures, and Options Trading Simulation",
+            "o SECI/NVVNL Business Model Case Studies"
           ]
         }
       },
       "learningOutcomes": [
-        "Comprehensive understanding of grid operations",
-        "Knowledge of dispatch mechanisms and protocols",
-        "Understanding of grid stability and security measures",
-        "Practical experience with grid simulation tools"
+        "Understanding of power market operations and transaction modes",
+        "Knowledge of different bidding mechanisms and contract types",
+        "Expertise in market coupling and price discovery mechanisms",
+        "Skills in analyzing CERC and SERC regulatory orders"
       ],
-      "prerequisites": "Basic electrical engineering knowledge preferred",
-      "certification": "Technical certification in grid operations"
+      "prerequisites": "Basic understanding of electricity markets recommended",
+      "certification": "Certification in power market operations"
     },
     {
       "id": 3,
-      "title": "103 - Evolution Of The Power Market",
-      "slug": "103-evolution-of-the-power-market",
+      "title": "103 - Open Access and its Mechanism",
+      "slug": "103-open-access-and-its-mechanism",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -200,89 +197,271 @@
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
       "img": "/course/103.png",
-      "category": "Market Analysis",
-      "description": "Historical analysis and current trends in power market evolution, from regulated monopolies to competitive market structures.",
+      "category": "Market Access",
+      "description": "Comprehensive course on Open Access regulations, Green Energy Open Access, captive power plants, and pricing mechanisms for commercial & industrial consumers.",
       "points": [
-        "Understanding of power market evolution in India from monopoly to competitive structures",
-        "Analysis of economic impacts of market reforms and insights into future developments"
+        "Understanding of Open Access and Green Energy Open Access regulations (CERC & SERCs)",
+        "Knowledge of captive generation provisions, pricing mechanisms, and cross-subsidy charge implications"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Historical analysis and current trends in power market evolution, from regulated monopolies to competitive market structures."
+        "description": "Comprehensive course on Open Access regulations, Green Energy Open Access, captive power plants, and pricing mechanisms for commercial & industrial consumers."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "OPEN ACCESS & CAPTIVE POWER PLANTS - REGULATIONS:",
           "items": [
-            "o Electricity Act 2003 - Market Reforms and Competition",
-            "o Central Electricity Regulatory Commission Act, 1998",
-            "o Competition Act, 2002 - Power Sector Applications",
-            "o CERC (Power Market) Regulations, 2021",
-            "o CERC (Terms and Conditions for Recognition and Issuance of Renewable Energy Certificate) Regulations",
-            "o Foreign Exchange Management Act (FEMA) - Power Sector Investments",
-            "o Companies Act 2013 - Corporate Governance in Power Sector",
-            "o Energy Conservation Act, 2001 - Market Mechanisms",
-            "o Consumer Protection Act, 2019 - Electricity Consumer Rights"
+            "o Introduction to Open Access - Regulatory Framework",
+            "o Green Energy Open Access - Policy and Implementation",
+            "o Open Access Regulations (CERC) - Interstate Framework",
+            "o Open Access Regulations (SERCs) - State-level Implementation",
+            "o Green Energy Open Access Regulations (CERC and SERCs)",
+            "o Provisions of Captive Generation in Electricity Act 2003",
+            "o Issues in Captive Generation - Legal Challenges",
+            "o Supreme Court Order on Captive Generation Resolution",
+            "o Open Access and Captive Power - Related Issues and Clarifications"
           ]
         },
         "institutionalStructure": {
-          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "title": "STAKEHOLDER IMPACT & IMPLEMENTATION:",
           "items": [
-            "o Power Exchange of India Limited (PXIL) - Market Operations",
-            "o Indian Energy Exchange (IEX) - Electricity Trading Platform",
-            "o Central Electricity Regulatory Commission (CERC) - Market Regulation",
-            "o Power Market Surveillance Cell - Market Monitoring",
-            "o Market Coupling Operator (MCO) - Price Discovery",
-            "o National Sample Survey Office (NSSO) - Market Research",
-            "o Competition Commission of India (CCI) - Anti-competitive Practices",
-            "o Foreign Investment Promotion Board (FIPB) - Foreign Investments",
-            "o Power Trading Corporation (PTC) - Government Trading Entity",
-            "o Private Power Trading Companies - Market Participants"
+            "o Open Access Implications - Stakeholder-wise Impact Analysis",
+            "o Distribution Companies (DISCOMs) - Revenue Impact",
+            "o Generating Companies - Market Access and Competition",
+            "o Transmission Utilities - Network Access Management",
+            "o Industrial Consumers - Cost Savings and Energy Choice",
+            "o Commercial Consumers - Open Access Benefits",
+            "o Captive Power Plant Owners - Regulatory Compliance",
+            "o Renewable Energy Generators - Green Open Access",
+            "o State Electricity Regulatory Commissions - Policy Implementation",
+            "o Open Access Implementation Challenges - Systemic Issues"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "PRICING MECHANISM & CHARGES:",
           "items": [
-            "o National Electricity Policy 2005 - Market Development Objectives",
-            "o Tariff Policy 2006 - Competitive Market Transition",
-            "o National Solar Mission - Renewable Energy Markets",
-            "o Power Market Development and Competition Enhancement",
-            "o Cross-border Electricity Trade Policy",
-            "o Electricity Contract Enforcement and Dispute Resolution",
-            "o Market-based Economic Dispatch (MBED) Implementation",
-            "o Ancillary Services Market Development",
-            "o Capacity Market Mechanisms and Design",
-            "o Green Energy Corridor and Market Integration"
+            "o Pricing Mechanism for Captive Plants - Tariff Framework",
+            "o Transmission Charges for Open Access Consumers",
+            "o Distribution Charges and Wheeling Charges",
+            "o Open Access Charges - Components and Calculation",
+            "o Cross Subsidy Charges from Industries - Rationale and Computation",
+            "o Additional Surcharge - Legal Provisions and Application",
+            "o Cross Subsidy Surcharge - Determination Methodology",
+            "o Banking and Scheduling Charges for Open Access",
+            "o Green Energy Open Access - Preferential Pricing",
+            "o Standby Charges and Grid Support Charges"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CASE STUDIES & CLASSROOM SIMULATION:",
+          "items": [
+            "o Case Studies on Open Access Implementation",
+            "o Captive Power Plant Structuring - Legal and Financial",
+            "o Open Access Application Filing - Step-by-Step Process",
+            "o Cross Subsidy Surcharge Calculation Exercise",
+            "o Additional Surcharge Computation Workshop",
+            "o Green Energy Open Access - Project Development Case Study",
+            "o Open Access for C&I Consumers - Cost-Benefit Analysis",
+            "o Supreme Court Judgement Analysis - Captive Generation",
+            "o Stakeholder Impact Assessment - DISCOM Perspective"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Understanding of Open Access and Green Energy Open Access regulations",
+        "Knowledge of captive generation provisions and Supreme Court rulings",
+        "Expertise in pricing mechanisms and cross-subsidy charge calculations",
+        "Skills in analyzing stakeholder impacts and implementation challenges"
+      ],
+      "prerequisites": "Completion of course 101 or basic understanding of electricity regulations",
+      "certification": "Certification in Open Access mechanisms"
+    },
+    {
+      "id": 4,
+      "title": "104 - Functioning of Electricity Grid & Renewable Energy Scheduling",
+      "slug": "104-functioning-of-electricity-grid-renewable-energy-scheduling",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/204.png",
+      "category": "Technical Course",
+      "description": "Technical deep-dive into electricity grid functioning, transmission & distribution systems, system operations, and renewable energy scheduling mechanisms.",
+      "points": [
+        "Understanding of grid functioning, transmission/distribution principles, and regional frequency management",
+        "Expertise in system operations (SCED, MBED, SCUC) and renewable energy scheduling with forecasting challenges"
+      ],
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Technical deep-dive into electricity grid functioning, transmission & distribution systems, system operations, and renewable energy scheduling mechanisms."
+      },
+      "sections": {
+        "legislation": {
+          "title": "FUNCTIONING OF ELECTRICITY GRID, TRANSMISSION & DISTRIBUTION:",
+          "items": [
+            "o Functioning of the Electricity Grid - Principles & Protocols",
+            "o Transmission & Distribution System - Technical Framework",
+            "o Understanding Regional Frequency - Grid Stability Mechanisms",
+            "o Availability Based Tariff (ABT) - Framework and Implementation",
+            "o The Indian Electricity Grid Code (IEGC) - Technical Standards",
+            "o State Electricity Grid Codes - State-level Operating Procedures",
+            "o Grid Discipline and Frequency Regulation",
+            "o Real-time Grid Balancing Mechanisms",
+            "o Transmission Congestion Management"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "SYSTEM OPERATIONS:",
+          "items": [
+            "o Security Constraint Economic Dispatch (SCED) - Optimization Framework",
+            "o Market-Based Economic Dispatch (MBED) - Market Integration",
+            "o Security Constraint Unit Commitment (SCUC) - Generation Scheduling",
+            "o Ancillary Services - Frequency Regulation and Reserves",
+            "o Automatic Generation Control (AGC) - Real-time Balancing",
+            "o Load Dispatch Centres - NLDC, RLDCs, SLDCs Operations",
+            "o Merit Order Dispatch - Economic Principles",
+            "o Real-time Balancing and Deviation Settlement",
+            "o Grid Security Analysis and Contingency Planning",
+            "o System Operator Coordination Mechanisms"
+          ]
+        },
+        "policyFramework": {
+          "title": "SCHEDULING OF RENEWABLE ENERGY:",
+          "items": [
+            "o Scheduling Infirm Power RE through Interstate Systems",
+            "o Forecasting Issues in Renewable Energy - Wind and Solar",
+            "o Penalties for Forecasting Deviations - Regulatory Framework",
+            "o Renewable Regulatory Fund (RRF) - Deviation Charges",
+            "o Limitations in RE Forecasting and Scheduling",
+            "o Wheeling and Banking of Renewable Energy - Mechanisms",
+            "o Scheduling Constraints in RE Integration",
+            "o Solutions for RE Scheduling Challenges",
+            "o Energy Storage Integration for RE Firming",
+            "o Must-Run Status and RE Curtailment Issues"
           ]
         },
         "classroomSimulation": {
           "title": "CLASSROOM SIMULATION:",
           "items": [
-            "o Power Exchange Trading Simulation - Day-Ahead Market",
-            "o Real-time Market (RTM) Trading Exercise",
-            "o Bilateral Contract Negotiation Workshop",
-            "o Renewable Energy Certificate (REC) Trading Simulation",
-            "o Market Coupling and Price Discovery Exercise",
-            "o Open Access Application and Market Entry Simulation",
-            "o Power Purchase Agreement (PPA) Structuring Workshop",
-            "o Market Surveillance and Manipulation Detection",
-            "o Cross-border Power Trade Negotiation Exercise"
+            "o Grid Operations Control Room Simulation",
+            "o SCED/MBED/SCUC Algorithm Implementation Exercise",
+            "o Regional Frequency Management Simulation",
+            "o Availability Based Tariff (ABT) Calculation Workshop",
+            "o RE Forecasting and Scheduling Exercise - 96 Time Blocks",
+            "o Wheeling and Banking Mechanism Case Studies",
+            "o Deviation Settlement and Penalty Calculation",
+            "o Ancillary Services Market Simulation",
+            "o Grid Code Compliance and Violation Analysis",
+            "o Interstate RE Scheduling - Practical Exercise"
           ]
         }
       },
       "learningOutcomes": [
-        "Understanding of power market evolution in India",
-        "Knowledge of different market structures and mechanisms",
-        "Analysis of economic impacts of market reforms",
-        "Insights into future market developments"
+        "Understanding of electricity grid functioning and T&D principles",
+        "Knowledge of regional frequency, ABT, and Grid Codes",
+        "Expertise in system operations - SCED, MBED, SCUC, and ancillary services",
+        "Skills in RE scheduling, forecasting, wheeling, and banking mechanisms"
       ],
-      "prerequisites": "Basic economics and policy background helpful",
-      "certification": "Market analysis certification"
+      "prerequisites": "Basic electrical engineering knowledge and understanding of power systems",
+      "certification": "Technical certification in grid operations and RE scheduling"
     },
     {
-      "id": 4,
-      "title": "202- GNA And Open Access Mechanism",
-      "slug": "202-gna-and-open-access-mechanism",
+      "id": 200,
+      "title": "201 - Renewable Energy: Tariff, Bidding, RPOs",
+      "slug": "201-renewable-energy-tariff-bidding-rpos",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/102.png",
+      "category": "Renewable Energy",
+      "description": "Comprehensive course on renewable energy tariff determination, bidding mechanisms, RPO implementation, and REC/ESCerts trading.",
+      "points": [
+        "Understanding of RE tariff determination, preferential/feed-in tariffs, and green tariff policies",
+        "Knowledge of RPO implementation, REC obligations, PAT scheme, and trading mechanisms for RECs and ESCerts"
+      ],
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Comprehensive course on renewable energy tariff determination, bidding mechanisms, RPO implementation, and REC/ESCerts trading."
+      },
+      "sections": {
+        "legislation": {
+          "title": "RENEWABLE ENERGY TARIFF, BIDDING AND TRANSACTIONS:",
+          "items": [
+            "o How are RE Tariffs Determined? - Regulatory Framework",
+            "o Preferential Tariff for Renewable Energy - Policy and Implementation",
+            "o Feed-in Tariff (FIT) Mechanism - Design and Application",
+            "o Concept of Green Tariff - Policies and Regulations",
+            "o Tariff Components for Solar, Wind, and Other RE Sources",
+            "o Competitive Bidding for Renewable Energy Projects",
+            "o Viability Gap Funding (VGF) for RE Projects",
+            "o Banking and Green Bonds - Financial Instruments",
+            "o RE Power Purchase Agreements (PPAs) - Terms and Conditions"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "RPO IMPLEMENTATION & OBLIGATIONS:",
+          "items": [
+            "o How are RPOs Determined? - Methodology and Calculation",
+            "o Implementation of RPOs - State and National Level",
+            "o Impact on DISCOMs - Compliance and Procurement Challenges",
+            "o Impact on RE Developers - Market Opportunities and Risks",
+            "o REC (Renewable Energy Certificate) Obligations",
+            "o Solar RPO vs Non-Solar RPO Requirements",
+            "o Hydropower Purchase Obligations (HPO)",
+            "o RPO Compliance Mechanisms and Monitoring",
+            "o Penalties for Non-Compliance with RPOs",
+            "o State-wise RPO Trajectory and Targets"
+          ]
+        },
+        "policyFramework": {
+          "title": "PAT SCHEME & TRADING MECHANISMS:",
+          "items": [
+            "o Perform Achieve and Trade (PAT) Scheme - Framework",
+            "o Energy Efficiency and PAT Implementation",
+            "o Trading of REC (Renewable Energy Certificates)",
+            "o ESCerts (Energy Saving Certificates) Trading",
+            "o Power Exchanges - IEX and PXIL for REC Trading",
+            "o REC Mechanism - Floor Price and Forbearance Price",
+            "o Green Energy Open Access and REC Equivalence",
+            "o Carbon Credits and International Mechanisms",
+            "o Green Hydrogen and Ammonia - Emerging Policies",
+            "o Renewable Energy Trading - Market Dynamics"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o RE Tariff Determination Exercise - Solar and Wind",
+            "o Preferential vs Competitive Bidding - Comparative Analysis",
+            "o RPO Calculation and Compliance Planning Workshop",
+            "o REC Trading Simulation - Power Exchange Platform",
+            "o ESCerts Trading under PAT Scheme Exercise",
+            "o Green Tariff Design for C&I Consumers",
+            "o RE PPA Negotiation and Structuring Workshop",
+            "o Banking and Green Bonds - Financial Modeling",
+            "o Impact Assessment - RPOs on DISCOMs and Developers",
+            "o Case Studies on RPO Non-Compliance and Penalties"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Understanding of RE tariff determination mechanisms",
+        "Knowledge of preferential, feed-in, and green tariff policies",
+        "Expertise in RPO implementation and compliance frameworks",
+        "Skills in REC and ESCerts trading mechanisms"
+      ],
+      "prerequisites": "Completion of foundation courses or basic understanding of renewable energy sector",
+      "certification": "Certification in renewable energy tariff and market mechanisms"
+    },
+    {
+      "id": 15,
+      "title": "202 - Deviation Settlement Mechanisms",
+      "slug": "202-deviation-settlement-mechanisms",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -291,88 +470,88 @@
       "authorRole": "Development team",
       "img": "/course/202.png",
       "category": "Advanced Course",
-      "description": "Advanced course on General Network Access (GNA) and Open Access mechanisms enabling competitive power markets.",
+      "description": "Advanced course on Inter-State and Intra-State Deviation Settlement Mechanisms (DSM), ABT impact, and transition to 5-minute time blocks.",
       "points": [
-        "Expert knowledge of GNA and Open Access frameworks with technical and commercial processes",
-        "Practical experience with regulatory procedures and system planning impact assessment"
+        "Understanding of Inter-State and Intra-State DSM with ABT framework and impact analysis",
+        "Knowledge of 15-minute to 5-minute time-block transition roadmap, implications, and scheduling constraints"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Advanced course on General Network Access (GNA) and Open Access mechanisms enabling competitive power markets."
+        "description": "Advanced course on Inter-State and Intra-State Deviation Settlement Mechanisms (DSM), ABT impact, and transition to 5-minute time blocks."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "DEVIATION SETTLEMENT MECHANISMS (DSM):",
           "items": [
-            "o Electricity Act 2003 - Open Access Provisions (Section 9, 10, 12)",
-            "o CERC (Grant of Connectivity, Long-term Access and Medium-term Open Access) Regulations, 2009",
-            "o CERC (Sharing of Inter-State Transmission Charges and Losses) Regulations, 2020",
-            "o CERC (Terms and Conditions of Tariff) Regulations, 2019",
-            "o State Electricity Regulatory Commissions (Open Access) Regulations",
-            "o Central Electricity Authority (Technical Standards for Connectivity) Regulations, 2007",
-            "o Indian Electricity Grid Code (IEGC) - Connectivity and Access Provisions",
-            "o CERC (Procedure, Terms and Conditions for grant of trading license) Regulations, 2020",
-            "o Electricity Rules, 2005 - Open Access Implementation Guidelines"
+            "o Inter-State Deviation Settlement Mechanisms (DSM) - CERC Regulations",
+            "o Intra-State Deviation Settlement Mechanisms (DSM) - SERC Regulations",
+            "o Impact of ABT (Availability Based Tariff) on DSM",
+            "o DSM Charges and Penalty Structure",
+            "o Frequency-linked DSM Rates - Grid Discipline",
+            "o CERC (Deviation Settlement Mechanism) Regulations Framework",
+            "o State DSM Regulations - Variations and Implementation",
+            "o Deviation Accounting and Energy Balancing",
+            "o UI (Unscheduled Interchange) Mechanism - Evolution to DSM"
           ]
         },
         "institutionalStructure": {
-          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "title": "IMPACT ON STAKEHOLDERS:",
           "items": [
-            "o Central Electricity Regulatory Commission (CERC) - Interstate Open Access",
-            "o State Electricity Regulatory Commissions (SERCs) - Intrastate Open Access",
-            "o Central Transmission Utility (CTU) - Transmission Access Provider",
-            "o State Transmission Utilities (STUs) - State Level Access",
-            "o Regional Load Dispatch Centres (RLDCs) - Access Coordination",
-            "o State Load Dispatch Centres (SLDCs) - State Access Management",
-            "o Central Electricity Authority (CEA) - Technical Standards and Connectivity",
-            "o Distribution Companies (DISCOMs) - Local Access and Wheeling",
-            "o Power Trading Companies - Open Access Facilitators",
-            "o Open Access Customers - Industrial and Commercial Consumers"
+            "o Impact on Generators - Scheduling and Deviation Charges",
+            "o Impact on DISCOMs - Load Forecasting and Compliance",
+            "o Impact on Open Access Consumers - DSM Exposure",
+            "o Load Dispatch Centres - DSM Implementation and Monitoring",
+            "o Regional Energy Accounts - Settlement Process",
+            "o Power Exchanges - Market Participants and DSM",
+            "o Renewable Energy Generators - Variable Generation and DSM",
+            "o Transmission Licensees - Loss Allocation and DSM",
+            "o Trading Companies - Portfolio Management under DSM",
+            "o Grid Discipline and Financial Implications"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "TRANSITION TO 5-MINUTE TIME-BLOCKS:",
           "items": [
-            "o National Electricity Policy 2005 - Open Access Objectives",
-            "o National Tariff Policy 2006 - Access Charge Principles",
-            "o Cross-subsidy Surcharge Determination and Rationalization",
-            "o Transmission and Wheeling Charge Methodology",
-            "o Point of Connection (PoC) Mechanism and Pricing",
-            "o General Network Access (GNA) Framework Implementation",
-            "o Connectivity and Long-term Access (LTA) Process",
-            "o Medium-term Open Access (MTOA) and Short-term Open Access (STOA)",
-            "o Green Energy Open Access Rules, 2022",
-            "o Banking and Scheduling Mechanisms for Open Access"
+            "o Expected Change of Time-block in Indian Power Sector",
+            "o From 15 Minutes to 5 Minutes - Rationale and Benefits",
+            "o Roadmap for Execution - Implementation Plan",
+            "o Impact and Implications on Grid Operations",
+            "o Impact on Real-time Market and Power Exchanges",
+            "o Scheduling Constraints with 5-minute Blocks",
+            "o Technology and Infrastructure Requirements",
+            "o International Best Practices - 5-minute Markets",
+            "o Renewable Energy Integration - Enhanced Flexibility",
+            "o Stakeholder Readiness and Transition Challenges"
           ]
         },
         "classroomSimulation": {
           "title": "CLASSROOM SIMULATION:",
           "items": [
-            "o Open Access Application Filing - Step-by-Step Process",
-            "o Transmission Charge Calculation Exercise",
-            "o Cross-subsidy Surcharge Computation Workshop",
-            "o Point of Connection Study and System Impact Assessment",
-            "o Open Access Agreement Negotiation Simulation",
-            "o Scheduling and Energy Accounting Process",
-            "o Grid Security Analysis for Open Access",
-            "o Dispute Resolution in Open Access Cases",
-            "o Renewable Energy Open Access Project Development"
+            "o Inter-State DSM Calculation Exercise",
+            "o Intra-State DSM Computation Workshop",
+            "o ABT Impact Analysis - Generator and DISCOM Perspective",
+            "o Deviation Charge Calculation - Frequency-linked Rates",
+            "o Open Access Consumer DSM Exposure Analysis",
+            "o 15-minute vs 5-minute Time-block Simulation",
+            "o Scheduling Strategy Development for 5-minute Blocks",
+            "o DSM Optimization - Portfolio Management Exercise",
+            "o Case Studies on DSM Non-compliance and Penalties"
           ]
         }
       },
       "learningOutcomes": [
-        "Expert knowledge of GNA and Open Access frameworks",
-        "Understanding of technical and commercial processes",
-        "Skills in system planning and impact assessment",
-        "Practical experience with regulatory procedures"
+        "Understanding of Inter-State and Intra-State DSM frameworks",
+        "Knowledge of ABT impact on generators, DISCOMs, and open access consumers",
+        "Expertise in 5-minute time-block transition roadmap and implications",
+        "Skills in DSM calculation and scheduling constraint management"
       ],
-      "prerequisites": "Completion of courses 101-103 or equivalent experience",
-      "certification": "Advanced certification in market access mechanisms"
+      "prerequisites": "Completion of foundation courses or understanding of grid operations",
+      "certification": "Advanced certification in deviation settlement mechanisms"
     },
     {
       "id": 5,
-      "title": "203- Resource Adequacy",
-      "slug": "203-resource-adequacy",
+      "title": "203 - GNA and Open Access Mechanism",
+      "slug": "203-gna-and-open-access-mechanism",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -380,89 +559,89 @@
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
       "img": "/course/203.png",
-      "category": "Planning & Security",
-      "description": "Comprehensive study of resource adequacy planning, ensuring reliable electricity supply meets demand under various scenarios.",
+      "category": "Advanced Course",
+      "description": "Advanced course on General Network Access (GNA) regulations, implementation, licensing frameworks, and pricing mechanisms for transmission access.",
       "points": [
-        "Mastery of resource adequacy planning techniques with reliability standards and metrics",
-        "Skills in renewable integration planning and knowledge of market mechanisms for adequacy"
+        "Expert knowledge of GNA mechanism, regulations, and stakeholder-wise impact analysis",
+        "Understanding of licensing frameworks and evolution of pricing mechanisms (MTOA, STOA, PoC)"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Comprehensive study of resource adequacy planning, ensuring reliable electricity supply meets demand under various scenarios."
+        "description": "Advanced course on General Network Access (GNA) regulations, implementation, licensing frameworks, and pricing mechanisms for transmission access."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "GNA: REGULATIONS, IMPLEMENTATION AND RELATED ISSUES:",
           "items": [
-            "o Electricity Act 2003 - Resource Planning and Adequacy Provisions",
-            "o Central Electricity Authority (Technical Standards for Construction of Electrical Plants) Regulations, 2010",
-            "o CERC (Terms and Conditions of Tariff) Regulations - Capacity Charges",
-            "o National Electricity Policy 2005 - Resource Adequacy Objectives",
-            "o Renewable Energy Purchase Obligation (RPO) Regulations",
-            "o CERC (Deviation Settlement Mechanism) Regulations - Grid Security",
-            "o Central Electricity Authority (Safety Requirements) Regulations, 2010",
-            "o Energy Storage System Guidelines and Standards",
-            "o Demand Side Management and Energy Efficiency Regulations"
+            "o Granular Analysis of GNA - Detailed Framework",
+            "o General Network Access (GNA): Mechanism and Principles",
+            "o GNA Regulations (CERC) - Regulatory Framework",
+            "o GNA Implementation - Merits/Demerits and Challenges",
+            "o GNA: Stakeholder-wise Impact Analysis",
+            "o Intra-state GNA: Scope and Implementation",
+            "o GNA vs LTA (Long-term Access) - Comparative Analysis",
+            "o Connectivity and GNA Application Process",
+            "o Grid Security and GNA - Technical Considerations"
           ]
         },
         "institutionalStructure": {
-          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "title": "LICENSING:",
           "items": [
-            "o Central Electricity Authority (CEA) - Resource Adequacy Assessment",
-            "o Load Dispatch Centres - Real-time Adequacy Monitoring",
-            "o Central Electricity Regulatory Commission (CERC) - Capacity Market Regulation",
-            "o Planning Commission - Long-term Resource Planning",
-            "o Ministry of Power - Resource Policy and Planning",
-            "o Regional Power Committees (RPCs) - Regional Adequacy Coordination",
-            "o State Electricity Regulatory Commissions - State Adequacy Planning",
-            "o Generating Companies - Capacity Availability and Maintenance",
-            "o Transmission Utilities - Network Adequacy and Security",
-            "o Distribution Companies - Demand Forecasting and Load Management"
+            "o Transmission Licensing - Inter-State Framework",
+            "o Transmission Licensing - Intra-State Framework",
+            "o Distribution Licensing - Regulatory Requirements",
+            "o Power Trading Licensing - Inter-State Regulations",
+            "o Power Trading Licensing - Intra-State Regulations",
+            "o Licensing Conditions and Compliance Requirements",
+            "o License Modification and Renewal Process",
+            "o Central Electricity Regulatory Commission - License Grant Authority",
+            "o State Electricity Regulatory Commissions - State Licensing",
+            "o License Revocation and Penalty Provisions"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "PRICING MECHANISM:",
           "items": [
-            "o National Electricity Plan (NEP) - Resource Adequacy Roadmap",
-            "o Capacity Addition Program and Implementation Timeline",
-            "o Reserve Margin Standards and Reliability Criteria",
-            "o Demand Forecasting Methodology and Accuracy Standards",
-            "o Renewable Energy Integration and Grid Stability Policies",
-            "o Energy Storage Policy and Deployment Strategy",
-            "o Demand Response and Demand Side Management Programs",
-            "o Capacity Markets and Adequacy Payment Mechanisms",
-            "o Resource Adequacy Standards and Compliance Framework",
-            "o Emergency Procurement and Resource Adequacy Recovery Plans"
+            "o Evolution of Pricing for MTOA (Medium-term Open Access)",
+            "o Evolution of Pricing for STOA (Short-term Open Access)",
+            "o Regional Postage Stamp Method of Pricing - Mechanism",
+            "o Point of Connection (PoC) Pricing - Framework and Implementation",
+            "o Transmission Charges - Components and Calculation",
+            "o Sharing of Transmission Charges and Losses",
+            "o Cross-subsidy Surcharge and Additional Surcharge",
+            "o Wheeling Charges - Distribution Network Usage",
+            "o Banking Charges for Renewable Energy",
+            "o Transition from Postage Stamp to PoC Mechanism"
           ]
         },
         "classroomSimulation": {
           "title": "CLASSROOM SIMULATION:",
           "items": [
-            "o Resource Adequacy Assessment - Probabilistic Analysis",
-            "o Demand Forecasting Model Development and Testing",
-            "o Capacity Credit Calculation for Renewable Resources",
-            "o Reserve Margin Optimization Exercise",
-            "o Peak Load Management Strategy Simulation",
-            "o Energy Storage Sizing and Placement Analysis",
-            "o Demand Response Program Design Workshop",
-            "o Resource Adequacy Crisis Management Simulation",
-            "o Long-term Resource Planning Scenario Analysis"
+            "o GNA Application and Approval Process Exercise",
+            "o Stakeholder Impact Analysis Workshop - GNA Implementation",
+            "o Intra-state GNA Framework Design Exercise",
+            "o Licensing Application Preparation - Transmission/Distribution/Trading",
+            "o MTOA and STOA Pricing Calculation Workshop",
+            "o Regional Postage Stamp Method - Charge Computation",
+            "o Point of Connection (PoC) Pricing Analysis Exercise",
+            "o GNA Merits vs Demerits - Debate and Analysis",
+            "o Case Studies on GNA Challenges and Solutions"
           ]
         }
       },
       "learningOutcomes": [
-        "Mastery of resource adequacy planning techniques",
-        "Understanding of reliability standards and metrics",
-        "Skills in renewable integration planning",
-        "Knowledge of market mechanisms for adequacy"
+        "Expert knowledge of GNA mechanism and regulatory framework",
+        "Understanding of licensing requirements for transmission, distribution, and trading",
+        "Skills in pricing mechanism analysis - MTOA, STOA, PoC",
+        "Knowledge of stakeholder impacts and implementation challenges"
       ],
-      "prerequisites": "Strong background in power systems and economics",
-      "certification": "Specialist certification in resource adequacy planning"
+      "prerequisites": "Completion of courses 101-103 or equivalent experience in power sector",
+      "certification": "Advanced certification in GNA and market access mechanisms"
     },
     {
       "id": 6,
-      "title": "204- Issues In Consumer Interest",
-      "slug": "204-issues-in-consumer-interest",
+      "title": "204 - Distribution System Planning",
+      "slug": "204-distribution-system-planning",
       "lessons": "Lesson 10",
       "duration": "19h 30m",
       "students": "Students 20+",
@@ -470,84 +649,355 @@
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
       "img": "/course/204.png",
-      "category": "Consumer Protection",
-      "description": "Focus on consumer protection, rights, and advocacy in the evolving electricity market landscape.",
+      "category": "Distribution Planning",
+      "description": "Comprehensive course on distribution system planning, quality power supply, DISCOM portfolio management, and government schemes for distributed renewable energy.",
       "points": [
-        "Deep understanding of consumer rights in electricity sector with tariff impact analysis",
-        "Skills in consumer advocacy and representation with regulatory process knowledge"
+        "Understanding of quality power supply, DISCOM portfolio management, and revenue collection issues",
+        "Knowledge of government DRE schemes (PM KUSUM, PM SURYA GHAR) and their impact on DISCOMs"
       ],
       "overview": {
         "title": "OVERVIEW",
-        "description": "Focus on consumer protection, rights, and advocacy in the evolving electricity market landscape."
+        "description": "Comprehensive course on distribution system planning, quality power supply, DISCOM portfolio management, and government schemes for distributed renewable energy."
       },
       "sections": {
         "legislation": {
-          "title": "LEGISLATION:",
+          "title": "SUPPLY OF QUALITY POWER:",
           "items": [
-            "o Electricity Act 2003 - Consumer Rights and Protection (Chapter V, VI)",
-            "o Electricity (Rights of Consumers) Rules, 2020",
-            "o Consumer Protection Act, 2019 - Electricity Services Coverage",
-            "o Right to Information Act, 2005 - Transparency in Electricity Sector",
-            "o CERC (Terms and Conditions of Tariff) Regulations - Consumer Impact",
-            "o State Electricity Regulatory Commissions (Standards of Performance) Regulations",
-            "o Electricity Supply Code and Consumer Service Regulations",
-            "o Public Utilities (Consumer Grievances) Rules",
-            "o Competition Act, 2002 - Consumer Welfare in Electricity Markets"
+            "o Supply of Quality Power - Standards and Regulations",
+            "o Voltage and Frequency Standards - Grid Code Compliance",
+            "o Quality of Service (QoS) Standards for DISCOMs",
+            "o Harmonics and Power Quality Issues",
+            "o Reliability Indices - SAIDI, SAIFI, CAIDI",
+            "o Distribution System Upgrades for Quality Improvement",
+            "o Smart Grid Technologies for Quality Power Supply",
+            "o Power Quality Monitoring and Measurement",
+            "o Consumer Compensation for Poor Quality Supply"
           ]
         },
         "institutionalStructure": {
-          "title": "INSTITUTIONAL STRUCTURE – ROLES & RESPONSIBILITY, JURISDICTIONS & INDEPENDENCE:",
+          "title": "PORTFOLIO MANAGEMENT OF DISCOMS & LEGAL ISSUES:",
           "items": [
-            "o Consumer Grievance Redressal Forums (CGRFs) - First Level Resolution",
-            "o Electricity Ombudsman - Second Level Consumer Protection",
-            "o State Electricity Regulatory Commissions (SERCs) - Consumer Advocacy",
-            "o Central Electricity Regulatory Commission (CERC) - Consumer Interests",
-            "o State Consumer Disputes Redressal Commissions",
-            "o National Consumer Disputes Redressal Commission",
-            "o Distribution Companies (DISCOMs) - Consumer Service Obligations",
-            "o Consumer Organizations and Advocacy Groups",
-            "o Legal Services Authorities - Consumer Legal Aid",
-            "o Public Interest Research Groups - Consumer Advocacy"
+            "o Portfolio Management of DISCOMs - Power Procurement Strategies",
+            "o Legal and Regulatory Issues in DISCOMs' Revenue Collection",
+            "o Billing Efficiency - Improvements and Challenges",
+            "o AT&C Losses (Aggregate Technical & Commercial Losses)",
+            "o ACS (Average Cost of Supply) & ARR (Aggregate Revenue Requirement) Gaps",
+            "o Metering Issues - Smart Meters and AMI Implementation",
+            "o Electricity Theft and Unauthorized Use of Electricity",
+            "o Legal Framework for Theft Detection and Prosecution",
+            "o Revenue Protection Measures and Anti-theft Drives",
+            "o DISCOM Financial Restructuring - UDAY and Other Schemes"
           ]
         },
         "policyFramework": {
-          "title": "POLICY & REGULATORY FRAMEWORK:",
+          "title": "GOVERNMENT SCHEMES TO PROMOTE DRE:",
           "items": [
-            "o National Electricity Policy 2005 - Consumer Protection Objectives",
-            "o National Tariff Policy 2006 - Consumer Interest Safeguards",
-            "o Standards of Performance (SOP) for Distribution Utilities",
-            "o Consumer Grievance Redressal Mechanism Implementation",
-            "o Tariff Design and Cross-subsidy Rationalization Policies",
-            "o Quality of Service Standards and Penalty Framework",
-            "o Consumer Education and Awareness Programs",
-            "o Digital Consumer Services and Online Grievance Systems",
-            "o Consumer Data Protection and Privacy Policies",
-            "o Vulnerable Consumer Protection and Lifeline Tariff Policies"
+            "o PM KUSUM (Kisan Urja Suraksha evam Utthaan Mahabhiyan) Scheme",
+            "o PM SURYA GHAR YOJANA - Rooftop Solar Scheme",
+            "o Impact on DISCOMs - Revenue and Grid Integration Challenges",
+            "o Legal and Regulatory Hurdles in System Integration",
+            "o Net Metering and Gross Metering Policies",
+            "o Grid Integration of Distributed Renewable Energy (DRE)",
+            "o Subsidy Mechanisms and Financial Viability",
+            "o Farmer and Residential Consumer Benefits",
+            "o Distribution System Upgrades for DRE Integration",
+            "o Future of Distribution - Decentralization and Prosumers"
           ]
         },
         "classroomSimulation": {
           "title": "CLASSROOM SIMULATION:",
           "items": [
-            "o Consumer Grievance Filing and Resolution Process",
-            "o Electricity Bill Analysis and Dispute Resolution",
-            "o Consumer Forum Hearing Simulation",
-            "o Ombudsman Proceeding and Decision Making",
-            "o Public Interest Litigation Drafting Exercise",
-            "o Consumer Advocacy Campaign Planning",
-            "o Tariff Impact Assessment on Different Consumer Categories",
-            "o Quality of Service Monitoring and Complaint Process",
-            "o Consumer Rights Awareness Program Design"
+            "o Quality Power Supply Assessment Exercise",
+            "o DISCOM Portfolio Management - Procurement Strategy Workshop",
+            "o AT&C Loss Reduction Analysis and Action Plan",
+            "o ACS-ARR Gap Analysis and Tariff Restructuring",
+            "o Billing Efficiency Improvement Case Studies",
+            "o Electricity Theft Detection and Legal Action Simulation",
+            "o PM KUSUM Scheme Implementation - Impact Analysis",
+            "o PM SURYA GHAR YOJANA - Rooftop Solar Integration Exercise",
+            "o Smart Metering and AMI Deployment Planning",
+            "o DRE System Integration - Technical and Regulatory Challenges"
           ]
         }
       },
       "learningOutcomes": [
-        "Deep understanding of consumer rights in electricity sector",
-        "Knowledge of tariff impacts on different consumer segments",
-        "Skills in consumer advocacy and representation",
-        "Understanding of regulatory processes from consumer perspective"
+        "Understanding of quality power supply standards and DISCOM operations",
+        "Knowledge of revenue collection issues, AT&C losses, and metering challenges",
+        "Expertise in government DRE schemes - PM KUSUM and PM SURYA GHAR",
+        "Skills in analyzing DISCOM impact and system integration hurdles"
       ],
-      "prerequisites": "Basic understanding of electricity regulation",
-      "certification": "Consumer advocacy and protection certification"
+      "prerequisites": "Basic understanding of distribution systems and regulatory framework",
+      "certification": "Certification in distribution system planning and management"
+    },
+    {
+      "id": 7,
+      "title": "301 - Renewable Energy: Issues in Grid Integration",
+      "slug": "301-renewable-energy-issues-in-grid-integration",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/101.png",
+      "category": "Renewable Energy",
+      "description": "Comprehensive analysis of renewable energy integration challenges, grid stability issues, and scheduling mechanisms for RE sources.",
+      "points": [
+        "Understanding of India's RE vision and Green Energy Corridor with grid integration technical challenges",
+        "Knowledge of scheduling mechanisms across 96-time blocks and expertise in managing renewable variability"
+      ],
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Comprehensive analysis of renewable energy integration challenges, grid stability issues, and scheduling mechanisms for RE sources."
+      },
+      "sections": {
+        "legislation": {
+          "title": "GOVERNMENT OF INDIA'S VISION FOR RE:",
+          "items": [
+            "o Green Energy Corridor Initiative and Infrastructure Development",
+            "o Integration of Renewable Energy into the Grid - Policy Framework",
+            "o The 'Must Run' Status of RE - Regulatory Provisions",
+            "o Access to Transmission for Renewable Energy Projects",
+            "o Nuances Resulting Due to RE Integration - Grid Code Amendments",
+            "o Scheduling Constraints and Compliance Requirements",
+            "o Renewable Energy Purchase Obligation (RPO) Regulations",
+            "o Green Energy Open Access Rules, 2022",
+            "o National Solar Mission and Wind Energy Mission Targets"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "SCHEDULING POWER INTER AND INTRA 96-TIME BLOCKS:",
+          "items": [
+            "o Regional Load Dispatch Centres (RLDCs) - RE Scheduling Coordination",
+            "o State Load Dispatch Centres (SLDCs) - Intra-State RE Management",
+            "o National Load Dispatch Centre (NLDC) - RE Forecasting and Monitoring",
+            "o Renewable Energy Management Centres (REMCs) - Forecasting Systems",
+            "o Solar and Wind Forecasting Agencies - Prediction Services",
+            "o Power System Operation Corporation Limited (POSOCO) - Grid Integration",
+            "o Central Transmission Utility (CTU) - Transmission Infrastructure",
+            "o State Transmission Utilities (STUs) - State Level Integration",
+            "o Distribution Companies (DISCOMs) - RE Off-take and Scheduling",
+            "o Renewable Energy Generators - Scheduling and Compliance"
+          ]
+        },
+        "policyFramework": {
+          "title": "CHALLENGES IN TRANSMISSION PLANNING IN RENEWABLE ENERGY:",
+          "items": [
+            "o Ramping Up and Ramping Down for Grid Stability and Discipline",
+            "o Force Majeure Events and Grid Security Implications",
+            "o Hurdles in Scheduling of RE - Variability and Uncertainty",
+            "o Challenges in the Integration of Rooftop Solar and Solar Pump",
+            "o Increasing Demand from Data Centres & AI - Grid Impact",
+            "o Transmission Congestion and RE Curtailment Issues",
+            "o Energy Storage Integration for RE Firming",
+            "o Grid Code Compliance for Variable Renewable Energy",
+            "o Frequency Regulation with High RE Penetration",
+            "o Ancillary Services and Grid Balancing Requirements"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o RE Forecasting and Scheduling Exercise - 96-Time Block Analysis",
+            "o Grid Stability Simulation with High RE Penetration",
+            "o Ramping and Frequency Control Challenge Simulation",
+            "o Rooftop Solar Integration Planning Workshop",
+            "o RE Curtailment Analysis and Mitigation Strategies",
+            "o Energy Storage Sizing for RE Integration",
+            "o Transmission Planning for RE Evacuation Exercise",
+            "o Must-Run Status Implementation and Compliance",
+            "o Data Centre Load Management with RE Supply Simulation"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Understanding of India's RE vision and Green Energy Corridor",
+        "Knowledge of scheduling mechanisms across 96-time blocks",
+        "Expertise in managing renewable variability and grid stability",
+        "Skills in transmission planning for RE integration"
+      ],
+      "prerequisites": "Completion of foundation courses or equivalent experience in power systems",
+      "certification": "Advanced certification in renewable energy grid integration"
+    },
+    {
+      "id": 8,
+      "title": "302 - Integration of Energy Storage System",
+      "slug": "302-integration-of-energy-storage-system",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/103.png",
+      "category": "Energy Storage",
+      "description": "In-depth exploration of energy storage systems integration, focusing on BESS, pumped storage, and regulatory frameworks for grid-scale storage.",
+      "points": [
+        "Comprehensive understanding of BESS importance and scope with legal framework knowledge",
+        "Expertise in hydropower and pumped storage systems with practical ESS application use cases"
+      ],
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "In-depth exploration of energy storage systems integration, focusing on BESS, pumped storage, and regulatory frameworks for grid-scale storage."
+      },
+      "sections": {
+        "legislation": {
+          "title": "IMPORTANCE & SCOPE OF BATTERY ENERGY STORAGE SYSTEM (BESS):",
+          "items": [
+            "o Legal Status of BESS in Electricity Act 2003 - Amendments and Provisions",
+            "o BESS as Deemed Generation or Deemed Consumption - Regulatory Classification",
+            "o Energy Storage Systems Policy Framework and Guidelines",
+            "o CERC (Terms and Conditions of Tariff) Regulations for Storage Systems",
+            "o State Regulatory Frameworks for Energy Storage Deployment",
+            "o Grid Code Provisions for Storage System Integration",
+            "o Renewable Energy Integration with Storage - Must Run Status",
+            "o Battery Manufacturing Standards and Safety Regulations",
+            "o Environmental and Disposal Regulations for Battery Systems"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "STATUS OF BESS IN INDIA & GOVERNMENT MEASURES:",
+          "items": [
+            "o Ministry of Power - Energy Storage Policy and Promotion",
+            "o Central Electricity Authority (CEA) - Storage Planning and Standards",
+            "o Central Electricity Regulatory Commission (CERC) - Storage Tariff Framework",
+            "o State Electricity Regulatory Commissions - State Storage Policies",
+            "o National Load Dispatch Centre - Storage Scheduling and Operations",
+            "o Battery Energy Storage System Manufacturers and Integrators",
+            "o Research and Development Organizations - Storage Technology Innovation",
+            "o Financial Institutions - Storage Project Financing Mechanisms",
+            "o Power System Operation Corporation - Grid Storage Integration",
+            "o Distribution Companies - Behind-the-Meter Storage Deployment"
+          ]
+        },
+        "policyFramework": {
+          "title": "HYDROPOWER AND PUMP STORAGE:",
+          "items": [
+            "o Pumped Storage Hydropower - Technology and Potential in India",
+            "o Measures Already Taken Up by Government for Promotion of Energy Storage",
+            "o Measures Under Consideration for Energy Storage Deployment",
+            "o Application and Use Cases of ESS - Grid Stability and Frequency Regulation",
+            "o Peak Load Management and Demand Response with Storage",
+            "o Renewable Energy Firming and Capacity Firming Services",
+            "o Transmission and Distribution Upgrade Deferral Applications",
+            "o Black Start and Grid Restoration Capabilities",
+            "o Microgrid and Island Grid Applications with Storage",
+            "o Economic Viability and Business Models for Energy Storage"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o BESS Sizing and Techno-Economic Analysis Exercise",
+            "o Pumped Storage Project Planning and Feasibility Study",
+            "o Energy Storage Tariff Determination Workshop",
+            "o Grid Services Revenue Stacking Analysis for Storage",
+            "o RE + Storage Hybrid Plant Design Simulation",
+            "o Frequency Regulation with BESS - Real-time Control Exercise",
+            "o Behind-the-Meter Storage Optimization for Commercial Consumers",
+            "o Storage System Bidding Strategy in Power Markets",
+            "o Regulatory Framework Development for Storage Systems"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Comprehensive understanding of BESS importance and scope",
+        "Knowledge of legal framework and regulatory status in India",
+        "Expertise in hydropower and pumped storage systems",
+        "Skills in ESS application and use case analysis"
+      ],
+      "prerequisites": "Background in power systems and renewable energy integration recommended",
+      "certification": "Advanced certification in energy storage system integration"
+    },
+    {
+      "id": 9,
+      "title": "303 - Resource Adequacy",
+      "slug": "303-resource-adequacy",
+      "lessons": "Lesson 10",
+      "duration": "19h 30m",
+      "students": "Students 20+",
+      "author": "Angela",
+      "authorImg": "/course/m1.png",
+      "authorRole": "Development team",
+      "img": "/course/102.png",
+      "category": "Planning & Security",
+      "description": "Advanced course on resource adequacy planning, regulations, and compliance mechanisms ensuring reliable electricity supply across India.",
+      "points": [
+        "Deep understanding of resource adequacy concept and regulatory frameworks (CERC & SERCs)",
+        "Knowledge of capacity markets and coordination mechanisms with compliance and penalty frameworks"
+      ],
+      "overview": {
+        "title": "OVERVIEW",
+        "description": "Advanced course on resource adequacy planning, regulations, and compliance mechanisms ensuring reliable electricity supply across India."
+      },
+      "sections": {
+        "legislation": {
+          "title": "INTRODUCTION TO THE CONCEPT OF RESOURCE ADEQUACY:",
+          "items": [
+            "o Resource Adequacy Regulations (CERC) - Central Framework",
+            "o Resource Adequacy Regulations (SERCs) - State-level Implementation",
+            "o Electricity Act 2003 - Resource Planning Provisions",
+            "o National Electricity Policy - Resource Adequacy Objectives",
+            "o National Electricity Plan - Adequacy Assessment Methodology",
+            "o CERC (Terms and Conditions of Tariff) Regulations - Capacity Charges",
+            "o Renewable Purchase Obligations (RPO) and Resource Mix",
+            "o Energy Storage Obligations and Adequacy Requirements",
+            "o Reserve Margin Standards and Reliability Criteria"
+          ]
+        },
+        "institutionalStructure": {
+          "title": "ROLE OF STAKEHOLDERS IN RESOURCE ADEQUACY PLANNING:",
+          "items": [
+            "o Central Electricity Authority (CEA) - National Resource Adequacy Assessment",
+            "o Central Electricity Regulatory Commission (CERC) - Regulatory Oversight",
+            "o State Electricity Regulatory Commissions (SERCs) - State Adequacy Planning",
+            "o Ministry of Power - Policy Framework and Coordination",
+            "o Load Dispatch Centres - Real-time Adequacy Monitoring",
+            "o Generating Companies - Capacity Availability Commitments",
+            "o Distribution Companies - Demand Forecasting and Procurement",
+            "o Transmission Utilities - Network Adequacy and Security",
+            "o Power Trading Companies - Market-based Resource Solutions",
+            "o Renewable Energy Generators - Variable Resource Integration"
+          ]
+        },
+        "policyFramework": {
+          "title": "CAPACITY MARKETS & COORDINATION:",
+          "items": [
+            "o Capacity Markets - Design and Implementation Framework",
+            "o Coordination between Centre and State Entities for Resource Adequacy",
+            "o Resource Adequacy Compliance Mechanisms and Monitoring",
+            "o Penalties for Non-Compliance - Enforcement Framework",
+            "o Accuracy of the Resource Adequacy Reports - Validation and Verification",
+            "o Demand Forecasting Standards and Methodology",
+            "o Capacity Addition Planning and Implementation Timeline",
+            "o Emergency Procurement Mechanisms and Procedures",
+            "o Cross-border Power Trade for Resource Adequacy",
+            "o Demand Response and Energy Efficiency in Adequacy Planning"
+          ]
+        },
+        "classroomSimulation": {
+          "title": "CLASSROOM SIMULATION:",
+          "items": [
+            "o Resource Adequacy Assessment - Probabilistic Analysis Workshop",
+            "o Capacity Market Auction Design and Bidding Exercise",
+            "o Centre-State Coordination Meeting Simulation",
+            "o Resource Adequacy Report Preparation and Validation",
+            "o Demand Forecasting Model Development Exercise",
+            "o Compliance Monitoring and Penalty Calculation Workshop",
+            "o Peak Load Management Strategy Development",
+            "o Emergency Resource Procurement Simulation",
+            "o Stakeholder Consultation Process for Adequacy Planning"
+          ]
+        }
+      },
+      "learningOutcomes": [
+        "Deep understanding of resource adequacy concept and importance",
+        "Knowledge of CERC and SERC regulatory frameworks",
+        "Understanding of stakeholder roles and coordination mechanisms",
+        "Expertise in capacity markets and compliance frameworks"
+      ],
+      "prerequisites": "Foundation in power systems planning and regulatory frameworks recommended",
+      "certification": "Advanced certification in resource adequacy planning"
     }
   ]
 }
