@@ -9,18 +9,6 @@ interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
   enableLazyLoading?: boolean;
 }
 
-const generateBlurDataURL = (width = 10, height = 10) => {
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
-  if (ctx) {
-    ctx.fillStyle = '#f3f4f6';
-    ctx.fillRect(0, 0, width, height);
-  }
-  return canvas.toDataURL();
-};
-
 export function OptimizedImage({ 
   src, 
   alt, 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useParams, notFound } from "next/navigation";
 import React, { useState } from "react";
