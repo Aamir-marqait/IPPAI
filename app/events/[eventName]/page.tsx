@@ -1,6 +1,6 @@
 "use client";
 import { useParams, notFound } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import eventsData from "../../../data/events.json";
 
@@ -8,6 +8,49 @@ export default function EventDetailPage() {
   const params = useParams();
   const eventName = params.eventName as string;
   const event = eventsData.events.find((e) => e.slug === eventName);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your inquiry has been submitted successfully.",
+        });
+        e.currentTarget.reset();
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: "Something went wrong. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to submit inquiry. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (!event) {
     notFound();
@@ -175,35 +218,55 @@ export default function EventDetailPage() {
           <div className="font-red-hat-display font-bold text-lg sm:text-[24px] leading-[44px] text-[#1F2937] mb-4 sm:mb-[18px]">
             Inquire about this event
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
+            {/* Web3Forms Access Key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="b082e58d-c43a-4b9c-b64d-61b8d709971f"
+            />
+            {/* Event Name for context in email */}
+            <input
+              type="hidden"
+              name="event_name"
+              value={event.title}
+            />
+
             <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
               Full Name
               <input
                 type="text"
+                name="name"
                 placeholder="Enter Full Name"
                 className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
+                required
               />
             </label>
             <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
               Email Address
               <input
                 type="email"
+                name="email"
                 placeholder="Enter Email"
                 className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
+                required
               />
             </label>
             <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
               Phone Number
               <input
-                type="text"
+                type="tel"
+                name="phone"
                 placeholder="Enter Phone Number"
                 className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
+                required
               />
             </label>
             <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
               Company Name
               <input
                 type="text"
+                name="company"
                 placeholder="Enter Company Name"
                 className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
               />
@@ -211,16 +274,33 @@ export default function EventDetailPage() {
             <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-3 mt-3">
               Message
               <textarea
+                name="message"
                 placeholder="Enter your Message"
                 rows={3}
                 className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D] resize-vertical"
+                required
               />
             </label>
+
+            {/* Status Message */}
+            {submitStatus.type && (
+              <div
+                className={`text-center py-3 px-4 rounded-md mb-3 ${
+                  submitStatus.type === "success"
+                    ? "bg-green-100 text-green-700 border border-green-300"
+                    : "bg-red-100 text-red-700 border border-red-300"
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="mt-2 sm:mt-3 bg-[#D3363B] text-white text-center border-none rounded-[25px] py-2.5 sm:py-3 px-8 font-work-sans font-medium text-base sm:text-[16px] leading-[100%] cursor-pointer shadow-[0px_4px_4px_0px_#D3363B4F] hover:bg-[#B8292E] transition-colors"
+              disabled={isSubmitting}
+              className="mt-2 sm:mt-3 bg-[#D3363B] text-white text-center border-none rounded-[25px] py-2.5 sm:py-3 px-8 font-work-sans font-medium text-base sm:text-[16px] leading-[100%] cursor-pointer shadow-[0px_4px_4px_0px_#D3363B4F] hover:bg-[#B8292E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-full"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>

@@ -36,8 +36,7 @@ export default function OurPartners() {
           Our Partners
         </h2>
         <p className="text-center text-gray-500 mb-8 max-w-2xl mx-auto text-sm md:text-base xl:text-base font-normal leading-7 font-['Poppins']">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis.
+          Collaborating with leading power sector organizations to advance regulatory excellence and drive sustainable energy solutions across India.
         </p>
         {/* Carousel */}
         <div className="space-y-6">

@@ -12,46 +12,46 @@ const features = [
       />
     ),
     title: "IN PERSON NETWORKING",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    desc: "Connect directly with regulators, policymakers, and industry leaders. Build meaningful relationships that foster collaboration and knowledge exchange.",
     num: "01.",
   },
   {
     icon: (
       <Image
         src="/event/2.png"
-        alt="Boost Creativity"
+        alt="Expert Knowledge"
         width={56}
         height={56}
       />
     ),
-    title: "BOOST CREATIVITY",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    title: "EXPERT KNOWLEDGE",
+    desc: "Gain insights from leading experts on energy transition, regulatory frameworks, and emerging trends shaping India's power sector.",
     num: "02.",
   },
   {
     icon: (
       <Image
         src="/event/3.png"
-        alt="After Party Event"
+        alt="Interactive Sessions"
         width={56}
         height={56}
       />
     ),
-    title: "AFTER PARTY EVENT",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    title: "INTERACTIVE SESSIONS",
+    desc: "Engage in dynamic workshops, panel discussions, and case studies that encourage practical application of regulatory concepts.",
     num: "03.",
   },
   {
     icon: (
       <Image
         src="/event/4.png"
-        alt="Spark Creativity"
+        alt="Policy Insights"
         width={56}
         height={56}
       />
     ),
-    title: "SPARK CREATIVITY",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    title: "POLICY INSIGHTS",
+    desc: "Stay ahead with the latest developments in energy policy, market dynamics, and strategic implementation across the power sector.",
     num: "04.",
   },
   {
@@ -63,21 +63,21 @@ const features = [
         height={56}
       />
     ),
-    title: "TOP SPEAKERS",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    title: "INDUSTRY LEADERS",
+    desc: "Learn from distinguished speakers including senior regulators, utility executives, and internationally recognized energy professionals.",
     num: "05.",
   },
   {
     icon: (
       <Image
         src="/event/6.png"
-        alt="Potential Clients"
+        alt="Strategic Partnerships"
         width={56}
         height={56}
       />
     ),
-    title: "POTENTIAL CLIENTS",
-    desc: "Nemo cubilia non, exercitationem ridiculus modi faucibus nullam animi suspendisse in porttitor.",
+    title: "STRATEGIC PARTNERSHIPS",
+    desc: "Forge strategic alliances with key stakeholders in the power sector to drive innovation and advance regulatory excellence.",
     num: "06.",
   },
 ];

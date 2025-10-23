@@ -32,8 +32,7 @@ export default function OurAlumni() {
             What our Alumni say
           </h2>
           <p className="font-poppins font-normal  max-w-xl mx-auto text-[18px] leading-[30px] text-center text-[#7C7D7F]">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar
-            elementum tempus hac tellus libero
+            Hear from professionals who have transformed their careers through our intensive courses and training programs in the power sector.
           </p>
         </div>
         {/* Cards */}
