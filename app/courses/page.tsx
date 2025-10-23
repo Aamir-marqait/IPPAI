@@ -17,7 +17,6 @@ function page() {
       <MentorsSection />
       <CampusSection />
       <OurAlumni />
-
       <CampusGallery />
       <RegisterNowSection />
     </div>

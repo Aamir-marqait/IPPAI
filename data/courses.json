@@ -10,7 +10,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/101.png",
+      "img": "/c/101.png",
       "category": "Foundation Course",
       "description": "Comprehensive foundation course covering the evolution of India's electricity sector, legal framework, and regulatory institutions.",
       "points": [
@@ -106,7 +106,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/102.png",
+      "img": "/c/102.png",
       "category": "Market Analysis",
       "description": "Comprehensive course on power market operations, transaction modes, bidding mechanisms, and market coupling in India's evolving electricity sector.",
       "points": [
@@ -196,7 +196,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/103.png",
+      "img": "/c/103.webp",
       "category": "Market Access",
       "description": "Comprehensive course on Open Access regulations, Green Energy Open Access, captive power plants, and pricing mechanisms for commercial & industrial consumers.",
       "points": [
@@ -286,7 +286,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/204.png",
+      "img": "/c/104.jpg",
       "category": "Technical Course",
       "description": "Technical deep-dive into electricity grid functioning, transmission & distribution systems, system operations, and renewable energy scheduling mechanisms.",
       "points": [
@@ -377,7 +377,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/102.png",
+      "img": "/c/201.jpg",
       "category": "Renewable Energy",
       "description": "Comprehensive course on renewable energy tariff determination, bidding mechanisms, RPO implementation, and REC/ESCerts trading.",
       "points": [
@@ -468,7 +468,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/202.png",
+      "img": "/c/202.jpeg",
       "category": "Advanced Course",
       "description": "Advanced course on Inter-State and Intra-State Deviation Settlement Mechanisms (DSM), ABT impact, and transition to 5-minute time blocks.",
       "points": [
@@ -558,7 +558,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/203.png",
+      "img": "/c/203.webp",
       "category": "Advanced Course",
       "description": "Advanced course on General Network Access (GNA) regulations, implementation, licensing frameworks, and pricing mechanisms for transmission access.",
       "points": [
@@ -648,7 +648,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/204.png",
+      "img": "/c/204.jpg",
       "category": "Distribution Planning",
       "description": "Comprehensive course on distribution system planning, quality power supply, DISCOM portfolio management, and government schemes for distributed renewable energy.",
       "points": [
@@ -739,7 +739,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/101.png",
+      "img": "/c/301.jpg",
       "category": "Renewable Energy",
       "description": "Comprehensive analysis of renewable energy integration challenges, grid stability issues, and scheduling mechanisms for RE sources.",
       "points": [
@@ -829,7 +829,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/103.png",
+      "img": "/c/302.webp",
       "category": "Energy Storage",
       "description": "In-depth exploration of energy storage systems integration, focusing on BESS, pumped storage, and regulatory frameworks for grid-scale storage.",
       "points": [
@@ -919,7 +919,7 @@
       "author": "Angela",
       "authorImg": "/course/m1.png",
       "authorRole": "Development team",
-      "img": "/course/102.png",
+      "img": "/c/303.jpg",
       "category": "Planning & Security",
       "description": "Advanced course on resource adequacy planning, regulations, and compliance mechanisms ensuring reliable electricity supply across India.",
       "points": [
