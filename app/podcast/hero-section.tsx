@@ -14,6 +14,8 @@ export default function HeroPage() {
           width={1100}
           height={400}
           className="w-full"
+          videoSrc="/voice/2.mp4"
+          thumbnail="/voice/2.png"
         />
       </div>
     </div>
