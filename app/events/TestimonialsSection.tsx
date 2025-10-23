@@ -1,25 +1,24 @@
 import React from "react";
 import Image from "next/image";
 
-// Replace these avatar URLs with actual image paths
 const testimonials = [
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Dr. Rajesh Kumar",
+    role: "Senior Policy Analyst, CERC",
+    avatar: "/user.jpg",
+    text: `"The regulatory retreat provided invaluable insights into emerging challenges in the power sector. The collaborative discussions and expert sessions helped refine our approach to policy implementation and stakeholder engagement."`,
   },
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Priya Sharma",
+    role: "Director, Renewable Energy Division",
+    avatar: "/user.jpg",
+    text: `"IPPAI's intensive courses offer a perfect blend of theoretical knowledge and practical applications. The networking opportunities with industry leaders and regulators have been instrumental in advancing our energy transition initiatives."`,
   },
   {
-    name: "John Carter",
-    role: "Web Designer",
-    avatar: "/about/user2.png",
-    text: `“Lorem ipsum dolor sit amet consectetuer adipiscing lectus a nunc mauris scelerisque sed egestas pharetraol quis pharetra arcu pharetra blandit.”`,
+    name: "Amit Verma",
+    role: "Chief Regulatory Officer, State Utility",
+    avatar: "/user.jpg",
+    text: `"Attending these events has significantly enhanced our understanding of geopolitical impacts on energy markets. The quality of speakers and depth of content make these programs essential for anyone in the power sector."`,
   },
 ];
 
@@ -33,8 +32,7 @@ export default function TestimonialsSection() {
             What our visitors say
           </h2>
           <p className="font-poppins font-normal text-[18px] leading-[30px] text-center text-[#7C7D7F]">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar
-            elementum tempus hac tellus libero
+            Discover how our events have empowered professionals to drive meaningful change and advance their careers in the power sector.
           </p>
         </div>
         {/* Cards */}

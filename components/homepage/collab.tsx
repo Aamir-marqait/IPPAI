@@ -37,8 +37,7 @@ export default function CompanyCarousel() {
           <span className="text-[#D3363B]">100+ Leading Companies</span>
         </h2>
         <p className="text-center text-gray-500 mb-8 max-w-2xl mx-auto text-sm md:text-base xl:text-base font-normal leading-7 font-['Poppins']">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis.
+          Partnering with India's top power utilities, renewable energy companies, and regulatory bodies to shape the future of the energy sector.
         </p>
         {/* Carousel */}
         <div className="space-y-6">

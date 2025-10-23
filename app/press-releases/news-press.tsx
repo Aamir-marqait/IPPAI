@@ -7,43 +7,43 @@ const news = [
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
-    date: "June 28, 2025",
+      "IPPAI Announces 26th Regulators & Policymakers Retreat in Karnataka",
+    desc: "The upcoming retreat will focus on advancing regulatory excellence and strategic policy implementation, bringing together senior officials from across India's power sector.",
+    date: "January 7, 2026",
   },
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
-    date: "June 28, 2025",
+      "New Intensive Course on Energy Transition Launches in October 2025",
+    desc: "IPPAI introduces comprehensive training on navigating geopolitics, markets, and India's evolving power sector landscape for industry professionals.",
+    date: "October 29, 2025",
   },
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
-    date: "June 28, 2025",
+      "India's Renewable Energy Capacity Reaches Historic Milestone",
+    desc: "With solar and wind installations accelerating, the power sector witnesses unprecedented growth in clean energy infrastructure and regulatory frameworks.",
+    date: "September 15, 2025",
   },
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
-    date: "June 28, 2025",
+      "CERC Issues New Guidelines for Open Access and Green Energy Markets",
+    desc: "The Central Electricity Regulatory Commission introduces updated regulations to streamline market operations and promote renewable energy adoption.",
+    date: "August 22, 2025",
   },
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
-    date: "June 28, 2025",
+      "IPPAI Partners with Leading Utilities for Advanced Training Programs",
+    desc: "Strategic collaboration aims to enhance regulatory capacity and knowledge sharing among power sector professionals across state and central entities.",
+    date: "July 10, 2025",
   },
   {
     image: "/image.png",
     title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-    desc: "Pellentesque at dui vitae amet varius interdum pulvinar mi a egestas ultricies ut diam eget tempor...",
+      "National Workshop on Grid Modernization and Smart Infrastructure",
+    desc: "Industry experts convene to discuss latest developments in grid technology, energy storage, and digital transformation of India's power distribution systems.",
     date: "June 28, 2025",
   },
 ];
