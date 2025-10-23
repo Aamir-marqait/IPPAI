@@ -7,14 +7,14 @@ import Image from "next/image";
 
 export default function MentorsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   // Calculate how many cards to show per view
   const cardsPerView = 4; // Show 4 cards at once on desktop
   const cardWidth = 243.67;
   const gap = 24;
   const slideWidth = cardWidth + gap;
 
-   const mentors = [
+  const mentors = [
     {
       id: 1,
       name: "Mr. V.P. Raja",
@@ -77,7 +77,7 @@ export default function MentorsSection() {
             <div className="flex items-center gap-2 mb-3">
               <div className="w-1 h-6 bg-white"></div>
               <p className="font-red-hat-display font-bold xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-white text-sm tracking-wider uppercase">
-                OUR MENTORS
+                Faculty Members
               </p>
             </div>
             <h2 className="font-red-hat-display font-bold xl:text-[35px] xl:leading-[100%] xl:tracking-[0%] text-white text-5xl capitalize">
@@ -106,7 +106,7 @@ export default function MentorsSection() {
 
         {/* Cards Slider */}
         <div className="relative overflow-hidden">
-          <div 
+          <div
             className="flex transition-transform duration-500 ease-in-out gap-6"
             style={{
               transform: `translateX(-${currentIndex * slideWidth}px)`,
@@ -121,44 +121,44 @@ export default function MentorsSection() {
                   height: "342.34px",
                 }}
               >
-              {/* Image Container */}
-              <div
-                className="relative overflow-hidden"
-                style={{
-                  width: "227px",
-                  height: "240.63px",
-                  top: "8.33px",
-                  left: "8.33px",
-                  borderTopLeftRadius: "4.17px",
-                  borderTopRightRadius: "4.17px",
-                  opacity: 1,
-                }}
-              >
-                <Image
-                  src={mentor.imgSrc}
-                  alt={mentor.imgAlt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
+                {/* Image Container */}
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    width: "227px",
+                    height: "240.63px",
+                    top: "8.33px",
+                    left: "8.33px",
+                    borderTopLeftRadius: "4.17px",
+                    borderTopRightRadius: "4.17px",
+                    opacity: 1,
+                  }}
+                >
+                  <Image
+                    src={mentor.imgSrc}
+                    alt={mentor.imgAlt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
 
-                {/* Share Button */}
-              </div>
-              {/* <button className="absolute cursor-pointer overflow-visible z-50 top-[68%] right-6 w-8 h-8 bg-[#D3363B] rounded flex items-center justify-center text-white hover:bg-[#9d2e35]  ">
+                  {/* Share Button */}
+                </div>
+                {/* <button className="absolute cursor-pointer overflow-visible z-50 top-[68%] right-6 w-8 h-8 bg-[#D3363B] rounded flex items-center justify-center text-white hover:bg-[#9d2e35]  ">
                 <Share2 size={18} />
               </button> */}
 
-              {/* Info Container */}
-              <div className="px-5 py-7">
-                <h3 className="font-red-hat-display font-bold xl:text-[20px] xl:leading-[19.24px] xl:tracking-[0%] text-[#0E2A46] text-lg mb-1 capitalize">
-                  {mentor.name}
-                </h3>
-                <p className="font-sora font-normal xl:text-[14.16px] xl:leading-[26.66px] xl:tracking-[0%] text-[#D3363B] text-sm">
-                  {mentor.role}
-                </p>
+                {/* Info Container */}
+                <div className="px-5 py-7">
+                  <h3 className="font-red-hat-display font-bold xl:text-[20px] xl:leading-[19.24px] xl:tracking-[0%] text-[#0E2A46] text-lg mb-1 capitalize">
+                    {mentor.name}
+                  </h3>
+                  <p className="font-sora font-normal xl:text-[14.16px] xl:leading-[26.66px] xl:tracking-[0%] text-[#D3363B] text-sm">
+                    {mentor.role}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </div>

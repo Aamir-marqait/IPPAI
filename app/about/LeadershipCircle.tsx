@@ -4,16 +4,16 @@ import Image from "next/image";
 
 const members = [
   // Circle around the central image (positions are % relative to container)
-  {
-    src: "/user.jpg",
-    alt: "Asok Dasgupta",
-    name: "Asok Dasgupta",
-    occupation: "President",
-    description:
-      "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
-    size: 55,
-    style: { top: "3%", left: "60%" },
-  },
+  // {
+  //   src: "/user.jpg",
+  //   alt: "Asok Dasgupta",
+  //   name: "Asok Dasgupta",
+  //   occupation: "President",
+  //   description:
+  //     "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
+  //   size: 55,
+  //   style: { top: "3%", left: "60%" },
+  // },
   {
     src: "/user.jpg",
     alt: "Dharun Kapur",
@@ -88,11 +88,11 @@ const members = [
 
 const defaultCenterMember = {
   src: "/user.jpg",
-  alt: "Mr. V.P. Raja",
-  name: "Mr. V.P. Raja",
-  occupation: "Former Chairman, Maharashtra Electricity Regulatory Commission",
+  alt: "Asok Dasgupta",
+  name: "Asok Dasgupta",
+  occupation: "President",
   description:
-    "The experience and competence of our team will help build your business successful.",
+    "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
 };
 
 export default function LeadershipCircle() {
@@ -182,7 +182,9 @@ export default function LeadershipCircle() {
               color: "#e0e0e0",
             }}
           >
-            Our dedicated leadership team brings together decades of expertise and vision, steering IPPAI&apos;s mission to transform India&apos;s power sector through strategic collaboration and innovation.
+            Our dedicated leadership team brings together decades of expertise
+            and vision, steering IPPAI&apos;s mission to transform India&apos;s
+            power sector through strategic collaboration and innovation.
           </p>
         </div>
 
@@ -192,10 +194,10 @@ export default function LeadershipCircle() {
           <div className="flex flex-col flex-shrink-0 md:w-sm w-full mb-10 md:mb-0">
             <div className="">
               <div
-                className="text-right font-red-hat-display mb-2 flex items-center transition-all duration-300 ease-in-out"
+                className="text-right  truncate font-red-hat-display mb-2 flex items-center transition-all duration-300 ease-in-out"
                 style={{
                   fontWeight: 800,
-                  fontSize: "48px",
+                  fontSize: "42px",
                   lineHeight: "64px",
                   letterSpacing: "1%",
                   color: "#D3363B",

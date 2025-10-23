@@ -3,11 +3,6 @@ import { CTABanner } from "./cta-banner";
 
 const leaders = [
   {
-    img: "/leader/10.jpg",
-    name: "Mr. Harry Dhaul",
-    role: "Director General, IPPAI",
-  },
-  {
     img: "/leader/1.jpg",
     name: "Dr. Pramod Deo",
     role: "Former Chairman, CERC",
@@ -52,6 +47,11 @@ const leaders = [
     name: "Mr. Balawant Joshi",
     role: "MD, Idam Infrastructure Advisory",
   },
+  {
+    img: "/leader/10.jpg",
+    name: "Mr. Harry Dhaul",
+    role: "Director General, IPPAI",
+  },
 ];
 
 export default function LeadershipSection() {
@@ -59,13 +59,14 @@ export default function LeadershipSection() {
     <section className="w-full bg-[#F5F5F5] py-10 sm:py-14 px-2 sm:px-4 flex flex-col items-center">
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center">
         <span className="font-red-hat-display font-bold text-base leading-none text-center uppercase text-[#D3363B] mb-2">
-          Meet Our Core Members
+          Advisory board members
         </span>
         <h2 className="font-red-hat-display font-bold text-4xl leading-none text-center text-[#141414] mb-2">
-          Core Team at IPPAI
+          Leadership at IPPAI
         </h2>
         <p className="font-poppins font-normal text-base leading-7 text-center text-[#141414] max-w-2xl mb-10">
-          Our core members bring decades of expertise and commitment, driving IPPAI&apos;s mission to advance India&apos;s power sector through collaboration and innovation.
+          Guided by experienced leaders, experts and advisors shaping future of
+          India&apos;s power sector.
         </p>
 
         <div className="w-full space-y-9">

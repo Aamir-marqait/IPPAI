@@ -15,8 +15,8 @@ function page() {
       <AboutIrpriSection />
       <CurriculumCourses />
       <MentorsSection />
-      <OurAlumni />
       <CampusSection />
+      <OurAlumni />
       <CampusGallery />
       <RegisterNowSection />
     </div>

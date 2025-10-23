@@ -56,7 +56,7 @@ export default function CurriculumCourses() {
                   src={course.img}
                   alt={course.title}
                   fill
-                  className="object-cover"
+                  className="object-fill"
                   sizes="(max-width: 700px) 95vw, (max-width: 1200px) 48vw, 320px"
                   priority={idx < 2}
                 />

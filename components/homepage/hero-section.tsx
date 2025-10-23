@@ -10,14 +10,14 @@ export default function HomeHero() {
   const events = [
     {
       title: "26th Regulators & Policymakers Retreat",
-      desc: "Advancing Regulatory Excellence & Strategic Policy Implementation",
+      desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India’s Energy Transition",
       date: "7th- 10th January, 2026",
       location: "Shoonya Farm Retreat, Village Belgundi, Belgaum, Karnataka",
       image: "/optimized/bg2.webp",
     },
     {
-      title: "Intensive Course",
-      desc: "The Evolving Power Sector: Navigating Geopolitics, Markets & India's Energy Transition",
+      title: "Intensive Course on Regulatory & Policy Framework in the Power Sector",
+      desc: "Comprehensive Course On Energy, Policy & Regulation",
       date: "29th - 31st October, 2025",
       location:
         "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
