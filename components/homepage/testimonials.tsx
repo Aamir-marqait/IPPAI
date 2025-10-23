@@ -76,7 +76,7 @@ export default function Testimonials() {
       <DecorQuotes
         side="right"
         size={132}
-        className="pointer-events-none absolute top-16 right-20 opacity-100"
+        className="hidden md:block pointer-events-none absolute top-16 right-20 opacity-100"
       />
 
       <div className="mx-auto max-w-[1100px] px-6 md:px-8 py-14 md:py-16 lg:py-20">
@@ -90,9 +90,9 @@ export default function Testimonials() {
           </span>
         </div>
 
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-white mb-8 md:mb-10">
+        {/* <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-white mb-8 md:mb-10">
           Our Client Experience in Their Own Words
-        </h2>
+        </h2> */}
 
         {/* Content */}
         <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8 md:gap-10">
