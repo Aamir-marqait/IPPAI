@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "./hero-section";
-import ContactUsSection from "./contact-form";
+// import ContactUsSection from "./contact-form";
 import PublicationsSection from "./PublicationsSection";
 
 function page() {
@@ -8,7 +8,7 @@ function page() {
     <div>
       <HeroSection />
       <PublicationsSection />
-      <ContactUsSection />
+      {/* <ContactUsSection /> */}
     </div>
   );
 }
