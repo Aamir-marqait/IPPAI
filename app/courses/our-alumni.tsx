@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Assistant Director",
     role: "Central Electricity Authority",
-    avatar: "/course/user2.jpg",
+    avatar: "/user.jpg",
     text: `“The course helped provide a detailed overview of various key concepts of the Indian Power sector, such as Resource Adequacy, Open Access and GNA Mechanisms.”`,
   },
   {
     name: "Assistant Engineer",
     role: "KSEBL",
-    avatar: "/course/user2.jpg",
+    avatar: "/user.jpg",
     text: `“Good opportunity to interact with various power experts from across the country. Refreshing course”.`,
   },
   {
     name: "Exec Engineer",
     role: "MSPGCL",
-    avatar: "/course/user2.jpg",
+    avatar: "/user.jpg",
     text: `“Benefitted from the interaction with legends of the regulatory field. Gained a broader knowledge of the Regulation and Policy arena and current power industry approach.”`,
   },
 ];

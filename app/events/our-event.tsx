@@ -42,7 +42,7 @@ export default function EventsPage() {
               return (
                 <Link
                   key={event.id}
-                  href={`/events/${event.slug}`}
+                  href={event.redirectTo || `/events/${event.slug}`}
                   className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow block cursor-pointer"
                 >
                   {/* Event Image */}

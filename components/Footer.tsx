@@ -1,11 +1,11 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaInstagram,
+//   FaYoutube,
+//   FaLinkedinIn,
+// } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,10 +33,10 @@ export default function Footer() {
               height={48}
               className="mb-3"
             />
-            <p className="text-sm font-normal text-white font-poppins leading-normal">
+            {/* <p className="text-sm font-normal text-white font-poppins leading-normal">
               Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis.
-            </p>
+            </p> */}
           </div>
 
           {/* Contact Info */}
@@ -73,71 +73,65 @@ export default function Footer() {
             </h4>
             <ul className="text-sm font-normal font-poppins space-y-2 mt-2">
               <li>
-                <Link href="#" className="hover:underline">
-                  Latest News
+                <Link href="/about" className="hover:underline">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
-                  Upcoming Events
+                <Link href="/events" className="hover:underline">
+                  Events
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
-                  Membership
+                <Link href="/courses" className="hover:underline">
+                  IRPRI
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* About */}
+          {/* Resources */}
           <div>
             <h4 className="text-lg md:text-xl xl:text-2xl font-bold mb-2 pb-3 text-white font-red-hat-display relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#D3363B]">
-              About IPPAI
+              Resources
             </h4>
             <ul className="text-sm font-normal font-poppins space-y-2 mt-2">
+              <li></li>
               <li>
-                <Link href="#" className="hover:underline">
-                  Mission & Vision
+                <Link href="/publications" className="hover:underline">
+                  Publications
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
-                  Lorem ipsum
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:underline">
-                  History
+                <Link href="/articles" className="hover:underline">
+                  Articles
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Media Center */}
           <div>
-            <h4 className="text-lg md:text-xl xl:text-2xl font-bold mb-2 pb-3 text-white font-red-hat-display relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/4 after:h-0.5 after:bg-[#D3363B]">
-              Legal
+            <h4 className="text-lg md:text-xl xl:text-2xl font-bold mb-2 pb-3 text-white font-red-hat-display relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#D3363B]">
+              Media Center
             </h4>
             <ul className="text-sm font-normal font-poppins space-y-2 mt-2">
               <li>
-                <Link href="#" className="hover:underline">
-                  Privacy Policy
+                <Link href="/photo-gallery" className="hover:underline">
+                  Photo Gallery
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
-                  Terms Of Use
+                <Link href="/podcast" className="hover:underline">
+                  Video Gallery / Podcast
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-[#444] my-8"></div>
+        {/* <div className="border-t border-[#444] my-8"></div>
 
-        {/* Newsletter */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div className="flex-1">
             <div className="text-sm font-semibold tracking-[0.05em] uppercase text-[#9CA3AF] mb-1 font-red-hat-display">
@@ -161,7 +155,7 @@ export default function Footer() {
               Subscribe
             </button>
           </form>
-        </div>
+        </div> */}
 
         {/* Divider */}
         <div className="border-t border-[#444] my-8"></div>
@@ -171,7 +165,7 @@ export default function Footer() {
           <div className="text-sm md:text-base font-normal text-[#9CA3AF] font-poppins">
             &copy; 2025, IPPAI Inc. All rights reserved.
           </div>
-          <div className="flex gap-4 mt-2 md:mt-0">
+          {/* <div className="flex gap-4 mt-2 md:mt-0">
             <a
               href="#"
               className="w-[35px] h-[35px] flex items-center justify-center rounded-3xl bg-[#EFEFEF] hover:bg-[#D3363B] text-black hover:text-white transition"
@@ -207,7 +201,7 @@ export default function Footer() {
             >
               <FaLinkedinIn size={18} />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

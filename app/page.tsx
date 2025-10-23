@@ -1,5 +1,6 @@
 // import PartnersCarousel from "@/components/homepage/association-partners";
 // import CompanyCarousel from "@/components/homepage/collab";
+
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
 // import Contributors from "@/components/homepage/key-contribution";

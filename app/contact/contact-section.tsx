@@ -1,6 +1,11 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+"use client";
+
+import { Mail, Phone, MapPin, Clock, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactSection() {
+  const [showMoreEmails, setShowMoreEmails] = useState(false);
+
   return (
     <section className="w-full bg-white py-12">
       <div className="max-w-[1100px] mx-auto px-4 flex flex-col lg:flex-row gap-10">
@@ -10,8 +15,9 @@ export default function ContactSection() {
             Contact Information
           </h2>
           <p className="text-[#585858] mb-8 font-poppins text-base leading-6 max-w-lg">
-            Pellentesque arcu facilisis nunc mi proin. Dignissim mattis in
-            lectus tincidunt tincidunt ultrices. Diam convallis morbi pellentesque adipiscing
+            Get in touch with IPPAI for inquiries about our events, research,
+            policy recommendations, or membership opportunities. We&apos;re here to
+            support India&apos;s power sector advancement.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-7">
             {/* Call */}
@@ -27,15 +33,78 @@ export default function ContactSection() {
               </div>
             </div>
             {/* Email */}
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start relative">
               <Mail size={24} className="text-[#C24A48] mb-2" />
               <div>
                 <div className="font-bold text-[24px] text-[#243C4B] font-red-hat-display mb-1 leading-6">
                   Send us email
                 </div>
                 <div className="text-base text-[#141414] font-poppins font-normal leading-6">
-                  info@ippai.org
+                  <a
+                    href="mailto:info@ippai.org"
+                    className="hover:text-[#C24A48] transition"
+                  >
+                    info@ippai.org
+                  </a>
+                  <button
+                    onClick={() => setShowMoreEmails(!showMoreEmails)}
+                    className="ml-2 cursor-pointer text-[#C24A48] hover:underline inline-flex items-center gap-1 text-sm"
+                  >
+                    and more
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${
+                        showMoreEmails ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
                 </div>
+                {showMoreEmails && (
+                  <div className="mt-3 space-y-1.5 bg-white border border-[#E3E3E3] rounded-lg p-3 shadow-md absolute top-full left-0 z-10 min-w-[250px]">
+                    <a
+                      href="mailto:dharun@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      dharun@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:anil@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      anil@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:gulrez@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      gulrez@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:divya@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      divya@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:aren@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      aren@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:purabi@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      purabi@ippaimail.org
+                    </a>
+                    <a
+                      href="mailto:shelton@ippaimail.org"
+                      className="block text-sm text-[#141414] hover:text-[#C24A48] transition"
+                    >
+                      shelton@ippaimail.org
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
             {/* Hours */}
@@ -71,7 +140,9 @@ export default function ContactSection() {
             <h3 className="text-[30.1px] font-bold mb-6 font-red-hat-display text-[#141414] leading-[34.2px]">
               Get In Touch
             </h3>
-            <form className="space-y-4">
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+              <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
+              <input type="hidden" name="subject" value="Contact Form Submission" />
               {/* Name */}
               <div>
                 <label className="block text-[12.31px] font-medium mb-1 text-[#121212] font-poppins leading-[12.31px]">
@@ -79,6 +150,8 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full rounded-full border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition"
                   placeholder="John Carter"
                 />
@@ -90,6 +163,8 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full rounded-full border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition"
                   placeholder="example@email.com"
                 />
@@ -101,6 +176,8 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="text"
+                  name="company"
+                  required
                   className="w-full rounded-full border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition"
                   placeholder="Tech Solutions"
                 />
@@ -111,6 +188,7 @@ export default function ContactSection() {
                   Leave us message
                 </label>
                 <textarea
+                  name="message"
                   className="w-full rounded-2xl border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition min-h-[90px] resize-none"
                   placeholder="Please type your message here..."
                 />

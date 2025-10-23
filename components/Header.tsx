@@ -58,13 +58,13 @@ export default function Header() {
                 ABOUT US
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
               </Link>
-              <Link
+              {/* <Link
                 href="/membership"
                 className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
               >
                 MEMBERSHIP
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
-              </Link>
+              </Link> */}
               <Link
                 href="/events"
                 className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
@@ -112,12 +112,12 @@ export default function Header() {
                     <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                     <div className="py-2">
-                      <Link
+                      {/* <Link
                         href="/policies"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                       >
                         Policies
-                      </Link>
+                      </Link> */}
                       <Link
                         href="/publications"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -167,12 +167,12 @@ export default function Header() {
                     <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                     <div className="py-2">
-                      <Link
+                      {/* <Link
                         href="/press-releases"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                       >
                         Press Releases
-                      </Link>
+                      </Link> */}
                       <Link
                         href="/photo-gallery"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -258,7 +258,7 @@ export default function Header() {
                 } origin-center`}
               ></div>
             </Link>
-            <Link
+            {/* <Link
               href="/membership"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
                 isEventDetailPage
@@ -274,7 +274,7 @@ export default function Header() {
                     : "scale-x-0 group-hover:scale-x-100"
                 } origin-center`}
               ></div>
-            </Link>
+            </Link> */}
             <Link
               href="/events"
               className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
@@ -351,12 +351,12 @@ export default function Header() {
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                   <div className="py-2">
-                    <Link
+                    {/* <Link
                       href="/policies"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
                       Policies
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/publications"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
@@ -416,12 +416,12 @@ export default function Header() {
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
 
                   <div className="py-2">
-                    <Link
+                    {/* <Link
                       href="/press-releases"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
                       Press Releases
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/photo-gallery"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"

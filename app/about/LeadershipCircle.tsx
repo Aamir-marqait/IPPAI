@@ -5,89 +5,89 @@ import Image from "next/image";
 const members = [
   // Circle around the central image (positions are % relative to container)
   {
-    src: "/about/user2.png",
-    alt: "Dr. Priya Sharma",
-    name: "Dr. Priya Sharma",
-    occupation: "Director of Energy Policy",
+    src: "/user.jpg",
+    alt: "Asok Dasgupta",
+    name: "Asok Dasgupta",
+    occupation: "President",
     description:
-      "Leading renewable energy initiatives with 15+ years of experience in sustainable power solutions.",
+      "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
     size: 55,
     style: { top: "3%", left: "60%" },
   },
   {
-    src: "/about/user3.png",
-    alt: "Rajesh Kumar",
-    name: "Rajesh Kumar",
-    occupation: "Chief Technology Officer",
+    src: "/user.jpg",
+    alt: "Dharun Kapur",
+    name: "Dharun Kapur",
+    occupation: "Vice President",
     description:
-      "Pioneering smart grid technologies and digital transformation in the power sector.",
+      "Supporting organizational leadership and driving initiatives for sustainable energy development.",
     size: 115,
     style: { top: "1%", left: "74%" },
   },
   {
-    src: "/about/user2.png",
-    alt: "Ms. Anjali Verma",
-    name: "Ms. Anjali Verma",
-    occupation: "Head of Regulatory Affairs",
+    src: "/user.jpg",
+    alt: "Gulrez Patwegar",
+    name: "Gulrez Patwegar",
+    occupation: "Secretary General",
     description:
-      "Expert in power sector regulations with deep understanding of compliance frameworks.",
+      "Managing administrative operations and coordinating key stakeholder engagements across the organization.",
     size: 140,
     style: { top: "37%", left: "93%" },
   },
   {
-    src: "/about/user3.png",
-    alt: "Dr. Suresh Patel",
-    name: "Dr. Suresh Patel",
-    occupation: "Senior Research Advisor",
+    src: "/user.jpg",
+    alt: "Anil Rai",
+    name: "Anil Rai",
+    occupation: "Head, Business Development",
     description:
-      "Leading research in grid modernization and energy storage solutions for India.",
+      "Expanding IPPAI's reach through strategic partnerships and new business opportunities in the power sector.",
     size: 120,
     style: { top: "68%", left: "85%" },
   },
   {
-    src: "/about/user2.png",
-    alt: "Kavita Singh",
-    name: "Kavita Singh",
-    occupation: "Operations Director",
+    src: "/user.jpg",
+    alt: "Adv Divya Sood",
+    name: "Adv Divya Sood",
+    occupation: "Head, Regulatory Affairs",
     description:
-      "Streamlining power sector operations with innovative management strategies.",
+      "Expert in power sector regulations, navigating policy frameworks and compliance matters.",
     size: 90,
     style: { top: "78%", left: "70%" },
   },
   {
-    src: "/about/user1.png",
-    alt: "Arjun Mehta",
-    name: "Arjun Mehta",
-    occupation: "Strategic Planning Head",
+    src: "/user.jpg",
+    alt: "Aren Morena",
+    name: "Aren Morena",
+    occupation: "Human Resources",
     description:
-      "Developing long-term strategies for sustainable power infrastructure development.",
+      "Building and nurturing IPPAI's talent pool, fostering a culture of excellence and collaboration.",
     size: 110,
     style: { top: "68%", left: "45%" },
   },
   {
-    src: "/about/user2.png",
-    alt: "Dr. Ravi Gupta",
-    name: "Dr. Ravi Gupta",
-    occupation: "Innovation Lead",
+    src: "/user.jpg",
+    alt: "Purabi Rana",
+    name: "Purabi Rana",
+    occupation: "Research Associate",
     description:
-      "Driving technological innovation in renewable energy and smart power systems.",
+      "Conducting in-depth research on energy policy, market trends, and regulatory developments.",
     size: 100,
     style: { top: "40%", left: "36%" },
   },
   {
-    src: "/about/user3.png",
-    alt: "Neha Agarwal",
-    name: "Neha Agarwal",
-    occupation: "Policy Research Manager",
+    src: "/user.jpg",
+    alt: "Shelton Prabhakar",
+    name: "Shelton Prabhakar",
+    occupation: "Marketing Associate",
     description:
-      "Analyzing policy impacts and shaping regulatory frameworks for power sector growth.",
+      "Amplifying IPPAI's message and engagement through strategic marketing and communications.",
     size: 120,
     style: { top: "15%", left: "40%" },
   },
 ];
 
 const defaultCenterMember = {
-  src: "/about/user1.png",
+  src: "/user.jpg",
   alt: "Mr. V.P. Raja",
   name: "Mr. V.P. Raja",
   occupation: "Former Chairman, Maharashtra Electricity Regulatory Commission",
@@ -106,7 +106,7 @@ export default function LeadershipCircle() {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % (members.length + 1);
-        
+
         if (nextIndex === members.length) {
           // Show default center member
           setCenterMember(originalCenterMember);
@@ -158,7 +158,7 @@ export default function LeadershipCircle() {
               color: "#D3363B",
             }}
           >
-            Advisory Board Members
+            Meet Our Leadership Team
           </div>
           <h2
             className="text-center font-red-hat-display mb-3"
@@ -170,7 +170,7 @@ export default function LeadershipCircle() {
               color: "#FFFFFF",
             }}
           >
-            Leadership at IPPAI
+            The Driving Force of IPPAI
           </h2>
           <p
             className="text-center font-poppins max-w-[40rem] mx-auto"
@@ -182,8 +182,7 @@ export default function LeadershipCircle() {
               color: "#e0e0e0",
             }}
           >
-            Guided by experienced leaders, experts, and advisors shaping the
-            future of India&apos;s power sector.
+            Our dedicated leadership team brings together decades of expertise and vision, steering IPPAI&apos;s mission to transform India&apos;s power sector through strategic collaboration and innovation.
           </p>
         </div>
 
@@ -258,7 +257,8 @@ export default function LeadershipCircle() {
                     width: rotatedMember.size,
                     height: rotatedMember.size,
                     transform: "translate(-50%, -50%)",
-                    transition: "top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out",
+                    transition:
+                      "top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out",
                   }}
                 >
                   <div
@@ -273,14 +273,10 @@ export default function LeadershipCircle() {
                   >
                     <Image
                       src={
-                        currentIndex === i
-                          ? originalCenterMember.src
-                          : m.src
+                        currentIndex === i ? originalCenterMember.src : m.src
                       }
                       alt={
-                        currentIndex === i
-                          ? originalCenterMember.alt
-                          : m.alt
+                        currentIndex === i ? originalCenterMember.alt : m.alt
                       }
                       fill
                       className="object-cover rounded-full transition-all duration-300 ease-in-out"

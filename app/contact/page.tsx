@@ -1,7 +1,7 @@
 import ContactSection from "./contact-section";
 import HeroSection from "./hero-section";
 import MapSection from "./map-section";
-import PartnersCarousel from "./partners";
+// import PartnersCarousel from "./partners";
 
 function page() {
   return (
@@ -9,7 +9,7 @@ function page() {
       <HeroSection />
       <ContactSection />
       <MapSection />
-      <PartnersCarousel />
+      {/* <PartnersCarousel /> */}
     </div>
   );
 }

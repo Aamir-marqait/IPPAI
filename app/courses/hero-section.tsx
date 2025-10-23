@@ -46,15 +46,15 @@ export default function IntensiveCourseHero() {
           </h1>
 
           <div className="text-white font-poppins font-normal xl:text-[14px] xl:leading-[27px] xl:tracking-[0.32px] mb-5 text-base">
-            3 day Residential course conducted by IPPAI 25th to 27th September
+            3 day Residential course conducted by IPPAI 29th to 31th October
             2025
           </div>
           <Link
-            href="/contact"
+            href="#register-now"
             className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition mb-3 inline-block"
             style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
           >
-            Sign Up For Resources
+            Register Now
           </Link>
         </div>
         <div className=" z-20 hidden md:flex flex-col justify-center">

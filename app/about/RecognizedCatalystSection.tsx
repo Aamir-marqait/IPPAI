@@ -75,15 +75,15 @@ export default function RecognizedCatalystSection() {
                 />
               </div>
             </div>
-            {/* Excellence Awards */}
+            {/* Conferences Held */}
             <div className="w-[356px] h-[404px] flex flex-col justify-between bg-white rounded-[20px] border border-[#DFDFDF] overflow-hidden mx-auto">
               <div className="px-6 pt-8 pb-2 flex flex-col gap-3 justify-center text-left h-full">
                 <h3 className="font-red-hat-display font-bold text-2xl leading-none tracking-normal text-[#D3363B] mb-1">
-                  Excellence Awards
+                  300+ Conferences Held
                 </h3>
                 <p className="font-poppins font-light text-base leading-none tracking-normal text-black mb-2">
-                  Received multiple accolades for contribution to sustainable
-                  energy, development.
+                  Organized 300+ events fostering innovation in India’s power
+                  sector.
                 </p>
               </div>
               <div className="w-full h-full relative">
