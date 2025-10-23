@@ -11,7 +11,20 @@ import {
 } from "@/components/ui/select";
 import eventsData from "../../data/events.json";
 
-const events = eventsData.events;
+interface Event {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  location: string;
+  date: string;
+  image: string;
+  status: string;
+  statusLabel: string;
+  redirectTo?: string;
+}
+
+const events = eventsData.events as Event[];
 
 export default function EventsPage() {
   return (
