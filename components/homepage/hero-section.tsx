@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomeHero() {
   const [currentEvent, setCurrentEvent] = useState(0);
@@ -24,6 +24,15 @@ export default function HomeHero() {
       image: "/optimized/hero.webp",
     },
   ];
+
+  // Auto-slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEvent((prev) => (prev + 1) % events.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [events.length]);
 
   return (
     <div className="relative">
