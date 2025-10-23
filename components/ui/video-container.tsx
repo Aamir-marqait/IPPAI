@@ -6,12 +6,16 @@ interface VideoContainerProps {
   width?: number;
   height?: number;
   className?: string;
+  videoSrc?: string;
+  thumbnail?: string;
 }
 
-export function VideoContainer({ 
-  width = 1100, 
-  height = 400, 
-  className = ""
+export function VideoContainer({
+  width = 1100,
+  height = 400,
+  className = "",
+  videoSrc = "/video.mp4",
+  thumbnail
 }: VideoContainerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
@@ -45,9 +49,9 @@ export function VideoContainer({
         }}
         controls={false}
         preload="auto"
-        muted
+        poster={thumbnail}
       >
-        <source src="/video.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
