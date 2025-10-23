@@ -14,6 +14,8 @@ export default function Header() {
   const [mediaCenterDropdown, setMediaCenterDropdown] = useState(false);
   const [resourcesDropdownMain, setResourcesDropdownMain] = useState(false);
   const [mediaCenterDropdownMain, setMediaCenterDropdownMain] = useState(false);
+  const [resourcesDropdownMobile, setResourcesDropdownMobile] = useState(false);
+  const [mediaCenterDropdownMobile, setMediaCenterDropdownMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -541,36 +543,77 @@ export default function Header() {
                 } origin-center`}
               ></div>
             </Link>
-            <Link
-              href="/news"
-              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
-              onClick={toggleMenu}
-            >
-              RESOURCES
-              <ChevronDown className="w-4 h-4" />
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/news"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
-            <Link
-              href="/podcast"
-              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
-              onClick={toggleMenu}
-            >
-              MEDIA CENTER
-              <ChevronDown className="w-4 h-4" />
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/podcast"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
+            {/* Resources Dropdown - Mobile */}
+            <div className="flex flex-col">
+              <button
+                className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
+                onClick={() => setResourcesDropdownMobile(!resourcesDropdownMobile)}
+              >
+                RESOURCES
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${resourcesDropdownMobile ? 'rotate-180' : ''}`} />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/publications" || pathname === "/articles" || resourcesDropdownMobile
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+              {resourcesDropdownMobile && (
+                <div className="flex flex-col mt-3 pl-6 space-y-3">
+                  <Link
+                    href="/publications"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Publications
+                  </Link>
+                  <Link
+                    href="/articles"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Articles
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Media Center Dropdown - Mobile */}
+            <div className="flex flex-col">
+              <button
+                className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
+                onClick={() => setMediaCenterDropdownMobile(!mediaCenterDropdownMobile)}
+              >
+                MEDIA CENTER
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mediaCenterDropdownMobile ? 'rotate-180' : ''}`} />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/photo-gallery" || pathname === "/podcast" || mediaCenterDropdownMobile
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+              {mediaCenterDropdownMobile && (
+                <div className="flex flex-col mt-3 pl-6 space-y-3">
+                  <Link
+                    href="/photo-gallery"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Photo Gallery
+                  </Link>
+                  <Link
+                    href="/podcast"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Video Gallery / Podcast
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Contact Button - Mobile Menu */}
             <Link href="/contact">
