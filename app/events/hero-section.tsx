@@ -107,7 +107,7 @@ export default function HeroSection() {
                       className="flex-shrink-0"
                     />
                     <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed">
-                      25th to 27th September 2025
+                      7th- 10th January, 2026
                     </span>
                   </div>
 

@@ -160,94 +160,12 @@
       "conclusion": "Don't miss this rare opportunity to engage with fellow regulators and policymakers in an environment designed for deep thinking and meaningful collaboration. The retreat format allows for the kind of substantive dialogue and relationship building that's often impossible in traditional conference settings. Be part of shaping India's energy future through strategic policy discussions and collaborative problem-solving."
     },
     {
-      "id": 1,
-      "title": "Intensive Course",
-      "slug": "intensive-course",
-      "redirectTo": "/courses",
-      "description": "The IPPAI Regulatory and Policy Research Institute (IRPRI) is dedicated to advancing knowledge, capacity building, and leadership in India's evolving power and energy sector through research, training, and collaboration.",
-      "location": "Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka",
-      "date": "29th - 31st October, 2025",
-      "dateTime": "Tuesday, December 11 · 10:00 – 6:00pm GMT+5:30",
-      "time": "10:00 AM - 6:00 PM",
-      "capacity": "500 Attendees",
-      "image": "/event/event 1.png",
-      "status": "upcoming",
-      "statusLabel": "Upcoming Event",
-      "organizer": "IPPAI Team",
-      "registrationLink": "#",
-      "breadcrumb": {
-        "category": "Upcoming events",
-        "eventTitle": "101- The Legal & Institutional Framework for Energy Policy"
-      },
-      "eventDuration": "Event lasts 8 hours",
-      "fullDescription": "Get ready for a comprehensive understanding of energy policy frameworks with IPPAI— the ultimate workshop to kickstart your policy career! Whether you're a student, professional, or policy enthusiast, this event is packed with the insights you need to make your mark in the energy sector.",
-      "aboutEvent": {
-        "mainDescription": "Get ready for MPOWERingDreams with IPPAI— the ultimate workshop to kickstart your energy policy journey! Whether you're entering the field in 2025 or planning your next career move, this event is packed with the info you need to advance your expertise.",
-        "details": [
-          {
-            "icon": "clock",
-            "text": "Date: Tuesday, December 11, 2025."
-          },
-          {
-            "icon": "clock",
-            "text": "Time: 10:00 AM (But arrive early! Our Early Bird Entry opens at 9:00 a.m., where you'll get exclusive access to expert speakers and a team of professionals, ready to answer your questions face-to-face!)"
-          },
-          {
-            "icon": "location",
-            "text": "Location: Energy Policy Institute (Inside International Public Policy Center)"
-          }
-        ]
-      },
-      "highlights": {
-        "title": "What's in store for you?",
-        "items": [
-          {
-            "emoji": "🎓",
-            "title": "Policy Framework Analysis:",
-            "description": "Does institutional structure really matter? We'll dive into how to understand and navigate complex energy policy frameworks for maximum impact.",
-            "color": "#A37CFE"
-          },
-          {
-            "emoji": "💼",
-            "title": "Career Opportunities:",
-            "description": "Learn how to secure positions that not only advance your career but also contribute meaningfully to energy policy development.",
-            "color": "#FEA800"
-          },
-          {
-            "emoji": "💵",
-            "title": "Funding & Research Opportunities:",
-            "description": "Demystify the process and learn how to navigate grants, fellowships, and research opportunities in energy policy like a pro.",
-            "color": "#18B76A"
-          },
-          {
-            "emoji": "💬",
-            "title": "Q&A Session:",
-            "description": "Get your burning questions answered in real time by industry experts and policy professionals!",
-            "color": "#F44336"
-          }
-        ]
-      },
-      "whyAttend": {
-        "title": "Why you should be there:",
-        "description": "This is your one-stop event to get real, actionable insights to make your energy policy journey a success. Whether you're still deciding on specializations or planning your research focus, we've got you covered. Plus, it's a great chance to meet others on the same path!"
-      },
-      "prizes": {
-        "title": "Exciting Prizes (Attendees Only!):",
-        "items": [
-          "1 Policy Research Grant worth $5,000 as the grand prize!",
-          "Gift Cards worth INR 30,000 from Amazon, Flipkart, and professional development platforms!",
-          "Pro Tip: Bring a colleague along! The more, the merrier! Share this with your network and get them to register, too—it's always more fun to start this journey together."
-        ]
-      },
-      "conclusion": "See you there, ready to make your energy policy dreams a reality—and maybe win some amazing prizes! This is your one-stop event to get real, actionable insights to make your policy career a success. Whether you're still deciding on focus areas or planning your next steps, we've got you covered. Plus, it's a great chance to meet others on the same path!"
-    },
-    {
       "id": 2,
       "title": "Consultative Conference on Resolving Issues in Open Access, Stressed Assets, Captive & Group Captive, Fuel Supply, Re-negotiation of PPAs to revive Power Consumers...",
       "slug": "som-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...",
-      "location": "2715 Ash Dr. San Jose, South Dakota -83475",
-      "date": "Nov 15- Nov 28, 2025",
+      "description": "A comprehensive consultative forum addressing critical challenges in open access, stressed power assets, captive power arrangements, fuel supply management, and PPA renegotiations to support power sector stakeholders and consumers.",
+      "location": "World Trade Centre, Cuffe Parade, Mumbai",
+      "date": "6th September 2018",
       "dateTime": "Friday, November 15 · 9:00 – 5:00pm GMT+5:30",
       "time": "9:00 AM - 5:00 PM",
       "capacity": "300 Attendees",
@@ -326,9 +244,9 @@
       "id": 3,
       "title": "Promoting Fresh Investments in the Power Sector in Telangana",
       "slug": "advanced-energy-economics-and-market-design",
-      "description": "Comprehensive workshop on energy market mechanisms, pricing strategies, and economic analysis in the evolving energy landscape.",
-      "location": "Energy Economics Institute, Mumbai, Maharashtra - 400001",
-      "date": "Jan 20- Jan 22, 2026",
+      "description": "Strategic conference focused on attracting and facilitating new investments in Telangana's power sector, featuring policy discussions, investment opportunities, and regulatory frameworks to boost the state's energy infrastructure and capacity.",
+      "location": "Hotel Best Western Ashoka, Lakdikapul, Hyderabad",
+      "date": "12 July 2018",
       "dateTime": "Monday, January 20 · 8:30 – 6:30pm GMT+5:30",
       "time": "8:30 AM - 6:30 PM",
       "capacity": "400 Attendees",
@@ -407,9 +325,9 @@
       "id": 4,
       "title": "Emerging Opportunities & Challenges in the Power Sector for E-Mobility, Industrial & Commercial Power Consumers, Discoms, Generators & Other Stakeholders",
       "slug": "climate-policy-and-energy-transition-strategies",
-      "description": "Strategic workshop on climate policy frameworks, energy transition pathways, and implementation strategies for sustainable energy systems.",
-      "location": "Climate Policy Center, New Delhi, Delhi - 110001",
-      "date": "Mar 10- Mar 12, 2026",
+      "description": "Expert-led conference exploring the evolving landscape of the power sector, covering e-mobility integration, industrial and commercial power consumption trends, distribution company challenges, generation perspectives, and collaborative solutions for diverse stakeholders.",
+      "location": "South Lounge Hall (Ground Floor), World Trade Centre, Cuffe Parade, Colaba, Mumbai",
+      "date": "7 March 2018",
       "dateTime": "Tuesday, March 10 · 9:00 – 5:00pm GMT+5:30",
       "time": "9:00 AM - 5:00 PM",
       "capacity": "250 Attendees",
@@ -488,9 +406,9 @@
       "id": 5,
       "title": "Emerging Opportunities & Challenges in Open Access in the Power Sector in Uttar Pradesh for Discoms and Power Consumers",
       "slug": "digital-innovation-in-energy-systems",
-      "description": "Cutting-edge workshop on digital technologies transforming energy systems, including AI, IoT, blockchain, and smart grid technologies.",
-      "location": "Tech Innovation Hub, Bangalore, Karnataka - 560001",
-      "date": "May 15- May 17, 2026",
+      "description": "Specialized conference examining open access developments in Uttar Pradesh's power sector, addressing regulatory frameworks, implementation challenges, opportunities for distribution companies, and benefits for industrial and commercial power consumers.",
+      "location": "Hotel Genx Casaya, Gomti Nagar, Lucknow",
+      "date": "10 May 2018",
       "dateTime": "Thursday, May 15 · 10:00 – 6:00pm GMT+5:30",
       "time": "10:00 AM - 6:00 PM",
       "capacity": "350 Attendees",
@@ -564,6 +482,87 @@
         ]
       },
       "conclusion": "Don't miss this opportunity to be at the forefront of energy innovation. Whether you're developing new technologies, implementing digital solutions, or planning for the future, this workshop will provide the insights and connections you need to succeed in the digital energy landscape."
+    },
+    {
+      "id": 6,
+      "title": "Focus: E-Mobility to meet India's EV targets",
+      "slug": "advanced-energy-economics-and-market-design",
+      "description": "Strategic conference focused on attracting and facilitating new investments in Telangana's power sector, featuring policy discussions, investment opportunities, and regulatory frameworks to boost the state's energy infrastructure and capacity.",
+      "location": "CWC Library, West Block II, Wing No.7, Ground Floor, RK Puram, New Delhi – 110066 ",
+      "date": "24 January 2018",
+      "dateTime": "Monday, January 20 · 8:30 – 6:30pm GMT+5:30",
+      "time": "8:30 AM - 6:30 PM",
+      "capacity": "400 Attendees",
+      "image": "/event/event 3.png",
+      "status": "past",
+      "statusLabel": "Past Event",
+      "organizer": "IPPAI Economics Division",
+      "registrationLink": "#",
+      "breadcrumb": {
+        "category": "Past events",
+        "eventTitle": "103- Advanced Energy Economics and Market Design"
+      },
+      "eventDuration": "Event lasts 3 days",
+      "fullDescription": "Master the complexities of energy economics with this intensive three-day workshop covering market design, pricing mechanisms, and economic modeling in modern energy systems.",
+      "aboutEvent": {
+        "mainDescription": "Dive deep into energy economics with IPPAI's most comprehensive workshop yet! This intensive program is designed for economists, analysts, and professionals who need to understand and work with complex energy market mechanisms and pricing strategies.",
+        "details": [
+          {
+            "icon": "clock",
+            "text": "Date: Monday-Wednesday, January 20-22, 2026."
+          },
+          {
+            "icon": "clock",
+            "text": "Time: 8:30 AM - 6:30 PM daily (Continental breakfast starts at 8:00 a.m. each day for early networking!)"
+          },
+          {
+            "icon": "location",
+            "text": "Location: Energy Economics Institute (Inside Mumbai International Finance Centre)"
+          }
+        ]
+      },
+      "highlights": {
+        "title": "What's in store for you?",
+        "items": [
+          {
+            "emoji": "📈",
+            "title": "Market Design Principles:",
+            "description": "Understand the fundamental principles of energy market design, including auction mechanisms, capacity markets, and ancillary services.",
+            "color": "#A37CFE"
+          },
+          {
+            "emoji": "💰",
+            "title": "Pricing Strategies:",
+            "description": "Learn advanced pricing models including nodal pricing, time-of-use rates, and dynamic pricing mechanisms for modern energy markets.",
+            "color": "#18B76A"
+          },
+          {
+            "emoji": "🔧",
+            "title": "Economic Modeling:",
+            "description": "Hands-on sessions with industry-standard economic modeling tools and techniques for energy market analysis and forecasting.",
+            "color": "#FEA800"
+          },
+          {
+            "emoji": "🌐",
+            "title": "Global Case Studies:",
+            "description": "Analysis of energy market designs from around the world, including lessons learned and best practices from different jurisdictions.",
+            "color": "#F44336"
+          }
+        ]
+      },
+      "whyAttend": {
+        "title": "Why you should be there:",
+        "description": "This intensive workshop provides the analytical tools and market insights essential for anyone working in energy economics, market analysis, or energy finance. You'll leave with practical skills and a comprehensive understanding of how energy markets function and evolve."
+      },
+      "prizes": {
+        "title": "Exciting Prizes (Attendees Only!):",
+        "items": [
+          "1 Full scholarship to advanced energy economics certification program worth $10,000!",
+          "Professional software licenses worth INR 50,000 for energy modeling and analysis tools!",
+          "Exclusive invitation to IPPAI's annual Energy Economics Summit with leading global experts."
+        ]
+      },
+      "conclusion": "Join us for this transformative learning experience that will enhance your expertise in energy economics and market analysis. Whether you're shaping policy, developing market strategies, or conducting research, this workshop will provide the advanced knowledge you need to excel in the energy sector."
     }
   ]
 }
