@@ -85,7 +85,10 @@ async function main() {
     
     // Hero section background images
     { input: 'public/hero.png', output: 'public/optimized/hero.webp' },
-    { input: 'public/home/bg2.jpg', output: 'public/optimized/bg2.webp' }
+    { input: 'public/home/bg2.jpg', output: 'public/optimized/bg2.webp' },
+
+    // Main image above knowledge hub
+    { input: 'public/main.jpg', output: 'public/optimized/main.webp' }
   ];
 
   console.log('🚀 Starting image optimization...\n');
