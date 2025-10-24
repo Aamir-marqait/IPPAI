@@ -16,7 +16,8 @@ export default function HomeHero() {
       image: "/optimized/bg2.webp",
     },
     {
-      title: "Intensive Course on Regulatory & Policy Framework in the Power Sector",
+      title:
+        "Intensive Course on Regulatory & Policy Framework in the Power Sector",
       desc: "Comprehensive Course On Energy, Policy & Regulation",
       date: "29th - 31st October, 2025",
       location:
@@ -169,7 +170,7 @@ export default function HomeHero() {
       </div>
 
       {/* Previous Button */}
-      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-start pl-20">
+      <div className="hidden absolute inset-0 z-50 pointer-events-none sm:flex items-center justify-start pl-20">
         <button
           onClick={() =>
             setCurrentEvent(
@@ -190,7 +191,7 @@ export default function HomeHero() {
       </div>
 
       {/* Next Button */}
-      <div className="absolute inset-0 z-50 pointer-events-none flex items-center justify-end pr-20">
+      <div className="hidden absolute inset-0 z-50 pointer-events-none sm:flex items-center justify-end pr-20">
         <button
           onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
           className="cursor-pointer pointer-events-auto p-6 hover:scale-105 transition-transform"
