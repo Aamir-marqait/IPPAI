@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 
 const videos = [
-  {
-    thumb: "/voice/2.png",
-    src: "/voice/2.mp4",
-    title: "Pricing of electricity",
-  },
+  // {
+  //   thumb: "/voice/2.png",
+  //   src: "/voice/2.mp4",
+  //   title: "Pricing of electricity",
+  // },
   {
     thumb: "/voice/3.png",
     src: "/voice/3.mp4",
