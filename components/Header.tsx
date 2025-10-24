@@ -15,7 +15,8 @@ export default function Header() {
   const [resourcesDropdownMain, setResourcesDropdownMain] = useState(false);
   const [mediaCenterDropdownMain, setMediaCenterDropdownMain] = useState(false);
   const [resourcesDropdownMobile, setResourcesDropdownMobile] = useState(false);
-  const [mediaCenterDropdownMobile, setMediaCenterDropdownMobile] = useState(false);
+  const [mediaCenterDropdownMobile, setMediaCenterDropdownMobile] =
+    useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -36,15 +37,17 @@ export default function Header() {
       <header className="w-full absolute z-50 left-0 right-0 pt-4">
         <div className="mx-auto max-w-[1100px] py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <Image
-                src="/header/logo.png"
-                alt="IPPAI Logo"
-                width={116}
-                height={53}
-                className="w-20 h-9 sm:w-24 sm:h-11 md:w-28 md:h-12 lg:w-[116px] lg:h-[53px] xl:w-32 xl:h-14 2xl:w-36 2xl:h-16 rotate-0 opacity-100"
-              />
-            </div>
+            <Link href="/">
+              <div className="flex items-center">
+                <Image
+                  src="/header/logo.png"
+                  alt="IPPAI Logo"
+                  width={116}
+                  height={53}
+                  className="w-20 h-9 sm:w-24 sm:h-11 md:w-28 md:h-12 lg:w-[116px] lg:h-[53px] xl:w-32 xl:h-14 2xl:w-36 2xl:h-16 rotate-0 opacity-100"
+                />
+              </div>
+            </Link>
             <nav className="hidden lg:flex items-center space-x-8">
               <Link
                 href="/"
@@ -161,7 +164,7 @@ export default function Header() {
                 {/* Media Center Dropdown */}
                 {mediaCenterDropdown && (
                   <div
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
+                    className=" absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
                     onMouseEnter={() => setMediaCenterDropdown(true)}
                     onMouseLeave={() => setMediaCenterDropdown(false)}
                   >
@@ -214,15 +217,17 @@ export default function Header() {
       <div className="mx-auto max-w-[1100px] py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <Image
-              src="/header/logo.png"
-              alt="IPPAI Logo"
-              width={116}
-              height={53}
-              className="w-20 h-9 sm:w-24 sm:h-11 md:w-28 md:h-12 lg:w-[116px] lg:h-[53px] xl:w-32 xl:h-14 2xl:w-36 2xl:h-16 rotate-0 opacity-100"
-            />
-          </div>
+          <Link href="/">
+            <div className="flex items-center">
+              <Image
+                src="/header/logo.png"
+                alt="IPPAI Logo"
+                width={116}
+                height={53}
+                className="w-20 h-9 sm:w-24 sm:h-11 md:w-28 md:h-12 lg:w-[116px] lg:h-[53px] xl:w-32 xl:h-14 2xl:w-36 2xl:h-16 rotate-0 opacity-100"
+              />
+            </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-4">
@@ -448,19 +453,19 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                isMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isEventDetailPage ? "bg-black" : "bg-white"
+              } ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
             ></span>
             <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                isMenuOpen ? "opacity-0" : ""
-              }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isEventDetailPage ? "bg-black" : "bg-white"
+              } ${isMenuOpen ? "opacity-0" : ""}`}
             ></span>
             <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isEventDetailPage ? "bg-black" : "bg-white"
+              } ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
             ></span>
           </button>
 
@@ -544,23 +549,31 @@ export default function Header() {
               ></div>
             </Link>
             {/* Resources Dropdown - Mobile */}
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center">
               <button
                 className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
-                onClick={() => setResourcesDropdownMobile(!resourcesDropdownMobile)}
+                onClick={() =>
+                  setResourcesDropdownMobile(!resourcesDropdownMobile)
+                }
               >
                 RESOURCES
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${resourcesDropdownMobile ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    resourcesDropdownMobile ? "rotate-180" : ""
+                  }`}
+                />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/publications" || pathname === "/articles" || resourcesDropdownMobile
+                    pathname === "/publications" ||
+                    pathname === "/articles" ||
+                    resourcesDropdownMobile
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   } origin-center`}
                 ></div>
               </button>
               {resourcesDropdownMobile && (
-                <div className="flex flex-col mt-3 pl-6 space-y-3">
+                <div className="flex flex-col mt-3 space-y-3 items-center">
                   <Link
                     href="/publications"
                     className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
@@ -580,23 +593,31 @@ export default function Header() {
             </div>
 
             {/* Media Center Dropdown - Mobile */}
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center">
               <button
                 className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
-                onClick={() => setMediaCenterDropdownMobile(!mediaCenterDropdownMobile)}
+                onClick={() =>
+                  setMediaCenterDropdownMobile(!mediaCenterDropdownMobile)
+                }
               >
                 MEDIA CENTER
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mediaCenterDropdownMobile ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    mediaCenterDropdownMobile ? "rotate-180" : ""
+                  }`}
+                />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                    pathname === "/photo-gallery" || pathname === "/podcast" || mediaCenterDropdownMobile
+                    pathname === "/photo-gallery" ||
+                    pathname === "/podcast" ||
+                    mediaCenterDropdownMobile
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   } origin-center`}
                 ></div>
               </button>
               {mediaCenterDropdownMobile && (
-                <div className="flex flex-col mt-3 pl-6 space-y-3">
+                <div className="flex flex-col mt-3 space-y-3 items-center">
                   <Link
                     href="/photo-gallery"
                     className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
@@ -616,14 +637,16 @@ export default function Header() {
             </div>
 
             {/* Contact Button - Mobile Menu */}
-            <Link href="/contact">
-              <Button
-                className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
-                onClick={toggleMenu}
-              >
-                CONTACT US
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/contact">
+                <Button
+                  className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors mt-6"
+                  onClick={toggleMenu}
+                >
+                  CONTACT US
+                </Button>
+              </Link>
+            </div>
           </div>
         </nav>
       </div>
