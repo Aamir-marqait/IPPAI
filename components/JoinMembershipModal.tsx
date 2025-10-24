@@ -133,13 +133,13 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-white">
+        <DialogContent className="max-w-4xl w-[95%] md:w-full p-0 overflow-hidden bg-white max-h-[90vh] md:max-h-[600px] overflow-y-auto">
           <DialogTitle className="sr-only">
             Join Us Today - Membership Registration
           </DialogTitle>
-          <div className="flex h-[600px]">
+          <div className="flex flex-col md:flex-row md:h-[600px]">
             {/* Left side - Image */}
-            <div className="flex-1 relative">
+            <div className="w-full md:flex-1 relative h-[200px] md:h-auto">
               <Image
                 src="/membership/join.png"
                 alt="Professional handshake with network overlay"
@@ -151,7 +151,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
             </div>
 
             {/* Right side - Form */}
-            <div className="flex-1 bg-gray-50 p-8 relative">
+            <div className="w-full md:flex-1 bg-gray-50 p-6 md:p-8 relative">
               {/* Close button */}
               {/* <button
               onClick={() => onOpenChange(false)}
@@ -162,11 +162,9 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
 
               <div className="max-w-sm mx-auto">
                 <h2
-                  className="mb-8 text-left font-red-hat-display"
+                  className="mb-6 md:mb-8 text-left font-red-hat-display text-[24px] md:text-[30.1px] leading-[28px] md:leading-[34.2px]"
                   style={{
                     fontWeight: 700,
-                    fontSize: "30.1px",
-                    lineHeight: "34.2px",
                     letterSpacing: "0px",
                     color: "#D3363B",
                   }}
@@ -174,7 +172,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                   {article ? "Download after Submission" : "Join Us Today!"}
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   <div>
                     <label
                       className="block mb-2 font-poppins"
@@ -325,9 +323,9 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
 
       {/* Thank You Modal */}
       <Dialog open={showThankYou} onOpenChange={handleThankYouClose}>
-        <DialogContent className="max-w-md w-full p-0 overflow-hidden bg-white">
+        <DialogContent className="max-w-md w-[90%] md:w-full p-0 overflow-hidden bg-white">
           <DialogTitle className="sr-only">Thank You for Joining</DialogTitle>
-          <div className="p-8 text-center">
+          <div className="p-6 md:p-8 text-center">
             <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
               <svg
                 className="w-8 h-8 text-green-600"
@@ -344,11 +342,11 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
               </svg>
             </div>
 
-            <h2 className="font-red-hat-display font-bold text-2xl text-[#141414] mb-3">
+            <h2 className="font-red-hat-display font-bold text-xl md:text-2xl text-[#141414] mb-3">
               Thank You for Joining!
             </h2>
 
-            <p className="font-poppins font-normal text-base text-[#4D5756] mb-6 leading-relaxed">
+            <p className="font-poppins font-normal text-sm md:text-base text-[#4D5756] mb-6 leading-relaxed">
               {article
                 ? "We appreciate your interest in IPPAI. Your article will be downloaded shortly, and we'll be in touch with more valuable insights."
                 : "We appreciate your interest in IPPAI. We'll be in touch with valuable insights and opportunities to collaborate with us."}
