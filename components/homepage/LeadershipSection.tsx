@@ -40,7 +40,7 @@ const leaders = [
   {
     img: "/leader/8.jpg",
     name: "Mr. Chintan Shah",
-    role: "Group President, ReNew",
+    role: "Founder, SustCred",
   },
   {
     img: "/leader/9.jpeg",
