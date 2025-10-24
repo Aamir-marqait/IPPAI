@@ -376,7 +376,7 @@ export default function KnowledgeHubSection() {
 
   return (
     <section
-      className="w-full flex flex-col items-center py-8 px-4 md:px-6 lg:px-8 md:-mt-20"
+      className="w-full flex flex-col items-center py-8 px-4 md:px-6 lg:px-8 "
       style={{
         backgroundImage: "url('/optimized/khbg.webp')",
         backgroundSize: "contain",
@@ -395,7 +395,7 @@ export default function KnowledgeHubSection() {
         </p>
 
         {/* Main Card - Centered Articles */}
-        <div className="w-full max-w-[500px] mt-2 bg-white rounded-[18px] shadow-lg px-8 md:px-12 py-8 md:py-12 mx-auto relative">
+        <div className="w-full max-w-[500px] mt-12 bg-white rounded-[18px] shadow-lg px-8 md:px-12 py-8 md:py-12 mx-auto relative">
           {/* Articles/Insights - Centered */}
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-2 mb-6">
