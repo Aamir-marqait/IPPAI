@@ -61,9 +61,9 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "IPPAI - International Public Policy and Administration Institute",
+  title: "Independent Power Producers Association of India (IPPAI)",
   description:
-    "International Public Policy and Administration Institute - Advancing public policy through education, research, and professional development.",
+    "Independent Power Producers Association of India (IPPAI) - The premier association representing independent power producers, promoting sustainable energy development and policy advocacy in India's power sector.",
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

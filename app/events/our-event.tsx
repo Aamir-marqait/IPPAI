@@ -115,9 +115,9 @@ export default function EventsPage() {
                     </p>
 
                     {/* Location */}
-                    <div className="flex items-start gap-2 mb-3">
+                    <div className="flex items-start gap-2 mb-3 ">
                       <MapPin className="h-4 w-4 text-gray-400 mt-1 flex-shrink-0" />
-                      <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">
+                      <span className="font-inter font-semibold text-sm leading-6 text-[#161C2D]/80">
                         {event.location}
                       </span>
                     </div>
@@ -125,7 +125,7 @@ export default function EventsPage() {
                     {/* Date */}
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                      <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">
+                      <span className="font-inter font-semibold text-sm leading-6 text-[#161C2D]/80">
                         {event.date}
                       </span>
                     </div>
@@ -164,14 +164,14 @@ export default function EventsPage() {
 
                   {/* Event Content */}
                   <div className="p-6">
-                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3 line-clamp-2">
+                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3 ">
                       {event.title}
                     </h3>
 
                     {/* Location */}
                     <div className="flex items-start gap-2 mb-3">
                       <MapPin className="h-4 w-4 text-gray-400 mt-1 flex-shrink-0" />
-                      <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">
+                      <span className="font-inter font-semibold text-sm leading-6 text-[#161C2D]/80">
                         {event.location}
                       </span>
                     </div>
@@ -179,7 +179,7 @@ export default function EventsPage() {
                     {/* Date */}
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                      <span className="font-inter font-normal text-sm leading-6 text-[#161C2D]/80">
+                      <span className="font-inter font-semibold text-sm leading-6 text-[#161C2D]/80">
                         {event.date}
                       </span>
                     </div>
