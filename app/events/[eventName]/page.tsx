@@ -5,10 +5,35 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { getEventBySlug } from "@/lib/sanity";
 
+type EventType = {
+  title: string;
+  breadcrumb?: {
+    category?: string;
+    eventTitle?: string;
+  };
+  image?: string;
+  dateTime?: string;
+  location?: string;
+  eventDuration?: string;
+  aboutEvent?: {
+    mainDescription?: string;
+    details?: { text: string }[];
+  };
+  highlights?: {
+    title?: string;
+    items?: { emoji?: string; title?: string; description?: string }[];
+  };
+  prizes?: {
+    title?: string;
+    items?: string[];
+  };
+  conclusion?: string;
+};
+
 export default function EventDetailPage() {
   const params = useParams();
   const eventName = params.eventName as string;
-  const [event, setEvent] = useState<any>(null);
+  const [event, setEvent] = useState<EventType | null>(null);
   const [loading, setLoading] = useState(true);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,13 +123,17 @@ export default function EventDetailPage() {
 
       {/* Event Image */}
       <div className="rounded-xl overflow-hidden w-full">
-        <Image
-          src={event.image}
-          alt="Event presentation"
-          width={1100}
-          height={400}
-          className="w-full object-cover"
-        />
+        {event.image ? (
+          <Image
+            src={event.image}
+            alt="Event presentation"
+            width={1100}
+            height={400}
+            className="w-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-[400px] bg-gray-100" aria-hidden />
+        )}
       </div>
 
       {/* Event Content + Form */}
@@ -145,7 +174,7 @@ export default function EventDetailPage() {
             {event.aboutEvent?.mainDescription}
             <br />
             <br />
-            {event.aboutEvent?.details?.map((detail: any, i: number) => (
+            {event.aboutEvent?.details?.map((detail: { text: string }, i: number) => (
               <div className="flex items-start mb-2" key={i}>
                 {i === 0 && (
                   <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
@@ -176,7 +205,7 @@ export default function EventDetailPage() {
             <>
               <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.highlights.title}</div>
               <ul className="text-[#373737] text-sm sm:text-[15.5px] mb-4 sm:mb-[23px] ml-3 sm:ml-[12px] pl-3 sm:pl-[18px] leading-relaxed sm:leading-[1.8]">
-                {event.highlights.items?.map((item: any, index: number) => (
+                {event.highlights.items?.map((item: { emoji?: string; title?: string; description?: string }, index: number) => (
                   <li key={index} className="mb-1 sm:mb-1.5">
                     <strong>{item.emoji} {item.title}</strong> {item.description}
                   </li>

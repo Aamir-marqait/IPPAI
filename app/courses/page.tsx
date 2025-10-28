@@ -8,7 +8,7 @@ import CampusSection from "./IRPRI-campus";
 import CampusGallery from "./gallery";
 import RegisterNowSection from "./RegisterNowSection";
 
-function page() {
+export default function CoursesPage() {
   return (
     <div>
       <IntensiveCourseHero />
@@ -22,5 +22,3 @@ function page() {
     </div>
   );
 }
-
-export default page;
