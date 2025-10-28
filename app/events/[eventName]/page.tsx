@@ -1,20 +1,40 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useParams, notFound } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import eventsData from "../../../data/events.json";
+import { getEventBySlug } from "@/lib/sanity";
 
 export default function EventDetailPage() {
   const params = useParams();
   const eventName = params.eventName as string;
-  const event = eventsData.events.find((e) => e.slug === eventName);
+  const [event, setEvent] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  useEffect(() => {
+    async function fetchEvent() {
+      try {
+        const eventData = await getEventBySlug(eventName);
+        if (!eventData) {
+          notFound();
+        }
+        setEvent(eventData);
+      } catch (error) {
+        console.error("Error fetching event:", error);
+        notFound();
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchEvent();
+  }, [eventName]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,6 +73,14 @@ export default function EventDetailPage() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
+
   if (!event) {
     notFound();
   }
@@ -63,9 +91,9 @@ export default function EventDetailPage() {
       <nav className="mb-8 sm:mb-[40px] flex flex-wrap items-center text-sm">
         <span className="font-inter font-semibold text-[#4B5563]">Events</span>
         <span className="mx-2">{">"}</span>
-        <span className="font-inter font-semibold text-[#4B5563]">{event.breadcrumb.category}</span>
+        <span className="font-inter font-semibold text-[#4B5563]">{event.breadcrumb?.category}</span>
         <span className="mx-2">{">"}</span>
-        <span className="font-inter font-semibold text-[#757575]">{event.breadcrumb.eventTitle}</span>
+        <span className="font-inter font-semibold text-[#757575]">{event.breadcrumb?.eventTitle}</span>
       </nav>
 
       {/* Event Image */}
@@ -114,10 +142,10 @@ export default function EventDetailPage() {
             </span>
           </div>
           <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mb-4 sm:mb-5 mt-2">
-            {event.aboutEvent.mainDescription}
+            {event.aboutEvent?.mainDescription}
             <br />
             <br />
-            {event.aboutEvent.details.map((detail, i) => (
+            {event.aboutEvent?.details?.map((detail: any, i: number) => (
               <div className="flex items-start mb-2" key={i}>
                 {i === 0 && (
                   <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
@@ -144,68 +172,37 @@ export default function EventDetailPage() {
             ))}
           </div>
           {/* Highlights */}
-          <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.highlights.title}</div>
-          <ul className="text-[#373737] text-sm sm:text-[15.5px] mb-4 sm:mb-[23px] ml-3 sm:ml-[12px] pl-3 sm:pl-[18px] leading-relaxed sm:leading-[1.8]">
-            {event.highlights.items.map((item, index) => (
-              <li key={index}>
-                <span className="font-medium mr-1.5" style={{ color: item.color }}>
-                  {item.emoji} {item.title}
-                </span>
-                {item.description}
-              </li>
-            ))}
-          </ul>
-          {/* Why Attend */}
-          <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.whyAttend.title}</div>
-          <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mb-4 sm:mb-[22px]">
-            {event.whyAttend.description}
-          </div>
+          {event.highlights && (
+            <>
+              <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.highlights.title}</div>
+              <ul className="text-[#373737] text-sm sm:text-[15.5px] mb-4 sm:mb-[23px] ml-3 sm:ml-[12px] pl-3 sm:pl-[18px] leading-relaxed sm:leading-[1.8]">
+                {event.highlights.items?.map((item: any, index: number) => (
+                  <li key={index} className="mb-1 sm:mb-1.5">
+                    <strong>{item.emoji} {item.title}</strong> {item.description}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           {/* Prizes - Only show if prizes field exists */}
           {event.prizes && (
             <>
               <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.prizes.title}</div>
               <div className="space-y-3">
-            <div className="flex items-start">
-              <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="8" width="18" height="4" rx="1" />
-                <path d="M12 8v13" />
-                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-              </svg>
-              <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">
-                1 Policy Research Grant worth $5,000 as the grand prize!
-              </span>
-            </div>
-            <div className="flex items-start">
-              <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="8" width="18" height="4" rx="1" />
-                <path d="M12 8v13" />
-                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-              </svg>
-              <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">
-                Gift Cards worth INR 30,000 from Amazon, Flipkart, and professional development platforms!
-              </span>
-            </div>
-            <div className="flex items-start">
-              <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <defs>
-                  <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: "#3B82F6", stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: "#FDE047", stopOpacity: 1 }} />
-                  </linearGradient>
-                </defs>
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" stroke="url(#rocketGradient)" />
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" stroke="url(#rocketGradient)" />
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" stroke="url(#rocketGradient)" />
-                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" stroke="url(#rocketGradient)" />
-              </svg>
-              <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">
-                <span className="text-[#A37CFE] font-medium">Pro Tip:</span>{" "}
-                Bring a colleague along! The more, the merrier! Share this with your network and get them to register, too—it&apos;s always more fun to start this journey together.
-              </span>
-            </div>
-          </div>
+                {event.prizes.items?.map((prize: string, index: number) => (
+                  <div className="flex items-start" key={index}>
+                    <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="8" width="18" height="4" rx="1" />
+                      <path d="M12 8v13" />
+                      <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                      <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                    </svg>
+                    <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">
+                      {prize}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </>
           )}
           <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mt-4 sm:mt-[18px]">

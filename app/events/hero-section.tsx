@@ -5,7 +5,25 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroSection() {
+interface HeroSectionData {
+  title: string;
+  subtitle?: string;
+  highlightText: string;
+  eventDate: string;
+  eventLocation: string;
+  registrationLink: string;
+  knowMoreLink: string;
+  countdownTargetDate: string;
+  backgroundImage: string;
+  frameImage: string;
+  heroImage: string;
+}
+
+interface HeroSectionProps {
+  data: HeroSectionData;
+}
+
+export default function HeroSection({ data }: HeroSectionProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -15,8 +33,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Event date: 7th January 2026, 00:00:00
-      const eventDate = new Date("2026-01-07T00:00:00").getTime();
+      const eventDate = new Date(data.countdownTargetDate).getTime();
       const now = new Date().getTime();
       const difference = eventDate - now;
 
@@ -41,14 +58,14 @@ export default function HeroSection() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [data.countdownTargetDate]);
 
   return (
     <div className="relative min-h-screen overflow-hidden pb-14">
       <div
         className="absolute inset-0 w-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/event/bg.png')",
+          backgroundImage: `url('${data.backgroundImage}')`,
         }}
       >
         <div className="absolute inset-0 bg-black/0"></div>
@@ -63,7 +80,7 @@ export default function HeroSection() {
               <div className="relative w-full max-w-md lg:max-w-lg">
                 {/* Base frame image */}
                 <Image
-                  src="/event/frame.png"
+                  src={data.frameImage}
                   alt="Event Frame"
                   width={500}
                   height={600}
@@ -73,7 +90,7 @@ export default function HeroSection() {
                 <div
                   className="absolute top-8 left-8 inset-0 bg-contain bg-center bg-no-repeat h-[28rem] w-[28em] rounded-xl"
                   style={{
-                    backgroundImage: "url('/hero.png')",
+                    backgroundImage: `url('${data.heroImage}')`,
                     zIndex: 10,
                   }}
                 ></div>
@@ -85,9 +102,15 @@ export default function HeroSection() {
               {/* Main Title */}
               <div>
                 <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal  text-white text-left">
-                  26th Regulators & Policymakers
+                  {data.title}
+                  {data.subtitle && (
+                    <>
+                      <br />
+                      {data.subtitle}
+                    </>
+                  )}
                   <br />
-                  <span className="text-[#D3363B]">Retreat</span>
+                  <span className="text-[#D3363B]">{data.highlightText}</span>
                 </h1>
                 <div className="flex justify-right">
                   <Image
@@ -112,7 +135,7 @@ export default function HeroSection() {
                       className="flex-shrink-0"
                     />
                     <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed">
-                      7th- 10th January, 2026
+                      {data.eventDate}
                     </span>
                   </div>
 
@@ -125,7 +148,7 @@ export default function HeroSection() {
                       className="flex-shrink-0 mt-1"
                     />
                     <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed text-left max-w-md">
-                      Shoonya Farm Retreat, Belagavi, Karnataka
+                      {data.eventLocation}
                     </span>
                   </div>
                 </div>
@@ -133,12 +156,12 @@ export default function HeroSection() {
                 {/* Register Button */}
                 <div className="pt-4 flex justify-start">
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <Link href="/contact">
+                    <Link href={data.registrationLink}>
                       <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 cursor-pointer sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
                         Register Now
                       </Button>
                     </Link>
-                    <Link href="/events/regulators-policymakers-retreat">
+                    <Link href={data.knowMoreLink}>
                       <Button className="bg-white shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-medium text-base leading-none text-center text-[#D3363B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] hover:text-white cursor-pointer">
                         Know More
                       </Button>
@@ -172,7 +195,6 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            {/* (Optional) You can put a hidden div here for future left-side content if needed */}
           </div>
         </main>
       </div>
