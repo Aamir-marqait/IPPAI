@@ -1,0 +1,170 @@
+IPPAI/
+├─ .gitignore
+├─ .vscode/
+│  └─ settings.json
+├─ CLAUDE.md
+├─ HOW_TO_USE_FONTS.md
+├─ README.md
+├─ components.json
+├─ eslint.config.mjs
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.mjs
+├─ optimize-media.js
+├─ optimize-video.sh
+├─ tailwind.config.ts
+├─ tsconfig.json
+├─ app/
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ not-found.tsx
+│  ├─ page.tsx
+│  ├─ favicon.ico
+│  ├─ about/
+│  │  ├─ hero-section.tsx
+│  │  ├─ LeadershipCircle.tsx
+│  │  ├─ MilestonesTimeline.tsx
+│  │  ├─ our-purpose.tsx
+│  │  ├─ RecognizedCatalystSection.tsx
+│  │  ├─ ThreeDecadesSection.tsx
+│  │  └─ page.tsx
+│  ├─ articles/
+│  │  ├─ articles.tsx
+│  │  ├─ hero-section.tsx
+│  │  ├─ contact-section.tsx
+│  │  └─ page.tsx
+│  ├─ careers/
+│  │  ├─ hero-section.tsx
+│  │  ├─ form.tsx
+│  │  └─ page.tsx
+│  ├─ contact/
+│  │  ├─ contact-section.tsx
+│  │  ├─ hero-section.tsx
+│  │  ├─ map-section.tsx
+│  │  ├─ partners.tsx
+│  │  └─ page.tsx
+│  ├─ courses/
+│  │  ├─ about-irrpai.tsx
+│  │  ├─ gallery.tsx
+│  │  ├─ hero-section.tsx
+│  │  ├─ IRPRI-campus.tsx
+│  │  ├─ MentorsSection.tsx
+│  │  ├─ our-alumni.tsx
+│  │  ├─ our-courses.tsx
+│  │  ├─ page.tsx
+│  │  ├─ RegisterNowSection.tsx
+│  │  └─ [courseName]/
+│  ├─ events/
+│  │  ├─ contact-event.tsx
+│  │  ├─ event-gallary.tsx
+│  │  ├─ hero-section.tsx
+│  │  ├─ our-event.tsx
+│  │  ├─ our-partners.tsx
+│  │  ├─ TestimonialsSection.tsx
+│  │  ├─ WhyJoinEvents.tsx
+│  │  └─ [eventName]/
+│  ├─ membership/
+│  │  ├─ hero-section.tsx
+│  │  ├─ JoinMembershipBanner.tsx
+│  │  ├─ MemberPrivileges.tsx
+│  │  └─ page.tsx
+│  ├─ photo-gallery/
+│  │  ├─ gallery.tsx
+│  │  ├─ hero-section.tsx
+│  │  └─ page.tsx
+│  ├─ podcast/
+│  │  ├─ hero-section.tsx
+│  │  ├─ page.tsx
+│  │  └─ VideoGallerySection.tsx
+│  ├─ policies/
+│  │  ├─ contact-form.tsx
+│  │  ├─ home-section.tsx
+│  │  ├─ policy-recommendation.tsx
+│  │  └─ page.tsx
+│  ├─ press-releases/
+│  │  ├─ contact-form.tsx
+│  │  ├─ hero-section.tsx
+│  │  ├─ news-press.tsx
+│  │  └─ page.tsx
+│  └─ publications/
+│     ├─ contact-form.tsx
+│     ├─ hero-section.tsx
+│     └─ page.tsx
+├─ components/
+│  ├─ contribution-card.tsx
+│  ├─ event-card.tsx
+│  ├─ Footer.tsx
+│  ├─ Header.tsx
+│  ├─ hub-card.tsx
+│  ├─ JoinMembershipModal.tsx
+│  ├─ stat-card.tsx
+│  ├─ video-card.tsx
+│  ├─ homepage/
+│  │  ├─ hero-section.tsx
+│  │  ├─ cta-banner.tsx
+│  │  ├─ what-we-do.tsx
+│  │  ├─ voice.tsx
+│  │  ├─ testimonials.tsx
+│  │  └─ ...
+│  └─ ui/
+│     ├─ button.tsx
+│     ├─ dialog.tsx
+│     ├─ input.tsx
+│     ├─ optimized-image.tsx
+│     ├─ select.tsx
+│     └─ textarea.tsx
+├─ data/
+│  ├─ courses.json
+│  ├─ events.json
+│  └─ articles/
+│     ├─ 1.pdf
+│     ├─ 2.pdf
+│     ├─ 3.pdf
+│     ├─ 4.pdf
+│     ├─ 5.pdf
+│     └─ 6.pdf
+├─ lib/
+│  └─ utils.ts
+├─ public/
+│  ├─ favicon.ico
+│  ├─ favicon-16x16.png
+│  ├─ favicon-32x32.png
+│  ├─ favicon-192x192.png
+│  ├─ favicon-512x512.png
+│  ├─ hero.png
+│  ├─ image.png
+│  ├─ main.jpg
+│  ├─ img/
+│  │  ├─ img1.png
+│  │  ├─ img2.png
+│  │  ├─ img3.png
+│  │  ├─ img4.png
+│  │  ├─ img5.png
+│  │  ├─ img6.png
+│  │  ├─ img7.png
+│  │  ├─ img8.png
+│  │  └─ img9.png
+│  ├─ home/
+│  │  ├─ background.mp4
+│  │  ├─ intro1.png
+│  │  ├─ intro2.png
+│  │  ├─ intro3.png
+│  │  └─ ...
+│  ├─ course/
+│  ├─ event/
+│  ├─ gallery/
+│  ├─ article/
+│  ├─ about/
+│  ├─ membership/
+│  ├─ optimized/
+│  ├─ voice/
+│  └─ ... (many static assets)
+├─ types/
+│  └─ routes.d.ts
+└─ PROJECT_TREE.txt  (this file)
+
+Notes:
+- This tree was generated excluding the `.next/` directory and any `node_modules/` directories.
+- Some directories contain many assets; those are collapsed with `...` to keep the view readable. If you want a fully expanded listing (every file), I can regenerate and write the complete list into the file.

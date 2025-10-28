@@ -1,48 +1,23 @@
 import Image from "next/image";
 
-export default function EventsGallery() {
-  const images = [
-    {
-      src: "/ne/1.jpg",
-      alt: "Business presentation with charts",
-      size: "small",
-    },
-    {
-      src: "/ne/2.jpg",
-      alt: "Professional conference presentation",
-      size: "equal",
-    },
-    {
-      src: "/ne/3.jpg",
-      alt: "Corporate meeting discussion",
-      size: "big",
-    },
-    {
-      src: "/ne/4.jpg",
-      alt: "Business seminar audience",
-      size: "equal",
-    },
-    {
-      src: "/ne/5.jpg",
-      alt: "Professional networking event",
-      size: "big",
-    },
-    {
-      src: "/ne/6.jpg",
-      alt: "Corporate training session",
-      size: "equal",
-    },
-    {
-      src: "/ne/7.jpg",
-      alt: "Conference auditorium presentation",
-      size: "small",
-    },
-    {
-      src: "/ne/8.jpg",
-      alt: "Executive meeting with documents",
-      size: "equal",
-    },
-  ];
+interface GalleryImage {
+  url: string;
+  alt: string;
+}
+
+interface EventsGalleryData {
+  sectionTitle: string;
+  mainHeading: string;
+  description: string;
+  images: GalleryImage[];
+}
+
+interface EventsGalleryProps {
+  data: EventsGalleryData;
+}
+
+export default function EventsGallery({ data }: EventsGalleryProps) {
+  const images = data.images;
 
   // Desktop custom positions
   const positions = [
@@ -67,14 +42,13 @@ export default function EventsGallery() {
         {/* Header Section */}
         <div className="mb-8 sm:mb-12">
           <div className="font-red-hat-display font-bold text-xs sm:text-base leading-none uppercase text-[#D3363B] mb-2 sm:mb-4">
-            EVENTS GALLERY
+            {data.sectionTitle}
           </div>
           <h2 className="font-red-hat-display font-bold text-xl sm:text-[36px] leading-none text-[#141414] mb-4 sm:mb-6">
-            Collection of images from past events
+            {data.mainHeading}
           </h2>
           <p className="font-poppins font-normal text-sm sm:text-base leading-[24px] sm:leading-[28px] text-gray-600 max-w-2xl">
-            Unique confluences of stalwarts from government, industry and civil
-            society engaging and deliberating for a brighter future.
+            {data.description}
           </p>
         </div>
 
@@ -88,7 +62,7 @@ export default function EventsGallery() {
                 className="relative aspect-[4/3] sm:aspect-[4/3] overflow-hidden rounded-[18px] bg-gray-200 group"
               >
                 <Image
-                  src={image.src || "/placeholder.svg"}
+                  src={image.url || "/placeholder.svg"}
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -116,7 +90,7 @@ export default function EventsGallery() {
                   }}
                 >
                   <Image
-                    src={image.src || "/placeholder.svg"}
+                    src={image.url || "/placeholder.svg"}
                     alt={image.alt}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

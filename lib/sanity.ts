@@ -1,0 +1,232 @@
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
+
+export const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  useCdn: true, // Enable CDN for faster response
+  apiVersion: '2024-01-01', // Use current date or latest API version
+})
+
+// Helper function to generate image URLs from Sanity images
+const builder = imageUrlBuilder(client)
+
+export function urlFor(source: any) {
+  return builder.image(source)
+}
+
+// Reusable query functions
+export const sanityQueries = {
+  // Get all events
+  getAllEvents: `*[_type == "event"] | order(dateTime desc) {
+    _id,
+    title,
+    slug,
+    description,
+    location,
+    date,
+    dateTime,
+    time,
+    capacity,
+    "image": image.asset->url,
+    status,
+    statusLabel,
+    organizer,
+    registrationLink,
+    redirectTo,
+    breadcrumb,
+    eventDuration,
+    fullDescription,
+    theme,
+    conceptNote,
+    aboutEvent {
+      mainDescription,
+      details[] {
+        icon,
+        text
+      },
+      venue {
+        title,
+        description
+      }
+    },
+    highlights {
+      title,
+      items[] {
+        emoji,
+        title,
+        description,
+        color
+      }
+    },
+    criticalIssues {
+      title,
+      items[]
+    },
+    whyAttend {
+      title,
+      description
+    },
+    whoShouldAttend[],
+    delegateFees {
+      privateEntities,
+      governmentEntities,
+      sercChairmenMembers
+    },
+    awards {
+      title,
+      description,
+      date,
+      categories[]
+    },
+    prizes {
+      title,
+      items[]
+    },
+    contacts[] {
+      name,
+      email,
+      phone
+    },
+    conclusion
+  }`,
+
+  // Get single event by slug
+  getEventBySlug: (slug: string) => `*[_type == "event" && slug.current == "${slug}"][0] {
+    _id,
+    title,
+    slug,
+    description,
+    location,
+    date,
+    dateTime,
+    time,
+    capacity,
+    "image": image.asset->url,
+    status,
+    statusLabel,
+    organizer,
+    registrationLink,
+    redirectTo,
+    breadcrumb,
+    eventDuration,
+    fullDescription,
+    theme,
+    conceptNote,
+    aboutEvent {
+      mainDescription,
+      details[] {
+        icon,
+        text
+      },
+      venue {
+        title,
+        description
+      }
+    },
+    highlights {
+      title,
+      items[] {
+        emoji,
+        title,
+        description,
+        color
+      }
+    },
+    criticalIssues {
+      title,
+      items[]
+    },
+    whyAttend {
+      title,
+      description
+    },
+    whoShouldAttend[],
+    delegateFees {
+      privateEntities,
+      governmentEntities,
+      sercChairmenMembers
+    },
+    awards {
+      title,
+      description,
+      date,
+      categories[]
+    },
+    prizes {
+      title,
+      items[]
+    },
+    contacts[] {
+      name,
+      email,
+      phone
+    },
+    conclusion
+  }`,
+
+  // Get hero section data
+  getHeroSection: `*[_type == "eventHeroSection"][0] {
+    _id,
+    title,
+    subtitle,
+    highlightText,
+    eventDate,
+    eventLocation,
+    registrationLink,
+    knowMoreLink,
+    countdownTargetDate,
+    "backgroundImage": backgroundImage.asset->url,
+    "frameImage": frameImage.asset->url,
+    "heroImage": heroImage.asset->url
+  }`,
+
+  // Get Why Join Events data
+  getWhyJoinEvents: `*[_type == "whyJoinEvents"][0] {
+    _id,
+    sectionTitle,
+    mainHeading,
+    description,
+    features[] {
+      iconType,
+      iconName,
+      "iconImage": iconImage.asset->url,
+      title,
+      description,
+      number
+    }
+  }`,
+
+  // Get Gallery Images
+  getGalleryImages: `*[_type == "eventGallery"][0] {
+    _id,
+    sectionTitle,
+    mainHeading,
+    description,
+    images[] {
+      "url": asset->url,
+      alt
+    }
+  }`,
+}
+
+// Export fetch functions
+export async function getAllEvents() {
+  return await client.fetch(sanityQueries.getAllEvents)
+}
+
+export async function getEventBySlug(slug: string) {
+  return await client.fetch(sanityQueries.getEventBySlug(slug))
+}
+
+export async function getHeroSection() {
+  return await client.fetch(sanityQueries.getHeroSection)
+}
+
+export async function getWhyJoinEvents() {
+  return await client.fetch(sanityQueries.getWhyJoinEvents)
+}
+
+export async function getGalleryImages() {
+  return await client.fetch(sanityQueries.getGalleryImages)
+}

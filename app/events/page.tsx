@@ -3,23 +3,22 @@ import HeroSection from "./hero-section";
 import EventsPage from "./our-event";
 import WhyJoinEvents from "./WhyJoinEvents";
 import EventsGallery from "./event-gallary";
+import { getHeroSection, getWhyJoinEvents, getGalleryImages } from "@/lib/sanity";
 
-// import OurPartners from "./our-partners";
-// import TestimonialsSection from "./TestimonialsSection";
-// import ContactUsSection from "./contact-event";
+export default async function Page() {
+  // Fetch all data from Sanity
+  const [heroData, whyJoinData, galleryData] = await Promise.all([
+    getHeroSection(),
+    getWhyJoinEvents(),
+    getGalleryImages(),
+  ]);
 
-function page() {
   return (
     <div>
-      <HeroSection />
+      <HeroSection data={heroData} />
       <EventsPage />
-      <WhyJoinEvents />
-      <EventsGallery />
-      {/* <TestimonialsSection /> */}
-      {/* <OurPartners /> */}
-      {/* <ContactUsSection /> */}
+      <WhyJoinEvents data={whyJoinData} />
+      <EventsGallery data={galleryData} />
     </div>
   );
 }
-
-export default page;

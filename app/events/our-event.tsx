@@ -9,12 +9,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import eventsData from "../../data/events.json";
+import { getAllEvents } from "@/lib/sanity";
 
 interface Event {
-  id: number;
+  _id: string;
   title: string;
-  slug: string;
+  slug: { current: string };
   description: string;
   location: string;
   date: string;
@@ -24,9 +24,11 @@ interface Event {
   redirectTo?: string;
 }
 
-const events = eventsData.events as Event[];
+export default async function EventsPage() {
+  // Fetch events from Sanity
+  const eventsFromSanity = await getAllEvents();
+  const events = eventsFromSanity.reverse() || [];
 
-export default function EventsPage() {
   return (
     <div className="min-h-screen bg-white mt-10">
       <div className="w-full max-w-[1100px] mx-auto px-4 py-8 md:py-12">
@@ -50,12 +52,14 @@ export default function EventsPage() {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
-          {events.map((event) => {
+          {events.map((event: Event) => {
+            const slug = event.slug?.current || event.slug;
+            
             if (event.status === "upcoming") {
               return (
                 <Link
-                  key={event.id}
-                  href={event.redirectTo || `/events/${event.slug}`}
+                  key={event._id}
+                  href={event.redirectTo || `/events/${slug}`}
                   className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow block cursor-pointer"
                 >
                   {/* Event Image */}
@@ -135,7 +139,7 @@ export default function EventsPage() {
             } else {
               return (
                 <div
-                  key={event.id}
+                  key={event._id}
                   className="bg-white rounded-lg shadow-sm overflow-hidden group transition-shadow block cursor-default"
                 >
                   {/* Event Image */}
