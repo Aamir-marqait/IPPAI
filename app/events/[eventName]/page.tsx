@@ -4,6 +4,7 @@ import { useParams, notFound } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { getEventBySlug } from "@/lib/sanity";
+import Link from "next/link";
 
 type EventType = {
   title: string;
@@ -114,9 +115,10 @@ export default function EventDetailPage() {
     <div className="max-w-[1100px] mx-auto pt-20 sm:pt-32 pb-10 px-2 sm:px-4 w-full">
       {/* Breadcrumb */}
       <nav className="mb-8 sm:mb-[40px] flex flex-wrap items-center text-sm">
+        <Link href="/events" className="font-inter font-semibold text-[#4B5563] hover:underline">
         <span className="font-inter font-semibold text-[#4B5563]">Events</span>
-        <span className="mx-2">{">"}</span>
-        <span className="font-inter font-semibold text-[#4B5563]">{event.breadcrumb?.category}</span>
+        </Link>
+        
         <span className="mx-2">{">"}</span>
         <span className="font-inter font-semibold text-[#757575]">{event.breadcrumb?.eventTitle}</span>
       </nav>
