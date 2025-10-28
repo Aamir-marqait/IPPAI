@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import * as LucideIcons from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 interface Feature {
   iconType: "image" | "lucide";
@@ -35,8 +36,8 @@ export default function WhyJoinEvents({ data }: WhyJoinEventsProps) {
         />
       );
     } else if (feature.iconType === "lucide" && feature.iconName) {
-      // Dynamically get the Lucide icon component
-      const IconComponent = (LucideIcons as any)[feature.iconName];
+      const IconComponent = LucideIcons[feature.iconName as keyof typeof LucideIcons] as LucideIcon;
+      
       
       if (IconComponent) {
         return <IconComponent size={56} className="text-[#D3363B]" />;
