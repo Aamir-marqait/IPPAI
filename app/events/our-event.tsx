@@ -15,6 +15,7 @@ interface Event {
   _id: string;
   title: string;
   slug: { current: string };
+  clickable?: boolean;
   description: string;
   location: string;
   date: string;
@@ -54,8 +55,10 @@ export default async function EventsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
           {events.map((event: Event) => {
             const slug = event.slug?.current || event.slug;
+            const isClickable = event.clickable !== false; // Default to true if not set
             
-            if (event.status === "upcoming") {
+            // Render clickable card
+            if (event.clickable === isClickable) {
               return (
                 <Link
                   key={event._id}
@@ -74,43 +77,31 @@ export default async function EventsPage() {
 
                     {/* Status Badge */}
                     <div className="absolute top-3 left-3">
-                      <span
-                        className={`px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none text-[#D3363B] ${
-                          event.status === "upcoming"
-                            ? "bg-orange-100"
-                            : "bg-gray-100"
-                        }`}
-                      >
+                      <span className="px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none text-[#D3363B] bg-orange-100">
                         {event.statusLabel}
                       </span>
                     </div>
 
-                    {/* White Background for Button - Only for upcoming events */}
-                    {event.status === "upcoming" && (
-                      <div
-                        className="absolute top-0 right-0  bg-white w-16 h-16"
-                        style={{
-                          borderRadius: "0px 8px 0px 50px",
-                        }}
-                      ></div>
-                    )}
+                    {/* White Background for Button */}
+                    <div
+                      className="absolute top-0 right-0 bg-white w-16 h-16"
+                      style={{ borderRadius: "0px 8px 0px 50px" }}
+                    ></div>
 
-                    {/* Arrow Button - Only for upcoming events */}
-                    {event.status === "upcoming" && (
-                      <div className="absolute top-3 right-3">
-                        <Button
-                          size="sm"
-                          className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white p-0"
-                        >
-                          <ArrowUpRight className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    )}
+                    {/* Arrow Button */}
+                    <div className="absolute top-3 right-3">
+                      <Button
+                        size="sm"
+                        className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white p-0"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Event Content */}
                   <div className="p-6">
-                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3 line-clamp-4 ">
+                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3 line-clamp-4">
                       {event.title}
                     </h3>
 
@@ -119,7 +110,7 @@ export default async function EventsPage() {
                     </p>
 
                     {/* Location */}
-                    <div className="flex items-start gap-2 mb-3 ">
+                    <div className="flex items-start gap-2 mb-3">
                       <MapPin className="h-4 w-4 text-gray-400 mt-1 flex-shrink-0" />
                       <span className="font-inter font-semibold text-sm leading-6 text-[#161C2D]/80">
                         {event.location}
@@ -136,7 +127,10 @@ export default async function EventsPage() {
                   </div>
                 </Link>
               );
-            } else {
+            } 
+            
+            // Render non-clickable card (status not upcoming OR clickable is false)
+            else {
               return (
                 <div
                   key={event._id}
@@ -168,7 +162,7 @@ export default async function EventsPage() {
 
                   {/* Event Content */}
                   <div className="p-6">
-                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3 ">
+                    <h3 className="font-red-hat-display font-semibold text-2xl leading-none text-[#243C4B] mb-3">
                       {event.title}
                     </h3>
 

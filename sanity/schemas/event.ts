@@ -22,6 +22,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'clickable',
+      title: 'Card Clickable',
+      type: 'boolean',
+      description: 'Enable/disable clicking on this event card to view details',
+      initialValue: true,
+    }),
+    defineField({
       name: 'description',
       title: 'Short Description',
       type: 'text',
@@ -393,12 +400,14 @@ export default defineType({
       date: 'date',
       media: 'image',
       status: 'status',
+      clickable: 'clickable',
     },
     prepare(selection) {
-      const { title, date, media, status } = selection
+      const { title, date, media, status, clickable } = selection
+      const clickableIcon = clickable ? '🔗' : '🔒'
       return {
         title: title,
-        subtitle: `${date} • ${status}`,
+        subtitle: `${clickableIcon} ${date} • ${status}`,
         media: media,
       }
     },

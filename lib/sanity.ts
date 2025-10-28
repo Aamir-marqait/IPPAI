@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'r4mgvxxq',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   useCdn: true, // Enable CDN for faster response
   apiVersion: '2025-01-28', // Use current date or latest API version
@@ -23,6 +23,7 @@ export const sanityQueries = {
     _id,
     title,
     slug,
+    clickable,
     description,
     location,
     date,
@@ -97,6 +98,7 @@ export const sanityQueries = {
     _id,
     title,
     slug,
+    clickable,
     description,
     location,
     date,
