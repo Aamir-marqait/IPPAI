@@ -1,3 +1,4 @@
+import ArticlesAndInsights from "@/components/homepage/Articleandinsight";
 import Banners from "@/components/homepage/banners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <HomeHero />
       <Introduction />
+      <ArticlesAndInsights />
       {/* <KnowledgeHub /> */}
       <Commitments />
       <VoicesInAction />
