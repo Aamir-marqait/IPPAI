@@ -1,3 +1,4 @@
+import Banners from "@/components/homepage/banners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
@@ -13,26 +14,13 @@ export default function Home() {
     <div>
       <HomeHero />
       <Introduction />
-      <section className="w-full flex justify-center py-8 px-4 md:px-6 lg:px-8 md:-mt-24">
-        <div className="w-full max-w-[1200px] relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src="/optimized/main.webp"
-            alt="Energy Infrastructure"
-            fill
-            className="object-cover"
-            loading="lazy"
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
-          />
-        </div>
-      </section>
-
       <KnowledgeHub />
       <Commitments />
       <VoicesInAction />
       <WhatWeDo />
       <Testimonials />
       <LeadershipSection />
+      <Banners />
     </div>
   );
 }
