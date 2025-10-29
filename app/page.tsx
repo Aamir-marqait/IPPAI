@@ -1,11 +1,6 @@
-// import PartnersCarousel from "@/components/homepage/association-partners";
-// import CompanyCarousel from "@/components/homepage/collab";
-
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
-// import Contributors from "@/components/homepage/key-contribution";
 import KnowledgeHub from "@/components/homepage/knowledge-hub";
-// import { LatestVideos } from "@/components/homepage/latest-videos";
 import LeadershipSection from "@/components/homepage/LeadershipSection";
 import Commitments from "@/components/homepage/our-commitments";
 import Testimonials from "@/components/homepage/testimonials";
@@ -17,7 +12,6 @@ export default function Home() {
   return (
     <div>
       <HomeHero />
-      {/* <PartnersCarousel /> */}
       <Introduction />
       <section className="w-full flex justify-center py-8 px-4 md:px-6 lg:px-8 md:-mt-24">
         <div className="w-full max-w-[1200px] relative aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden shadow-lg">
@@ -35,13 +29,10 @@ export default function Home() {
 
       <KnowledgeHub />
       <Commitments />
-      {/* <LatestVideos /> */}
       <VoicesInAction />
       <WhatWeDo />
       <Testimonials />
-      {/* <Contributors /> */}
       <LeadershipSection />
-      {/* <CompanyCarousel /> */}
     </div>
   );
 }
