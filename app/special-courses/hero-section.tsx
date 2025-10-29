@@ -32,8 +32,8 @@ export default function SpecialCoursesHero() {
             Policy & Research in Infrastructure
           </h1>
           <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
-            Building Capacity, Sharing Knowledge, and Empowering India's Power
-            Sector
+            Building Capacity, Sharing Knowledge, and Empowering India&apos;s
+            Power Sector
           </div>
 
           <div className="text-white font-poppins font-normal xl:text-[14px] xl:leading-[27px] xl:tracking-[0.32px] mb-5 text-base">
