@@ -14,9 +14,11 @@ export default function Header() {
   const [mediaCenterDropdown, setMediaCenterDropdown] = useState(false);
   const [resourcesDropdownMain, setResourcesDropdownMain] = useState(false);
   const [mediaCenterDropdownMain, setMediaCenterDropdownMain] = useState(false);
+  const [irpriDropdownMain, setIrpriDropdownMain] = useState(false);
   const [resourcesDropdownMobile, setResourcesDropdownMobile] = useState(false);
   const [mediaCenterDropdownMobile, setMediaCenterDropdownMobile] =
     useState(false);
+  const [irpriDropdownMobile, setIrpriDropdownMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -77,13 +79,36 @@ export default function Header() {
                 EVENTS
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
               </Link>
-              <Link
-                href="/courses"
-                className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              <div
+                className="relative"
+                onMouseEnter={() => setResourcesDropdown(true)}
+                onMouseLeave={() => setResourcesDropdown(false)}
               >
-                IRPRI
-                <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
-              </Link>
+                <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
+                  IRPRI
+                  <ChevronDown className="w-4 h-4" />
+                  <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
+                </button>
+
+                {/* IRPRI Dropdown */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50 opacity-0 pointer-events-none">
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+                  <div className="py-2">
+                    <Link
+                      href="/courses"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Course
+                    </Link>
+                    <Link
+                      href="/special-courses"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Special Course
+                    </Link>
+                  </div>
+                </div>
+              </div>
               <div
                 className="relative"
                 onMouseEnter={() => setResourcesDropdown(true)}
@@ -299,23 +324,64 @@ export default function Header() {
                 } origin-center`}
               ></div>
             </Link>
-            <Link
-              href="/courses"
-              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
-                isEventDetailPage
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-red-500"
-              }`}
+            <div
+              className="relative"
+              onMouseEnter={() => setIrpriDropdownMain(true)}
+              onMouseLeave={() => setIrpriDropdownMain(false)}
             >
-              IRPRI
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/courses"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
+              <button
+                className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group flex items-center gap-1 ${
+                  isEventDetailPage
+                    ? "text-black hover:text-gray-600"
+                    : "text-white hover:text-red-500"
+                }`}
+              >
+                IRPRI
+                <ChevronDown className="w-4 h-4" />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/courses" ||
+                    pathname === "/special-courses" ||
+                    pathname?.startsWith("/courses/") ||
+                    irpriDropdownMain
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+
+              {/* Invisible bridge for smooth hover */}
+              {irpriDropdownMain && (
+                <div className="absolute top-full left-0 right-0 h-4 bg-transparent"></div>
+              )}
+
+              {/* IRPRI Dropdown Main */}
+              {irpriDropdownMain && (
+                <div
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
+                  onMouseEnter={() => setIrpriDropdownMain(true)}
+                  onMouseLeave={() => setIrpriDropdownMain(false)}
+                >
+                  {/* Arrow */}
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+
+                  <div className="py-2">
+                    <Link
+                      href="/courses"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Course
+                    </Link>
+                    <Link
+                      href="/special-courses"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    >
+                      Special Course
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
             <div
               className="relative"
               onMouseEnter={() => setResourcesDropdownMain(true)}
@@ -534,20 +600,50 @@ export default function Header() {
                 } origin-center`}
               ></div>
             </Link>
-            <Link
-              href="/courses"
-              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
-              onClick={toggleMenu}
-            >
-              IRPRI
-              <div
-                className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
-                  pathname === "/courses"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                } origin-center`}
-              ></div>
-            </Link>
+            {/* IRPRI Dropdown - Mobile */}
+            <div className="flex flex-col items-center">
+              <button
+                className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
+                onClick={() =>
+                  setIrpriDropdownMobile(!irpriDropdownMobile)
+                }
+              >
+                IRPRI
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    irpriDropdownMobile ? "rotate-180" : ""
+                  }`}
+                />
+                <div
+                  className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
+                    pathname === "/courses" ||
+                    pathname === "/special-courses" ||
+                    pathname?.startsWith("/courses/") ||
+                    irpriDropdownMobile
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  } origin-center`}
+                ></div>
+              </button>
+              {irpriDropdownMobile && (
+                <div className="flex flex-col mt-3 space-y-3 items-center">
+                  <Link
+                    href="/courses"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Course
+                  </Link>
+                  <Link
+                    href="/special-courses"
+                    className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Special Course
+                  </Link>
+                </div>
+              )}
+            </div>
             {/* Resources Dropdown - Mobile */}
             <div className="flex flex-col items-center">
               <button
