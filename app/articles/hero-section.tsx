@@ -1,12 +1,18 @@
 import Image from "next/image";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  title: string;
+  subtitle?: string;
+  backgroundImage: string;
+}
+
+export default function HeroSection({ title, subtitle, backgroundImage }: HeroSectionProps) {
   return (
     <div className="relative">
       <div
         className="absolute inset-0 w-screen bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/article/hero.png')",
+          backgroundImage: `url(${backgroundImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/10"></div>
@@ -14,10 +20,10 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 pt-20">
-        <main className="flex max-w-[1100px]  min-h-80 mx-auto flex-col items-center justify-center   text-center">
+        <main className="flex max-w-[1100px] min-h-80 mx-auto flex-col items-center justify-center text-center">
           <div className="w-full">
             <h1 className="text-2xl max-w-[500px] mx-auto sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] 2xl:text-7xl font-bold font-red-hat-display text-white mb-2 leading-[150%]">
-              Articles
+              {title}
             </h1>
             <Image
               src="/home/line.png"
@@ -26,6 +32,11 @@ export default function HeroSection() {
               height={4}
               className="mx-auto mb-6"
             />
+            {subtitle && (
+              <p className="text-white text-lg md:text-xl font-poppins max-w-2xl mx-auto">
+                {subtitle}
+              </p>
+            )}
           </div>
         </main>
       </div>
