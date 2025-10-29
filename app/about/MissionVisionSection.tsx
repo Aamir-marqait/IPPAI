@@ -21,7 +21,7 @@ const items = [
 export default function MissionVisionSection() {
   return (
     <section className="bg-white max-w-[1100px] mx-auto  py-10 flex flex-col items-center">
-      <div className="w-full flex flex-col md:flex-row  justify-center items-center max-w-4xl">
+      <div className="w-full flex flex-col md:flex-row gap-5 md:gap-0  justify-center items-center max-w-4xl">
         {/* Left Image */}
         <div className="flex-1 flex justify-center items-center">
           <Image
@@ -36,7 +36,7 @@ export default function MissionVisionSection() {
           />
         </div>
         {/* Mission & Vision */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 px-4 md:px-0 flex flex-col gap-6">
           {items.map((item, idx) => (
             <div
               key={idx}
