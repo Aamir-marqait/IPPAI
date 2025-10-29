@@ -29,6 +29,7 @@ type EventType = {
     items?: string[];
   };
   conclusion?: string;
+  gallery?: { url: string; alt?: string; caption?: string }[];
 };
 
 export default function EventDetailPage() {
@@ -116,9 +117,8 @@ export default function EventDetailPage() {
       {/* Breadcrumb */}
       <nav className="mb-8 sm:mb-[40px] flex flex-wrap items-center text-sm">
         <Link href="/events" className="font-inter font-semibold text-[#4B5563] hover:underline">
-        <span className="font-inter font-semibold text-[#4B5563]">Events</span>
+          <span className="font-inter font-semibold text-[#4B5563]">Events</span>
         </Link>
-        
         <span className="mx-2">{">"}</span>
         <span className="font-inter font-semibold text-[#757575]">{event.breadcrumb?.eventTitle}</span>
       </nav>
@@ -145,6 +145,7 @@ export default function EventDetailPage() {
           <h1 className="font-red-hat-display font-bold text-2xl sm:text-3xl md:text-[32px] leading-[140%] text-[#141414] m-0">
             {event.title}
           </h1>
+          
           {/* Date and Time */}
           <div className="mt-6 sm:mt-[22px] font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414]">Date and Time</div>
           <div className="flex items-center text-base sm:text-[16px] text-[#333931] font-normal leading-[24px] mt-2 mb-3 sm:mb-[14px]">
@@ -154,6 +155,7 @@ export default function EventDetailPage() {
             </svg>
             {event.dateTime}
           </div>
+          
           {/* Location */}
           <div className="font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414] mt-6 sm:mt-8">Location</div>
           <div className="flex items-center text-base sm:text-[16px] text-[#333931] font-normal leading-[24px] mt-2 mb-4 sm:mb-5">
@@ -163,6 +165,7 @@ export default function EventDetailPage() {
             </svg>
             {event.location}
           </div>
+          
           {/* About Event */}
           <div className="font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414] mb-3 sm:mb-4 mt-6 sm:mt-8">
             About This Event
@@ -202,6 +205,7 @@ export default function EventDetailPage() {
               </div>
             ))}
           </div>
+          
           {/* Highlights */}
           {event.highlights && (
             <>
@@ -215,6 +219,7 @@ export default function EventDetailPage() {
               </ul>
             </>
           )}
+          
           {/* Prizes - Only show if prizes field exists */}
           {event.prizes && (
             <>
@@ -236,14 +241,17 @@ export default function EventDetailPage() {
               </div>
             </>
           )}
+          
           <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mt-4 sm:mt-[18px]">
             {event.conclusion}
           </div>
+
+          {/* Photo Gallery Section */}
+         
         </div>
+
         {/* Right: Form */}
-        <div
-          className="w-full max-w-full sm:max-w-[450px] lg:max-w-[450px] min-w-0 bg-[#F7F7F7] rounded-[10px] p-5 sm:p-6 shadow-[0px_0.5px_5.5px_0px_#0000000A] lg:ml-[52px] h-fit"
-        >
+        <div className="w-full max-w-full sm:max-w-[450px] lg:max-w-[450px] min-w-0 bg-[#F7F7F7] rounded-[10px] p-5 sm:p-6 shadow-[0px_0.5px_5.5px_0px_#0000000A] lg:ml-[52px] h-fit">
           <div className="font-red-hat-display font-bold text-lg sm:text-[24px] leading-[44px] text-[#1F2937] mb-4 sm:mb-[18px]">
             Inquire about this event
           </div>
@@ -334,6 +342,34 @@ export default function EventDetailPage() {
           </form>
         </div>
       </div>
+       {event.gallery && event.gallery.length > 0 && (
+            <div className="mt-8 sm:mt-12">
+              <h2 className="font-red-hat-display font-bold text-center text-xl sm:text-2xl leading-[100%] text-[#141414] mb-6">
+                Photo Gallery
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {event.gallery.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 hover:opacity-90 transition-opacity cursor-pointer"
+                  >
+                    <Image
+                      src={image.url}
+                      alt={image.alt || `Event gallery image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    />
+                    {image.caption && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2">
+                        {image.caption}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
     </div>
   );
 }

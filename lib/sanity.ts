@@ -90,7 +90,12 @@ export const sanityQueries = {
       email,
       phone
     },
-    conclusion
+    conclusion,
+    gallery[] {
+      "url": asset->url,
+      alt,
+      caption
+    }
   }`,
 
   // Get single event by slug
@@ -165,7 +170,12 @@ export const sanityQueries = {
       email,
       phone
     },
-    conclusion
+    conclusion,
+    gallery[] {
+      "url": asset->url,
+      alt,
+      caption
+    }
   }`,
 
   // Get hero section data
