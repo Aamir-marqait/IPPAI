@@ -80,16 +80,16 @@ export default function Introduction() {
                 />
               </div>
               <div className="pt-[16px]">
-                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                <div className="bg-white flex flex-col gap-5 rounded-2xl p-4 shadow-sm">
                   <div className="flex items-center gap-2 mb-3">
                     <CalendarCheck className="w-5 h-5 text-[#d43838]" />
                     <span className="font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       {currentEvent?.date}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="line-clamp-1 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                    <span className="max-w-60 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       {currentEvent?.location}
                     </span>
                   </div>
@@ -193,24 +193,25 @@ export default function Introduction() {
             <div className="bg-[#F5F5F5] p-2 rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] min-h-[516px]">
               <div className="relative w-full h-[240px]">
                 <Image
-                  src={currentCourse?.img || "/c/101.png"}
+                  src={currentCourse?.img}
                   alt={currentCourse?.title || "Course"}
                   fill
                   className="object-cover rounded-[24px]"
                 />
               </div>
               <div className="pt-[16px]">
-                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                <div className="bg-white flex flex-col gap-5 rounded-2xl p-4 shadow-sm">
                   <div className="flex items-center gap-2 mb-3">
                     <CalendarCheck className="w-5 h-5 text-[#d43838]" />
                     <span className="font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       29th - 31st October, 2025
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="line-clamp-1 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
-                      Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka
+                    <span className="max-w-60 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                      Bangalore International Centre (BIC), 4th Main Rd, 2
+                      Stage, Domlur, Bengaluru, Karnataka
                     </span>
                   </div>
                   <Link href={`/courses/${currentCourse?.slug}`}>
@@ -218,7 +219,7 @@ export default function Introduction() {
                       className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
                       style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
                     >
-                      Learn More
+                      Register Now
                     </Button>
                   </Link>
                 </div>
