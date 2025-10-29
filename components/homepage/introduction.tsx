@@ -70,7 +70,7 @@ export default function Introduction() {
             <div className="text-[#555] mb-[18px] line-clamp-1">
               {currentEvent?.description}
             </div>
-            <div className="bg-[#F5F5F5] p-2  rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] min-h-[516px]">
+            <div className="bg-[#F5F5F5] p-2  rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] ">
               <div className="relative w-full h-[240px]">
                 <Image
                   src={currentEvent?.image || "/event/bg.png"}
@@ -89,7 +89,7 @@ export default function Introduction() {
                   </div>
                   <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="max-w-60 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                    <span className="max-w-60 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       {currentEvent?.location}
                     </span>
                   </div>
@@ -114,7 +114,7 @@ export default function Introduction() {
                       (prev - 1 + upcomingEvents.length) % upcomingEvents.length
                   )
                 }
-                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors cursor-pointer"
                 aria-label="Previous event"
               >
                 <svg
@@ -154,7 +154,7 @@ export default function Introduction() {
                     (prev) => (prev + 1) % upcomingEvents.length
                   )
                 }
-                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors cursor-pointer"
                 aria-label="Next event"
               >
                 <svg
@@ -190,7 +190,7 @@ export default function Introduction() {
             <div className="text-[#555] mb-[18px] line-clamp-1">
               {currentCourse?.description}
             </div>
-            <div className="bg-[#F5F5F5] p-2 rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] min-h-[516px]">
+            <div className="bg-[#F5F5F5] p-2 rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px]">
               <div className="relative w-full h-[240px]">
                 <Image
                   src={currentCourse?.img}
@@ -209,7 +209,7 @@ export default function Introduction() {
                   </div>
                   <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="max-w-60 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                    <span className="max-w-60 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       Bangalore International Centre (BIC), 4th Main Rd, 2
                       Stage, Domlur, Bengaluru, Karnataka
                     </span>
@@ -234,7 +234,7 @@ export default function Introduction() {
                     (prev) => (prev - 1 + courses.length) % courses.length
                   )
                 }
-                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors cursor-pointer"
                 aria-label="Previous course"
               >
                 <svg

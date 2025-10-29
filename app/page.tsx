@@ -1,7 +1,7 @@
 import Banners from "@/components/homepage/banners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";
-import KnowledgeHub from "@/components/homepage/knowledge-hub";
+// import KnowledgeHub from "@/components/homepage/knowledge-hub";
 import LeadershipSection from "@/components/homepage/LeadershipSection";
 import Commitments from "@/components/homepage/our-commitments";
 import Testimonials from "@/components/homepage/testimonials";
@@ -13,7 +13,7 @@ export default function Home() {
     <div>
       <HomeHero />
       <Introduction />
-      <KnowledgeHub />
+      {/* <KnowledgeHub /> */}
       <Commitments />
       <VoicesInAction />
       <WhatWeDo />
