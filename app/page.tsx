@@ -7,7 +7,6 @@ import Commitments from "@/components/homepage/our-commitments";
 import Testimonials from "@/components/homepage/testimonials";
 import { VoicesInAction } from "@/components/homepage/voice";
 import WhatWeDo from "@/components/homepage/what-we-do";
-import Image from "next/image";
 
 export default function Home() {
   return (
