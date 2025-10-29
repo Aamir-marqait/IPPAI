@@ -1,7 +1,33 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { CalendarCheck, MapPin } from "lucide-react";
+import eventsData from "@/data/events.json";
+import coursesData from "@/data/courses.json";
 
 export default function Introduction() {
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
+
+  // Get upcoming events only
+  const upcomingEvents = eventsData.events.filter(
+    (event) => event.status === "upcoming"
+  );
+  const courses = coursesData.courses;
+
+  // Auto-slide for events every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % upcomingEvents.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [upcomingEvents.length]);
+
+  const currentEvent = upcomingEvents[currentEventIndex];
+  const currentCourse = courses[currentCourseIndex];
+
   return (
     <div className="w-screen min-h-screen bg-white">
       <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-[5.5rem]">
@@ -15,7 +41,7 @@ export default function Introduction() {
             of India
           </h1>
           <p className="text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-none text-center text-[#141414]/60 max-w-6xl mx-auto">
-            IPPAI was set up as a not-for-profit association shortly after the
+            IPPAI was set up as a not-for-pro­fit association shortly after the
             Government of India opened the power sector to private industry.
             Since its inception as an independent body in 1994, IPPAI&apos;s aim
             has been to provide a neutral platform for the examination of issues
@@ -26,113 +52,244 @@ export default function Introduction() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-          {/* Examine Card */}
-          <div className="group relative">
-            <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
-              style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
-              }}
-            >
-              <div className="w-full h-36 relative mb-2">
+        <div className="flex gap-10 max-w-[1000px] mx-auto justify-center items-start flex-wrap">
+          {/* Left Card - Latest Events */}
+          <div className="flex-1 min-w-[340px]">
+            <div className="flex items-center gap-3 mb-7">
+              <span
+                className="h-4 w-[4px] rounded-full bg-[#D3363B]"
+                aria-hidden="true"
+              />
+              <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
+                Latest Events
+              </span>
+            </div>
+            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3">
+              {currentEvent?.title}
+            </div>
+            <div className="text-[#555] mb-[18px] line-clamp-1">
+              {currentEvent?.description}
+            </div>
+            <div className="bg-[#F5F5F5] p-2  rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] min-h-[516px]">
+              <div className="relative w-full h-[240px]">
                 <Image
-                  src="/optimized/intro1.webp"
-                  alt="Two businessmen examining documents in a professional meeting"
+                  src={currentEvent?.image || "/event/bg.png"}
+                  alt={currentEvent?.title || "Event"}
                   fill
-                  className="object-contain"
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
+                  className="object-cover rounded-[24px]"
                 />
               </div>
-              <h2 className="text-base sm:text-lg md:text-xl xl:text-2xl font-bold font-red-hat-display leading-none text-[#141414] mb-3">
-                Examine
-              </h2>
-              <p className="text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins leading-[1.4] text-[#141414]/60 line-clamp-3 group-hover:line-clamp-none">
-                IPPAI is able to take up pioneering positions on issues that the
-                industry grapples with and seek solutions to the same. This
-                enables it to provide cutting-edge inputs to policymakers and
-                regulators in the formative stage of policy and regulatory
-                development.
-              </p>
+              <div className="pt-[16px]">
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CalendarCheck className="w-5 h-5 text-[#d43838]" />
+                    <span className="font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                      {currentEvent?.date}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-[#d43838]" />
+                    <span className="line-clamp-1 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                      {currentEvent?.location}
+                    </span>
+                  </div>
+                  <Link href={currentEvent?.registrationLink || "/contact"}>
+                    <Button
+                      className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
+                      style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
+                    >
+                      Register Now
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Carousel dots and arrows */}
+            <div className="flex items-center justify-center gap-4 mt-3">
+              {/* Left Arrow */}
+              <button
+                onClick={() =>
+                  setCurrentEventIndex(
+                    (prev) =>
+                      (prev - 1 + upcomingEvents.length) % upcomingEvents.length
+                  )
+                }
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                aria-label="Previous event"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              {/* Dots */}
+              <div className="flex items-center">
+                {upcomingEvents.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentEventIndex(index)}
+                    className={`inline-block h-1 rounded-sm mx-[5px] transition-all ${
+                      index === currentEventIndex
+                        ? "w-[22px] bg-[#d43838]"
+                        : "w-[10px] border border-[#d43838] bg-transparent"
+                    }`}
+                    aria-label={`Go to event ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() =>
+                  setCurrentEventIndex(
+                    (prev) => (prev + 1) % upcomingEvents.length
+                  )
+                }
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                aria-label="Next event"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
             </div>
           </div>
 
-          {/* Engage Card */}
-          <div className="group relative">
-            <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
-              style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
-              }}
-            >
-              <div className="w-full h-36 relative mb-2">
+          {/* Right Card - Our Courses */}
+          <div className="flex-1 min-w-[340px] relative">
+            <div className="flex items-center gap-3 mb-7">
+              <span
+                className="h-4 w-[4px] rounded-full bg-[#D3363B]"
+                aria-hidden="true"
+              />
+              <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
+                OUR COURSES
+              </span>
+            </div>
+            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3 line-clamp-2">
+              {currentCourse?.title}
+            </div>
+            <div className="text-[#555] mb-[18px] line-clamp-1">
+              {currentCourse?.description}
+            </div>
+            <div className="bg-[#F5F5F5] p-2 rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px] min-h-[516px]">
+              <div className="relative w-full h-[240px]">
                 <Image
-                  src="/optimized/intro2.webp"
-                  alt="Business team engaged in a presentation meeting"
+                  src={currentCourse?.img || "/c/101.png"}
+                  alt={currentCourse?.title || "Course"}
                   fill
-                  className="object-contain"
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
+                  className="object-cover rounded-[24px]"
                 />
               </div>
-              <h2 className="text-base sm:text-lg md:text-xl xl:text-2xl font-bold font-red-hat-display leading-none text-[#141414] mb-3">
-                Engage
-              </h2>
-              <p className="text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins leading-[1.4] text-[#141414]/60 line-clamp-3 group-hover:line-clamp-none">
-                IPPAI provides an engaging interface between players in the
-                energy sector, policymakers (central and state level),
-                electricity boards, financial institutions, ministries, power
-                developers, Indian and multinational companies, equipment
-                suppliers, EPC contractors and consultants.
-              </p>
+              <div className="pt-[16px]">
+                <div className="bg-white rounded-2xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CalendarCheck className="w-5 h-5 text-[#d43838]" />
+                    <span className="font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                      29th - 31st October, 2025
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-[#d43838]" />
+                    <span className="line-clamp-1 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                      Bangalore International Centre (BIC), 4th Main Rd, 2 Stage, Domlur, Bengaluru, Karnataka
+                    </span>
+                  </div>
+                  <Link href={`/courses/${currentCourse?.slug}`}>
+                    <Button
+                      className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
+                      style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
+            {/* Carousel dots and arrows */}
+            <div className="flex items-center justify-center gap-4 mt-3">
+              {/* Left Arrow */}
+              <button
+                onClick={() =>
+                  setCurrentCourseIndex(
+                    (prev) => (prev - 1 + courses.length) % courses.length
+                  )
+                }
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                aria-label="Previous course"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
 
-          {/* Empower Card */}
-          <div className="group relative">
-            <div
-              className="bg-white rounded-[20px] pb-6 px-[15px] transition-all duration-300 cursor-pointer hover:border-2 hover:border-[#D3363B]"
-              style={{ boxShadow: "0px 6px 25px 0px #A3A3A340" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0px 4px 24px 0px #D3363B40";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0px 6px 25px 0px #A3A3A340";
-              }}
-            >
-              <div className="w-full h-36 relative mb-2">
-                <Image
-                  src="/optimized/intro3.webp"
-                  alt="Silhouettes of people celebrating with raised arms against sunset"
-                  fill
-                  className="object-contain"
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8A0NbfH2oo2+PlHZ7L93eMuUgPCDkMB74P/9k="
-                />
+              {/* Dots */}
+              <div className="flex items-center">
+                {courses.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCourseIndex(index)}
+                    className={`inline-block h-1 rounded-sm mx-[5px] transition-all ${
+                      index === currentCourseIndex
+                        ? "w-[22px] bg-[#d43838]"
+                        : "w-[10px] border border-[#d43838] bg-transparent"
+                    }`}
+                    aria-label={`Go to course ${index + 1}`}
+                  />
+                ))}
               </div>
-              <h2 className="text-base sm:text-lg md:text-xl xl:text-2xl font-bold font-red-hat-display leading-none text-[#141414] mb-3">
-                Empower
-              </h2>
-              <p className="text-xs sm:text-sm md:text-base xl:text-base font-light font-poppins leading-[1.4] text-[#141414]/60 line-clamp-3 group-hover:line-clamp-none">
-                IPPAI&apos;s neutral disposition enables it to interact with
-                regulators from a position of strength and provide cutting-edge
-                inputs to them on a continuing basis. This empowers both the
-                regulator and the industry to work together for the greater good
-                of the power sector.
-              </p>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() =>
+                  setCurrentCourseIndex((prev) => (prev + 1) % courses.length)
+                }
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                aria-label="Next course"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
             </div>
+            {/* Decorative vertical line in the center */}
+            <div className="absolute left-[-20px] top-0 h-full w-1 bg-gradient-to-b from-[#e7d6d6] from-80% to-[#d43838] to-100% rounded-sm" />
           </div>
         </div>
       </div>
