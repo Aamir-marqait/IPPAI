@@ -10,7 +10,7 @@ export default function HeroSection() {
       }}
     >
       {/* Content */}
-      <div className="relative z-10 pt-16 sm:pt-20 md:pt-28">
+      <div className="relative z-10 pt-16 sm:pt-20 md:pt-25">
         <main className="flex max-w-screen-xl md:max-w-[1100px] mx-auto flex-col items-start justify-center mt-6 sm:mt-10 px-4 sm:px-6 md:px-8">
           <div className="w-full">
             <div className="text-center mb-8 sm:mb-12">
