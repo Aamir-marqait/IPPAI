@@ -3,6 +3,9 @@ import SpecialCoursesHero from "./hero-section";
 import FocusAreas from "./FocusAreas";
 import PastSpecialCourses from "./PastSpecialCourses";
 import AboutWorkshop from "./AboutWorkshop";
+import KeyTopicsCovered from "./KeyTopicsCovered";
+import CampusGallery from "./our-gallery";
+import RegisterNowSection from "../courses/RegisterNowSection";
 
 function page() {
   return (
@@ -10,7 +13,10 @@ function page() {
       <SpecialCoursesHero />
       <FocusAreas />
       <PastSpecialCourses />
-      <AboutWorkshop/>
+      <AboutWorkshop />
+      <KeyTopicsCovered />
+      <CampusGallery />
+      <RegisterNowSection />
     </div>
   );
 }
