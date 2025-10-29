@@ -5,8 +5,8 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'r4mgvxxq',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
-  useCdn: true, // Enable CDN for faster response
-  apiVersion: '2025-01-28', // Use current date or latest API version
+  useCdn: true, // Keep CDN enabled for fast global delivery
+  apiVersion: '2025-01-28',
 })
 
 // Helper function to generate image URLs from Sanity images
@@ -223,23 +223,68 @@ export const sanityQueries = {
   }`,
 }
 
-// Export fetch functions
+// Export fetch functions with Next.js cache options
 export async function getAllEvents() {
-  return await client.fetch(sanityQueries.getAllEvents)
+  return await client.fetch(
+    sanityQueries.getAllEvents,
+    {},
+    {
+      next: { 
+        tags: ['events'], // Tag for revalidation
+        revalidate: 60 // Fallback: revalidate every 60 seconds
+      }
+    }
+  )
 }
 
 export async function getEventBySlug(slug: string) {
-  return await client.fetch(sanityQueries.getEventBySlug(slug))
+  return await client.fetch(
+    sanityQueries.getEventBySlug(slug),
+    {},
+    {
+      next: { 
+        tags: [`event-${slug}`], // Tag for specific event revalidation
+        revalidate: 60 // Fallback: revalidate every 60 seconds
+      }
+    }
+  )
 }
 
 export async function getHeroSection() {
-  return await client.fetch(sanityQueries.getHeroSection)
+  return await client.fetch(
+    sanityQueries.getHeroSection,
+    {},
+    {
+      next: { 
+        tags: ['hero'],
+        revalidate: 300 // Revalidate every 5 minutes
+      }
+    }
+  )
 }
 
 export async function getWhyJoinEvents() {
-  return await client.fetch(sanityQueries.getWhyJoinEvents)
+  return await client.fetch(
+    sanityQueries.getWhyJoinEvents,
+    {},
+    {
+      next: { 
+        tags: ['why-join'],
+        revalidate: 300
+      }
+    }
+  )
 }
 
 export async function getGalleryImages() {
-  return await client.fetch(sanityQueries.getGalleryImages)
+  return await client.fetch(
+    sanityQueries.getGalleryImages,
+    {},
+    {
+      next: { 
+        tags: ['gallery'],
+        revalidate: 300
+      }
+    }
+  )
 }
