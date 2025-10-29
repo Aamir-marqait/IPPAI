@@ -272,7 +272,7 @@ export default function Introduction() {
                 onClick={() =>
                   setCurrentCourseIndex((prev) => (prev + 1) % courses.length)
                 }
-                className="text-[#d43838] hover:text-[#b82e2e] transition-colors"
+                className="text-[#d43838] hover:text-[#b82e2e] transition-colors cursor-pointer"
                 aria-label="Next course"
               >
                 <svg
@@ -289,8 +289,17 @@ export default function Introduction() {
                 </svg>
               </button>
             </div>
-            {/* Decorative vertical line in the center */}
-            <div className="absolute left-[-20px] top-0 h-full w-1 bg-gradient-to-b from-[#e7d6d6] from-80% to-[#d43838] to-100% rounded-sm" />
+
+            <div className="absolute left-[-20px] top-0 h-full flex items-center">
+              <Image
+                src="/optimized/line-main.webp"
+                alt="Divider"
+                width={6}
+                height={200}
+                className="w-[6px] min-h-[240px]"
+                style={{ minHeight: "730px", maxHeight: "420px" }}
+              />
+            </div>
           </div>
         </div>
       </div>

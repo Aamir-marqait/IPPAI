@@ -7,7 +7,7 @@ export default function Banners() {
       <div className="w-full max-w-[1100px] mx-auto flex flex-col items-center">
         <section className="w-full flex justify-center py-8 px-4">
           <div
-            className="relative w-full max-w-[753px]  border-12  h-[416px] bg-white rounded-[71px] overflow-hidden p-4"
+            className="relative w-full max-w-[753px]  border-12 border-white h-[416px] bg-white rounded-[71px] overflow-hidden p-4"
             style={{ boxShadow: "0px 12px 40px 0px #00000029" }}
           >
             <Image
