@@ -21,8 +21,8 @@ const cards = [
 
 export default function FocusAreas() {
   return (
-    <section className="w-full bg-white py-8 flex justify-center items-center">
-      <div className="flex flex-col md:flex-row justify-center gap-6 w-full max-w-6xl px-2">
+    <section className="w-full bg-white py-8 flex justify-center items-center max-w-[1100px] mx-auto">
+      <div className="flex flex-col md:flex-row justify-center gap-6 w-full">
         {cards.map((card, idx) => (
           <div
             key={idx}
@@ -41,7 +41,9 @@ export default function FocusAreas() {
                 <div className="w-8 h-8" />
               )}
             </div>
-            <div className="font-work-sans font-normal text-[28px] leading-[100%] tracking-[0%] text-black">{card.title}</div>
+            <div className="font-work-sans font-normal text-[28px] leading-[100%] tracking-[0%] text-black">
+              {card.title}
+            </div>
           </div>
         ))}
       </div>
