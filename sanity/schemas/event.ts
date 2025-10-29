@@ -393,6 +393,34 @@ export default defineType({
       type: 'text',
       rows: 3,
     }),
+    defineField({
+      name: 'gallery',
+      title: 'Photo Gallery',
+      type: 'array',
+      description: 'Upload images for this event gallery (recommended: 6-12 images)',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text',
+              description: 'Important for SEO and accessibility',
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+              description: 'Optional caption for the image',
+            },
+          ],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {

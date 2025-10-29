@@ -274,7 +274,7 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
               size="sm"
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 hover:cursor-pointer"
             >
               <ChevronLeft className="h-4 w-4" />
               Previous
@@ -311,8 +311,8 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
                     onClick={() => goToPage(page)}
                     className={`min-w-[40px] ${
                       currentPage === page 
-                        ? "bg-[#D3363B] hover:bg-[#B8303A] text-white" 
-                        : ""
+                        ? "bg-[#D3363B] hover:bg-[#B8303A] text-white hover:cursor-pointer" 
+                        : "hover:cursor-pointer"
                     }`}
                   >
                     {page}
@@ -327,7 +327,7 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
               size="sm"
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 hover:cursor-pointer"
             >
               Next
               <ChevronRight className="h-4 w-4" />
