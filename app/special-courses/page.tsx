@@ -6,6 +6,7 @@ import AboutWorkshop from "./AboutWorkshop";
 import KeyTopicsCovered from "./KeyTopicsCovered";
 import CampusGallery from "./our-gallery";
 import RegisterNowSection from "../courses/RegisterNowSection";
+import FacultyMembers from "./FacultyMembers";
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
       <PastSpecialCourses />
       <AboutWorkshop />
       <KeyTopicsCovered />
+      <FacultyMembers />
       <CampusGallery />
       <RegisterNowSection />
     </div>

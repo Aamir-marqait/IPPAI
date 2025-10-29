@@ -65,20 +65,13 @@ export default function CampusGallery() {
     <section className="w-full py-10 sm:py-14 px-2 sm:px-4 bg-gray-50">
       <div className="mx-auto max-w-[1100px]">
         {/* Header Section */}
-        <div className="mb-8 sm:mb-12">
-          <div className="flex flex-row items-center gap-2 mb-4">
-            <div className="w-[5px] h-[24px] bg-[#D3363B] opacity-100"></div>
-            <span className="font-red-hat-display font-bold xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-[#D3363B] uppercase">
-              OUR GALLERY
-            </span>
-          </div>
-          <h2 className="font-red-hat-display font-bold text-xl sm:text-[36px] leading-none text-[#141414] mb-4 sm:mb-6">
-            IRPRI Batch 1
+        <div className="mb-3 text-center">
+          <span className="font-red-hat-display font-bold text-base leading-none text-center uppercase text-[#D3363B]">
+            Workshop
+          </span>
+          <h2 className="font-red-hat-display font-bold text-4xl leading-none text-center text-[#141414] mb-7 mt-4">
+            Our Workshop Moments
           </h2>
-          <p className="font-poppins font-normal text-sm sm:text-base leading-[24px] sm:leading-[28px] text-gray-600 max-w-2xl">
-            Unique confluences of stalwarts from government, industry and civil
-            society engaging and deliberating for a brighter future.
-          </p>
         </div>
 
         {/* Responsive Grid for mobile/tablet, custom grid for desktop */}
