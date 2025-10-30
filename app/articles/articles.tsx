@@ -346,23 +346,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { JoinUsModal } from "@/components/JoinMembershipModal";
+import type { Article } from "./types/article";
 
-interface Article {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  summary: string;
-  image: string;
-  pdfFile: string;
-  categories?: string[];
-  customCategories?: string[];
-  author: {
-    name: string;
-    avatar: string;
-  };
-  publishedAt: string;
-  featured?: boolean;
-}
+
+
 
 interface ArticlesClientProps {
   articles: Article[];
@@ -429,14 +416,16 @@ export default function ArticlesClient({ articles }: ArticlesClientProps) {
   });
 
   // Format date for display
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
-  };
+const formatDate = (dateString?: string) => {
+  if (!dateString) return ""; // gracefully handle undefined
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
+
 
   return (
     <section className="w-full py-10 sm:py-14 px-2 sm:px-6 bg-white" onClick={handleClickOutside}>
@@ -548,7 +537,7 @@ export default function ArticlesClient({ articles }: ArticlesClientProps) {
                   setSelectedArticle({
                     ...article,
                     date: formatDate(article.publishedAt),
-                  } as any);
+                  });
                   setIsModalOpen(true);
                 }}
               >
@@ -648,7 +637,7 @@ export default function ArticlesClient({ articles }: ArticlesClientProps) {
           </div>
         )}
       </div>
-      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} article={selectedArticle as any} />
+      <JoinUsModal open={isModalOpen} onOpenChange={setIsModalOpen} article={selectedArticle} />
       <style jsx>{`
         @media (max-width: 1100px) {
           .card-custom {
