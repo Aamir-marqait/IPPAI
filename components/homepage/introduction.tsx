@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -53,7 +54,6 @@ export default function Introduction() {
         </div>
 
         <div className="flex gap-10 max-w-[1000px] mx-auto justify-center items-start flex-wrap">
-          {/* Left Card - Latest Events */}
           <div className="flex-1 min-w-[340px]">
             <div className="flex items-center gap-3 mb-7">
               <span
@@ -104,9 +104,8 @@ export default function Introduction() {
                 </div>
               </div>
             </div>
-            {/* Carousel dots and arrows */}
-            <div className="flex items-center justify-center gap-4 mt-3">
-              {/* Left Arrow */}
+
+            {/* <div className="flex items-center justify-center gap-4 mt-3">
               <button
                 onClick={() =>
                   setCurrentEventIndex(
@@ -131,7 +130,6 @@ export default function Introduction() {
                 </svg>
               </button>
 
-              {/* Dots */}
               <div className="flex items-center">
                 {upcomingEvents.map((_, index) => (
                   <button
@@ -147,7 +145,6 @@ export default function Introduction() {
                 ))}
               </div>
 
-              {/* Right Arrow */}
               <button
                 onClick={() =>
                   setCurrentEventIndex(
@@ -170,10 +167,9 @@ export default function Introduction() {
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
 
-          {/* Right Card - Our Courses */}
           <div className="flex-1 min-w-[340px] relative">
             <div className="flex items-center gap-3 mb-7">
               <span
@@ -185,15 +181,21 @@ export default function Introduction() {
               </span>
             </div>
             <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3 line-clamp-2">
-              {currentCourse?.title}
+              Intensive Course on Regulatory & Policy Framework in the Power
+              Sector
             </div>
             <div className="text-[#555] mb-[18px] line-clamp-1">
-              {currentCourse?.description}
+              This intensive course provides a comprehensive exploration of the
+              regulatory and policy frameworks governing the power sector.
+              Participants will gain in-depth knowledge of the legal,
+              institutional, and economic structures that shape electricity
+              markets and power generation, transmission, and distribution
+              systems.
             </div>
             <div className="bg-[#F5F5F5] p-2 rounded-[24px] border border-[#D3363B] shadow-sm pb-[15px] mb-[15px] max-w-[494px]">
               <div className="relative w-full h-[240px]">
                 <Image
-                  src={currentCourse?.img}
+                  src="/chero.png"
                   alt={currentCourse?.title || "Course"}
                   fill
                   className="object-cover rounded-[24px]"
@@ -214,7 +216,7 @@ export default function Introduction() {
                       Stage, Domlur, Bengaluru, Karnataka
                     </span>
                   </div>
-                  <Link href={`/courses/${currentCourse?.slug}`}>
+                  <Link href="/courses#register-now">
                     <Button
                       className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
                       style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
@@ -225,9 +227,8 @@ export default function Introduction() {
                 </div>
               </div>
             </div>
-            {/* Carousel dots and arrows */}
-            <div className="flex items-center justify-center gap-4 mt-3">
-              {/* Left Arrow */}
+
+            {/* <div className="flex items-center justify-center gap-4 mt-3">
               <button
                 onClick={() =>
                   setCurrentCourseIndex(
@@ -251,7 +252,6 @@ export default function Introduction() {
                 </svg>
               </button>
 
-              {/* Dots */}
               <div className="flex items-center">
                 {courses.map((_, index) => (
                   <button
@@ -267,7 +267,6 @@ export default function Introduction() {
                 ))}
               </div>
 
-              {/* Right Arrow */}
               <button
                 onClick={() =>
                   setCurrentCourseIndex((prev) => (prev + 1) % courses.length)
@@ -288,7 +287,7 @@ export default function Introduction() {
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </div>
+            </div> */}
 
             <div className="absolute left-[-20px] top-0 h-full flex items-center">
               <Image
