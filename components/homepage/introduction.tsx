@@ -16,13 +16,13 @@ export default function Introduction() {
   const upcomingEvents = eventsData.events.filter(
     (event) => event.status === "upcoming"
   );
-  const courses = coursesData.courses;
+  const courses = [1];
 
   // Auto-slide for events every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentEventIndex((prev) => (prev + 1) % upcomingEvents.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [upcomingEvents.length]);
 
@@ -64,7 +64,7 @@ export default function Introduction() {
                 Latest Events
               </span>
             </div>
-            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3">
+            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3 line-clamp-2">
               {currentEvent?.title}
             </div>
             <div className="text-[#555] mb-[18px] line-clamp-1">
@@ -89,7 +89,7 @@ export default function Introduction() {
                   </div>
                   <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="max-w-60 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                    <span className="max-w-77 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       {currentEvent?.location}
                     </span>
                   </div>
@@ -105,7 +105,7 @@ export default function Introduction() {
               </div>
             </div>
 
-            {/* <div className="flex items-center justify-center gap-4 mt-3">
+            <div className="flex items-center justify-center gap-4 mt-3">
               <button
                 onClick={() =>
                   setCurrentEventIndex(
@@ -167,7 +167,7 @@ export default function Introduction() {
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </div> */}
+            </div>
           </div>
 
           <div className="flex-1 min-w-[340px] relative">
@@ -228,7 +228,7 @@ export default function Introduction() {
               </div>
             </div>
 
-            {/* <div className="flex items-center justify-center gap-4 mt-3">
+            <div className="flex items-center justify-center gap-4 mt-3">
               <button
                 onClick={() =>
                   setCurrentCourseIndex(
@@ -287,7 +287,7 @@ export default function Introduction() {
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </div> */}
+            </div>
 
             <div className="absolute left-[-20px] top-0 h-full flex items-center">
               <Image
