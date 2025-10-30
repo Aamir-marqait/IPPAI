@@ -5,11 +5,13 @@ import MilestonesTimeline from "./MilestonesTimeline";
 import LeadershipCircle from "./LeadershipCircle";
 // import OurPurpose from "./our-purpose";
 import RecognizedCatalystSection from "./RecognizedCatalystSection";
+import MissionVisionSection from "./MissionVisionSection";
 
 function page() {
   return (
     <div>
       <HeroSection />
+      <MissionVisionSection />
       <MilestonesTimeline />
       <ThreeDecadesSection />
       {/* <OurPurpose /> */}

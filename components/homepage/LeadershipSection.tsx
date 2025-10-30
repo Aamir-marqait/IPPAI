@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CTABanner } from "./cta-banner";
 
 const leaders = [
   {
@@ -131,9 +130,9 @@ export default function LeadershipSection() {
               ))}
             </div>
           </div>
-          <div className="mt-20">
+          {/* <div className="mt-20">
             <CTABanner />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

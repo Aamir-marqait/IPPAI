@@ -1,19 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const members = [
-  // Circle around the central image (positions are % relative to container)
-  // {
-  //   src: "/user.jpg",
-  //   alt: "Asok Dasgupta",
-  //   name: "Asok Dasgupta",
-  //   occupation: "President",
-  //   description:
-  //     "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
-  //   size: 55,
-  //   style: { top: "3%", left: "60%" },
-  // },
+  {
+    src: "/user.jpg",
+    alt: "Asok Dasgupta",
+    name: "Asok Dasgupta",
+    occupation: "President",
+    description:
+      "Leading IPPAI's strategic vision and fostering partnerships across India's power sector ecosystem.",
+    size: 55,
+    style: { top: "3%", left: "60%" },
+  },
   {
     src: "/user.jpg",
     alt: "Dharun Kapur",
@@ -97,45 +97,7 @@ const defaultCenterMember = {
 
 export default function LeadershipCircle() {
   const [centerMember, setCenterMember] = useState(defaultCenterMember);
-  const [currentIndex, setCurrentIndex] = useState(-1); // -1 means showing default center member
-  const [originalCenterMember] = useState(defaultCenterMember);
-  const [rotationOffset, setRotationOffset] = useState(0);
-
-  // Auto-rotation effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % (members.length + 1);
-
-        if (nextIndex === members.length) {
-          // Show default center member
-          setCenterMember(originalCenterMember);
-          setRotationOffset(members.length); // Keep rotation going
-          return -1;
-        } else {
-          // Show member at nextIndex
-          const member = members[nextIndex];
-          setCenterMember({
-            src: member.src,
-            alt: member.alt,
-            name: member.name,
-            occupation: member.occupation,
-            description: member.description,
-          });
-          setRotationOffset(nextIndex + 1); // Always increment for animation
-          return nextIndex;
-        }
-      });
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [originalCenterMember]);
-
-  // Function to get rotated member data (position and size)
-  const getRotatedMember = (memberIndex: number) => {
-    const rotatedIndex = (memberIndex + rotationOffset) % members.length;
-    return members[rotatedIndex];
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section
@@ -145,7 +107,7 @@ export default function LeadershipCircle() {
           "linear-gradient(232.4deg, rgba(211, 54, 59, 0) 0%, rgba(211, 54, 59, 0.2) 43.28%, rgba(211, 54, 59, 0) 100%), #000000",
       }}
     >
-      <div className="max-w-[1200px] mx-auto w-full px-4 z-10">
+      <div className="max-w-[1100px] mx-auto w-full px-4 z-10">
         {/* Top: Title and Subtitle */}
         <div className="text-center mb-20">
           <div
@@ -188,108 +150,108 @@ export default function LeadershipCircle() {
           </p>
         </div>
 
-        {/* Bottom: Left-Right Content */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Left: Featured Member */}
-          <div className="flex flex-col flex-shrink-0 md:w-sm w-full mb-10 md:mb-0">
-            <div className="">
-              <div
-                className="text-right  truncate font-red-hat-display mb-2 flex items-center transition-all duration-300 ease-in-out"
-                style={{
-                  fontWeight: 800,
-                  fontSize: "42px",
-                  lineHeight: "64px",
-                  letterSpacing: "1%",
-                  color: "#D3363B",
-                }}
-              >
-                {centerMember.name}
-              </div>
-              <div
-                className="font-poppins mb-2 transition-all duration-300 ease-in-out"
-                style={{
-                  fontWeight: 400,
-                  fontSize: "24px",
-                  lineHeight: "144%",
-                  letterSpacing: "3%",
-                  color: "#FFFFFF",
-                }}
-              >
-                {centerMember.occupation}
-              </div>
-              <div
-                className="flex items-center transition-all duration-300 ease-in-out"
-                style={{
-                  fontFamily: "poppins",
-                  fontWeight: 400,
-                  fontSize: "18px",
-                  lineHeight: "160%",
-                  letterSpacing: "0%",
-                  color: "#d6d6d6",
-                }}
-              >
-                {centerMember.description}
-              </div>
+        {/* Content: Image Left, Description Right */}
+        <div className="flex flex-col md:flex-row items-center gap-12 max-w-[800px] mx-auto">
+          {/* Left: Image */}
+          <div className="flex-shrink-0">
+            <div className="relative w-[300px] h-[300px]">
+              <Image
+                src={centerMember.src}
+                alt={centerMember.alt}
+                fill
+                className="object-cover rounded-lg transition-all duration-300 ease-in-out"
+                priority
+              />
             </div>
           </div>
-          {/* Right: Circle Images */}
-          <div className="relative flex-1 min-h-[600px] flex items-center justify-center">
-            {/* Central member */}
-            <div className="absolute z-20 top-[39%] left-[63%] w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2">
-              <div className="relative rounded-full border-[3px] border-white shadow-lg w-[300px] h-[300px] transition-all duration-300 ease-in-out">
-                <Image
-                  src={centerMember.src}
-                  alt={centerMember.alt}
-                  fill
-                  className="object-cover rounded-full transition-all duration-300 ease-in-out"
-                  style={{ borderRadius: "9999px" }}
-                  priority
-                />
-              </div>
+
+          {/* Right: Description */}
+          <div className="flex-1 flex flex-col gap-3">
+            {/* Name */}
+            <div
+              className="font-red-hat-display transition-all duration-300 ease-in-out"
+              style={{
+                fontWeight: 800,
+                fontSize: "42px",
+                lineHeight: "64px",
+                letterSpacing: "1%",
+                color: "#D3363B",
+              }}
+            >
+              {centerMember.name}
             </div>
-            {/* Surrounding members */}
-            {members.map((m, i) => {
-              const rotatedMember = getRotatedMember(i);
-              return (
-                <div
-                  key={i}
-                  className="absolute z-10"
-                  style={{
-                    ...rotatedMember.style,
-                    width: rotatedMember.size,
-                    height: rotatedMember.size,
-                    transform: "translate(-50%, -50%)",
-                    transition:
-                      "top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out",
-                  }}
-                >
-                  <div
-                    className="relative rounded-full border-4 transition-all duration-300 ease-in-out"
-                    style={{
-                      border: "3px solid #FFF",
-                      boxShadow: "0px 0px 15px 0px #1C1D2226",
-                      width: rotatedMember.size,
-                      height: rotatedMember.size,
-                      transform: currentIndex === i ? "scale(1.1)" : "scale(1)",
-                    }}
-                  >
-                    <Image
-                      src={
-                        currentIndex === i ? originalCenterMember.src : m.src
-                      }
-                      alt={
-                        currentIndex === i ? originalCenterMember.alt : m.alt
-                      }
-                      fill
-                      className="object-cover rounded-full transition-all duration-300 ease-in-out"
-                      style={{ borderRadius: "9999px" }}
-                      sizes={`${rotatedMember.size}px`}
-                      priority
-                    />
-                  </div>
-                </div>
-              );
-            })}
+
+            {/* Occupation */}
+            <div
+              className="font-poppins transition-all duration-300 ease-in-out"
+              style={{
+                fontWeight: 400,
+                fontSize: "24px",
+                lineHeight: "144%",
+                letterSpacing: "3%",
+                color: "#FFFFFF",
+              }}
+            >
+              {centerMember.occupation}
+            </div>
+
+            {/* Description */}
+            <div
+              className="transition-all duration-300 ease-in-out"
+              style={{
+                fontFamily: "poppins",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "160%",
+                letterSpacing: "0%",
+                color: "#d6d6d6",
+              }}
+            >
+              {centerMember.description}
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex items-center gap-4 mt-6">
+              <button
+                onClick={() => {
+                  const newIndex =
+                    currentIndex <= 0 ? members.length - 1 : currentIndex - 1;
+                  setCurrentIndex(newIndex);
+                  const member = members[newIndex];
+                  setCenterMember({
+                    src: member.src,
+                    alt: member.alt,
+                    name: member.name,
+                    occupation: member.occupation,
+                    description: member.description,
+                  });
+                }}
+                className="w-12 h-12 rounded-full border-2 border-gray-800 cursor-pointer flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group"
+                aria-label="Previous member"
+              >
+                <ChevronLeft className="w-6 h-6 text-red-500 group-hover:text-red-600 transition-colors" />
+              </button>
+
+              <button
+                onClick={() => {
+                  const newIndex =
+                    currentIndex >= members.length - 1 ? 0 : currentIndex + 1;
+                  setCurrentIndex(newIndex);
+                  const member = members[newIndex];
+                  setCenterMember({
+                    src: member.src,
+                    alt: member.alt,
+                    name: member.name,
+                    occupation: member.occupation,
+                    description: member.description,
+                  });
+                }}
+                className="w-12 h-12 rounded-full border-2 border-gray-800 cursor-pointer flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group"
+                aria-label="Next member"
+              >
+                <ChevronRight className="w-6 h-6 text-red-500 group-hover:text-red-600 transition-colors" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
