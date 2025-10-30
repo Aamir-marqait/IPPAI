@@ -89,7 +89,7 @@ export default function Introduction() {
                   </div>
                   <div className="flex items-start gap-2 mb-4">
                     <MapPin className="w-5 h-5 text-[#d43838]" />
-                    <span className="max-w-77 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
+                    <span className="max-w-60 line-clamp-3 font-work-sans font-medium text-[20px] leading-[100%] tracking-[0%] text-[#222222]">
                       {currentEvent?.location}
                     </span>
                   </div>
