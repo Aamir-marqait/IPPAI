@@ -16,7 +16,7 @@ export default function Introduction() {
   const upcomingEvents = eventsData.events.filter(
     (event) => event.status === "upcoming"
   );
-  const courses = coursesData.courses;
+  const courses = [1];
 
   // Auto-slide for events every 5 seconds
   useEffect(() => {
@@ -228,7 +228,7 @@ export default function Introduction() {
               </div>
             </div>
 
-            {/* <div className="flex items-center justify-center gap-4 mt-3">
+            <div className="flex items-center justify-center gap-4 mt-3">
               <button
                 onClick={() =>
                   setCurrentCourseIndex(
@@ -287,7 +287,7 @@ export default function Introduction() {
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-            </div> */}
+            </div>
 
             <div className="absolute left-[-20px] top-0 h-full flex items-center">
               <Image
