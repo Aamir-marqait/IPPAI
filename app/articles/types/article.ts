@@ -9,7 +9,7 @@ export interface Article {
   customCategories?: string[];
   author: {
     name: string;
-    avatar: string;
+    avatar: string | null;        // ✅ Fixed: avatar can be null from Sanity
   };
   publishedAt?: string;
   featured?: boolean;

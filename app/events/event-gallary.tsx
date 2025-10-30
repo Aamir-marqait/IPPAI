@@ -2,13 +2,13 @@ import Image from "next/image";
 
 interface GalleryImage {
   url: string;
-  alt: string;
+  alt?: string;  // ✅ Made optional
 }
 
 interface EventsGalleryData {
-  sectionTitle: string;
+  sectionTitle?: string;  // ✅ Made optional to match Sanity
   mainHeading: string;
-  description: string;
+  description?: string;  // ✅ Made optional to match Sanity
   images: GalleryImage[];
 }
 
@@ -41,15 +41,19 @@ export default function EventsGallery({ data }: EventsGalleryProps) {
       <div className="mx-auto max-w-[1100px]">
         {/* Header Section */}
         <div className="mb-8 sm:mb-12">
-          <div className="font-red-hat-display font-bold text-xs sm:text-base leading-none uppercase text-[#D3363B] mb-2 sm:mb-4">
-            {data.sectionTitle}
-          </div>
+          {data.sectionTitle && (
+            <div className="font-red-hat-display font-bold text-xs sm:text-base leading-none uppercase text-[#D3363B] mb-2 sm:mb-4">
+              {data.sectionTitle}
+            </div>
+          )}
           <h2 className="font-red-hat-display font-bold text-xl sm:text-[36px] leading-none text-[#141414] mb-4 sm:mb-6">
             {data.mainHeading}
           </h2>
-          <p className="font-poppins font-normal text-sm sm:text-base leading-[24px] sm:leading-[28px] text-gray-600 max-w-2xl">
-            {data.description}
-          </p>
+          {data.description && (
+            <p className="font-poppins font-normal text-sm sm:text-base leading-[24px] sm:leading-[28px] text-gray-600 max-w-2xl">
+              {data.description}
+            </p>
+          )}
         </div>
 
         {/* Responsive Grid for mobile/tablet, custom grid for desktop */}
@@ -63,7 +67,7 @@ export default function EventsGallery({ data }: EventsGalleryProps) {
               >
                 <Image
                   src={image.url || "/placeholder.svg"}
-                  alt={image.alt}
+                  alt={image.alt || `Gallery image ${idx + 1}`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 260px"
@@ -91,7 +95,7 @@ export default function EventsGallery({ data }: EventsGalleryProps) {
                 >
                   <Image
                     src={image.url || "/placeholder.svg"}
-                    alt={image.alt}
+                    alt={image.alt || `Gallery image ${index + 1}`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     sizes="270px"

@@ -1,4 +1,4 @@
-import { getAllEvents } from "@/lib/sanity";
+import { getAllEvents } from "@/lib/sanity/queries";
 import EventsPageClient from "./EventsPageClient";
 
 export default async function EventsPage() {

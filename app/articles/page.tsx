@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getAllArticles, getArticlesHero } from "@/lib/sanity";
+import { getAllArticles, getArticlesHero } from "@/lib/sanity/queries";
 import ArticlesClient from "./articles";
 import HeroSection from "./hero-section";
 
