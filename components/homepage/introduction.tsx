@@ -196,7 +196,7 @@ export default function Introduction() {
               <div className="relative w-full h-[240px]">
                 <Image
                   src="/chero.png"
-                  alt={currentCourse?.title || "Course"}
+                  alt={"Course"}
                   fill
                   className="object-cover rounded-[24px]"
                 />
