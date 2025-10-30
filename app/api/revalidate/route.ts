@@ -1,79 +1,110 @@
-import { revalidatePath} from 'next/cache';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server'
+import {
+  handleEventRevalidation,
+  handleEventHeroRevalidation,
+  handleWhyJoinEventsRevalidation,
+  handleEventGalleryRevalidation,
+  handleArticleRevalidation,
+  handleArticlesHeroRevalidation,
+  type WebhookPayload,
+  type RevalidationResult,
+} from './handlers'
+
+/**
+ * Webhook Route for Sanity Content Revalidation
+ * 
+ * @route POST /api/revalidate?secret=YOUR_SECRET
+ */
+
+function validateSecret(secret: string | null): boolean {
+  if (!secret) return false
+  return secret === process.env.REVALIDATE_SECRET
+}
+
+function routeToHandler(body: WebhookPayload): RevalidationResult {
+  const type = body._type
+
+  switch (type) {
+    // EVENTS
+    case 'event':
+      return handleEventRevalidation(body)
+    case 'eventHeroSection':
+      return handleEventHeroRevalidation(body)
+    case 'whyJoinEvents':
+      return handleWhyJoinEventsRevalidation(body)
+    case 'eventGallery':
+      return handleEventGalleryRevalidation(body)
+    
+    // ARTICLES
+    case 'article':
+      return handleArticleRevalidation(body)
+    case 'articlesHero':
+      return handleArticlesHeroRevalidation(body)
+    
+    // DEFAULT
+    default:
+      return {
+        success: false,
+        contentType: type,
+        paths: [],
+        message: `Unknown content type: ${type}`,
+      }
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
-    // Get the secret from query params
-    const secret = request.nextUrl.searchParams.get('secret');
+    const secret = request.nextUrl.searchParams.get('secret')
     
-    // Check for secret to confirm this is a valid request
-    if (secret !== process.env.REVALIDATE_SECRET) {
+    if (!validateSecret(secret)) {
       return NextResponse.json(
         { message: 'Invalid token' }, 
         { status: 401 }
-      );
+      )
     }
 
-    // Get the body to know what was updated
-    const body = await request.json();
+    const body: WebhookPayload = await request.json()
     
-    console.log('Revalidation webhook triggered:', body);
+    console.log('🔔 Webhook received:', {
+      type: body._type,
+      id: body._id,
+      slug: body.slug?.current,
+      timestamp: new Date().toISOString(),
+    })
 
-    // Revalidate based on content type
-    const type = body._type;
+    const result = routeToHandler(body)
 
-    if (type === 'event') {
-      // Revalidate all events pages
-      revalidatePath('/events');
-      
-      // If it's a specific event, revalidate that page too
-      if (body.slug?.current) {
-        revalidatePath(`/events/${body.slug.current}`);
-      }
+    if (result.success) {
+      console.log('✅ Revalidation successful:', {
+        contentType: result.contentType,
+        paths: result.paths,
+      })
+    } else {
+      console.warn('⚠️ Revalidation skipped:', {
+        contentType: result.contentType,
+        message: result.message,
+      })
+    }
 
-      // Also revalidate the home page if events are shown there
-      revalidatePath('/');
-    } 
-    else if (type === 'article') {
-      // Revalidate articles page
-      revalidatePath('/articles');
-      
-      // If it's a specific article, revalidate that page too
-      if (body.slug?.current) {
-        revalidatePath(`/articles/${body.slug.current}`);
-      }
-
-      // Revalidate home if articles shown there
-      revalidatePath('/');
-    }
-    else if (type === 'articlesHero') {
-      // Revalidate articles page for hero changes
-      revalidatePath('/articles');
-    }
-    else if (type === 'eventHeroSection') {
-      // Revalidate home/events page for hero changes
-      revalidatePath('/');
-      revalidatePath('/events');
-    }
-    else {
-      // Generic revalidation for other content types
-      revalidatePath('/');
-    }
-    
     return NextResponse.json({ 
-      revalidated: true, 
-      now: Date.now(),
-      message: 'Successfully revalidated',
-      type: type || 'unknown'
-    });
+      revalidated: result.success,
+      contentType: result.contentType,
+      paths: result.paths,
+      timestamp: Date.now(),
+      message: result.success 
+        ? 'Successfully revalidated'
+        : result.message || 'Revalidation skipped',
+    })
+    
   } catch (err) {
-    console.error('Error revalidating:', err);
+    console.error('❌ Revalidation error:', err)
+    
     return NextResponse.json(
       { 
         message: 'Error revalidating', 
         error: err instanceof Error ? err.message : 'Unknown error'
       }, 
       { status: 500 }
-    );
+    )
   }
 }

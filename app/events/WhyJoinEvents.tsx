@@ -4,18 +4,18 @@ import * as LucideIcons from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface Feature {
-  iconType: "image" | "lucide";
+  iconType?: string;  // ✅ Accept any string to match Sanity
   iconName?: string;
   iconImage?: string;
   title: string;
   description: string;
-  number: string;
+  number?: number;  // ✅ Changed from string to number to match Sanity
 }
 
 interface WhyJoinEventsData {
-  sectionTitle: string;
+  sectionTitle?: string;  // ✅ Made optional to match Sanity
   mainHeading: string;
-  description: string;
+  description?: string;  // ✅ Made optional to match Sanity
   features: Feature[];
 }
 
@@ -57,15 +57,19 @@ export default function WhyJoinEvents({ data }: WhyJoinEventsProps) {
     >
       <div className="w-full flex flex-col items-center px-4 py-16 md:py-24">
         <div className="w-full max-w-[1100px] mx-auto text-center mb-12">
-          <p className="font-red-hat-display font-bold text-base leading-none text-center uppercase text-[#D3363B] mb-2">
-            {data.sectionTitle}
-          </p>
+          {data.sectionTitle && (
+            <p className="font-red-hat-display font-bold text-base leading-none text-center uppercase text-[#D3363B] mb-2">
+              {data.sectionTitle}
+            </p>
+          )}
           <h2 className="font-red-hat-display font-bold text-[36px] leading-none text-center text-white mb-3">
             {data.mainHeading}
           </h2>
-          <p className="font-poppins font-normal text-base leading-[28px] text-center text-[#D1D5DB] max-w-2xl mx-auto">
-            {data.description}
-          </p>
+          {data.description && (
+            <p className="font-poppins font-normal text-base leading-[28px] text-center text-[#D1D5DB] max-w-2xl mx-auto">
+              {data.description}
+            </p>
+          )}
         </div>
         <div className="w-full max-w-[1100px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.features.map((f, i) => (
@@ -75,9 +79,11 @@ export default function WhyJoinEvents({ data }: WhyJoinEventsProps) {
             >
               <div className="flex items-center gap-4 mb-7">
                 <div>{renderIcon(f)}</div>
-                <span className="absolute right-8 top-8 text-[48px] md:text-[56px] font-extrabold text-[#F7D9D9] group-hover:text-[#E2C1C1] select-none pointer-events-none">
-                  {f.number}
-                </span>
+                {f.number && (
+                  <span className="absolute right-8 top-8 text-[48px] md:text-[56px] font-extrabold text-[#F7D9D9] group-hover:text-[#E2C1C1] select-none pointer-events-none">
+                    {f.number}
+                  </span>
+                )}
               </div>
               <h3 className="font-poppins font-semibold text-[20px] leading-[24px] text-[#223645] uppercase mb-2">
                 {f.title}

@@ -3,39 +3,13 @@
 import { useParams, notFound } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { getEventBySlug } from "@/lib/sanity";
+import { getEventBySlug, type Event } from "@/lib/sanity/queries";
 import Link from "next/link";
-
-type EventType = {
-  title: string;
-  breadcrumb?: {
-    category?: string;
-    eventTitle?: string;
-  };
-  image?: string;
-  dateTime?: string;
-  location?: string;
-  eventDuration?: string;
-  aboutEvent?: {
-    mainDescription?: string;
-    details?: { text: string }[];
-  };
-  highlights?: {
-    title?: string;
-    items?: { emoji?: string; title?: string; description?: string }[];
-  };
-  prizes?: {
-    title?: string;
-    items?: string[];
-  };
-  conclusion?: string;
-  gallery?: { url: string; alt?: string; caption?: string }[];
-};
 
 export default function EventDetailPage() {
   const params = useParams();
   const eventName = params.eventName as string;
-  const [event, setEvent] = useState<EventType | null>(null);
+  const [event, setEvent] = useState<Event | null>(null);
   const [loading, setLoading] = useState(true);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -120,7 +94,17 @@ export default function EventDetailPage() {
           <span className="font-inter font-semibold text-[#4B5563]">Events</span>
         </Link>
         <span className="mx-2">{">"}</span>
-        <span className="font-inter font-semibold text-[#757575]">{event.breadcrumb?.eventTitle}</span>
+        <span className="font-inter font-semibold text-[#757575]">
+  {(() => {
+    if (typeof event.breadcrumb === 'string') {
+      return event.breadcrumb;
+    } else if (event.breadcrumb && typeof event.breadcrumb === 'object') {
+      return (event.breadcrumb).eventTitle || event.title;
+    } else {
+      return event.title;
+    }
+  })()}
+</span>
       </nav>
 
       {/* Event Image */}
@@ -179,7 +163,7 @@ export default function EventDetailPage() {
             {event.aboutEvent?.mainDescription}
             <br />
             <br />
-            {event.aboutEvent?.details?.map((detail: { text: string }, i: number) => (
+            {event.aboutEvent?.details?.map((detail: { text?: string }, i: number) => (
               <div className="flex items-start mb-2" key={i}>
                 {i === 0 && (
                   <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">

@@ -23,8 +23,8 @@ interface Event {
   date: string;
   dateTime: string;
   image: string;
-  status: string;
-  statusLabel: string;
+  status?: string;  // ✅ Made optional to match Sanity type
+  statusLabel?: string;
   redirectTo?: string;
 }
 
