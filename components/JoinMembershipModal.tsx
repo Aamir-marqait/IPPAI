@@ -9,17 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-interface Article {
-  image: string;
-  title: string;
-  summary: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  date: string;
-  pdfFile: string;
-}
+import type { Article } from "@/app/articles/types/article";
 
 interface JoinUsModalProps {
   open: boolean;

@@ -221,6 +221,53 @@ export const sanityQueries = {
       alt
     }
   }`,
+
+    // Get all articles (published only)
+  getAllArticles: `*[_type == "article" && status == "published"] | order(coalesce(order, 999999) asc, publishedAt desc) {
+    _id,
+    title,
+    slug,
+    summary,
+    "image": image.asset->url,
+    "pdfFile": pdfFile.asset->url,
+    categories,
+    customCategories,
+    author {
+      name,
+      "avatar": avatar.asset->url
+    },
+    publishedAt,
+    featured,
+    order
+  }`,
+
+  // Get single article by slug
+  getArticleBySlug: (slug: string) => `*[_type == "article" && slug.current == "${slug}"][0] {
+    _id,
+    title,
+    slug,
+    summary,
+    "image": image.asset->url,
+    "pdfFile": pdfFile.asset->url,
+    categories,
+    customCategories,
+    author {
+      name,
+      "avatar": avatar.asset->url
+    },
+    publishedAt,
+    featured,
+    status
+  }`,
+
+  // Get articles hero section
+  getArticlesHero: `*[_type == "articlesHero"][0] {
+    _id,
+    title,
+    subtitle,
+    "backgroundImage": backgroundImage.asset->url
+  }`,
+
 }
 
 // Export fetch functions with Next.js cache options
@@ -288,3 +335,47 @@ export async function getGalleryImages() {
     }
   )
 }
+
+// Get all articles (published only)
+export async function getAllArticles() {
+  return await client.fetch(
+    sanityQueries.getAllArticles,
+    {},
+    {
+      next: { 
+        tags: ['articles'],
+        revalidate: 60
+      }
+    }
+  )
+}
+
+// Get single article by slug
+export async function getArticleBySlug(slug: string) {
+  return await client.fetch(
+    sanityQueries.getArticleBySlug(slug),
+    {},
+    {
+      next: { 
+        tags: [`article-${slug}`],
+        revalidate: 60
+      }
+    }
+  )
+}
+
+// Get articles hero section
+export async function getArticlesHero() {
+  return await client.fetch(
+    sanityQueries.getArticlesHero,
+    {},
+    {
+      next: { 
+        tags: ['articles-hero'],
+        revalidate: 300
+      }
+    }
+  )
+}
+
+

@@ -1,4 +1,4 @@
-import { revalidatePath } from 'next/cache';
+import { revalidatePath} from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -19,21 +19,52 @@ export async function POST(request: NextRequest) {
     
     console.log('Revalidation webhook triggered:', body);
 
-    // Revalidate all events pages
-    revalidatePath('/events');
-    
-    // If it's a specific event, revalidate that page too
-    if (body.slug?.current) {
-      revalidatePath(`/events/${body.slug.current}`);
-    }
+    // Revalidate based on content type
+    const type = body._type;
 
-    // Also revalidate the home page if events are shown there
-    revalidatePath('/');
+    if (type === 'event') {
+      // Revalidate all events pages
+      revalidatePath('/events');
+      
+      // If it's a specific event, revalidate that page too
+      if (body.slug?.current) {
+        revalidatePath(`/events/${body.slug.current}`);
+      }
+
+      // Also revalidate the home page if events are shown there
+      revalidatePath('/');
+    } 
+    else if (type === 'article') {
+      // Revalidate articles page
+      revalidatePath('/articles');
+      
+      // If it's a specific article, revalidate that page too
+      if (body.slug?.current) {
+        revalidatePath(`/articles/${body.slug.current}`);
+      }
+
+      // Revalidate home if articles shown there
+      revalidatePath('/');
+    }
+    else if (type === 'articlesHero') {
+      // Revalidate articles page for hero changes
+      revalidatePath('/articles');
+    }
+    else if (type === 'eventHeroSection') {
+      // Revalidate home/events page for hero changes
+      revalidatePath('/');
+      revalidatePath('/events');
+    }
+    else {
+      // Generic revalidation for other content types
+      revalidatePath('/');
+    }
     
     return NextResponse.json({ 
       revalidated: true, 
       now: Date.now(),
-      message: 'Successfully revalidated'
+      message: 'Successfully revalidated',
+      type: type || 'unknown'
     });
   } catch (err) {
     console.error('Error revalidating:', err);
