@@ -54,6 +54,19 @@ export {
   getArticlesHero,
 } from './articles'
 
+
+export {  // Types
+  type Publication,
+  type PublicationsPageData,
+// Functions
+
+  getAllPublications,
+  getPublicationBySlug,
+  getPublicationsPageData,
+
+}
+  from './publications'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================
