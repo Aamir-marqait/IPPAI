@@ -171,8 +171,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 {(data.registrationLink || data.knowMoreLink) && (
                   <div className="pt-4 flex justify-start">
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                      {data.registrationLink && (
-                        <Link href={data.registrationLink}>
+                      {data.knowMoreLink && (
+                        <Link href={data.knowMoreLink}>
                           <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 cursor-pointer sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
                             Register Now
                           </Button>
