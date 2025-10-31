@@ -43,11 +43,18 @@ export default function HomeHero() {
               </p>
             </div>
           </div>
-          <Link href="/events">
-            <Button className="hidden lg:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
-              See events
-            </Button>
-          </Link>
+          <div className="flex gap-3">
+            <Link href="/events">
+              <Button className="flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
+                See events
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button className="flex cursor-pointer bg-transparent border  hover:bg-[#454343] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
+                About Us
+              </Button>
+            </Link>
+          </div>
         </main>
       </div>
     </div>

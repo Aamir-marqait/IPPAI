@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useParams, notFound } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -42,7 +41,9 @@ export default function EventDetailPage() {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
-    const formData = new FormData(e.currentTarget);
+    // Store form reference before async operations
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -52,19 +53,21 @@ export default function EventDetailPage() {
 
       const data = await response.json();
 
-      if (data.success) {
+      // Check if response is successful (either response.ok or data.success)
+      if (response.ok && data.success) {
         setSubmitStatus({
           type: "success",
           message: "Thank you! Your inquiry has been submitted successfully.",
         });
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setSubmitStatus({
           type: "error",
-          message: "Something went wrong. Please try again.",
+          message: data.message || "Something went wrong. Please try again.",
         });
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       setSubmitStatus({
         type: "error",
         message: "Failed to submit inquiry. Please try again later.",
