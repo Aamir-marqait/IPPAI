@@ -16,8 +16,8 @@ export default function ContactSection() {
           </h2>
           <p className="text-[#585858] mb-8 font-poppins text-base leading-6 max-w-lg">
             Get in touch with IPPAI for inquiries about our events, research,
-            policy recommendations, or membership opportunities. We&apos;re here to
-            support India&apos;s power sector advancement.
+            policy recommendations, or membership opportunities. We&apos;re here
+            to support India&apos;s power sector advancement.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-7">
             {/* Call */}
@@ -28,7 +28,7 @@ export default function ContactSection() {
                   Call for inquiry
                 </div>
                 <div className="text-base text-[#141414] font-poppins font-normal leading-6">
-                  +91-11-41635700
+                  080 41256661
                 </div>
               </div>
             </div>
@@ -140,9 +140,21 @@ export default function ContactSection() {
             <h3 className="text-[30.1px] font-bold mb-6 font-red-hat-display text-[#141414] leading-[34.2px]">
               Get In Touch
             </h3>
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
-              <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
-              <input type="hidden" name="subject" value="Contact Form Submission" />
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="space-y-4"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="b082e58d-c43a-4b9c-b64d-61b8d709971f"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="Contact Form Submission"
+              />
               {/* Name */}
               <div>
                 <label className="block text-[12.31px] font-medium mb-1 text-[#121212] font-poppins leading-[12.31px]">
