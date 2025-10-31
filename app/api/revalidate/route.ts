@@ -6,6 +6,7 @@ import {
   handleEventGalleryRevalidation,
   handleArticleRevalidation,
   handleArticlesHeroRevalidation,
+  handlePublicationRevalidation,
   type WebhookPayload,
   type RevalidationResult,
 } from './handlers'
@@ -40,6 +41,11 @@ function routeToHandler(body: WebhookPayload): RevalidationResult {
       return handleArticleRevalidation(body)
     case 'articlesHero':
       return handleArticlesHeroRevalidation(body)
+
+      // PUBLICATIONS
+    case 'publication':
+      return handlePublicationRevalidation(body)
+
     
     // DEFAULT
     default:

@@ -4,6 +4,7 @@ import whyJoinEvents from './whyJoinEvents'
 import eventGallery from './eventGallery'
 import article from './article'
 import articlesHero from './articlesHero'
+import publication from './publication'
 
 export const schemas = [
   event,
@@ -11,5 +12,6 @@ export const schemas = [
   whyJoinEvents,
   eventGallery,
   article,
-  articlesHero
+  articlesHero,
+  publication
 ]

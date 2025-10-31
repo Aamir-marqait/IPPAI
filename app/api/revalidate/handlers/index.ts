@@ -20,6 +20,11 @@ export {
   handleArticlesHeroRevalidation,
 } from './articles'
 
+export {
+  handlePublicationRevalidation,
+  revalidateAllPublications,
+} from './publication'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

@@ -1,16 +1,24 @@
 import React from "react";
 import HeroSection from "./hero-section";
-// import ContactUsSection from "./contact-form";
 import PublicationsSection from "./PublicationsSection";
+import { getPublicationsPageData } from "@/lib/sanity/queries";
 
-function page() {
+export const revalidate = 60;
+
+export default async function PublicationsPage() {
+  const pageData = await getPublicationsPageData();
+
   return (
     <div>
-      <HeroSection />
-      <PublicationsSection />
-      {/* <ContactUsSection /> */}
+      <HeroSection 
+        title={pageData.heroTitle}
+        subtitle={pageData.heroSubtitle}
+        backgroundImage={pageData.heroBackgroundImage}
+      />
+      <PublicationsSection 
+        publications={pageData.publications}
+        categories={pageData.categories}
+      />
     </div>
   );
 }
-
-export default page;
