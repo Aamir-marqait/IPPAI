@@ -98,7 +98,7 @@ export default function Header() {
                       href="/courses"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
-                      Course
+                      Monthly Course
                     </Link>
                     <Link
                       href="/special-courses"
@@ -370,7 +370,7 @@ export default function Header() {
                       href="/courses"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
                     >
-                      Course
+                      Monthly Course
                     </Link>
                     <Link
                       href="/special-courses"
@@ -604,9 +604,7 @@ export default function Header() {
             <div className="flex flex-col items-center">
               <button
                 className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
-                onClick={() =>
-                  setIrpriDropdownMobile(!irpriDropdownMobile)
-                }
+                onClick={() => setIrpriDropdownMobile(!irpriDropdownMobile)}
               >
                 IRPRI
                 <ChevronDown
@@ -632,7 +630,7 @@ export default function Header() {
                     className="font-work-sans font-normal text-base text-white hover:text-red-500 transition-colors"
                     onClick={toggleMenu}
                   >
-                    Course
+                    Monthly Course
                   </Link>
                   <Link
                     href="/special-courses"
