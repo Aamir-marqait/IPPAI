@@ -5,7 +5,7 @@ export default function IntensiveCourseHero() {
   return (
     <section className="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[430px] xl:min-h-[470px] w-full flex items-center justify-center bg-[#1c1c1c] overflow-hidden px-5 md:px-0 pt-28">
       <Image
-        src="/course/hero.jpg"
+        src="/chero.png"
         alt="Background"
         fill
         priority
