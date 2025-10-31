@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "../ui/button";
+// import Link from "next/link";
+// import { Button } from "../ui/button";
 
 export default function HomeHero() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 w-screen h-screen overflow-hidden">
+      <div className="absolute inset-0 w-screen overflow-hidden">
         <Image
           src="/home/hero.png"
           alt="IPPAI Background"
@@ -18,7 +18,7 @@ export default function HomeHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen pt-10">
+      <div className="relative z-10 flex items-center justify-center min-h-[60vh] pt-40">
         <main className="flex max-w-[1100px] mx-auto flex-col items-center justify-center w-full px-7 md:px-0">
           <div className="w-full flex flex-col items-center">
             <div className="text-center mb-16">
@@ -43,7 +43,7 @@ export default function HomeHero() {
               </p>
             </div>
           </div>
-          <div className="flex gap-3">
+          {/* <div className="flex gap-3">
             <Link href="/events">
               <Button className="flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
                 See events
@@ -54,7 +54,7 @@ export default function HomeHero() {
                 About Us
               </Button>
             </Link>
-          </div>
+          </div> */}
         </main>
       </div>
     </div>

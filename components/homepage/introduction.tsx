@@ -31,7 +31,7 @@ export default function Introduction() {
 
   return (
     <div className="w-screen min-h-screen bg-white">
-      <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-[5.5rem]">
+      <div className="w-full max-w-[1100px] mx-auto px-6 py-16 lg:py-[2.5rem]">
         <div className="text-center mb-16 lg:mb-14">
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-red-hat-display leading-none text-center text-[#141414] mb-6 lg:mb-8">
             Independent{" "}
@@ -41,7 +41,7 @@ export default function Introduction() {
             </span>
             of India
           </h1>
-          <p className="text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-none text-center text-[#141414]/60 max-w-6xl mx-auto">
+          {/* <p className="text-xs sm:text-sm md:text-base xl:text-base font-normal font-poppins leading-none text-center text-[#141414]/60 max-w-6xl mx-auto">
             IPPAI was set up as a not-for-pro­fit association shortly after the
             Government of India opened the power sector to private industry.
             Since its inception as an independent body in 1994, IPPAI&apos;s aim
@@ -50,7 +50,7 @@ export default function Introduction() {
             energy policy and to focus on strategic, financial, legal,
             regulatory and technical issues in the power, oil, gas and allied
             sectors with a prime focus on independent power producers.
-          </p>
+          </p> */}
         </div>
 
         <div className="flex gap-10 max-w-[1000px] mx-auto justify-center items-start flex-wrap">
@@ -64,7 +64,7 @@ export default function Introduction() {
                 Latest Events
               </span>
             </div>
-            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3 line-clamp-2">
+            <div className="text-[36px] font-bold font-red-hat-display leading-[120%] tracking-[0%] mb-7 mt-1 line-clamp-2">
               {currentEvent?.title}
             </div>
             <div className="text-[#555] mb-[18px] line-clamp-1">
@@ -180,7 +180,7 @@ export default function Introduction() {
                 OUR COURSES
               </span>
             </div>
-            <div className="text-[36px] font-bold font-red-hat-display leading-[100%] tracking-[0%] mb-7 mt-3 line-clamp-2">
+            <div className="text-[36px] font-bold font-red-hat-display leading-[120%] tracking-[0%] mb-7 mt-1 line-clamp-2">
               Intensive Course on Regulatory & Policy Framework in the Power
               Sector
             </div>
