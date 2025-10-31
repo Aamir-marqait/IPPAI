@@ -112,7 +112,7 @@ export default function EventDetailPage() {
 
       {/* Event Image */}
       <div className="rounded-xl overflow-hidden w-full">
-        {event.image ? (
+        {/* {event.image ? (
           <Image
             src={event.image}
             alt="Event presentation"
@@ -122,7 +122,7 @@ export default function EventDetailPage() {
           />
         ) : (
           <div className="w-full h-[400px] bg-gray-100" aria-hidden />
-        )}
+        )} */}
       </div>
 
       {/* Event Content + Form */}
