@@ -34,7 +34,7 @@ interface EventsPageProps {
 
 export default function EventsPageClient({ initialEvents }: EventsPageProps) {
   const [events, setEvents] = useState<Event[]>(initialEvents);
-  const [sortBy, setSortBy] = useState("default");
+  const [sortBy, setSortBy] = useState("status");
   const [currentPage, setCurrentPage] = useState(1);
   const eventsPerPage = 4;
   const eventsHeaderRef = useRef<HTMLDivElement>(null);
