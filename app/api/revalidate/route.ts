@@ -11,6 +11,8 @@ import {
   handlePodcastMediaRevalidation,
   handleAboutMilestonesRevalidation,
   handleAboutLeadershipRevalidation,
+  handleHomeBannerRevalidation,
+  handleHomeIntroductionRevalidation,
   type WebhookPayload,
   type RevalidationResult,
 } from './handlers'
@@ -66,6 +68,13 @@ function routeToHandler(body: WebhookPayload): RevalidationResult {
     case 'aboutLeadership':
       return handleAboutLeadershipRevalidation(body)
 
+    // HOME BANNER
+    case 'homeBanner':
+      return handleHomeBannerRevalidation(body)
+
+    // HOME INTRODUCTION
+    case 'homeIntroduction':
+      return handleHomeIntroductionRevalidation(body)
     
     // DEFAULT
     default:

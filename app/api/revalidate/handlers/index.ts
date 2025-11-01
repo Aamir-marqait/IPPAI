@@ -44,6 +44,14 @@ export {
   revalidateAllAboutLeadership
 } from './aboutLeadership'
 
+export {
+  handleHomeBannerRevalidation
+} from './homeBanner'
+
+export {
+  handleHomeIntroductionRevalidation
+} from './homeIntroduction'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

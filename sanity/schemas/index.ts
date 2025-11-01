@@ -9,6 +9,8 @@ import photoGallery from './photoGallery'
 import podcastMedia from './podcastMedia'
 import aboutMilestones from './aboutMilestones'
 import aboutLeadership from './aboutLeadership'
+import homeBanner from './homeBanner'
+import homeIntroduction from './homeIntroduction'
 
 export const schemas = [
   event,
@@ -21,5 +23,7 @@ export const schemas = [
   photoGallery,
   podcastMedia,
   aboutMilestones,
-  aboutLeadership
+  aboutLeadership,
+  homeBanner,
+  homeIntroduction
 ]
