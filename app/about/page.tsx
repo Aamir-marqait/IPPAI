@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "./hero-section";
 import ThreeDecadesSection from "./ThreeDecadesSection";
 import MilestonesTimeline from "./MilestonesTimeline";
-import LeadershipCircle from "./LeadershipCircle";
+import LeadershipCircle from "./LeadershipCircle-SERVER";
 // import OurPurpose from "./our-purpose";
 import RecognizedCatalystSection from "./RecognizedCatalystSection";
 import MissionVisionSection from "./MissionVisionSection";

@@ -25,6 +25,25 @@ export {
   revalidateAllPublications,
 } from './publication'
 
+export {
+  handlePhotoGalleryRevalidation,
+  revalidateAllPhotoGallery,
+} from './photoGallery'
+
+export {
+  handlePodcastMediaRevalidation,
+} from './podcastMedia'
+
+export {
+  handleAboutMilestonesRevalidation,
+  revalidateAllAbout,
+} from './aboutMilestones'
+
+export {
+  handleAboutLeadershipRevalidation,
+  revalidateAllAboutLeadership
+} from './aboutLeadership'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

@@ -7,6 +7,10 @@ import {
   handleArticleRevalidation,
   handleArticlesHeroRevalidation,
   handlePublicationRevalidation,
+  handlePhotoGalleryRevalidation,
+  handlePodcastMediaRevalidation,
+  handleAboutMilestonesRevalidation,
+  handleAboutLeadershipRevalidation,
   type WebhookPayload,
   type RevalidationResult,
 } from './handlers'
@@ -45,6 +49,22 @@ function routeToHandler(body: WebhookPayload): RevalidationResult {
       // PUBLICATIONS
     case 'publication':
       return handlePublicationRevalidation(body)
+
+      // PHOTO GALLERY
+    case 'photoGallery':
+      return handlePhotoGalleryRevalidation(body)
+
+      // PODCAST MEDIA
+    case 'podcastMedia':
+      return handlePodcastMediaRevalidation(body)
+
+    // ABOUT MILESTONES
+    case 'aboutMilestones':
+      return handleAboutMilestonesRevalidation(body)
+
+    // ABOUT LEADERSHIP
+    case 'aboutLeadership':
+      return handleAboutLeadershipRevalidation(body)
 
     
     // DEFAULT
