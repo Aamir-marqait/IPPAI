@@ -67,6 +67,51 @@ export {  // Types
 }
   from './publications'
 
+
+export {
+  // Types
+  type GalleryImage,
+  type PhotoGalleryPageData,
+  // Functions
+  getAllGalleryImages,
+  getPhotoGalleryHero,
+  getAllYears,
+  getPhotoGalleryPageData,
+} from './photoGallery'
+
+export {
+  // Types
+  type HeroVideo,
+  type Video,
+  type Podcast,
+  type PodcastPageData,
+  // Functions
+  getHeroVideo,
+  getAllVideos,
+  getAllPodcasts,
+  getVideoCategories,
+  getPodcastCategories,
+  getPodcastPageData,
+} from './podcast'
+
+
+export {
+  // Types
+  type Milestone,
+  type AboutMilestonesData,
+  // Functions
+  getAboutMilestones,
+} from './aboutMilestones'
+
+
+export {
+  // Types
+type TeamMember,
+  type AboutLeadershipData,
+  // Functions
+  getAboutLeadership,
+} from './aboutLeadership'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

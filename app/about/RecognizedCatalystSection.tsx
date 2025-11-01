@@ -16,7 +16,7 @@ export default function RecognizedCatalystSection() {
               <br />
               for Change
             </h2>
-            <p className="font-poppins font-normal text-base leading-7 tracking-normal text-black/80 mt-2">
+            <p className="font-poppins font-normal text-base leading-7 tracking-normal text-black/80 my-2">
               Our impact resonates across India&apos;s energy sector
               <br className="md:" /> and beyond
             </p>

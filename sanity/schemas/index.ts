@@ -5,6 +5,10 @@ import eventGallery from './eventGallery'
 import article from './article'
 import articlesHero from './articlesHero'
 import publication from './publication'
+import photoGallery from './photoGallery'
+import podcastMedia from './podcastMedia'
+import aboutMilestones from './aboutMilestones'
+import aboutLeadership from './aboutLeadership'
 
 export const schemas = [
   event,
@@ -13,5 +17,9 @@ export const schemas = [
   eventGallery,
   article,
   articlesHero,
-  publication
+  publication,
+  photoGallery,
+  podcastMedia,
+  aboutMilestones,
+  aboutLeadership
 ]

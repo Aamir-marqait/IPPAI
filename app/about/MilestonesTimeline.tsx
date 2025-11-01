@@ -1,107 +1,114 @@
+import React from "react";
 import Image from "next/image";
+import { getAboutMilestones } from "@/lib/sanity/queries/aboutMilestones";
 
-const milestones = [
-  {
-    year: "1994",
-    icon: (
-      <Image
-        src="/optimized/about-1994.webp"
-        alt="1994 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "IPPAI Founded As India's First Independent Power Producers Association",
-  },
-  {
-    year: "2001",
-    icon: (
-      <Image
-        src="/optimized/about-2001.webp"
-        alt="2001 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Established As Key Policy Advisor To Government Of India",
-  },
-  {
-    year: "2005",
-    icon: (
-      <Image
-        src="/optimized/about-2005.webp"
-        alt="2005 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Launched Comprehensive Regulatory Framework Initiatives",
-  },
-  {
-    year: "2010",
-    icon: (
-      <Image
-        src="/optimized/about-2010.webp"
-        alt="2010 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Pioneered Renewable Energy Integration Policies",
-  },
-  {
-    year: "2015",
-    icon: (
-      <Image
-        src="/optimized/about-2015.webp"
-        alt="2015 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Achieved Recognition As Leading Energy Sector Catalyst",
-  },
-  {
-    year: "2020",
-    icon: (
-      <Image
-        src="/optimized/about-2020.webp"
-        alt="2020 milestone"
-        width={45}
-        height={45}
-        className="object-contain"
-        loading="lazy"
-      />
-    ),
-    text: "Expanded Focus To Include Sustainability And Clean Energy",
-  },
-  // {
-  //   year: "2024",
-  //   icon: (
-  //     <Image
-  //       src="/optimized/about-2024.webp"
-  //       alt="2024 milestone"
-  //       width={45}
-  //       height={45}
-  //       className="object-contain"
-  //       loading="lazy"
-  //     />
-  //   ),
-  //   text: "Leading India's Energy Transition With 3200+ MW Mobilized",
-  // },
-];
+export const revalidate = 3600; // Revalidate every hour
 
-export default function MilestonesTimeline() {
+// const milestones = [
+//   {
+//     year: "1994",
+//     icon: (
+//       <Image
+//         src="/optimized/about-1994.webp"
+//         alt="1994 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "IPPAI Founded As India's First Independent Power Producers Association",
+//   },
+//   {
+//     year: "2001",
+//     icon: (
+//       <Image
+//         src="/optimized/about-2001.webp"
+//         alt="2001 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "Established As Key Policy Advisor To Government Of India",
+//   },
+//   {
+//     year: "2005",
+//     icon: (
+//       <Image
+//         src="/optimized/about-2005.webp"
+//         alt="2005 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "Launched Comprehensive Regulatory Framework Initiatives",
+//   },
+//   {
+//     year: "2010",
+//     icon: (
+//       <Image
+//         src="/optimized/about-2010.webp"
+//         alt="2010 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "Pioneered Renewable Energy Integration Policies",
+//   },
+//   {
+//     year: "2015",
+//     icon: (
+//       <Image
+//         src="/optimized/about-2015.webp"
+//         alt="2015 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "Achieved Recognition As Leading Energy Sector Catalyst",
+//   },
+//   {
+//     year: "2020",
+//     icon: (
+//       <Image
+//         src="/optimized/about-2020.webp"
+//         alt="2020 milestone"
+//         width={45}
+//         height={45}
+//         className="object-contain"
+//         loading="lazy"
+//       />
+//     ),
+//     text: "Expanded Focus To Include Sustainability And Clean Energy",
+//   },
+//   // {
+//   //   year: "2024",
+//   //   icon: (
+//   //     <Image
+//   //       src="/optimized/about-2024.webp"
+//   //       alt="2024 milestone"
+//   //       width={45}
+//   //       height={45}
+//   //       className="object-contain"
+//   //       loading="lazy"
+//   //     />
+//   //   ),
+//   //   text: "Leading India's Energy Transition With 3200+ MW Mobilized",
+//   // },
+// ];
+
+export default async function MilestonesTimeline() {
+
+  const data = await getAboutMilestones();
+  
   return (
     <section className="bg-white py-8 md:py-14">
       <div className="max-w-[1100px] mx-auto px-4">
@@ -124,7 +131,7 @@ export default function MilestonesTimeline() {
                 right: "40px",
               }}
             />
-            {milestones.map((m) => (
+            {data.milestones.map((m) => (
               <div
                 key={m.year}
                 className="flex items-start mb-16 lg:mb-20 last:mb-0 z-10 mt-10"
@@ -139,7 +146,7 @@ export default function MilestonesTimeline() {
 
           {/* Cards */}
           <div className="flex-1 flex flex-col gap-4 md:gap-6 lg:gap-7">
-            {milestones.map((m, i) => (
+            {data.milestones.map((m, i) => (
               <div
                 key={i}
                 className="flex flex-col sm:flex-row items-start sm:items-center bg-[#F6F6F6] border-b border-[#D3363B] rounded-2xl p-4 md:p-6 lg:p-8 gap-4 md:gap-6 w-full max-w-full md:max-w-[587px]"
@@ -152,13 +159,20 @@ export default function MilestonesTimeline() {
                 </div>
 
                 <div className="flex items-center justify-center bg-[#FFF7F7] rounded-lg w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
-                  {m.icon}
+                  <Image
+         src={m.icon}
+        alt={m.year + " milestone"}
+         width={45}
+        height={45}
+        className="object-contain"
+        loading="lazy"
+       />
                 </div>
 
                 <div className="hidden sm:block w-px h-8 md:h-12 border-l border-[#DDDDDD]"></div>
 
                 <div className="font-red-hat-display capitalize font-semibold text-base md:text-lg lg:text-xl leading-tight text-[#141414] flex-1">
-                  {m.text}
+                  {m.description}
                 </div>
               </div>
             ))}

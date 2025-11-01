@@ -1,9 +1,29 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useParams, notFound } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { getEventBySlug, type Event } from "@/lib/sanity/queries";
 import Link from "next/link";
+
+// Proper TypeScript interfaces
+interface EventDetail {
+  icon?: string;
+  text?: string;
+}
+
+interface HighlightItem {
+  emoji?: string;
+  title?: string;
+  description?: string;
+  color?: string;
+}
+
+interface ContactItem {
+  name?: string;
+  email?: string;
+  phone?: string;
+}
 
 export default function EventDetailPage() {
   const params = useParams();
@@ -41,9 +61,7 @@ export default function EventDetailPage() {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
-    // Store form reference before async operations
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formData = new FormData(e.currentTarget);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -53,21 +71,19 @@ export default function EventDetailPage() {
 
       const data = await response.json();
 
-      // Check if response is successful (either response.ok or data.success)
-      if (response.ok && data.success) {
+      if (data.success) {
         setSubmitStatus({
           type: "success",
           message: "Thank you! Your inquiry has been submitted successfully.",
         });
-        form.reset();
+        e.currentTarget.reset();
       } else {
         setSubmitStatus({
           type: "error",
-          message: data.message || "Something went wrong. Please try again.",
+          message: "Something went wrong. Please try again.",
         });
       }
     } catch (error) {
-      console.error("Form submission error:", error);
       setSubmitStatus({
         type: "error",
         message: "Failed to submit inquiry. Please try again later.",
@@ -79,8 +95,11 @@ export default function EventDetailPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Loading...</div>
+      <div className="flex items-center justify-center min-h-screen bg-white">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-xl font-semibold text-gray-900">Loading event details...</p>
+        </div>
       </div>
     );
   }
@@ -90,273 +109,516 @@ export default function EventDetailPage() {
   }
 
   return (
-    <div className="max-w-[1100px] mx-auto pt-20 sm:pt-32 pb-10 px-2 sm:px-4 w-full">
-      {/* Breadcrumb */}
-      <nav className="mb-8 sm:mb-[40px] flex flex-wrap items-center text-sm">
-        <Link href="/events" className="font-inter font-semibold text-[#4B5563] hover:underline">
-          <span className="font-inter font-semibold text-[#4B5563]">Events</span>
-        </Link>
-        <span className="mx-2">{">"}</span>
-        <span className="font-inter font-semibold text-[#757575]">
-  {(() => {
-    if (typeof event.breadcrumb === 'string') {
-      return event.breadcrumb;
-    } else if (event.breadcrumb && typeof event.breadcrumb === 'object') {
-      return (event.breadcrumb).eventTitle || event.title;
-    } else {
-      return event.title;
-    }
-  })()}
-</span>
-      </nav>
+    <div className="bg-white min-h-screen">
+      <div className="max-w-[1200px] mx-auto pt-20 sm:pt-28 pb-16 px-4 sm:px-6">
+        {/* Breadcrumb */}
+        <nav className="mb-6 flex items-center text-sm">
+          <Link href="/events" className="font-semibold text-gray-600 hover:text-red-600 transition-colors">
+            Events
+          </Link>
+          <svg className="w-4 h-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+          <span className="font-semibold text-gray-900">
+            {(() => {
+              if (typeof event.breadcrumb === 'string') {
+                return event.breadcrumb;
+              } else if (event.breadcrumb && typeof event.breadcrumb === 'object') {
+                return event.breadcrumb.eventTitle || event.title;
+              } else {
+                return event.title;
+              }
+            })()}
+          </span>
+        </nav>
 
-      {/* Event Image */}
-      <div className="rounded-xl overflow-hidden w-full">
-        {/* {event.image ? (
-          <Image
-            src={event.image}
-            alt="Event presentation"
-            width={1100}
-            height={400}
-            className="w-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-[400px] bg-gray-100" aria-hidden />
-        )} */}
-      </div>
-
-      {/* Event Content + Form */}
-      <div className="flex flex-col lg:flex-row justify-between mt-10 lg:mt-[38px] gap-8">
-        {/* Left: Event Details */}
-        <div className="flex-1 font-inter" style={{ maxWidth: "620px" }}>
-          <h1 className="font-red-hat-display font-bold text-2xl sm:text-3xl md:text-[32px] leading-[140%] text-[#141414] m-0">
-            {event.title}
-          </h1>
-          
-          {/* Date and Time */}
-          <div className="mt-6 sm:mt-[22px] font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414]">Date and Time</div>
-          <div className="flex items-center text-base sm:text-[16px] text-[#333931] font-normal leading-[24px] mt-2 mb-3 sm:mb-[14px]">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7" />
-              <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            {event.dateTime}
-          </div>
-          
-          {/* Location */}
-          <div className="font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414] mt-6 sm:mt-8">Location</div>
-          <div className="flex items-center text-base sm:text-[16px] text-[#333931] font-normal leading-[24px] mt-2 mb-4 sm:mb-5">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
-              <path d="M12 21c-6-5.5-8-8.5-8-12a8 8 0 1116 0c0 3.5-2 6.5-8 12z" stroke="currentColor" strokeWidth="1.7" />
-              <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.7" />
-            </svg>
-            {event.location}
-          </div>
-          
-          {/* About Event */}
-          <div className="font-red-hat-display font-bold text-lg sm:text-2xl leading-[100%] text-[#141414] mb-3 sm:mb-4 mt-6 sm:mt-8">
-            About This Event
-          </div>
-          <div className="flex items-center text-xs sm:text-[13.5px] font-semibold mb-2">
-            <span className="bg-[#F7F4FF] text-[#A37CFE] rounded-md px-3 py-1">
-              {event.eventDuration}
-            </span>
-          </div>
-          <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mb-4 sm:mb-5 mt-2">
-            {event.aboutEvent?.mainDescription}
-            <br />
-            <br />
-            {event.aboutEvent?.details?.map((detail: { text?: string }, i: number) => (
-              <div className="flex items-start mb-2" key={i}>
-                {i === 0 && (
-                  <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="1.7" />
-                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="1.7" />
-                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="1.7" />
-                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="1.7" />
-                  </svg>
-                )}
-                {i === 1 && (
-                  <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7" />
-                    <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-                {i === 2 && (
-                  <svg className="w-4 h-4 mr-2 mt-1 flex-shrink-0" fill="none" stroke="#616161" strokeWidth="1.7" viewBox="0 0 24 24">
-                    <path d="M12 21c-6-5.5-8-8.5-8-12a8 8 0 1116 0c0 3.5-2 6.5-8 12z" stroke="currentColor" strokeWidth="1.7" />
-                    <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.7" />
-                  </svg>
-                )}
-                <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">{detail.text}</span>
-              </div>
-            ))}
-          </div>
-          
-          {/* Highlights */}
-          {event.highlights && (
-            <>
-              <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.highlights.title}</div>
-              <ul className="text-[#373737] text-sm sm:text-[15.5px] mb-4 sm:mb-[23px] ml-3 sm:ml-[12px] pl-3 sm:pl-[18px] leading-relaxed sm:leading-[1.8]">
-                {event.highlights.items?.map((item: { emoji?: string; title?: string; description?: string }, index: number) => (
-                  <li key={index} className="mb-1 sm:mb-1.5">
-                    <strong>{item.emoji} {item.title}</strong> {item.description}
-                  </li>
-                ))}
-              </ul>
-            </>
+        {/* Hero Image */}
+        <div className="mb-8 border-2 border-gray-200 rounded-lg overflow-hidden">
+          {event.image ? (
+            <Image
+              src={event.image}
+              alt={event.title}
+              width={1200}
+              height={500}
+              className="w-full object-cover"
+              priority
+            />
+          ) : (
+            <div className="w-full h-[400px] bg-gray-100 flex items-center justify-center">
+              <p className="text-gray-400">Event Image</p>
+            </div>
           )}
-          
-          {/* Prizes - Only show if prizes field exists */}
-          {event.prizes && (
-            <>
-              <div className="font-semibold text-base sm:text-[16px] mt-3 mb-2">{event.prizes.title}</div>
-              <div className="space-y-3">
-                {event.prizes.items?.map((prize: string, index: number) => (
-                  <div className="flex items-start" key={index}>
-                    <svg className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="8" width="18" height="4" rx="1" />
-                      <path d="M12 8v13" />
-                      <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                      <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-                    </svg>
-                    <span className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px]">
-                      {prize}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-          
-          <div className="text-[#333931] text-base sm:text-[16px] font-normal leading-[24px] mt-4 sm:mt-[18px]">
-            {event.conclusion}
-          </div>
-
-          {/* Photo Gallery Section */}
-         
         </div>
 
-        {/* Right: Form */}
-        <div className="w-full max-w-full sm:max-w-[450px] lg:max-w-[450px] min-w-0 bg-[#F7F7F7] rounded-[10px] p-5 sm:p-6 shadow-[0px_0.5px_5.5px_0px_#0000000A] lg:ml-[52px] h-fit">
-          <div className="font-red-hat-display font-bold text-lg sm:text-[24px] leading-[44px] text-[#1F2937] mb-4 sm:mb-[18px]">
-            Inquire about this event
-          </div>
-          <form onSubmit={handleSubmit}>
-            {/* Web3Forms Access Key */}
-            <input
-              type="hidden"
-              name="access_key"
-              value="b082e58d-c43a-4b9c-b64d-61b8d709971f"
-            />
-            {/* Event Name for context in email */}
-            <input
-              type="hidden"
-              name="event_name"
-              value={event.title}
-            />
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Main Content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Title Section */}
+            <div>
+              <h1 className="font-bold text-3xl sm:text-4xl text-gray-900 mb-4 leading-tight">
+                {event.title}
+              </h1>
+              
+              {event.theme && (
+                <div className="inline-flex items-center gap-2 bg-red-50 text-red-700 px-4 py-2 rounded-md border border-red-200 font-semibold">
+                  {event.theme}
+                </div>
+              )}
+            </div>
 
-            <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
-              Full Name
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter Full Name"
-                className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
-                required
-              />
-            </label>
-            <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
-              Email Address
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter Email"
-                className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
-                required
-              />
-            </label>
-            <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
-              Phone Number
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter Phone Number"
-                className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
-                required
-              />
-            </label>
-            <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-2 mt-3">
-              Company Name
-              <input
-                type="text"
-                name="company"
-                placeholder="Enter Company Name"
-                className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D]"
-              />
-            </label>
-            <label className="block font-inter font-semibold text-[13px] sm:text-[14px] leading-[20px] text-[#374151] mb-3 mt-3">
-              Message
-              <textarea
-                name="message"
-                placeholder="Enter your Message"
-                rows={3}
-                className="w-full mt-1 mb-1 px-3 py-2 sm:py-[10px] rounded-md border border-[#D1D5DB] bg-white font-inter font-normal text-base sm:text-[16px] leading-[24px] text-[#9CA3AF] outline-none focus:border-[#D3363B] focus:ring-1 focus:ring-[#D3363B] shadow-[0px_1px_2px_0px_#0000000D] resize-vertical"
-                required
-              />
-            </label>
+            {/* Quick Info Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-6 border-b border-gray-200">
+              {/* Date & Time */}
+              <div className="flex items-start gap-3">
+                <div className="bg-red-600 rounded-lg p-3 mt-1">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Date & Time</p>
+                  <p className="font-bold text-gray-900">{event.date}</p>
+                  {event.time && <p className="text-sm text-gray-600 mt-1">{event.time}</p>}
+                </div>
+              </div>
 
-            {/* Status Message */}
-            {submitStatus.type && (
-              <div
-                className={`text-center py-3 px-4 rounded-md mb-3 ${
-                  submitStatus.type === "success"
-                    ? "bg-green-100 text-green-700 border border-green-300"
-                    : "bg-red-100 text-red-700 border border-red-300"
-                }`}
-              >
-                {submitStatus.message}
+              {/* Location */}
+              <div className="flex items-start gap-3">
+                <div className="bg-black rounded-lg p-3 mt-1">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M12 21c-6-5.5-8-8.5-8-12a8 8 0 1116 0c0 3.5-2 6.5-8 12z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Location</p>
+                  <p className="font-bold text-gray-900 text-sm leading-tight">{event.location}</p>
+                </div>
+              </div>
+
+              {/* Capacity - if exists */}
+              {event.capacity && (
+                <div className="flex items-start gap-3">
+                  <div className="bg-gray-900 rounded-lg p-3 mt-1">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Capacity</p>
+                    <p className="font-bold text-gray-900">{event.capacity}</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Organizer - if exists */}
+              {event.organizer && (
+                <div className="flex items-start gap-3">
+                  <div className="bg-red-600 rounded-lg p-3 mt-1">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Organized By</p>
+                    <p className="font-bold text-gray-900">{event.organizer}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Concept Note */}
+            {event.conceptNote && (
+              <div className="border-l-4 border-red-600 bg-red-50 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Concept Note</h2>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {event.conceptNote}
+                </p>
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="mt-2 sm:mt-3 bg-[#D3363B] text-white text-center border-none rounded-[25px] py-2.5 sm:py-3 px-8 font-work-sans font-medium text-base sm:text-[16px] leading-[100%] cursor-pointer shadow-[0px_4px_4px_0px_#D3363B4F] hover:bg-[#B8292E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-full"
-            >
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </button>
-          </form>
-        </div>
-      </div>
-       {event.gallery && event.gallery.length > 0 && (
-            <div className="mt-8 sm:mt-12">
-              <h2 className="font-red-hat-display font-bold text-center text-xl sm:text-2xl leading-[100%] text-[#141414] mb-6">
-                Photo Gallery
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {event.gallery.map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 hover:opacity-90 transition-opacity cursor-pointer"
-                  >
-                    <Image
-                      src={image.url}
-                      alt={image.alt || `Event gallery image ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    />
-                    {image.caption && (
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2">
-                        {image.caption}
-                      </div>
-                    )}
+            {/* About Event */}
+            {event.aboutEvent?.mainDescription && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Event</h2>
+                
+                {event.eventDuration && (
+                  <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-md mb-4 font-semibold">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                    </svg>
+                    {event.eventDuration}
                   </div>
-                ))}
+                )}
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  {event.aboutEvent.mainDescription}
+                </p>
+                
+                {event.aboutEvent.details && event.aboutEvent.details.length > 0 && (
+                  <div className="space-y-3">
+                    {event.aboutEvent.details.map((detail: EventDetail, i: number) => (
+                      <div key={i} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+                        <div className="bg-red-600 rounded p-2">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed flex-1">{detail.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Venue Information */}
+                {event.aboutEvent.venue && (
+                  <div className="mt-6 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {event.aboutEvent.venue.title || 'Venue Information'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">{event.aboutEvent.venue.description}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Event Highlights */}
+            {event.highlights && event.highlights.items && event.highlights.items.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.highlights.title || 'Event Highlights'}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {event.highlights.items.map((item: HighlightItem, index: number) => (
+                    <div 
+                      key={index} 
+                      className="bg-gray-50 p-5 rounded-lg border-l-4 hover:shadow-md transition-shadow"
+                      style={{ borderColor: item.color || '#DC2626' }}
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="text-3xl">{item.emoji}</span>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                          <p className="text-gray-700 leading-relaxed text-sm">{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Critical Issues */}
+            {event.criticalIssues && event.criticalIssues.items && event.criticalIssues.items.length > 0 && (
+              <div className="border-l-4 border-red-600 bg-red-50 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.criticalIssues.title || 'Critical Issues'}
+                </h2>
+                <ul className="space-y-2">
+                  {event.criticalIssues.items.map((issue: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-800 leading-relaxed">{issue}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Why Attend */}
+            {event.whyAttend && (
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.whyAttend.title || 'Why Attend'}
+                </h2>
+                <p className="text-gray-800 text-base leading-relaxed">{event.whyAttend.description}</p>
+              </div>
+            )}
+
+            {/* Who Should Attend */}
+            {event.whoShouldAttend && event.whoShouldAttend.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Who Should Attend</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {event.whoShouldAttend.map((attendee: string, index: number) => (
+                    <div key={index} className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <svg className="w-5 h-5 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-800 font-medium">{attendee}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Delegate Fees */}
+            {event.delegateFees && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Registration Fees</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {event.delegateFees.privateEntities && (
+                    <div className="bg-gray-50 p-5 rounded-lg border-2 border-gray-200">
+                      <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Private Entities</p>
+                      <p className="text-2xl font-bold text-gray-900">{event.delegateFees.privateEntities}</p>
+                    </div>
+                  )}
+                  {event.delegateFees.governmentEntities && (
+                    <div className="bg-gray-50 p-5 rounded-lg border-2 border-gray-200">
+                      <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Government Entities</p>
+                      <p className="text-2xl font-bold text-gray-900">{event.delegateFees.governmentEntities}</p>
+                    </div>
+                  )}
+                  {event.delegateFees.sercChairmenMembers && (
+                    <div className="bg-gray-50 p-5 rounded-lg border-2 border-gray-200">
+                      <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">SERC Chairmen & Members</p>
+                      <p className="text-2xl font-bold text-gray-900">{event.delegateFees.sercChairmenMembers}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Awards Information */}
+            {event.awards && (
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.awards.title || 'Awards'}
+                </h2>
+                {event.awards.description && (
+                  <p className="text-gray-800 leading-relaxed mb-4">{event.awards.description}</p>
+                )}
+                {event.awards.date && (
+                  <p className="text-gray-700 mb-4"><strong>Awards Date:</strong> {event.awards.date}</p>
+                )}
+                {event.awards.categories && event.awards.categories.length > 0 && (
+                  <div>
+                    <p className="font-bold text-gray-900 mb-3">Award Categories:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {event.awards.categories.map((category: string, index: number) => (
+                        <div key={index} className="flex items-center gap-2 bg-white p-3 rounded border border-gray-200">
+                          <svg className="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-gray-800 text-sm">{category}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Prizes */}
+            {event.prizes && event.prizes.items && event.prizes.items.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {event.prizes.title || 'Prizes'}
+                </h2>
+                <div className="space-y-3">
+                  {event.prizes.items.map((prize: string, index: number) => (
+                    <div key={index} className="flex items-start gap-4 bg-gray-50 p-4 rounded-lg border-l-4 border-red-600">
+                      <svg className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <p className="text-gray-800 leading-relaxed">{prize}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Contacts */}
+            {event.contacts && event.contacts.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {event.contacts.map((contact: ContactItem, index: number) => (
+                    <div key={index} className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                      {contact.name && (
+                        <p className="font-bold text-gray-900 text-lg mb-3">{contact.name}</p>
+                      )}
+                      {contact.email && (
+                        <div className="flex items-center gap-2 mb-2">
+                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <a href={`mailto:${contact.email}`} className="text-red-600 hover:underline text-sm">{contact.email}</a>
+                        </div>
+                      )}
+                      {contact.phone && (
+                        <div className="flex items-center gap-2">
+                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          </svg>
+                          <a href={`tel:${contact.phone}`} className="text-red-600 hover:underline text-sm">{contact.phone}</a>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Conclusion */}
+            {event.conclusion && (
+              <div className="bg-gray-900 p-6 rounded-lg text-white">
+                <h2 className="text-2xl font-bold mb-4">In Conclusion</h2>
+                <p className="text-gray-200 leading-relaxed">{event.conclusion}</p>
+              </div>
+            )}
+
+            {/* Photo Gallery */}
+            {event.gallery && event.gallery.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {event.gallery.map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative aspect-square overflow-hidden rounded-lg border-2 border-gray-200 hover:border-red-600 transition-colors cursor-pointer"
+                    >
+                      <Image
+                        src={image.url}
+                        alt={image.alt || `Event gallery image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                      />
+                      {image.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white text-xs p-2">
+                          {image.caption}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Right Column - Inquiry Form (Sticky) */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Inquire About This Event</h3>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
+                  <input type="hidden" name="event_name" value={event.title} />
+
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Full Name <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter your full name"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-red-600 focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Email Address <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="your.email@example.com"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-red-600 focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Phone Number <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="+91 98765 43210"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-red-600 focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="Your organization"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-red-600 focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Message <span className="text-red-600">*</span>
+                    </label>
+                    <textarea
+                      name="message"
+                      placeholder="Tell us about your inquiry..."
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:border-red-600 focus:outline-none transition-colors resize-vertical"
+                      required
+                    />
+                  </div>
+
+                  {submitStatus.type && (
+                    <div
+                      className={`p-4 rounded-lg text-center font-medium ${
+                        submitStatus.type === "success"
+                          ? "bg-green-50 text-green-700 border-2 border-green-200"
+                          : "bg-red-50 text-red-700 border-2 border-red-200"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+                  </button>
+                </form>
+
+                {/* Registration Link */}
+                {event.registrationLink && (
+                  <div className="mt-4 pt-4 border-t-2 border-gray-200">
+                    <a
+                      href={event.registrationLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+                    >
+                      Register Now
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
-          )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
