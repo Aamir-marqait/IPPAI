@@ -112,6 +112,20 @@ type TeamMember,
   getAboutLeadership,
 } from './aboutLeadership'
 
+export {
+  // Types
+  type HomeBannerData,
+  // Functions
+  getHomeBanner,
+} from './homeBanner'
+
+export {
+  type FeaturedEvent,
+  type FeaturedCourse,
+  type HomeIntroductionData,
+  getHomeIntroduction,
+} from './homeIntroduction'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================
