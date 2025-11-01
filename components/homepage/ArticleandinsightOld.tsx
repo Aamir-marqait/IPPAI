@@ -26,7 +26,7 @@ const cards = [
   },
 ];
 
-const ArticlesAndInsights = () => {
+const ArticlesAndInsightsOld = () => {
   return (
     <section
       className="min-h-[85vh] px-4 py-12 flex flex-col justify-center items-center"
@@ -84,4 +84,4 @@ const ArticlesAndInsights = () => {
   );
 };
 
-export default ArticlesAndInsights;
+export default ArticlesAndInsightsOld;

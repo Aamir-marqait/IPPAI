@@ -1,4 +1,5 @@
-import ArticlesAndInsights from "@/components/homepage/Articleandinsight";
+
+import ArticlesAndInsights from "@/components/homepage/Article";
 import Banners from "@/components/homepage/banners";
 import HomeHero from "@/components/homepage/hero-section";
 import Introduction from "@/components/homepage/introduction";

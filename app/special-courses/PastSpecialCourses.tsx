@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { CalendarCheck, MapPin } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function PastSpecialCourses() {
@@ -40,11 +41,16 @@ export default function PastSpecialCourses() {
               September 11–13, 2025
             </div>
           </div>
-          <Link href="/photo-gallery" className="hidden lg:flex">
-            <Button className="cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors">
-              View Gallery
-            </Button>
-          </Link>
+          <Button
+            onClick={() => {
+              document
+                .getElementById("register-now")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="hidden lg:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white px-6 py-2 rounded-full transition-colors"
+          >
+            Enquire Now
+          </Button>
         </div>
         {/* Right Image */}
         <div className="flex-1 flex justify-center items-center w-full">
