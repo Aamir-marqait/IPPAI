@@ -5,6 +5,56 @@ import { useState } from "react";
 
 export default function ContactSection() {
   const [showMoreEmails, setShowMoreEmails] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      message: formData.get("message"),
+    };
+
+    try {
+      // Submit to Web3Forms (email notification)
+      const web3FormsResponse = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      // Submit to Google Sheets
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxD6mRndjvyK1iu5DzBdqTGpW1oT3KzrtBJI0Ib1MlLY8uV-0oVth3V6tErVUvIhc_LPw/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (web3FormsResponse.ok) {
+        alert("Thank you! Your message has been submitted successfully.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("There was an error submitting your form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="w-full bg-white py-12">
@@ -140,11 +190,7 @@ export default function ContactSection() {
             <h3 className="text-[30.1px] font-bold mb-6 font-red-hat-display text-[#141414] leading-[34.2px]">
               Get In Touch
             </h3>
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="hidden"
                 name="access_key"
@@ -208,9 +254,10 @@ export default function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="rounded-[20.52px] bg-[#D3363B] text-white font-semibold py-3 px-6 mt-2 transition hover:bg-[#B8292E] font-work-sans text-base leading-[12.31px] text-center w-fit"
+                disabled={isSubmitting}
+                className="rounded-[20.52px] bg-[#D3363B] text-white font-semibold py-3 px-6 mt-2 transition hover:bg-[#B8292E] font-work-sans text-base leading-[12.31px] text-center w-fit disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>
