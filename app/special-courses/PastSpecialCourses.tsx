@@ -55,7 +55,7 @@ export default function PastSpecialCourses() {
         {/* Right Image */}
         <div className="flex-1 flex justify-center items-center w-full">
           <Image
-            src="/psc.png"
+            src="/course/Img4.png"
             alt="Special Course event"
             width={430}
             height={280}
