@@ -31,7 +31,7 @@ export function VoicesInAction() {
     //   imgSrc: "/voice/1.png",
     //   imgAlt: "Video thumbnail",
     //   date: "Aug 10, 2025",
-    //   title: "about IRPRI",
+    //   title: "about RPRI",
     //   description:
     //     "Explore how young leaders are taking charge of community projects, inspiring peers, and creating real social impact.",
     //   videoSrc: "/voice/1.mp4",

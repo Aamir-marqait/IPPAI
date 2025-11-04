@@ -28,7 +28,7 @@ export default function RegisterNowSection() {
             Register Now
           </h1>
           <p className="text-white/80 text-base font-normal leading-relaxed max-w-xs mb-2">
-            Join IRPRI to access exclusive courses, research resources, and
+            Join RPRI to access exclusive courses, research resources, and
             expert insights that will advance your knowledge in India&apos;s power
             sector and energy policy.
           </p>

@@ -73,7 +73,7 @@ export default function CampusGallery() {
             </span>
           </div>
           <h2 className="font-red-hat-display font-bold text-xl sm:text-[36px] leading-none text-[#141414] mb-4 sm:mb-6">
-            IRPRI Batch 1
+            RPRI Batch 1
           </h2>
           <p className="font-poppins font-normal text-sm sm:text-base leading-[24px] sm:leading-[28px] text-gray-600 max-w-2xl">
             Unique confluences of stalwarts from government, industry and civil

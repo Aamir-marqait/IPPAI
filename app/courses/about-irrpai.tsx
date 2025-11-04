@@ -34,7 +34,7 @@ export default function AboutIrpriSection() {
             <div className="flex items-center gap-3 mb-1">
               <div className="w-[5px] h-[24px] bg-[#D3363B] opacity-100"></div>
               <span className="font-red-hat-display font-bold xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-[#D3363B] uppercase">
-                ABOUT IRPRI
+                ABOUT RPRI
               </span>
             </div>
             <h2 className="font-red-hat-display font-bold xl:text-[36px] xl:leading-[48px] xl:tracking-[0%] text-2xl sm:text-3xl md:text-4xl text-[#222] mb-2 capitalize">
@@ -43,7 +43,7 @@ export default function AboutIrpriSection() {
               <span className="text-[#BC3C33]">Policy &amp; Progress</span>
             </h2>
             <p className="font-poppins font-normal xl:text-[16px] xl:leading-[24px] xl:tracking-[0%] text-[#4D5756] text-base sm:text-lg leading-relaxed mb-4 max-w-xl">
-              The IPPAI Regulatory and Policy Research Institute (IRPRI) is
+              The IPPAI Regulatory and Policy Research Institute (RPRI) is
               dedicated to advancing knowledge, capacity building, and
               leadership in India&apos;s evolving power and energy sector through
               research, training, and collaboration.

@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/courses" className="hover:underline">
-                  IRPRI
+                  RPRI
                 </Link>
               </li>
             </ul>

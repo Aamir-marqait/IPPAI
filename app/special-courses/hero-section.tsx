@@ -28,7 +28,7 @@ export default function SpecialCoursesHero() {
           </div>
 
           <h1 className="text-white font-red-hat-display font-bold text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
-            IRPRI — Institute for Regulatory <br className="hidden sm:block" />
+            RPRI — Institute for Regulatory <br className="hidden sm:block" />
             Policy & Research in Infrastructure
           </h1>
           <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
@@ -47,7 +47,7 @@ export default function SpecialCoursesHero() {
             className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition mb-3 inline-block"
             style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
           >
-            Learn More About IRPRI
+            Learn More About RPRI
           </Link>
         </div>
         <div className=" z-20 hidden md:flex flex-col justify-center"></div>
