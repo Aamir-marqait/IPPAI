@@ -85,12 +85,12 @@ export default function Header() {
                 onMouseLeave={() => setResourcesDropdown(false)}
               >
                 <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
-                  IRPRI
+                  RPRI
                   <ChevronDown className="w-4 h-4" />
                   <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
                 </button>
 
-                {/* IRPRI Dropdown */}
+                {/* RPRI Dropdown */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-6 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50 opacity-0 pointer-events-none">
                   <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
                   <div className="py-2">
@@ -336,7 +336,7 @@ export default function Header() {
                     : "text-white hover:text-red-500"
                 }`}
               >
-                IRPRI
+                RPRI
                 <ChevronDown className="w-4 h-4" />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
@@ -355,7 +355,7 @@ export default function Header() {
                 <div className="absolute top-full left-0 right-0 h-4 bg-transparent"></div>
               )}
 
-              {/* IRPRI Dropdown Main */}
+              {/* RPRI Dropdown Main */}
               {irpriDropdownMain && (
                 <div
                   className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white shadow-[0px_2px_4px_0px_#0000001F_inset] rounded-md z-50"
@@ -606,7 +606,7 @@ export default function Header() {
                 className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
                 onClick={() => setIrpriDropdownMobile(!irpriDropdownMobile)}
               >
-                IRPRI
+                RPRI
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-300 ${
                     irpriDropdownMobile ? "rotate-180" : ""
