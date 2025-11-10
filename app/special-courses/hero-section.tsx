@@ -28,8 +28,8 @@ export default function SpecialCoursesHero() {
           </div>
 
           <h1 className="text-white font-red-hat-display font-bold text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
-            RPRI — Institute for Regulatory <br className="hidden sm:block" />
-            Policy & Research in Infrastructure
+            IRPRI — IPPAI Regulatory<br className="hidden sm:block" />
+            and Policy Research Institute
           </h1>
           <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
             Building Capacity, Sharing Knowledge, and Empowering India&apos;s
@@ -37,7 +37,7 @@ export default function SpecialCoursesHero() {
           </div>
 
           <div className="text-white font-poppins font-normal xl:text-[14px] xl:leading-[27px] xl:tracking-[0.32px] mb-5 text-base">
-            RPRI, an initiative by IPPAI, conducts specialized training programs
+            IRPRI, an initiative by IPPAI, conducts specialized training programs
             and workshops for utilities, regulators, and industry professionals
             to strengthen understanding of policy, regulation, and market
             evolution in India&apos;s Power Sector.
