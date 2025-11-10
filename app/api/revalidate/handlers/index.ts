@@ -52,6 +52,12 @@ export {
   handleHomeIntroductionRevalidation
 } from './homeIntroduction'
 
+export {
+  handleCoursesPageRevalidation,
+  handleCourseRevalidation,
+  revalidateAllCourses
+} from './courses'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

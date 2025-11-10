@@ -1,5 +1,6 @@
 import Image from "next/image";
 import coursesData from "../../data/courses.json";
+import Link from "next/link";
 
 const courses = coursesData.courses;
 
@@ -37,6 +38,8 @@ export default function CurriculumCourses() {
                 overflow-hidden
               "
             >
+             
+              {/* Course Title */}
               <div className="px-3 mt-3">
                 <div className="font-epilogue font-semibold xl:text-[17.5px] xl:leading-[26.25px] xl:tracking-[0%] text-[17px] leading-tight text-black mb-2 capitalize">
                   {course.title}
@@ -63,9 +66,15 @@ export default function CurriculumCourses() {
               </div>
               {/* Content */}
               <div className="px-3 mt-2 mb-6 flex-grow">
+                <Link
+                href={`/courses/${course.slug}`}
+              >
                 <p className="font-poppins font-medium text-base leading-[26.67px] align-middle capitalize text-[#D3363B]">
                   About the Course
                 </p>
+                 
+               
+              </Link>
                 <p className="font-poppins font-normal text-base leading-[28px] align-middle text-[#6D6C80]">
                   {course.description}
                 </p>

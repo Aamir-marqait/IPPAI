@@ -126,6 +126,30 @@ export {
   getHomeIntroduction,
 } from './homeIntroduction'
 
+export {
+  // Types
+  type CourseInstructor,
+  type CourseCard,
+  type CourseDetail,
+  type CoursesHero,
+  type CoursesSection,
+  type GalleryImage as CoursesGalleryImage,
+  type CoursesGallery,
+  type CoursesPageData,
+  type PaginatedCoursesResult,
+  type CoursesFilterOptions,
+
+  // Functions
+  getCoursesPageData,
+  getAllCourses,
+  getAllCourseSlugs,
+  getPaginatedCourses,
+  getCoursesFilterOptions,
+  getCourseBySlug
+
+
+} from './courses'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

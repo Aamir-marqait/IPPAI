@@ -25,10 +25,10 @@ export default function CampusSection() {
             </span>
           </div>
           <h2 className="font-red-hat-display font-bold xl:text-[36px] xl:leading-[47.88px] xl:tracking-[-0.75px] text-2xl sm:text-3xl md:text-4xl text-[#161439] mb-4 capitalize">
-            RPRI Campus
+            IRPRI Campus
           </h2>
           <p className="font-poppins font-normal xl:text-[16px] xl:leading-[28px] xl:tracking-[0%] text-[#6D6C80] text-base leading-relaxed mb-2">
-            The RPRI facility is situated at Shoonya Farm Retreat in Belgundi,
+            The IRPRI facility is situated at Shoonya Farm Retreat in Belgundi,
             Belgaum, Karnataka, 591108. Direct flights are available to the
             Belagavi Airport a mere 30 minutes from Shoonya, from the following
             cities: Delhi, Mumbai, Bengaluru, Hyderabad, Tirupati, Nagpur,

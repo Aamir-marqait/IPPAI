@@ -11,6 +11,8 @@ import aboutMilestones from './aboutMilestones'
 import aboutLeadership from './aboutLeadership'
 import homeBanner from './homeBanner'
 import homeIntroduction from './homeIntroduction'
+import course from './course'
+import coursesPage from './coursesPage'
 
 export const schemas = [
   event,
@@ -25,5 +27,7 @@ export const schemas = [
   aboutMilestones,
   aboutLeadership,
   homeBanner,
-  homeIntroduction
+  homeIntroduction,
+  course,
+  coursesPage
 ]

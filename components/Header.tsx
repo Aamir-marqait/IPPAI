@@ -85,7 +85,7 @@ export default function Header() {
                 onMouseLeave={() => setResourcesDropdown(false)}
               >
                 <button className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group flex items-center gap-1">
-                  RPRI
+                  IRPRI
                   <ChevronDown className="w-4 h-4" />
                   <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
                 </button>
@@ -336,7 +336,7 @@ export default function Header() {
                     : "text-white hover:text-red-500"
                 }`}
               >
-                RPRI
+                IRPRI
                 <ChevronDown className="w-4 h-4" />
                 <div
                   className={`absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 ${
@@ -606,7 +606,7 @@ export default function Header() {
                 className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group flex items-center justify-center gap-1"
                 onClick={() => setIrpriDropdownMobile(!irpriDropdownMobile)}
               >
-                RPRI
+                IRPRI
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-300 ${
                     irpriDropdownMobile ? "rotate-180" : ""

@@ -34,7 +34,7 @@ export default function AboutIrpriSection() {
             <div className="flex items-center gap-3 mb-1">
               <div className="w-[5px] h-[24px] bg-[#D3363B] opacity-100"></div>
               <span className="font-red-hat-display font-bold xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-[#D3363B] uppercase">
-                ABOUT RPRI
+                ABOUT IRPRI
               </span>
             </div>
             <h2 className="font-red-hat-display font-bold xl:text-[36px] xl:leading-[48px] xl:tracking-[0%] text-2xl sm:text-3xl md:text-4xl text-[#222] mb-2 capitalize">
