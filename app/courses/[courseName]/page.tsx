@@ -358,12 +358,12 @@ interface CourseDetailPageProps {
   };
 }
 
-export default async function CourseDetailPage({ params }: CourseDetailPageProps) {
-  const course = await getCourseBySlug(params.courseName);
-
-  if (!course) {
-    notFound();
-  }
+export default async function CourseDetailPage(
+  { params }: { params: Promise<{ courseName: string }> }
+) {
+  const { courseName } = await params;
+  const course = await getCourseBySlug(courseName);
+  if (!course) notFound();
 
   return (
     <div className="max-w-[1100px] mx-auto pt-20 sm:pt-32 pb-10 px-2 sm:px-4 w-full">
