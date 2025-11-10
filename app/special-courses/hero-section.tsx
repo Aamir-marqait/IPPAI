@@ -29,7 +29,7 @@ export default function SpecialCoursesHero() {
 
           <h1 className="text-white font-red-hat-display font-bold text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
             IRPRI — IPPAI Regulatory<br className="hidden sm:block" />
-            and Policy Research Institute
+            and Policy Research Institute.
           </h1>
           <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
             Building Capacity, Sharing Knowledge, and Empowering India&apos;s

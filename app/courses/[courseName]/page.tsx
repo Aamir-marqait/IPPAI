@@ -352,11 +352,7 @@ export async function generateStaticParams() {
   }));
 }
 
-interface CourseDetailPageProps {
-  params: {
-    courseName: string;
-  };
-}
+
 
 export default async function CourseDetailPage(
   { params }: { params: Promise<{ courseName: string }> }
