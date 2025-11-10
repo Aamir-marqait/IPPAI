@@ -27,11 +27,11 @@ export default function SpecialCoursesHero() {
             />
           </div>
 
-          <h1 className="text-white font-red-hat-display font-bold md:text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
+          <h1 className="text-white font-red-hat-display font-bold text-3xl md:text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
             IRPRI — Institute for Regulatory <br className="hidden sm:block" />
             Policy & Research in Infrastructure
           </h1>
-          <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
+          <div className="text-white font-poppins font-medium text-xl md:text-[28px] leading-[100%] tracking-[0px] mb-5">
             Building Capacity, Sharing Knowledge, and Empowering India&apos;s
             Power Sector
           </div>
