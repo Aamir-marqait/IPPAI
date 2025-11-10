@@ -27,16 +27,16 @@ export default function SpecialCoursesHero() {
             />
           </div>
 
-          <h1 className="text-white font-red-hat-display font-bold text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
+          <h1 className="text-white font-red-hat-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[125%] tracking-[0px] mb-4 drop-shadow-lg">
             RPRI — Institute for Regulatory <br className="hidden sm:block" />
             Policy & Research in Infrastructure
           </h1>
-          <div className="text-white font-poppins font-medium text-[28px] leading-[100%] tracking-[0px] mb-5">
+          <div className="text-white font-poppins font-medium text-lg sm:text-xl md:text-2xl lg:text-[28px] leading-[120%] tracking-[0px] mb-5">
             Building Capacity, Sharing Knowledge, and Empowering India&apos;s
             Power Sector
           </div>
 
-          <div className="text-white font-poppins font-normal xl:text-[14px] xl:leading-[27px] xl:tracking-[0.32px] mb-5 text-base">
+          <div className="text-white font-poppins font-normal text-sm sm:text-base leading-[160%] mb-5">
             RPRI, an initiative by IPPAI, conducts specialized training programs
             and workshops for utilities, regulators, and industry professionals
             to strengthen understanding of policy, regulation, and market
@@ -44,7 +44,7 @@ export default function SpecialCoursesHero() {
           </div>
           <Link
             href="#register-now"
-            className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition mb-3 inline-block"
+            className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium text-sm sm:text-base text-center cursor-pointer px-6 sm:px-7 py-2.5 rounded-full transition mb-3 inline-block"
             style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
           >
             Learn More About RPRI

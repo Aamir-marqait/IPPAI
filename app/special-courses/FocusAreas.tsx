@@ -21,14 +21,14 @@ const cards = [
 
 export default function FocusAreas() {
   return (
-    <section className="w-full bg-white py-8 flex justify-center items-center max-w-[1100px] mx-auto">
-      <div className="flex flex-col md:flex-row justify-center gap-6 w-full">
+    <section className="w-full bg-white py-8 px-4 flex justify-center items-center">
+      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full max-w-[1100px]">
         {cards.map((card, idx) => (
           <div
             key={idx}
-            className="border border-gray-200 rounded-lg bg-white flex flex-col items-start px-8 py-7 min-w-[220px] max-w-[340px] w-full shadow-none"
+            className="border border-gray-200 rounded-lg bg-white flex flex-col items-start px-6 sm:px-8 py-6 sm:py-7 w-full sm:min-w-[220px] sm:max-w-[340px] shadow-none"
           >
-            <div className="bg-gray-100 rounded-lg w-12 h-12 flex items-center justify-center mb-5">
+            <div className="bg-gray-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4 sm:mb-5">
               {card.iconSrc ? (
                 <Image
                   src={card.iconSrc}
@@ -41,7 +41,7 @@ export default function FocusAreas() {
                 <div className="w-8 h-8" />
               )}
             </div>
-            <div className="font-work-sans font-normal text-[28px] leading-[100%] tracking-[0%] text-black">
+            <div className="font-work-sans font-normal text-xl sm:text-2xl lg:text-[28px] leading-[110%] tracking-[0%] text-black">
               {card.title}
             </div>
           </div>
