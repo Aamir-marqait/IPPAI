@@ -150,6 +150,27 @@ export {
 
 } from './courses'
 
+
+export {
+  // Types
+  type SpecialCourseCard,
+  type FocusAreaCard,
+  type SpecialCoursesFocusAreas,
+  type SpecialCoursesHero,
+  type SpecialCoursesPageData,
+  type FacultyMember,
+  type GalleryImage as SpecialCoursesGalleryImage,
+  type SpecialCourseDetail,
+  // Functions
+  getSpecialCoursesPageData,
+  getFeaturedCourses,
+  getFeaturedCoursesWithDetails,
+  getSpecialCourseBySlug
+
+
+
+} from './specialCourses'
+
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
 // ============================================

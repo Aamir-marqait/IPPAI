@@ -13,6 +13,8 @@ import homeBanner from './homeBanner'
 import homeIntroduction from './homeIntroduction'
 import course from './course'
 import coursesPage from './coursesPage'
+import specialCourse from './specialCourse'
+import specialCoursesPage from './specialCoursesPage'
 
 export const schemas = [
   event,
@@ -29,5 +31,7 @@ export const schemas = [
   homeBanner,
   homeIntroduction,
   course,
-  coursesPage
+  coursesPage,
+  specialCourse,
+  specialCoursesPage
 ]
