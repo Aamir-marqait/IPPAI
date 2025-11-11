@@ -15,8 +15,10 @@ export default function ContactSection() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
+      phone: formData.get("phone"),
       company: formData.get("company"),
       message: formData.get("message"),
+      source: formData.get("source"),
     };
 
     try {
@@ -31,7 +33,7 @@ export default function ContactSection() {
 
       // Submit to Google Sheets
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxD6mRndjvyK1iu5DzBdqTGpW1oT3KzrtBJI0Ib1MlLY8uV-0oVth3V6tErVUvIhc_LPw/exec",
+        "https://script.google.com/macros/s/AKfycbzundmFjoaZr-aaGk9rIyWL_CdZYtu16nduh4MrNTkN2L-ft2hsgf8hHQGLUZpfOK6jXg/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -201,6 +203,11 @@ export default function ContactSection() {
                 name="subject"
                 value="Contact Form Submission"
               />
+              <input
+                type="hidden"
+                name="source"
+                value="Contact Page"
+              />
               {/* Name */}
               <div>
                 <label className="block text-[12.31px] font-medium mb-1 text-[#121212] font-poppins leading-[12.31px]">
@@ -225,6 +232,19 @@ export default function ContactSection() {
                   required
                   className="w-full rounded-full border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition"
                   placeholder="example@email.com"
+                />
+              </div>
+              {/* Phone Number */}
+              <div>
+                <label className="block text-[12.31px] font-medium mb-1 text-[#121212] font-poppins leading-[12.31px]">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  className="w-full rounded-full border border-[#E3E3E3] px-5 py-3 bg-[#FCFCFC] text-[12.31px] font-poppins font-normal leading-[12.31px] placeholder:text-[#888] focus:outline-none focus:border-[#C24A48] transition"
+                  placeholder="+91 98765 43210"
                 />
               </div>
               {/* Company Name */}

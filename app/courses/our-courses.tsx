@@ -1,106 +1,3 @@
-// import Image from "next/image";
-// import coursesData from "../../data/courses.json";
-// import Link from "next/link";
-
-// const courses = coursesData.courses;
-
-// export default function CurriculumCourses() {
-//   return (
-//     <section
-//       className="w-full py-10 sm:py-14 px-2 sm:px-6 flex justify-center items-center"
-//       style={{
-//         backgroundImage: `url('/courses/bg.png')`,
-//         backgroundRepeat: "no-repeat",
-//         backgroundSize: "cover",
-//         backgroundPosition: "center",
-//       }}
-//     >
-//       <div className="mx-auto w-full max-w-[1100px] flex flex-col">
-//         <div className="flex items-center gap-3 mb-2">
-//           <div className="w-[5px] h-[24px] bg-[#D3363B] opacity-100"></div>
-//           <span className="font-red-hat-display font-bold xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-[#D3363B] uppercase">
-//             OUR Course
-//           </span>
-//         </div>
-//         <h2 className="font-red-hat-display font-bold xl:text-[36px] xl:leading-[48px] xl:tracking-[0%] text-2xl sm:text-3xl md:text-4xl text-[#141414] mb-3 capitalize">
-//           Comprehensive Curriculum On <br className="hidden sm:block" />
-//           Energy, Policy & Regulation
-//         </h2>
-
-//         {/* Grid */}
-//         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 justify-items-center">
-//           {courses.map((course, idx) => (
-//             <div
-//               key={course.id}
-//               className="
-//                 bg-white rounded-[10px] shadow-[0px_0px_8.9px_0px_rgba(0,0,0,0.09)]
-//                 w-full max-w-[539px] min-h-[571px] opacity-100 flex flex-col
-//                 overflow-hidden
-//               "
-//             >
-             
-//               {/* Course Title */}
-//               <div className="px-3 mt-3">
-//                 <div className="font-epilogue font-semibold xl:text-[17.5px] xl:leading-[26.25px] xl:tracking-[0%] text-[17px] leading-tight text-black mb-2 capitalize">
-//                   {course.title}
-//                 </div>
-//               </div>
-//               {/* Course Image */}
-//               <div
-//                 className="relative rounded-[4.17px] overflow-hidden"
-//                 style={{
-//                   width: "506px",
-//                   height: "217.87px",
-//                   marginLeft: "16px",
-//                   opacity: 1,
-//                 }}
-//               >
-//                 <Image
-//                   src={course.img}
-//                   alt={course.title}
-//                   fill
-//                   className="object-fill"
-//                   sizes="(max-width: 700px) 95vw, (max-width: 1200px) 48vw, 320px"
-//                   priority={idx < 2}
-//                 />
-//               </div>
-//               {/* Content */}
-//               <div className="px-3 mt-2 mb-6 flex-grow">
-//                 <Link
-//                 href={`/courses/${course.slug}`}
-//               >
-//                 <p className="font-poppins font-medium text-base leading-[26.67px] align-middle capitalize text-[#D3363B]">
-//                   About the Course
-//                 </p>
-                 
-               
-//               </Link>
-//                 <p className="font-poppins font-normal text-base leading-[28px] align-middle text-[#6D6C80]">
-//                   {course.description}
-//                 </p>
-//                 <ul className="mt-3 space-y-2 ml-2">
-//                   {course.points.map((point, pointIdx) => (
-//                     <li key={pointIdx} className="font-poppins font-normal text-base leading-[28px] align-middle text-[#6D6C80]">
-//                       {pointIdx + 1}. {point}
-//                     </li>
-//                   ))}
-//                 </ul>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
-
-
-
-
-
 import Image from "next/image";
 import Link from "next/link";
 import { getCoursesPageData, getAllCourses } from "@/lib/sanity/queries/courses";
@@ -109,7 +6,16 @@ export const revalidate = 3600; // Revalidate every hour
 
 export default async function CurriculumCourses() {
   const pageData = await getCoursesPageData();
-  const courses = await getAllCourses();
+  
+  // ⭐ Get courses and sort by number in title (101, 102, 103)
+  const allCourses = await getAllCourses();
+  const courses = allCourses.sort((a, b) => {
+    // Extract numbers from titles like "101 - Title" or "Course 101"
+    const numA = parseInt(a.title.match(/\d+/)?.[0] || "999");
+    const numB = parseInt(b.title.match(/\d+/)?.[0] || "999");
+    return numA - numB; // Ascending order: 101, 102, 103
+  });
+  
   const { coursesSection } = pageData;
 
   return (
@@ -144,7 +50,8 @@ export default async function CurriculumCourses() {
                 key={course._id}
                 className="
                   bg-white rounded-[10px] shadow-[0px_0px_8.9px_0px_rgba(0,0,0,0.09)]
-                  w-full max-w-[539px] min-h-[571px] opacity-100 flex flex-col
+                  w-full max-w-[539px]
+                  opacity-100 flex flex-col
                   overflow-hidden
                 "
               >
@@ -157,7 +64,7 @@ export default async function CurriculumCourses() {
 
                 {/* Course Image */}
                 <div
-                  className="relative rounded-[4.17px] overflow-hidden"
+                  className="relative rounded-[4.17px] overflow-hidden flex-shrink-0"
                   style={{
                     width: "506px",
                     height: "217.87px",
@@ -175,7 +82,7 @@ export default async function CurriculumCourses() {
                   />
                 </div>
 
-                {/* Content */}
+                {/* Content - NO SCROLL, content fits naturally */}
                 <div className="px-3 mt-2 mb-6 flex-grow">
                   <Link href={`/courses/${course.slug}`}>
                     <p className="font-poppins font-medium text-base leading-[26.67px] align-middle text-[#D3363B] hover:text-[#b82e2e] transition-colors">
@@ -187,10 +94,10 @@ export default async function CurriculumCourses() {
                     {course.shortDescription}
                   </p>
 
-                  {/* Course Highlights */}
+                  {/* Course Highlights - Limited to 3 */}
                   {course.highlights && course.highlights.length > 0 && (
                     <ul className="mt-3 space-y-2 ml-2">
-                      {course.highlights.map((point, pointIdx) => (
+                      {course.highlights.slice(0, 3).map((point, pointIdx) => (
                         <li
                           key={pointIdx}
                           className="font-poppins font-normal text-base leading-[28px] align-middle text-[#6D6C80]"
@@ -198,6 +105,12 @@ export default async function CurriculumCourses() {
                           {pointIdx + 1}. {point}
                         </li>
                       ))}
+                      {/* Show "..." if more than 3 highlights */}
+                      {course.highlights.length > 3 && (
+                        <li className="font-poppins font-normal text-base leading-[28px] align-middle  italic text-gray-500">
+                          ... and {course.highlights.length - 3} more
+                        </li>
+                      )}
                     </ul>
                   )}
 
@@ -243,7 +156,3 @@ export default async function CurriculumCourses() {
     </section>
   );
 }
-
-
-
-
