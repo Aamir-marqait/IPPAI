@@ -13,6 +13,10 @@ import {
   handleAboutLeadershipRevalidation,
   handleHomeBannerRevalidation,
   handleHomeIntroductionRevalidation,
+  handleCoursesPageRevalidation,
+  handleCourseRevalidation,
+   handleSpecialCoursesPageRevalidation,
+  handleSpecialCourseRevalidation,
   type WebhookPayload,
   type RevalidationResult,
 } from './handlers'
@@ -75,6 +79,18 @@ function routeToHandler(body: WebhookPayload): RevalidationResult {
     // HOME INTRODUCTION
     case 'homeIntroduction':
       return handleHomeIntroductionRevalidation(body)
+
+    // COURSES
+    case 'coursesPage':
+      return handleCoursesPageRevalidation(body)
+    case 'course':
+      return handleCourseRevalidation(body)
+
+    // SPECIAL COURSES
+    case 'specialCoursesPage':
+      return handleSpecialCoursesPageRevalidation(body)
+    case 'specialCourse':
+      return handleSpecialCourseRevalidation(body)
     
     // DEFAULT
     default:

@@ -54,9 +54,13 @@ export {
 
 export {
   handleCoursesPageRevalidation,
-  handleCourseRevalidation,
-  revalidateAllCourses
+  handleCourseRevalidation
 } from './courses'
+
+export {
+  handleSpecialCoursesPageRevalidation,
+  handleSpecialCourseRevalidation,
+} from './specialCourses'
 
 // ============================================
 // FUTURE EXPORTS (Add as you create them)
