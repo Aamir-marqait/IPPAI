@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useParams, notFound } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -58,38 +57,108 @@ export default function EventDetailPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // ⭐ CRITICAL: Store form reference BEFORE any async operations
+    // React's synthetic event will be nullified after async operations
+    const form = e.currentTarget;
+    
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
+    
+    // Extract data for Google Sheets
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      company: formData.get("company"),
+      message: formData.get("message"),
+      source: formData.get("source"),
+      event_name: formData.get("event_name"),
+    };
+
+    console.log("📝 Form submission started", data);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Submit to Web3Forms (email notification)
+      console.log("📧 Sending to Web3Forms...");
+      const web3FormsResponse = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
       });
 
-      const data = await response.json();
+      console.log("📧 Web3Forms response status:", web3FormsResponse.status);
+      console.log("📧 Web3Forms response ok:", web3FormsResponse.ok);
 
-      if (data.success) {
+      // Submit to Google Sheets (don't wait for it, send in parallel)
+      console.log("📊 Sending to Google Sheets...");
+      fetch(
+        "https://script.google.com/macros/s/AKfycbzundmFjoaZr-aaGk9rIyWL_CdZYtu16nduh4MrNTkN2L-ft2hsgf8hHQGLUZpfOK6jXg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      ).then(() => console.log("📊 Google Sheets request sent (no-cors mode)"))
+       .catch(err => console.error("📊 Google Sheets error:", err));
+
+      // Try to parse response
+      let responseData;
+      try {
+        responseData = await web3FormsResponse.json();
+        console.log("📧 Web3Forms response data:", responseData);
+      } catch (jsonError) {
+        console.error("❌ Failed to parse Web3Forms response as JSON:", jsonError);
+        const responseText = await web3FormsResponse.text();
+        console.log("📧 Web3Forms response text:", responseText);
+        
+        // If we can't parse JSON but status is ok, treat as success
+        if (web3FormsResponse.ok) {
+          setSubmitStatus({
+            type: "success",
+            message: "Thank you! Your inquiry has been submitted successfully.",
+          });
+          form.reset(); // ⭐ Use stored form reference
+          return;
+        } else {
+          throw new Error(`Invalid response format. Status: ${web3FormsResponse.status}`);
+        }
+      }
+
+      // Check response data
+      if (responseData && responseData.success) {
+        console.log("✅ Form submission successful!");
         setSubmitStatus({
           type: "success",
           message: "Thank you! Your inquiry has been submitted successfully.",
         });
-        e.currentTarget.reset();
+        form.reset(); // ⭐ Use stored form reference
       } else {
+        console.error("❌ Web3Forms returned success: false", responseData);
         setSubmitStatus({
           type: "error",
-          message: "Something went wrong. Please try again.",
+          message: responseData?.message || "Something went wrong. Please try again.",
         });
       }
     } catch (error) {
+      console.error("❌ Form submission error:", error);
+      console.error("Error details:", {
+        name: error instanceof Error ? error.name : 'Unknown',
+        message: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined
+      });
+      
       setSubmitStatus({
         type: "error",
         message: "Failed to submit inquiry. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
+      console.log("🏁 Form submission completed");
     }
   };
 
@@ -321,9 +390,7 @@ export default function EventDetailPage() {
                 <ul className="space-y-2">
                   {event.criticalIssues.items.map((issue: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                      </svg>
+                      -
                       <span className="text-gray-800 leading-relaxed">{issue}</span>
                     </li>
                   ))}
@@ -512,6 +579,7 @@ export default function EventDetailPage() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
                   <input type="hidden" name="event_name" value={event.title} />
+                  <input type="hidden" name="source" value={`Event: ${event.title}`} />
 
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">
@@ -598,22 +666,7 @@ export default function EventDetailPage() {
                   </button>
                 </form>
 
-                {/* Registration Link */}
-                {event.registrationLink && (
-                  <div className="mt-4 pt-4 border-t-2 border-gray-200">
-                    <a
-                      href={event.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
-                    >
-                      Register Now
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
-                  </div>
-                )}
+               
               </div>
             </div>
           </div>
