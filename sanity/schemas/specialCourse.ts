@@ -213,27 +213,27 @@ export default defineType({
                   options: {
                     hotspot: true,
                   },
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
                 {
                   name: 'name',
                   title: 'Full Name',
                   type: 'string',
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
                 {
                   name: 'title',
                   title: 'Title/Position',
                   type: 'string',
                   description: 'e.g., "Former CEO"',
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
                 {
                   name: 'organization',
                   title: 'Organization',
                   type: 'string',
                   description: 'e.g., "POSOCO"',
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
               ],
               preview: {
@@ -289,14 +289,14 @@ export default defineType({
                   options: {
                     hotspot: true,
                   },
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
                 {
                   name: 'altText',
                   title: 'Alt Text',
                   type: 'string',
                   description: 'Describe the image for accessibility',
-                  validation: (Rule: any) => Rule.required(),
+                  validation: (Rule) => Rule.required(),
                 },
               ],
               preview: {
