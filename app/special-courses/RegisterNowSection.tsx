@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import type { SpecialCourseDetail } from "@/lib/sanity/queries/specialCourses";
 
-export default function RegisterNowSection() {
+interface RegisterNowSectionProps {
+  selectedCourse: SpecialCourseDetail | null;
+}
+
+export default function RegisterNowSection({ selectedCourse }: RegisterNowSectionProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,15 +31,21 @@ export default function RegisterNowSection() {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
+    // ⭐ Determine source based on selected course
+    const source = selectedCourse 
+      ? `Special Course: ${selectedCourse.title}`
+      : "Special Courses Page - Register Now";
+
     // Prepare form data for Web3Forms
     const web3FormData = new FormData();
     web3FormData.append("access_key", "b082e58d-c43a-4b9c-b64d-61b8d709971f");
-    web3FormData.append("subject", "Course Registration");
+    web3FormData.append("subject", "Special Course Registration");
     web3FormData.append("name", formData.name);
     web3FormData.append("email", formData.email);
     web3FormData.append("phone", formData.phone);
     web3FormData.append("message", formData.message);
-    web3FormData.append("source", "Courses Page - Register Now");
+    web3FormData.append("source", source);
+    web3FormData.append("course_title", selectedCourse?.title || "N/A");
 
     // Prepare data for Google Sheets
     const sheetsData = {
@@ -43,12 +54,13 @@ export default function RegisterNowSection() {
       phone: formData.phone,
       company: "", // Not collected in this form
       message: formData.message,
-      source: "Courses Page - Register Now",
-      article_title: "", // Not applicable for course registration
-      event_name: "", // Not applicable for course registration
+      source: source,
+      article_title: "", // Not applicable
+      event_name: selectedCourse?.title || "", // Use course title as event name
     };
 
-    console.log("📝 Course registration started", sheetsData);
+    console.log("📝 Special course registration started", sheetsData);
+    console.log("📚 Selected course:", selectedCourse?.title || "None");
 
     try {
       // Submit to Web3Forms (email notification)
@@ -98,7 +110,7 @@ export default function RegisterNowSection() {
       }
 
       if (responseData && responseData.success) {
-        console.log("✅ Course registration successful!");
+        console.log("✅ Special course registration successful!");
         setSubmitStatus({
           type: "success",
           message:
@@ -127,7 +139,7 @@ export default function RegisterNowSection() {
         });
       }
     } catch (error) {
-      console.error("❌ Course registration error:", error);
+      console.error("❌ Special course registration error:", error);
       console.error("Error details:", {
         name: error instanceof Error ? error.name : "Unknown",
         message: error instanceof Error ? error.message : String(error),
@@ -138,7 +150,7 @@ export default function RegisterNowSection() {
       });
     } finally {
       setIsSubmitting(false);
-      console.log("🏁 Course registration completed");
+      console.log("🏁 Special course registration completed");
     }
   };
 
@@ -176,9 +188,18 @@ export default function RegisterNowSection() {
             Register Now
           </h1>
           <p className="text-white/80 text-base font-normal leading-relaxed max-w-xs mb-2">
-            Join IRPRI to access exclusive courses, research resources, and
-            expert insights that will advance your knowledge in India&apos;s
-            power sector and energy policy.
+            {selectedCourse ? (
+              <>
+                Register your interest for <span className="font-semibold">{selectedCourse.title}</span>. 
+                We will get back to you with course details and next steps.
+              </>
+            ) : (
+              <>
+                Join IRPRI to access exclusive courses, research resources, and
+                expert insights that will advance your knowledge in India&apos;s
+                power sector and energy policy.
+              </>
+            )}
           </p>
         </div>
 
@@ -189,6 +210,14 @@ export default function RegisterNowSection() {
             <h2 className="font-red-hat-display max-w-md font-bold text-2xl sm:text-3xl lg:text-[36px] leading-tight lg:leading-[48px] align-middle capitalize text-white mb-6 lg:mb-8">
               Register Now
             </h2>
+
+            {/* Show selected course */}
+            {selectedCourse && (
+              <div className="mb-4 p-3 bg-white/10 rounded-lg border border-white/20">
+                <p className="text-white/70 text-xs mb-1">Registering for:</p>
+                <p className="text-white font-medium text-sm">{selectedCourse.title}</p>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:gap-6">
               {/* Name */}

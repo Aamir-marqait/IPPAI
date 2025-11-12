@@ -21,6 +21,7 @@ export default defineType({
           options: {
             hotspot: true,
           },
+          validation: (Rule) => Rule.required(),
         }),
         defineField({
           name: 'title',
@@ -165,6 +166,96 @@ export default defineType({
           ],
           validation: (Rule) => Rule.min(1),
         }),
+      ],
+    }),
+
+    // ============================================
+    // ALUMNI SECTION
+    // ============================================
+    defineField({
+      name: 'alumniSection',
+      title: 'Alumni Section',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              title: 'Alumni Name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'role',
+              title: 'Alumni Role',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'avatar',
+              title: 'Avatar Image',
+              type: 'image',
+              options: { hotspot: true },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'text',
+              title: 'Testimonial Text',
+              type: 'text',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'order',
+              title: 'Display Order',
+              type: 'number',
+              description: 'Order of the testimonial',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+        },
+      ],
+    }),
+
+    // ============================================
+    // MENTOR SECTION
+    // ============================================
+    defineField({
+      name: 'mentorSection',
+      title: 'Mentor Section',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              title: 'Mentor Name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'role',
+              title: 'Mentor Role',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'image',
+              title: 'Mentor Image',
+              type: 'image',
+              options: { hotspot: true },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'order',
+              title: 'Display Order',
+              type: 'number',
+              description: 'Order of the mentor',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+        },
       ],
     }),
   ],

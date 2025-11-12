@@ -70,10 +70,27 @@ export interface CoursesGallery {
   images: GalleryImage[]
 }
 
+export interface Alumni {
+  name: string
+  role: string
+  avatar: string
+  text: string
+  order: number
+}
+
+export interface Mentor {
+  name: string
+  role: string
+  image: string
+  order: number
+}
+
 export interface CoursesPageData {
   hero: CoursesHero
   coursesSection: CoursesSection
   gallery: CoursesGallery
+  alumniSection: Alumni[]
+  mentorSection: Mentor[]
 }
 
 export interface PaginatedCoursesResult {
@@ -91,6 +108,8 @@ export interface CoursesFilterOptions {
   levels: string[]
   languages: string[]
 }
+
+
 
 // ============================================
 // GROQ QUERIES
@@ -120,7 +139,20 @@ const queries = {
         "image": image.asset->url,
         "altText": altText
       }
-    }
+    },
+    "alumniSection": alumniSection[]{
+      name, 
+      role, 
+      "avatar": avatar.asset->url, 
+      text, 
+      order
+  },
+  "mentorSection": mentorSection[]{
+      name, 
+      role, 
+      "image": image.asset->url, 
+      order
+  }
   }`,
 
   // Get all courses (for cards)
@@ -239,6 +271,8 @@ export async function getCoursesPageData(): Promise<CoursesPageData> {
       description: data?.gallery?.description,
       images: data?.gallery?.images || [],
     },
+     alumniSection: data?.alumniSection || [],
+    mentorSection: data?.mentorSection || []
   }
 }
 

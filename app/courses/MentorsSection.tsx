@@ -1,17 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Share2 } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { Mentor } from "@/lib/sanity/queries/courses";
 
-export default function MentorsSection() {
+interface MentorsSectionProps {
+  mentors: Mentor[];
+}
+
+export default function MentorsSection({ mentors }: MentorsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Sort mentors by order
+  const sortedMentors = [...mentors].sort((a, b) => a.order - b.order);
+
   // Desktop shows 4 cards at once, so max scroll is (total - 4)
   const cardsPerView = 4;
-  const maxDesktopIndex = Math.max(0, 6 - cardsPerView); // 6 total mentors - 4 visible = 2 max index
+  const maxDesktopIndex = Math.max(0, sortedMentors.length - cardsPerView);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -19,55 +26,10 @@ export default function MentorsSection() {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
-  const mentors = [
-    {
-      id: 1,
-      name: "Mr. V.P. Raja",
-      role: "Former Chairman, MERC",
-      imgSrc: "/fc/1.jpg",
-      imgAlt: "Mr. V.P. Raja portrait",
-    },
-    {
-      id: 2,
-      name: "Mr. Ashok Kumar Rajput",
-      role: "Former Member (Power Systems), CEA",
-      imgSrc: "/fc/2.jpg",
-      imgAlt: "Mr. Ashok Kumar Rajput portrait",
-    },
-    {
-      id: 3,
-      name: "Dr. Upendra N. Behera",
-      role: "Former Chairman, OERC",
-      imgSrc: "/fc/3.jpg",
-      imgAlt: "Dr. Upendra N. Behera portrait",
-    },
-    {
-      id: 4,
-      name: "Mr. B.B Mehta",
-      role: "Director(SLDC), OPTCL",
-      imgSrc: "/fc/4.jpg",
-      imgAlt: "Mr. B.B Mehta portrait",
-    },
-    {
-      id: 5,
-      name: "Mr. P.K Agarwal",
-      role: "Former Director & CISO, POSOCO",
-      imgSrc: "/fc/5.jpg",
-      imgAlt: "Mr. P.K Agarwal portrait",
-    },
-    {
-      id: 6,
-      name: "Mr. Satyajit Ganguly",
-      role: "Former CEO & MD, PXIL",
-      imgSrc: "/fc/6.jpg",
-      imgAlt: "Mr. Satyajit Ganguly portrait",
-    },
-  ];
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
@@ -75,15 +37,20 @@ export default function MentorsSection() {
 
   const handleNext = () => {
     setCurrentIndex((prev) => {
-      // On mobile: can scroll through all cards (0 to 5)
-      // On desktop: scroll only until last 4 cards are visible (0 to 2)
-      const maxIndex = isMobile ? mentors.length - 1 : maxDesktopIndex;
+      // On mobile: can scroll through all cards
+      // On desktop: scroll only until last 4 cards are visible
+      const maxIndex = isMobile ? sortedMentors.length - 1 : maxDesktopIndex;
       return prev < maxIndex ? prev + 1 : prev;
     });
   };
 
   // Calculate max index for button disabled state
-  const maxIndex = isMobile ? mentors.length - 1 : maxDesktopIndex;
+  const maxIndex = isMobile ? sortedMentors.length - 1 : maxDesktopIndex;
+
+  // If no mentors, return null
+  if (!sortedMentors.length) {
+    return null;
+  }
 
   return (
     <div className="w-full bg-gradient-to-r from-[#8C2428] to-[#D3363B] py-16 px-4">
@@ -132,8 +99,8 @@ export default function MentorsSection() {
                 {/* Image Container */}
                 <div className="relative overflow-hidden w-full aspect-[227/240.63] rounded-t-[4.17px]">
                   <Image
-                    src={mentors[currentIndex].imgSrc}
-                    alt={mentors[currentIndex].imgAlt}
+                    src={sortedMentors[currentIndex].image}
+                    alt={`${sortedMentors[currentIndex].name} portrait`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     sizes="280px"
@@ -143,10 +110,10 @@ export default function MentorsSection() {
                 {/* Info Container */}
                 <div className="px-5 py-7">
                   <h3 className="font-red-hat-display font-bold text-[20px] leading-[19.24px] text-[#0E2A46] mb-1 capitalize">
-                    {mentors[currentIndex].name}
+                    {sortedMentors[currentIndex].name}
                   </h3>
                   <p className="font-sora font-normal text-[14.16px] leading-[26.66px] text-[#D3363B]">
-                    {mentors[currentIndex].role}
+                    {sortedMentors[currentIndex].role}
                   </p>
                 </div>
               </div>
@@ -161,9 +128,9 @@ export default function MentorsSection() {
                 transform: `translateX(-${currentIndex * (243.67 + 24)}px)`,
               }}
             >
-              {mentors.map((mentor) => (
+              {sortedMentors.map((mentor) => (
                 <div
-                  key={mentor.id}
+                  key={mentor.name}
                   className="bg-white rounded-[4.17px] overflow-hidden group relative flex-shrink-0"
                   style={{
                     width: "243.67px",
@@ -184,8 +151,8 @@ export default function MentorsSection() {
                     }}
                   >
                     <Image
-                      src={mentor.imgSrc}
-                      alt={mentor.imgAlt}
+                      src={mentor.image}
+                      alt={`${mentor.name} portrait`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 1024px) 50vw, 25vw"

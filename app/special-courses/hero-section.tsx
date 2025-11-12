@@ -116,7 +116,7 @@ export default async function SpecialCoursesHero() {
 
           {/* CTA Button */}
           <Link
-            href={hero.ctaButtonLink}
+            href={'#register-now'}
             className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition mb-3 inline-block"
             style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
           >

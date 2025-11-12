@@ -1,16 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin, CalendarCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import type { SpecialCourseDetail } from "@/lib/sanity/queries/specialCourses";
 
 interface SpecialCoursesClientProps {
   courses: SpecialCourseDetail[];
+  onCourseChange?: (course: SpecialCourseDetail) => void; // ⭐ NEW: Callback to notify parent
 }
 
-export default function SpecialCoursesClient({ courses }: SpecialCoursesClientProps) {
+export default function SpecialCoursesClient({ courses, onCourseChange }: SpecialCoursesClientProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // ⭐ Notify parent whenever current course changes
+  useEffect(() => {
+    if (courses[currentIndex] && onCourseChange) {
+      onCourseChange(courses[currentIndex]);
+    }
+  }, [currentIndex, courses, onCourseChange]);
 
   if (!courses || courses.length === 0) {
     return (
@@ -66,32 +74,19 @@ export default function SpecialCoursesClient({ courses }: SpecialCoursesClientPr
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            {/* Dropdown Filter */}
-            <select
-              value={currentIndex}
-              onChange={(e) => handleSelectCourse(Number(e.target.value))}
-              className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#D3363B] w-full sm:w-auto max-w-md"
-            >
-              {courses.map((course, index) => (
-                <option key={course._id} value={index}>
-                  {course.title}
-                </option>
-              ))}
-            </select>
-
-            {/* Previous/Next Buttons */}
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col items-center justify-center gap-3 mb-8">
+            {/* Arrow Buttons & Dot Indicators */}
+            <div className="flex items-center gap-3">
               <button
                 onClick={handlePrevious}
-                className="p-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors shadow-sm"
                 aria-label="Previous course"
               >
                 <ChevronLeft className="w-5 h-5 text-gray-700" />
               </button>
               
               {/* Dot Indicators */}
-              <div className="flex items-center gap-2 px-4">
+              <div className="flex items-center gap-2 px-2">
                 {courses.map((_, index) => (
                   <button
                     key={index}
@@ -108,14 +103,14 @@ export default function SpecialCoursesClient({ courses }: SpecialCoursesClientPr
 
               <button
                 onClick={handleNext}
-                className="p-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors shadow-sm"
                 aria-label="Next course"
               >
                 <ChevronRight className="w-5 h-5 text-gray-700" />
               </button>
             </div>
 
-            {/* Course Counter */}
+            {/* Course Counter - Below arrows */}
             <div className="text-sm text-gray-600 font-medium">
               {currentIndex + 1} / {courses.length}
             </div>
@@ -148,19 +143,19 @@ export default function SpecialCoursesClient({ courses }: SpecialCoursesClientPr
               </div>
               {currentCourse.registrationLink && (
                 <button
-  onClick={() => {
-    if (currentCourse.registrationLink?.startsWith('#')) {
-      document
-        .getElementById(currentCourse.registrationLink.substring(1))
-        ?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.open(currentCourse.registrationLink, '_blank');
-    }
-  }}
-  className="hidden md:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-sm sm:text-base leading-none tracking-normal text-center uppercase text-white px-5 sm:px-6 py-2 rounded-full transition-colors"
->
-  Enquire Now
-</button>
+                  onClick={() => {
+                    if (currentCourse.registrationLink?.startsWith('#')) {
+                      document
+                        .getElementById(currentCourse.registrationLink.substring(1))
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      window.open(currentCourse.registrationLink, '_blank');
+                    }
+                  }}
+                  className="hidden md:flex cursor-pointer bg-[#D3363B] hover:bg-[#B8292E] font-work-sans font-medium text-sm sm:text-base leading-none tracking-normal text-center uppercase text-white px-5 sm:px-6 py-2 rounded-full transition-colors"
+                >
+                  Enquire Now
+                </button>
               )}
             </div>
             {/* Right Image */}
