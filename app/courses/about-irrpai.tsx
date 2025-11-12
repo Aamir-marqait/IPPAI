@@ -74,12 +74,7 @@ export default function AboutIrpriSection() {
               </div>
             </div>
           </div>
-          <button 
-            className="bg-[#D3363B] hover:bg-[#b72d2d] text-white font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center px-7 py-2.5 rounded-full transition mt-1 w-fit"
-            style={{ boxShadow: '0px 4px 4px 0px #D3363B4F' }}
-          >
-            Learn More
-          </button>
+          
         </div>
       </div>
     </section>

@@ -141,6 +141,8 @@ export {
   type CoursesPageData,
   type PaginatedCoursesResult,
   type CoursesFilterOptions,
+  type Alumni,              // <-- Add this
+  type Mentor,              // <-- Add this
 
   // Functions
   getCoursesPageData,
@@ -149,8 +151,6 @@ export {
   getPaginatedCourses,
   getCoursesFilterOptions,
   getCourseBySlug
-
-
 } from './courses'
 
 
