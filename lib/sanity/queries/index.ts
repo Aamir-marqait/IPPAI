@@ -123,6 +123,9 @@ export {
   type FeaturedEvent,
   type FeaturedCourse,
   type HomeIntroductionData,
+  type Testimonial,
+  type LeadershipMember,
+  // Functions
   getHomeIntroduction,
 } from './homeIntroduction'
 

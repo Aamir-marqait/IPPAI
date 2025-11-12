@@ -21,6 +21,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -28,6 +29,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
   });
 
@@ -38,6 +40,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
     const newErrors = {
       name: "",
       email: "",
+      phone: "",
       company: "",
     };
 
@@ -51,6 +54,13 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
+    }
+
+    // Phone validation
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\+?[\d\s-()]{10,}$/.test(formData.phone.trim())) {
+      newErrors.phone = "Please enter a valid phone number";
     }
 
     // Company validation
@@ -73,37 +83,128 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // ⭐ CRITICAL: Store form reference BEFORE any async operations
+    const form = e.currentTarget;
 
-    if (validateForm()) {
-      setIsLoading(true);
+    if (!validateForm()) {
+      return;
+    }
 
-      // Simulate API call with 2 second delay
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsLoading(true);
 
-      console.log("Form submitted:", formData);
+    // Prepare form data for Web3Forms
+    const web3FormData = new FormData();
+    web3FormData.append("access_key", "b082e58d-c43a-4b9c-b64d-61b8d709971f");
+    web3FormData.append("subject", "Article Download - Join Us Form");
+    web3FormData.append("name", formData.name);
+    web3FormData.append("email", formData.email);
+    web3FormData.append("phone", formData.phone);
+    web3FormData.append("company", formData.company);
+    web3FormData.append("message", formData.message);
+    
+    // ⭐ Add source tracking
+    const source = article 
+      ? `Article: ${article.title}` 
+      : "Homepage - Join Us";
+    web3FormData.append("source", source);
+    web3FormData.append("article_title", article?.title || "N/A");
 
-      // Download the PDF after successful form submission (only if article is provided)
-      if (article) {
-        downloadPDF();
+    // Prepare data for Google Sheets
+    const sheetsData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message,
+      source: source,
+      article_title: article?.title || "N/A",
+      event_name: "", // Empty for articles (used in events)
+    };
+
+    console.log("📝 Article form submission started", sheetsData);
+
+    try {
+      // Submit to Web3Forms (email notification)
+      console.log("📧 Sending to Web3Forms...");
+      const web3FormsResponse = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3FormData,
+      });
+
+      console.log("📧 Web3Forms response status:", web3FormsResponse.status);
+
+      // Submit to Google Sheets (fire and forget)
+      console.log("📊 Sending to Google Sheets...");
+      fetch(
+        "https://script.google.com/macros/s/AKfycbzundmFjoaZr-aaGk9rIyWL_CdZYtu16nduh4MrNTkN2L-ft2hsgf8hHQGLUZpfOK6jXg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sheetsData),
+        }
+      ).then(() => console.log("📊 Google Sheets request sent"))
+       .catch(err => console.error("📊 Google Sheets error:", err));
+
+      // Check Web3Forms response
+      let responseData;
+      try {
+        responseData = await web3FormsResponse.json();
+        console.log("📧 Web3Forms response data:", responseData);
+      } catch (jsonError) {
+        console.error("❌ Failed to parse Web3Forms response:", jsonError);
+        // If can't parse but status ok, continue anyway
+        if (web3FormsResponse.ok) {
+          responseData = { success: true };
+        } else {
+          throw new Error(`HTTP error! status: ${web3FormsResponse.status}`);
+        }
       }
 
-      setIsLoading(false);
-      setShowThankYou(true);
+      if (responseData && responseData.success) {
+        console.log("✅ Form submission successful!");
+        
+        // Download the PDF after successful form submission (only if article is provided)
+        if (article) {
+          downloadPDF();
+        }
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
+        setShowThankYou(true);
+
+        // Reset form
+        form.reset();
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setErrors({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+        });
+      } else {
+        console.error("❌ Web3Forms returned success: false", responseData);
+        alert("There was an error submitting your form. Please try again.");
+      }
+    } catch (error) {
+      console.error("❌ Form submission error:", error);
+      console.error("Error details:", {
+        name: error instanceof Error ? error.name : 'Unknown',
+        message: error instanceof Error ? error.message : String(error),
       });
-      setErrors({
-        name: "",
-        email: "",
-        company: "",
-      });
+      alert("Failed to submit form. Please try again later.");
+    } finally {
+      setIsLoading(false);
+      console.log("🏁 Form submission completed");
     }
   };
 
@@ -141,15 +242,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
             </div>
 
             {/* Right side - Form */}
-            <div className="w-full md:flex-1 bg-gray-50 p-6 md:p-8 relative">
-              {/* Close button */}
-              {/* <button
-              onClick={() => onOpenChange(false)}
-              className="absolute top-4 right-4 p-1 hover:bg-gray-200 rounded-sm transition-colors"
-            >
-              <X className="w-5 h-5 text-gray-600" />
-            </button> */}
-
+            <div className="w-full md:flex-1 bg-gray-50 p-6 md:p-8 relative overflow-y-auto">
               <div className="max-w-sm mx-auto">
                 <h2
                   className="mb-6 md:mb-8 text-left font-red-hat-display text-[24px] md:text-[30.1px] leading-[28px] md:leading-[34.2px]"
@@ -162,7 +255,8 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                   {article ? "Download after Submission" : "Join Us Today!"}
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+                  {/* Name */}
                   <div>
                     <label
                       className="block mb-2 font-poppins"
@@ -174,7 +268,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                         color: "#121212",
                       }}
                     >
-                      Name
+                      Name <span className="text-red-600">*</span>
                     </label>
                     <Input
                       type="text"
@@ -186,12 +280,14 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                       className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
                         errors.name ? "border-red-500" : "border-black/[0.13]"
                       }`}
+                      required
                     />
-                    {/* {errors.name && (
-                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.name}</p>
-                  )} */}
+                    {errors.name && (
+                      <p className="text-red-500 text-xs mt-1 font-poppins">{errors.name}</p>
+                    )}
                   </div>
 
+                  {/* Email */}
                   <div>
                     <label
                       className="block mb-2 font-poppins"
@@ -203,7 +299,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                         color: "#121212",
                       }}
                     >
-                      Email
+                      Email <span className="text-red-600">*</span>
                     </label>
                     <Input
                       type="email"
@@ -215,12 +311,14 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                       className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
                         errors.email ? "border-red-500" : "border-black/[0.13]"
                       }`}
+                      required
                     />
-                    {/* {errors.email && (
-                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.email}</p>
-                  )} */}
+                    {errors.email && (
+                      <p className="text-red-500 text-xs mt-1 font-poppins">{errors.email}</p>
+                    )}
                   </div>
 
+                  {/* Phone Number */}
                   <div>
                     <label
                       className="block mb-2 font-poppins"
@@ -232,7 +330,38 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                         color: "#121212",
                       }}
                     >
-                      Company Name
+                      Phone Number <span className="text-red-600">*</span>
+                    </label>
+                    <Input
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
+                      className={`w-full h-[49.25px] rounded-[34.2px] border-[0.68px] bg-white font-poppins text-[12.31px] leading-[12.31px] font-normal tracking-[0px] opacity-100 ${
+                        errors.phone ? "border-red-500" : "border-black/[0.13]"
+                      }`}
+                      required
+                    />
+                    {errors.phone && (
+                      <p className="text-red-500 text-xs mt-1 font-poppins">{errors.phone}</p>
+                    )}
+                  </div>
+
+                  {/* Company Name */}
+                  <div>
+                    <label
+                      className="block mb-2 font-poppins"
+                      style={{
+                        fontWeight: 500,
+                        fontSize: "12.31px",
+                        lineHeight: "12.31px",
+                        letterSpacing: "0%",
+                        color: "#121212",
+                      }}
+                    >
+                      Company Name <span className="text-red-600">*</span>
                     </label>
                     <Input
                       type="text"
@@ -246,12 +375,14 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                           ? "border-red-500"
                           : "border-black/[0.13]"
                       }`}
+                      required
                     />
-                    {/* {errors.company && (
-                    <p className="text-red-500 text-xs mt-1 font-poppins">{errors.company}</p>
-                  )} */}
+                    {errors.company && (
+                      <p className="text-red-500 text-xs mt-1 font-poppins">{errors.company}</p>
+                    )}
                   </div>
 
+                  {/* Message */}
                   <div>
                     <label
                       className="block mb-2 font-poppins"
@@ -276,6 +407,7 @@ export function JoinUsModal({ open, onOpenChange, article }: JoinUsModalProps) {
                     />
                   </div>
 
+                  {/* Submit Button */}
                   <Button
                     type="submit"
                     disabled={isLoading}

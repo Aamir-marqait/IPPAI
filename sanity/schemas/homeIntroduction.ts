@@ -198,18 +198,158 @@ export default defineType({
         },
       ],
     }),
+
+    // ============================================
+    // TESTIMONIALS SECTION
+    // ============================================
+    defineField({
+      name: 'testimonials',
+      title: 'Testimonials',
+      type: 'array',
+      description: 'Add testimonials to display on homepage - they will auto-slide every 5 seconds',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+              description: 'Name of the person giving testimonial',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'position',
+              title: 'Position/Title',
+              type: 'string',
+              description: 'Job title or position (e.g., "Former Chairman, CERC")',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'quote',
+              title: 'Testimonial Quote',
+              type: 'text',
+              rows: 4,
+              description: 'The testimonial text',
+              validation: (Rule) => Rule.required().max(500),
+            }),
+            defineField({
+              name: 'image',
+              title: 'Profile Image',
+              type: 'image',
+              description: 'Portrait photo of the person',
+              options: {
+                hotspot: true,
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'order',
+              title: 'Display Order',
+              type: 'number',
+              description: 'Order in which testimonial appears (lower numbers first)',
+              initialValue: 0,
+              validation: (Rule) => Rule.required().min(0),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'name',
+              subtitle: 'position',
+              media: 'image',
+              order: 'order',
+            },
+            prepare(selection) {
+              const { title, subtitle, media, order } = selection
+              return {
+                title: title || 'Untitled Testimonial',
+                subtitle: `${subtitle || 'No position'} • Order: ${order || 0}`,
+                media,
+              }
+            },
+          },
+        },
+      ],
+    }),
+
+    // ============================================
+    // LEADERSHIP SECTION
+    // ============================================
+    defineField({
+      name: 'leadershipTeam',
+      title: 'Leadership Team',
+      type: 'array',
+      description: 'Add leadership team members - they will be displayed in rows of 5',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+              description: 'Full name of the leader',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'role',
+              title: 'Role/Position',
+              type: 'string',
+              description: 'Position or title (e.g., "Former Chairman, CERC")',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'image',
+              title: 'Profile Photo',
+              type: 'image',
+              description: 'Professional photo of the leader',
+              options: {
+                hotspot: true,
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'order',
+              title: 'Display Order',
+              type: 'number',
+              description: 'Order in which leader appears (lower numbers first)',
+              initialValue: 0,
+              validation: (Rule) => Rule.required().min(0),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'name',
+              subtitle: 'role',
+              media: 'image',
+              order: 'order',
+            },
+            prepare(selection) {
+              const { title, subtitle, media, order } = selection
+              return {
+                title: title || 'Untitled Leader',
+                subtitle: `${subtitle || 'No role'} • Order: ${order || 0}`,
+                media,
+              }
+            },
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
       title: 'mainTitle',
       eventsCount: 'featuredEvents.length',
       coursesCount: 'featuredCourses.length',
+      testimonialsCount: 'testimonials.length',
+      leadershipCount: 'leadershipTeam.length',
     },
     prepare(selection) {
-      const {  eventsCount, coursesCount } = selection
+      const { eventsCount, coursesCount, testimonialsCount, leadershipCount } = selection
       return {
         title: 'Homepage Introduction',
-        subtitle: `${eventsCount || 0} events • ${coursesCount || 0} courses`,
+        subtitle: `${eventsCount || 0} events • ${coursesCount || 0} courses • ${testimonialsCount || 0} testimonials • ${leadershipCount || 0} leaders`,
       }
     },
   },

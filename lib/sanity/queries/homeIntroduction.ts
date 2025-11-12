@@ -4,7 +4,7 @@ import { client, CACHE_CONFIG } from '../client'
  * Homepage Introduction Queries
  * 
  * Fetches introduction section data for homepage
- * Including main title, featured events, and featured courses
+ * Including main title, featured events, featured courses, testimonials, and leadership team
  * 
  * @module lib/sanity/queries/homeIntroduction
  */
@@ -33,10 +33,27 @@ export interface FeaturedCourse {
   status: 'published' | 'draft'
 }
 
+export interface Testimonial {
+  name: string
+  position: string
+  quote: string
+  image: string
+  order: number
+}
+
+export interface LeadershipMember {
+  name: string
+  role: string
+  image: string
+  order: number
+}
+
 export interface HomeIntroductionData {
   mainTitle: string
   featuredEvents: FeaturedEvent[]
   featuredCourses: FeaturedCourse[]
+  testimonials: Testimonial[]
+  leadershipTeam: LeadershipMember[]
 }
 
 // ============================================
@@ -64,6 +81,19 @@ const queries = {
       location,
       link,
       status
+    },
+    "testimonials": testimonials[] | order(order asc) {
+      name,
+      position,
+      quote,
+      "image": image.asset->url,
+      order
+    },
+    "leadershipTeam": leadershipTeam[] | order(order asc) {
+      name,
+      role,
+      "image": image.asset->url,
+      order
     }
   }`,
 } as const
@@ -87,6 +117,8 @@ export async function getHomeIntroduction(): Promise<HomeIntroductionData> {
   return {
     mainTitle: data?.mainTitle || 'Independent Power Producers Association of India',
     featuredEvents: data?.featuredEvents || [],
-    featuredCourses: data?.featuredCourses || []
+    featuredCourses: data?.featuredCourses || [],
+    testimonials: data?.testimonials || [],
+    leadershipTeam: data?.leadershipTeam || []
   }
 }

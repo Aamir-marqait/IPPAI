@@ -127,7 +127,7 @@ export default function IntroductionClient({
                           className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
                           style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
                         >
-                          Register Now
+                          Know More
                         </Button>
                       </Link>
                     </div>
@@ -257,7 +257,7 @@ export default function IntroductionClient({
                           className="bg-[#D3363B] hover:bg-[#b82e2e] text-white border-none rounded-lg px-6 py-2 font-work-sans font-medium text-[16px] leading-[100%] tracking-[0%] text-center cursor-pointer"
                           style={{ boxShadow: "0px 4px 4px 0px #D3363B4F" }}
                         >
-                          Register Now
+                          Know More
                         </Button>
                       </Link>
                     </div>
