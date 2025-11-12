@@ -571,12 +571,13 @@ export default function EventDetailPage() {
           </div>
 
           {/* Right Column - Inquiry Form (Sticky) */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6">
+          {event.status !== 'past' && (
+              <div className="lg:col-span-1 space-y-0">
+            <div className="lg:sticky lg:top-24">
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-3">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Inquire About This Event</h3>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   <input type="hidden" name="access_key" value="b082e58d-c43a-4b9c-b64d-61b8d709971f" />
                   <input type="hidden" name="event_name" value={event.title} />
                   <input type="hidden" name="source" value={`Event: ${event.title}`} />
@@ -660,9 +661,9 @@ export default function EventDetailPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-red-600 text-white font-bold py-3 cursor-pointer rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+                    {isSubmitting ? "Registring..." : "Register"}
                   </button>
                 </form>
 
@@ -670,6 +671,8 @@ export default function EventDetailPage() {
               </div>
             </div>
           </div>
+          )}
+        
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ interface Event {
   date: string;
   dateTime: string;
   image: string;
-  status?: string;  // ✅ Made optional to match Sanity type
+  status?: string;
   statusLabel?: string;
   redirectTo?: string;
 }
@@ -32,9 +32,72 @@ interface EventsPageProps {
   initialEvents: Event[];
 }
 
+// Helper function to parse various date formats
+function parseEventDate(dateString: string): Date {
+  if (!dateString) return new Date(0); // Return epoch for invalid dates
+  
+  // Clean the string - remove ordinal indicators (st, nd, rd, th)
+  let cleaned = dateString
+    .replace(/(\d+)(st|nd|rd|th)/gi, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+  
+  // Handle date ranges - extract start date only
+  // Patterns: "7 - 10 January, 2026" or "8 to 11 February, 2024" or "12-13 December, 2013"
+  if (cleaned.includes(' - ') || cleaned.includes(' to ')) {
+    // Split by range separator
+    const parts = cleaned.split(/\s*(?:-|to)\s*/i);
+    if (parts.length >= 2) {
+      const startDay = parts[0].trim();
+      const endPart = parts[1].trim();
+      
+      // Check if month and year are in the end part
+      const monthYearMatch = endPart.match(/([A-Za-z]+)[,\s]+(\d{4})/);
+      if (monthYearMatch) {
+        cleaned = `${startDay} ${monthYearMatch[1]} ${monthYearMatch[2]}`;
+      }
+    }
+  }
+  
+  // Remove time information (e.g., "10:30 AM - 5:30 PM")
+  cleaned = cleaned.replace(/,?\s*\d{1,2}:\d{2}\s*(?:AM|PM|am|pm).*$/i, '');
+  
+  // Remove day of week (e.g., "Tuesday, March 10" -> "March 10")
+  cleaned = cleaned.replace(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s*/i, '');
+  
+  // Remove extra punctuation
+  cleaned = cleaned.replace(/[·•]/g, '').trim();
+  
+  // Try to parse the date
+  const parsedDate = new Date(cleaned);
+  
+  // If invalid, try alternative parsing
+  if (isNaN(parsedDate.getTime())) {
+    // Try format: "7 March 2018"
+    const match = cleaned.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+    if (match) {
+      const [, day, month, year] = match;
+      const monthMap: { [key: string]: number } = {
+        january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+        july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+        jan: 0, feb: 1, mar: 2, apr: 3, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11
+      };
+      const monthIndex = monthMap[month.toLowerCase()];
+      if (monthIndex !== undefined) {
+        return new Date(parseInt(year), monthIndex, parseInt(day));
+      }
+    }
+    
+    // Fallback to epoch if all parsing fails
+    return new Date(0);
+  }
+  
+  return parsedDate;
+}
+
 export default function EventsPageClient({ initialEvents }: EventsPageProps) {
   const [events, setEvents] = useState<Event[]>(initialEvents);
-  const [sortBy, setSortBy] = useState("status");
+  const [sortBy, setSortBy] = useState("upcoming-first");
   const [currentPage, setCurrentPage] = useState(1);
   const eventsPerPage = 8;
   const eventsHeaderRef = useRef<HTMLDivElement>(null);
@@ -44,25 +107,72 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
     const sortedEvents = [...initialEvents];
     
     switch (sortBy) {
-      case "date-newest":
-        sortedEvents.sort((a, b) => new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime());
+      case "upcoming-first":
+        // Status-based: upcoming → ongoing → past
+        // Within same status, sort by date (nearest first for upcoming, latest first for others)
+        sortedEvents.sort((a, b) => {
+          const statusOrder = { upcoming: 1, ongoing: 2, past: 3 };
+          const statusA = statusOrder[a.status as keyof typeof statusOrder] || 99;
+          const statusB = statusOrder[b.status as keyof typeof statusOrder] || 99;
+          
+          // First sort by status
+          if (statusA !== statusB) {
+            return statusA - statusB;
+          }
+          
+          // Within same status, sort by date
+          const dateA = parseEventDate(a.date || a.dateTime).getTime();
+          const dateB = parseEventDate(b.date || b.dateTime).getTime();
+          
+          // For upcoming events, show nearest dates first (ascending)
+          if (a.status === "upcoming") {
+            return dateA - dateB;
+          }
+          // For past events, show most recent first (descending)
+          else {
+            return dateB - dateA;
+          }
+        });
         break;
-      case "date-oldest":
-        sortedEvents.sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime());
+
+      case "newest-first":
+        // Most recent dates first (descending by date)
+        sortedEvents.sort((a, b) => {
+          const dateA = parseEventDate(a.date || a.dateTime).getTime();
+          const dateB = parseEventDate(b.date || b.dateTime).getTime();
+          return dateB - dateA;
+        });
         break;
-      case "name-asc":
-        sortedEvents.sort((a, b) => a.title.localeCompare(b.title));
+
+      case "oldest-first":
+        // Oldest dates first (ascending by date)
+        sortedEvents.sort((a, b) => {
+          const dateA = parseEventDate(a.date || a.dateTime).getTime();
+          const dateB = parseEventDate(b.date || b.dateTime).getTime();
+          return dateA - dateB;
+        });
         break;
-      case "name-desc":
-        sortedEvents.sort((a, b) => b.title.localeCompare(a.title));
-        break;
-      case "status":
-        const statusOrder = { upcoming: 1, ongoing: 2, past: 3 };
-        sortedEvents.sort((a, b) => (statusOrder[a.status as keyof typeof statusOrder] || 99) - (statusOrder[b.status as keyof typeof statusOrder] || 99));
-        break;
+
       default:
-        // Default: reverse chronological (newest first)
-        sortedEvents.reverse();
+        // Default: upcoming first
+        sortedEvents.sort((a, b) => {
+          const statusOrder = { upcoming: 1, ongoing: 2, past: 3 };
+          const statusA = statusOrder[a.status as keyof typeof statusOrder] || 99;
+          const statusB = statusOrder[b.status as keyof typeof statusOrder] || 99;
+          
+          if (statusA !== statusB) {
+            return statusA - statusB;
+          }
+          
+          const dateA = parseEventDate(a.date || a.dateTime).getTime();
+          const dateB = parseEventDate(b.date || b.dateTime).getTime();
+          
+          if (a.status === "upcoming") {
+            return dateA - dateB;
+          } else {
+            return dateB - dateA;
+          }
+        });
     }
     
     setEvents(sortedEvents);
@@ -77,9 +187,9 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
 
   const goToPage = (page: number) => {
     setCurrentPage(page);
-    // Scroll to events header (not page top)
+    // Scroll to events header
     if (eventsHeaderRef.current) {
-      const headerOffset = 100; // Offset for fixed header if you have one
+      const headerOffset = 100;
       const elementPosition = eventsHeaderRef.current.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -104,16 +214,13 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
             </p>
           </div>
           <Select value={sortBy} onValueChange={setSortBy}>
-            <SelectTrigger className="w-full sm:w-[180px] bg-white">
+            <SelectTrigger className="w-full sm:w-[200px] bg-white">
               <SelectValue placeholder="Sort By" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="default">Latest First</SelectItem>
-              <SelectItem value="date-newest">Date: Newest</SelectItem>
-              <SelectItem value="date-oldest">Date: Oldest</SelectItem>
-              <SelectItem value="name-asc">Name: A-Z</SelectItem>
-              <SelectItem value="name-desc">Name: Z-A</SelectItem>
-              <SelectItem value="status">Status</SelectItem>
+              <SelectItem value="upcoming-first">Upcoming First</SelectItem>
+              <SelectItem value="newest-first">Newest First</SelectItem>
+              <SelectItem value="oldest-first">Oldest First</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -143,17 +250,19 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
                     />
 
                     {/* Status Badge */}
-                    <div className="absolute top-3 left-3">
-                      <span className={`px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none ${
-                        event.status === "upcoming" 
-                          ? "bg-orange-100 text-[#D3363B]" 
-                          : event.status === "ongoing"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-gray-100 text-gray-700"
-                      }`}>
-                        {event.statusLabel}
-                      </span>
-                    </div>
+                    {event.status && event.statusLabel && (
+                      <div className="absolute top-3 left-3">
+                        <span className={`px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none ${
+                          event.status === "upcoming" 
+                            ? "bg-orange-100 text-[#D3363B]" 
+                            : event.status === "ongoing"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-gray-100 text-gray-700"
+                        }`}>
+                          {event.statusLabel}
+                        </span>
+                      </div>
+                    )}
 
                     {/* White Background for Button */}
                     <div
@@ -220,17 +329,19 @@ export default function EventsPageClient({ initialEvents }: EventsPageProps) {
                     />
 
                     {/* Status Badge */}
-                    <div className="absolute top-3 left-3">
-                      <span className={`px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none ${
-                        event.status === "upcoming" 
-                          ? "bg-orange-100 text-[#D3363B]" 
-                          : event.status === "ongoing"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-gray-100 text-gray-700"
-                      }`}>
-                        {event.statusLabel}
-                      </span>
-                    </div>
+                    {event.status && event.statusLabel && (
+                      <div className="absolute top-3 left-3">
+                        <span className={`px-3 py-1 rounded-full font-inter font-semibold text-xs leading-none ${
+                          event.status === "upcoming" 
+                            ? "bg-orange-100 text-[#D3363B]" 
+                            : event.status === "ongoing"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-gray-100 text-gray-700"
+                        }`}>
+                          {event.statusLabel}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Event Content */}

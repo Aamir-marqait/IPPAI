@@ -84,11 +84,7 @@ export default async function CurriculumCourses() {
 
                 {/* Content - NO SCROLL, content fits naturally */}
                 <div className="px-3 mt-2 mb-6 flex-grow">
-                  <Link href={`/courses/${course.slug}`}>
-                    <p className="font-poppins font-medium text-base leading-[26.67px] align-middle text-[#D3363B] hover:text-[#b82e2e] transition-colors">
-                      About the Course
-                    </p>
-                  </Link>
+                 
 
                   <p className="font-poppins font-normal text-base leading-[28px] align-middle text-[#6D6C80] mt-2">
                     {course.shortDescription}
@@ -142,6 +138,14 @@ export default async function CurriculumCourses() {
                         {course.price}
                       </span>
                     )}
+                  </div>
+
+<div className="text-center mt-2">
+                  <Link href={`/courses/${course.slug}`}>
+                    <p className="font-poppins font-medium text-base leading-[26.67px] align-middle rounded p-2 bg-red-500 text-white  hover:bg-red-800 transition-colors">
+                      About the Course
+                    </p>
+                  </Link>
                   </div>
                 </div>
               </div>
