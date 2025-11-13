@@ -77,18 +77,21 @@ export const metadata: Metadata = {
   },
 };
 
+// app/layout.tsx
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} ${epilogue.variable} ${sora.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} ${epilogue.variable} ${sora.variable} antialiased overflow-x-hidden`}
       >
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
 }
+
