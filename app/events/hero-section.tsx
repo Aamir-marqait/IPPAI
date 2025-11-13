@@ -104,7 +104,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
             </div>
 
             {/* Right side – text + buttons + countdown */}
-            <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 mt-4 lg:mt-0 pt-2 lg:pt-16 lg:translate-y-10">
+            <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 mt-16 sm:mt-20 lg:mt-0 pt-2 lg:pt-16 lg:translate-y-10">
+
               {/* Title */}
               <div>
                 <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal text-white text-left">
@@ -154,19 +155,20 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   )}
 
                   {data.eventLocation && (
-                    <div className="flex flex-wrap items-start justify-start gap-3">
-                      <Image
-                        src="/home/location.svg"
-                        alt="Location"
-                        width={20}
-                        height={20}
-                        className="flex-shrink-0 mt-1"
-                      />
-                      <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed text-left max-w-md">
-                        {data.eventLocation}
-                      </span>
-                    </div>
-                  )}
+  <div className="flex items-center justify-start gap-3">
+    <Image
+      src="/home/location.svg"
+      alt="Location"
+      width={20}
+      height={20}
+      className="flex-shrink-0"
+    />
+    <span className="font-work-sans text-white text-base xs:text-lg sm:text-xl font-medium leading-relaxed text-left max-w-md">
+      {data.eventLocation}
+    </span>
+  </div>
+)}
+
                 </div>
 
                 {/* Buttons */}

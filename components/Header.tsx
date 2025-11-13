@@ -553,10 +553,11 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <nav
-          className={`lg:hidden fixed top-0 right-0 h-full w-80 bg-black z-50 transform transition-transform duration-300 ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
+  className={`lg:hidden fixed inset-0 bg-black z-50 flex justify-center transform transition-transform duration-300 ${
+    isMenuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
+
           <div className="flex flex-col p-6 space-y-6 mt-16">
             <Link
               href="/"
