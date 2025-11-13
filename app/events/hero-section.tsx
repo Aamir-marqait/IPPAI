@@ -8,15 +8,15 @@ import Link from "next/link";
 interface HeroSectionData {
   title: string;
   subtitle?: string;
-  highlightText?: string;  // ✅ Made optional to match Sanity
-  eventDate?: string;  // ✅ Made optional to match Sanity
-  eventLocation?: string;  // ✅ Made optional to match Sanity
-  registrationLink?: string;  // ✅ Made optional to match Sanity
-  knowMoreLink?: string;  // ✅ Made optional to match Sanity
-  countdownTargetDate?: string;  // ✅ Made optional to match Sanity
+  highlightText?: string;
+  eventDate?: string;
+  eventLocation?: string;
+  registrationLink?: string;
+  knowMoreLink?: string;
+  countdownTargetDate?: string;
   backgroundImage: string;
-  frameImage?: string;  // ✅ Made optional to match Sanity
-  heroImage?: string;  // ✅ Made optional to match Sanity
+  frameImage?: string;
+  heroImage?: string;
 }
 
 interface HeroSectionProps {
@@ -51,10 +51,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     };
 
-    // Calculate immediately on mount
     setTimeLeft(calculateTimeLeft());
 
-    // Update every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -63,24 +61,22 @@ export default function HeroSection({ data }: HeroSectionProps) {
   }, [data.countdownTargetDate]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden pb-14">
+    <div className="relative overflow-hidden pb-14">
+      {/* Background */}
       <div
         className="absolute inset-0 w-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('${data.backgroundImage}')`,
-        }}
+        style={{ backgroundImage: `url('${data.backgroundImage}')` }}
       >
-        <div className="absolute inset-0 bg-black/0"></div>
+        <div className="absolute inset-0 bg-black/0" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col">
+      <div className="relative z-10 flex flex-col min-h-[620px] md:min-h-screen">
         <main className="flex-1 flex items-center">
-          <div className="w-full max-w-[1100px] mx-auto flex flex-col gap-5 lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
-            {/* Left side - Overlapping Images */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
-              <div className="relative w-full max-w-md lg:max-w-lg">
-                {/* Base frame image */}
+          <div className="w-full max-w-[1100px] mx-auto flex flex-col gap-10 lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 py-10 lg:py-0">
+            {/* Left side – frame + hero image */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start order-1 lg:order-none">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
                 {data.frameImage && (
                   <Image
                     src={data.frameImage}
@@ -88,26 +84,30 @@ export default function HeroSection({ data }: HeroSectionProps) {
                     width={500}
                     height={600}
                     className="w-full h-auto object-contain"
+                    priority
                   />
                 )}
-                {/* Hero image overlapping on top */}
+
                 {data.heroImage && (
-                  <div
-                    className="absolute top-8 left-8 inset-0 bg-contain bg-center bg-no-repeat h-[28rem] w-[28em] rounded-xl"
-                    style={{
-                      backgroundImage: `url('${data.heroImage}')`,
-                      zIndex: 10,
-                    }}
-                  ></div>
+                  <div className="absolute inset-4 sm:inset-6 lg:inset-8 rounded-xl overflow-hidden">
+                    <Image
+                      src={data.heroImage}
+                      alt="Event Hero"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 80vw, (max-width: 1200px) 45vw, 500px"
+                      priority
+                    />
+                  </div>
                 )}
               </div>
             </div>
 
-            {/* Right side - Content */}
-            <div className="w-full lg:w-1/2 text-center space-y-8 lg:space-y-3 lg:translate-y-20 mt-10 lg:mt-0  pt-20  ">
-              {/* Main Title */}
+            {/* Right side – text + buttons + countdown */}
+            <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 mt-4 lg:mt-0 pt-2 lg:pt-16 lg:translate-y-10">
+              {/* Title */}
               <div>
-                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal  text-white text-left">
+                <h1 className="font-red-hat-display font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight lg:leading-[150%] tracking-normal text-white text-left">
                   {data.title}
                   {data.subtitle && (
                     <>
@@ -118,11 +118,13 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   {data.highlightText && (
                     <>
                       <br />
-                      <span className="text-[#D3363B]">{data.highlightText}</span>
+                      <span className="text-[#D3363B]">
+                        {data.highlightText}
+                      </span>
                     </>
                   )}
                 </h1>
-                <div className="flex justify-right">
+                <div className="mt-3 flex justify-start">
                   <Image
                     src="/home/line.png"
                     alt="Line"
@@ -133,11 +135,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 </div>
               </div>
 
-              {/* Event Details */}
-              <div className="">
-                <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+              {/* Event details */}
+              <div>
+                <div className="space-y-3 sm:space-y-4">
                   {data.eventDate && (
-                    <div className="flex flex-wrap items-center justify-start gap-2 xs:gap-3">
+                    <div className="flex flex-wrap items-center justify-start gap-3">
                       <Image
                         src="/home/calendar.svg"
                         alt="Calendar"
@@ -152,7 +154,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   )}
 
                   {data.eventLocation && (
-                    <div className="flex flex-wrap items-start justify-start gap-2 xs:gap-3">
+                    <div className="flex flex-wrap items-start justify-start gap-3">
                       <Image
                         src="/home/location.svg"
                         alt="Location"
@@ -167,20 +169,20 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   )}
                 </div>
 
-                {/* Register Button */}
+                {/* Buttons */}
                 {(data.registrationLink || data.knowMoreLink) && (
-                  <div className="pt-4 flex justify-start">
+                  <div className="pt-5 flex justify-start">
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                      {data.knowMoreLink && (
-                        <Link href={data.knowMoreLink}>
-                          <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 cursor-pointer sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F]">
+                      {data.registrationLink && (
+                        <Link href={data.registrationLink}>
+                          <Button className="bg-[#D3363B] hover:bg-[#D3363B]/90 text-white font-work-sans font-medium text-base leading-none px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] shadow-[0px_4px_4px_0px_#D3363B4F] cursor-pointer">
                             Register Now
                           </Button>
                         </Link>
                       )}
                       {data.knowMoreLink && (
                         <Link href={data.knowMoreLink}>
-                          <Button className="bg-white shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-medium text-base leading-none text-center text-[#D3363B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] hover:text-white cursor-pointer">
+                          <Button className="bg-white shadow-[0px_4px_4px_0px_rgba(211,54,59,0.31)] font-work-sans font-medium text-base leading-none text-center text-[#D3363B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-[25px] hover:text-white hover:bg-[#D3363B] cursor-pointer">
                             Know More
                           </Button>
                         </Link>
@@ -190,8 +192,9 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 )}
               </div>
 
+              {/* Countdown */}
               {data.countdownTargetDate && (
-                <div className="pt-8 lg:pt-24 ">
+                <div className="pt-6 lg:pt-10">
                   <div className="inline-block bg-white rounded-[20px] px-4 xs:px-6 md:px-8 py-3 xs:py-4 lg:py-6 border shadow-lg">
                     <div className="flex flex-wrap justify-center items-center gap-3 xs:gap-4 sm:gap-6 lg:gap-8">
                       {[

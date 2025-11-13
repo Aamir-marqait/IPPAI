@@ -37,7 +37,7 @@ export default function Header() {
   if (!mounted) {
     return (
       <header className="w-full absolute z-50 left-0 right-0 pt-4">
-        <div className="mx-auto max-w-[1100px] py-4">
+        <div className="mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-0 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
               <div className="flex items-center">
@@ -239,7 +239,7 @@ export default function Header() {
 
   return (
     <header className="w-full absolute z-50 left-0 right-0 pt-4">
-      <div className="mx-auto max-w-[1100px] py-4">
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-0 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
