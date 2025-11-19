@@ -1,4 +1,5 @@
 import { client, CACHE_CONFIG } from '../client'
+import { PortableTextBlock } from 'sanity'
 
 /**
  * Event Queries
@@ -91,7 +92,7 @@ export interface Event {
     phone?: string
   }>
   conclusion?: string
-  content?: any[] // Portable Text / Rich Text content
+  content?: PortableTextBlock[] // Portable Text / Rich Text content
   gallery?: Array<{
     url: string
     alt?: string
