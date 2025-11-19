@@ -421,6 +421,23 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'brochure',
+      title: 'Event Brochure',
+      type: 'file',
+      description: 'Upload event brochure (PDF, DOCX, etc.)',
+      options: {
+        accept: '.pdf,.doc,.docx,.ppt,.pptx'
+      },
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Document Title',
+          description: 'Display name for the brochure (e.g., "Event Brochure", "Download PDF")',
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
