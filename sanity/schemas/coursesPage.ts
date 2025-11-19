@@ -64,6 +64,23 @@ export default defineType({
           initialValue: '#register-now',
           validation: (Rule) => Rule.required(),
         }),
+        defineField({
+          name: 'brochure',
+          title: 'Course Brochure',
+          type: 'file',
+          description: 'Upload course brochure (PDF, DOCX, etc.)',
+          options: {
+            accept: '.pdf,.doc,.docx,.ppt,.pptx'
+          },
+          fields: [
+            {
+              name: 'title',
+              type: 'string',
+              title: 'Document Title',
+              description: 'Display name for the brochure (e.g., "Download Course Brochure", "Course PDF")',
+            },
+          ],
+        }),
       ],
     }),
 

@@ -50,6 +50,10 @@ export interface CoursesHero {
   backgroundImage: string
   ctaButtonText: string
   ctaButtonLink: string
+  brochure?: {
+    url: string
+    title?: string
+  }
 }
 
 export interface CoursesSection {
@@ -124,7 +128,11 @@ const queries = {
       "subtitle": heroSection.subtitle,
       "backgroundImage": heroSection.backgroundImage.asset->url,
       "ctaButtonText": heroSection.ctaButtonText,
-      "ctaButtonLink": heroSection.ctaButtonLink
+      "ctaButtonLink": heroSection.ctaButtonLink,
+      "brochure": heroSection.brochure {
+        "url": asset->url,
+        "title": title
+      }
     },
     "coursesSection": {
       "sectionLabel": coursesSection.sectionLabel,
@@ -259,6 +267,7 @@ export async function getCoursesPageData(): Promise<CoursesPageData> {
       backgroundImage: data?.hero?.backgroundImage || '/chero.png',
       ctaButtonText: data?.hero?.ctaButtonText || 'Register Now',
       ctaButtonLink: data?.hero?.ctaButtonLink || '#register-now',
+      brochure: data?.hero?.brochure,
     },
     coursesSection: {
       sectionLabel: data?.coursesSection?.sectionLabel || 'OUR COURSE',
