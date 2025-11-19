@@ -26,13 +26,17 @@ interface FeaturedCourse {
 
 interface IntroductionClientProps {
   mainTitle: string;
+  eventsTitle: string;
   featuredEvents: FeaturedEvent[];
+  coursesTitle: string;
   featuredCourses: FeaturedCourse[];
 }
 
 export default function IntroductionClient({
   mainTitle,
+  eventsTitle,
   featuredEvents,
+  coursesTitle,
   featuredCourses,
 }: IntroductionClientProps) {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -87,7 +91,7 @@ export default function IntroductionClient({
                 aria-hidden="true"
               />
               <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
-                Latest Events
+                {eventsTitle}
               </span>
             </div>
 
@@ -217,7 +221,7 @@ export default function IntroductionClient({
                 aria-hidden="true"
               />
               <span className="text-xs sm:text-sm md:text-base xl:text-base font-bold font-red-hat-display leading-none uppercase text-[#D3363B]">
-                OUR COURSES
+                {coursesTitle}
               </span>
             </div>
 

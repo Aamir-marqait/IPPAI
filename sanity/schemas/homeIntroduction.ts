@@ -21,6 +21,15 @@ export default defineType({
     // EVENTS SECTION
     // ============================================
     defineField({
+      name: 'eventsTitle',
+      title: 'Events Section Title',
+      type: 'string',
+      description: 'Title for the events section (e.g., "Latest Events")',
+      initialValue: 'Latest Events',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'featuredEvents',
       title: 'Featured Events',
       type: 'array',
@@ -111,6 +120,15 @@ export default defineType({
     // ============================================
     // COURSES SECTION
     // ============================================
+    defineField({
+      name: 'coursesTitle',
+      title: 'Courses Section Title',
+      type: 'string',
+      description: 'Title for the courses section (e.g., "OUR COURSES")',
+      initialValue: 'OUR COURSES',
+      validation: (Rule) => Rule.required(),
+    }),
+
     defineField({
       name: 'featuredCourses',
       title: 'Featured Courses',
