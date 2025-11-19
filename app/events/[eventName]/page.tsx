@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { getEventBySlug, type Event } from "@/lib/sanity/queries";
 import Link from "next/link";
+import { PortableText } from '@portabletext/react';
+import { eventPortableTextComponents } from '@/components/events/PortableTextComponents';
 
 // Proper TypeScript interfaces
 interface EventDetail {
@@ -300,15 +302,26 @@ export default function EventDetailPage() {
               )}
             </div>
 
-            {/* Concept Note */}
-            {event.conceptNote && (
-              <div className="border-l-4 border-red-600 bg-red-50 p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Concept Note</h2>
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                  {event.conceptNote}
-                </p>
+            {/* RICH TEXT CONTENT - New flexible approach */}
+            {event.content && event.content.length > 0 ? (
+              <div className="rich-text-content prose prose-lg max-w-none">
+                <PortableText
+                  value={event.content}
+                  components={eventPortableTextComponents}
+                />
               </div>
-            )}
+            ) : (
+              // STRUCTURED CONTENT - Legacy/backward compatible approach
+              <>
+                {/* Concept Note */}
+                {event.conceptNote && (
+                  <div className="border-l-4 border-red-600 bg-red-50 p-6">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Concept Note</h2>
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                      {event.conceptNote}
+                    </p>
+                  </div>
+                )}
 
             {/* About Event */}
             {event.aboutEvent?.mainDescription && (
@@ -533,15 +546,17 @@ export default function EventDetailPage() {
               </div>
             )}
 
-            {/* Conclusion */}
-            {event.conclusion && (
-              <div className="bg-gray-900 p-6 rounded-lg text-white">
-                <h2 className="text-2xl font-bold mb-4">In Conclusion</h2>
-                <p className="text-gray-200 leading-relaxed">{event.conclusion}</p>
-              </div>
+                {/* Conclusion */}
+                {event.conclusion && (
+                  <div className="bg-gray-900 p-6 rounded-lg text-white">
+                    <h2 className="text-2xl font-bold mb-4">In Conclusion</h2>
+                    <p className="text-gray-200 leading-relaxed">{event.conclusion}</p>
+                  </div>
+                )}
+              </>
             )}
 
-            {/* Photo Gallery */}
+            {/* Photo Gallery - Always visible regardless of content type */}
             {event.gallery && event.gallery.length > 0 && (
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
