@@ -96,6 +96,10 @@ export interface Event {
     alt?: string
     caption?: string
   }>
+  brochure?: {
+    url: string
+    title?: string
+  }
 }
 
 export interface EventHero {
@@ -220,6 +224,10 @@ const queries = {
       "url": asset->url,
       alt,
       caption
+    },
+    brochure {
+      "url": asset->url,
+      title
     }
   }`,
 
@@ -299,6 +307,10 @@ const queries = {
       "url": asset->url,
       alt,
       caption
+    },
+    brochure {
+      "url": asset->url,
+      title
     }
   }`,
 
