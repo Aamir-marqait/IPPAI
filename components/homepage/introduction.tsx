@@ -9,7 +9,9 @@ export default async function Introduction() {
   return (
     <IntroductionClient
       mainTitle={data.mainTitle}
+      eventsTitle={data.eventsTitle}
       featuredEvents={data.featuredEvents}
+      coursesTitle={data.coursesTitle}
       featuredCourses={data.featuredCourses}
     />
   );

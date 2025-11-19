@@ -50,7 +50,9 @@ export interface LeadershipMember {
 
 export interface HomeIntroductionData {
   mainTitle: string
+  eventsTitle: string
   featuredEvents: FeaturedEvent[]
+  coursesTitle: string
   featuredCourses: FeaturedCourse[]
   testimonials: Testimonial[]
   leadershipTeam: LeadershipMember[]
@@ -64,6 +66,7 @@ const queries = {
   // Get introduction data
   homeIntroduction: `*[_type == "homeIntroduction"][0] {
     mainTitle,
+    eventsTitle,
     "featuredEvents": featuredEvents[status == "published"] {
       title,
       description,
@@ -73,6 +76,7 @@ const queries = {
       link,
       status
     },
+    coursesTitle,
     "featuredCourses": featuredCourses[status == "published"] {
       title,
       description,
@@ -116,7 +120,9 @@ export async function getHomeIntroduction(): Promise<HomeIntroductionData> {
 
   return {
     mainTitle: data?.mainTitle || 'Independent Power Producers Association of India',
+    eventsTitle: data?.eventsTitle || 'Latest Events',
     featuredEvents: data?.featuredEvents || [],
+    coursesTitle: data?.coursesTitle || 'OUR COURSES',
     featuredCourses: data?.featuredCourses || [],
     testimonials: data?.testimonials || [],
     leadershipTeam: data?.leadershipTeam || []
