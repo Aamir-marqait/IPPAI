@@ -91,6 +91,7 @@ export interface Event {
     phone?: string
   }>
   conclusion?: string
+  content?: any[] // Portable Text / Rich Text content
   gallery?: Array<{
     url: string
     alt?: string
@@ -220,6 +221,7 @@ const queries = {
       phone
     },
     conclusion,
+    content,
     gallery[] {
       "url": asset->url,
       alt,
@@ -303,6 +305,7 @@ const queries = {
       phone
     },
     conclusion,
+    content,
     gallery[] {
       "url": asset->url,
       alt,
