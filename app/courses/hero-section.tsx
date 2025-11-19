@@ -54,6 +54,23 @@ export default async function IntensiveCourseHero() {
           >
             {hero.ctaButtonText}
           </Link>
+
+          {/* Brochure Download Button */}
+          {hero.brochure?.url && (
+            <a
+              href={hero.brochure.url}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white hover:bg-gray-100 text-gray-900 font-work-sans font-medium xl:text-[16px] xl:leading-[100%] xl:tracking-[0%] text-center cursor-pointer px-7 py-2.5 rounded-full transition inline-flex items-center gap-2"
+              style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.1)" }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>{hero.brochure.title || 'Download Brochure'}</span>
+            </a>
+          )}
         </div>
         <div className="z-20 hidden md:flex flex-col justify-center">
           {/* Right side content if needed */}
