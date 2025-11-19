@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { getEventBySlug, type Event } from "@/lib/sanity/queries";
 import Link from "next/link";
+import RichTextContent from "@/components/RichTextContent";
 
 // Proper TypeScript interfaces
 interface EventDetail {
@@ -300,6 +301,15 @@ export default function EventDetailPage() {
               )}
             </div>
 
+            {/* Conditional: Show Rich Text Content OR Structured Fields */}
+            {event.content && event.content.length > 0 ? (
+              /* NEW WAY: Rich Text Content */
+              <div className="bg-white">
+                <RichTextContent content={event.content} />
+              </div>
+            ) : (
+              /* OLD WAY: All Structured Fields */
+              <>
             {/* Concept Note */}
             {event.conceptNote && (
               <div className="border-l-4 border-red-600 bg-red-50 p-6">
@@ -540,6 +550,9 @@ export default function EventDetailPage() {
                 <p className="text-gray-200 leading-relaxed">{event.conclusion}</p>
               </div>
             )}
+            </>
+            )}
+            {/* End Conditional */}
 
             {/* Photo Gallery */}
             {event.gallery && event.gallery.length > 0 && (
