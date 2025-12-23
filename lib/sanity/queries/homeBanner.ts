@@ -1,10 +1,10 @@
-import { client, CACHE_CONFIG } from '../client'
+import { client, CACHE_CONFIG } from "../client";
 
 /**
  * Homepage Banner Queries
- * 
+ *
  * Fetches banner image for the homepage
- * 
+ *
  * @module lib/sanity/queries/homeBanner
  */
 
@@ -13,8 +13,8 @@ import { client, CACHE_CONFIG } from '../client'
 // ============================================
 
 export interface HomeBannerData {
-  bannerImage: string
-  altText: string
+  bannerImage: string | null;
+  altText: string;
 }
 
 // ============================================
@@ -27,7 +27,7 @@ const queries = {
     "bannerImage": bannerImage.asset->url,
     altText
   }`,
-} as const
+} as const;
 
 // ============================================
 // FETCH FUNCTIONS
@@ -38,15 +38,15 @@ export async function getHomeBanner(): Promise<HomeBannerData> {
     queries.homeBanner,
     {},
     {
-      next: { 
-        tags: ['home-banner'],
-        revalidate: CACHE_CONFIG.STATIC.revalidate
-      }
+      next: {
+        tags: ["home-banner"],
+        revalidate: CACHE_CONFIG.STATIC.revalidate,
+      },
     }
-  )
+  );
 
   return {
-    bannerImage: data?.bannerImage || '/optimized/main.webp', // Fallback to current image
-    altText: data?.altText || 'Energy Infrastructure'
-  }
+    bannerImage: data?.bannerImage ?? null,
+    altText: data?.altText || "Energy Infrastructure",
+  };
 }

@@ -87,6 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${redHatDisplay.variable} ${poppins.variable} ${plusJakartaSans.variable} ${epilogue.variable} ${sora.variable} antialiased overflow-x-hidden`}
       >
         <LayoutWrapper>{children}</LayoutWrapper>
