@@ -219,6 +219,15 @@ export default function Header() {
                   </div>
                 )}
               </div>
+              <a
+                href="https://portal.ippai.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-2 group"
+              >
+                LEARNING PORTAL
+                <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 origin-center"></div>
+              </a>
             </nav>
             <button
               className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
@@ -511,6 +520,19 @@ export default function Header() {
                 </div>
               )}
             </div>
+            <a
+              href="https://portal.ippai.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-work-sans font-medium text-base leading-none tracking-normal text-center uppercase transition-colors relative pb-2 group ${
+                isEventDetailPage
+                  ? "text-black hover:text-gray-600"
+                  : "text-white hover:text-red-500"
+              }`}
+            >
+              LEARNING PORTAL
+              <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-center"></div>
+            </a>
           </nav>
 
           <button
@@ -730,6 +752,17 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+            <a
+              href="https://portal.ippai.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-work-sans font-medium text-lg leading-none tracking-normal text-center uppercase text-white hover:text-red-500 transition-colors relative pb-3 group"
+              onClick={toggleMenu}
+            >
+              LEARNING PORTAL
+              <div className="absolute -bottom-1 left-1/4 right-1/4 h-[3px] bg-[#D3363B] rounded-[3px] transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-center"></div>
+            </a>
 
             {/* Contact Button - Mobile Menu */}
             <div className="flex justify-center">
